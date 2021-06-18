@@ -1,4 +1,4 @@
-# Sistema de gestion de turnos medicos, con C# en as.Net
+# Sistema de gestion de turnos medicos, con C# en asp.Net
 
 ## TPC - programacion 3 - Universidad Tecnologica Nacional
 
