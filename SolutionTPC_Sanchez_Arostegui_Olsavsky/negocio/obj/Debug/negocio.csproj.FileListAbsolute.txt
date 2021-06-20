@@ -1,0 +1,6 @@
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\negocio.dll
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\negocio.pdb
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.dll
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.pdb

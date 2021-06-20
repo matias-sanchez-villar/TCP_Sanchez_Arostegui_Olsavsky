@@ -1,0 +1,6 @@
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\bin\Debug\dominio.dll
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\bin\Debug\dominio.pdb
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\obj\Debug\dominio.dll
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\obj\Debug\dominio.pdb
