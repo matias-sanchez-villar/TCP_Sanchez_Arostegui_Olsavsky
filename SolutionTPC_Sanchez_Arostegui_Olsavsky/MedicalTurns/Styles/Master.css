@@ -1,5 +1,6 @@
 ﻿
 
+
 /*-------------------------------- ESTILOS GENERALES --------------------------------*/
 
 :root {
@@ -72,6 +73,7 @@ ul > li, li{
     height: 100%;
     display: flex;
     justify-content: space-evenly;
+    gap: 24px;
 }
 
 .nav-item {
