@@ -1,3 +1,7 @@
+USE master 
+
+go  
+
 drop database Sanchez_Arostegui_Olsavsky_DB
 
 go
@@ -23,6 +27,7 @@ CREATE TABLE Pacientes(
     Genero CHAR NOT NULL CHECK (Genero IN ('M', 'F', 'O')),
     NroAfiliado varchar (40) NULL,
     ObraSocial VARCHAR(100) NOT NULL,
+	Estado bit not null check(Estado = 1)
 	--CONSTRAINT CHK_EMailCelular CHECK(EMail IS NOT NULL OR Celular IS NOT NULL),
 )
 
@@ -41,6 +46,7 @@ CREATE TABLE Medicos(
     Genero CHAR NOT NULL CHECK (Genero IN ('M', 'F', 'O')),
     Matricula varchar (50) NULL,
     Especialidad VARCHAR(150) NOT NULL,
+	Estado bit not null check(Estado = 1)
 )
 
 go
@@ -49,5 +55,6 @@ create table Turno(
 	IDPaciente int foreign key references Pacientes(ID) NOT NULL,
 	IDMedico int foreign key references Medicos(ID) NOT NULL,
 	FechaHora datetime not null CHECK(FechaHora > GETDATE()),
+	Estado bit not null check(Estado = 1)
 	PRIMARY KEY (IDPaciente, IDMedico, FechaHora)
 )

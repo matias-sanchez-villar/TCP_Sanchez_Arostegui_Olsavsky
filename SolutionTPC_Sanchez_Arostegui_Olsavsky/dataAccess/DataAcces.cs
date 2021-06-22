@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace dataAccess
 {
-    class DataAccess
+    public class DataAcces
     {
         private SqlConnection conexion;
         private SqlCommand comando;
@@ -15,7 +15,7 @@ namespace dataAccess
 
         string cadenaConexion = "data source = (local)\\SQLEXPRESS; initial catalog =Sanchez_Arostegui_Olsavsky_DB; integrated security = true;";
 
-        public DataAccess()
+        public DataAcces()
         {
             conexion = new SqlConnection(cadenaConexion);
             comando = new SqlCommand();

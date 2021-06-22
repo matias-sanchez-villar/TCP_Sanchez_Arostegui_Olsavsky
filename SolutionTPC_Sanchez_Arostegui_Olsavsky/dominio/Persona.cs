@@ -18,5 +18,6 @@ namespace dominio
         public string Email { get; set; }
         public String Constrasena { get; set; }
         public string Celular { get; set; }
+        public bool Estado { get; set; }
     }
 }
