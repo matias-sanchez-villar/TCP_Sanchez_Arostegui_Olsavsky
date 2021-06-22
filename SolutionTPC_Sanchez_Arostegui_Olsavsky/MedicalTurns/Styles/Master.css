@@ -5,7 +5,7 @@
     --main-white: #e0e0e0;
     --main-gray: #ECECEC;
     --font-color: #343545;
-    --accent-violet: #9865FF;
+    --accent-violet: #385399;
 }
 
 * {
@@ -74,16 +74,20 @@ ul > li, li{
     gap: 24px;
 }
 
-.nav-item {
+.lateral-navbar .lateral-navbar__icon-container .navbar-list .nav-item {
     padding: 20px;
     border-radius: 10px;
     background-color: var(--main-white);
+    transition: all 400ms;
 }
 
+.lateral-navbar .lateral-navbar__icon-container .navbar-list .nav-item:hover .inner-nav-item {
+    transition: all 400ms;
+    display: inline-block;
+}
 
-.lateral-navbar .lateral-navbar__control-center{
-    width: 100%;
-    height: auto;
-    margin-top: 200px;
-    justify-content: space-evenly;
+.lateral-navbar .lateral-navbar__icon-container .navbar-list .nav-item a.inner-nav-item {
+    margin-left: 10px;
+    display: none;
+    transition: all 400ms;
 }

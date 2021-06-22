@@ -19,11 +19,11 @@
         <nav class="lateral-navbar column shadow">
             <div class="lateral-navbar__icon-container">
                 <ul class="navbar-list column">
-                    <li class="nav-item pointer shadow"> <a href="Dashboard.aspx"><i class="fas fa-home"></i></a></li>
-                    <li class="nav-item pointer shadow"> <a href="Search.aspx"><i class="fas fa-search-plus"></i></a></li>
-                    <li class="nav-item pointer shadow"> <a href="Turns.aspx"><i class="fas fa-briefcase-medical"></i></a></li>
-                    <li class="nav-item pointer shadow"> <a href="Calendar.aspx"><i class="fas fa-calendar-alt"></i></a></li>
-                    <li class="nav-item pointer shadow"> <a href="Configuration.aspx"><i class="fas fa-cog"></i></a></li>
+                    <li class="nav-item pointer shadow"> <a href="Dashboard.aspx"><i class="fas fa-home"></i></a> <a class="inner-nav-item">Home</a> </li>
+                    <li class="nav-item pointer shadow"> <a href="Search.aspx"><i class="fas fa-search-plus"></i></a><a class="inner-nav-item">Search</a></li>
+                    <li class="nav-item pointer shadow"> <a href="Turns.aspx"><i class="fas fa-briefcase-medical"></i></a><a class="inner-nav-item">Set appoinment</a></li>
+                    <li class="nav-item pointer shadow"> <a href="Calendar.aspx"><i class="fas fa-calendar-alt"></i></a><a class="inner-nav-item">My Calendar</a></li>
+                    <li class="nav-item pointer shadow"> <a href="Configuration.aspx"><i class="fas fa-cog"></i></a><a class="inner-nav-item">Settings</a></li>
                 </ul>
             </div>
         </nav>
