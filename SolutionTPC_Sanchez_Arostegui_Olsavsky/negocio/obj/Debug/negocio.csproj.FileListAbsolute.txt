@@ -9,3 +9,14 @@ C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_S
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\dataAccess.pdb
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\dominio.pdb
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.csproj.CopyComplete
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\negocio.dll
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\negocio.pdb
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\dataAccess.dll
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\dominio.dll
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\dataAccess.pdb
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\dominio.pdb
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.csproj.CopyComplete
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.dll
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.pdb

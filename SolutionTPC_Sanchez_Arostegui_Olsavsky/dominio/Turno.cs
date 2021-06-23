@@ -13,10 +13,8 @@ namespace dominio
         public DateTime FechaHora { get; set; }
         public bool Estado { get; set; }
 
-        public Turno(Paciente paciente, Medico medico)
+        public Turno()
         {
-            this.paciente = paciente;
-            this.medico = medico;
             Estado = true;
         }
     }

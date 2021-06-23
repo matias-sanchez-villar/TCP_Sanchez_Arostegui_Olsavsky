@@ -10,7 +10,7 @@ namespace negocio
 {
     public class N_Medico
     {
-        public Medico Medico { get; set; }
+        public Medico medico { get; set; }
         public List<Medico> Lista { get; set; }
         public DataAcces Datos { get; set; }
 
@@ -28,7 +28,7 @@ namespace negocio
 
                 while (Datos.Lector.Read())
                 {
-                    Medico medico = new Medico();
+                    medico = new Medico();
 
                     medico.ID = (int)Datos.Lector["ID"];
                     medico.DNI = (string)Datos.Lector["DNI"];
@@ -48,6 +48,46 @@ namespace negocio
                     Lista.Add(medico);
                 }
                 return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
+        public Medico GetMedico(int ID)
+        {
+            Datos = new DataAcces();
+
+            try
+            {
+
+                Datos.setearConsulta("select ID, DNI, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Genero, Matricula, Especialidad, Estado from Medicos where ID = " + ID);
+
+                Datos.ejecutarLectura();
+                
+                medico = new Medico();
+
+                    medico.ID = (int)Datos.Lector["ID"];
+                    medico.DNI = (string)Datos.Lector["DNI"];
+                    medico.Nombre = (string)Datos.Lector["Nombre"];
+                    medico.Apellido = (string)Datos.Lector["Apellido"];
+                    medico.Matricula = (string)Datos.Lector["Matricula"];
+                    medico.Especialidad = (string)Datos.Lector["Especialidad"];
+                    medico.Domicilio = (string)Datos.Lector["Domicilio"];
+                    medico.Email = (string)Datos.Lector["Email"];
+                    medico.Constrasena = (string)Datos.Lector["Pass"];
+                    medico.Especialidad = (string)Datos.Lector["Especialidad"];
+                    medico.Celular = (string)Datos.Lector["Telefono"];
+                    medico.Estado = (bool)Datos.Lector["Estado"];
+                    medico.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
+                    medico.Genero = (char)Datos.Lector["Genero"];
+
+                return medico;
             }
             catch (Exception ex)
             {
@@ -91,7 +131,7 @@ namespace negocio
         }
 
 
-        public void Insertar(Medico medico)
+        public void Cargar(Medico medico)
         {
             Datos = new DataAcces();
             try

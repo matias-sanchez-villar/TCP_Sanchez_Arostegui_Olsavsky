@@ -61,6 +61,8 @@ create table Turno(
 	PRIMARY KEY (IDPaciente, IDMedico, FechaHora)
 )
 
+--select IDPaciente, IDMedico, FechaHora, Estado from Turno
+--update Turno set IDPaciente, IDMedico, FechaHora where IDPaciente, IDMedico, FechaHora
 
 --update Medicos set Estado = 1 where ID = 1
 
