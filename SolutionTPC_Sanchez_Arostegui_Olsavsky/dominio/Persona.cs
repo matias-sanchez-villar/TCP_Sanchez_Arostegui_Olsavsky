@@ -19,5 +19,10 @@ namespace dominio
         public String Constrasena { get; set; }
         public string Celular { get; set; }
         public bool Estado { get; set; }
+
+        public Persona()
+        {
+            Estado = true;
+        }
     }
 }

@@ -14,18 +14,14 @@ namespace negocio
         public List<Medico> Lista { get; set; }
         public DataAcces Datos { get; set; }
 
-        public N_Medico()
-        {
-            Datos = new DataAcces();
-        }
-
         public List<Medico> Listar()
         {
+            Datos = new DataAcces();
             Lista = new List<Medico>();
 
             try
             {
-                string Consulta = "22";
+                string Consulta = "22"; //Falta la consulta
 
                 Datos.setearConsulta(Consulta);
 
@@ -53,6 +49,57 @@ namespace negocio
                     Lista.Add(medico);
                 }
                 return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
+
+        public void Modificar(Medico medico)
+        {
+            Datos = new DataAcces();
+            try
+            {
+                Datos.setearConsulta("");
+
+                Datos.setearParametro("@Apellido", medico.Apellido);
+                Datos.setearParametro("@Celular", medico.Celular);
+                Datos.setearParametro("@Constrasena", medico.Constrasena);
+                Datos.setearParametro("@DNI", medico.DNI);
+                Datos.setearParametro("@Domicilio", medico.Domicilio);
+                Datos.setearParametro("@Email", medico.Email);
+                Datos.setearParametro("@Especialidad", medico.Especialidad);
+                Datos.setearParametro("@Estado", medico.Estado);
+                Datos.setearParametro("@FechaNacimiento", medico.FechaNacimiento);
+                Datos.setearParametro("@Genero", medico.Genero);
+                Datos.setearParametro("@ID", medico.ID);
+                Datos.setearParametro("@Matricula", medico.Matricula);
+                Datos.setearParametro("@Nombre", medico.Nombre);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
+
+        public void Eliminar(int ID)
+        {
+            Datos = new DataAcces();
+            try
+            {
+                Datos.setearConsulta("");
+                Datos.ejecutarLectura();
             }
             catch (Exception ex)
             {

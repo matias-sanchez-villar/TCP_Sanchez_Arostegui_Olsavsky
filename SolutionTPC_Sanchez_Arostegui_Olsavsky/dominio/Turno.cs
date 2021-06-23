@@ -17,6 +17,7 @@ namespace dominio
         {
             this.paciente = paciente;
             this.medico = medico;
+            Estado = true;
         }
     }
 }
