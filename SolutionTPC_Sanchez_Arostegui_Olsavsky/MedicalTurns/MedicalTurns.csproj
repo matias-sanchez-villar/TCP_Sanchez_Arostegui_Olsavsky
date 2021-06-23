@@ -111,6 +111,10 @@
     <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\dominio\dominio.csproj">
+      <Project>{9fbd1716-b184-4e75-80c9-b6af37d3bd0e}</Project>
+      <Name>dominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\negocio\negocio.csproj">
       <Project>{57b48f45-1e38-4574-aa24-b681c9f56fc7}</Project>
       <Name>negocio</Name>

@@ -28,6 +28,27 @@
             </div>
         </nav>
 
+        <%
+        
+            /*
+                Aca listamos los medicos Doro .. lo podes hacer en cualquier paguina con esta master peague
+                Copiando y pegando todo el form y el codigo del MainStructure.Master.cs
+                
+                Atencion esto no fue probado -> por lo tanto se puede romper, no te asustes
+
+
+                foreach (Dominio.Medico item in Lista)
+                {
+                    item.Nombre;
+                    item.Apellido;
+                    .......
+                    ......
+                }
+
+            */
+            
+        %>
+
 
         <form id="form1" runat="server">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
