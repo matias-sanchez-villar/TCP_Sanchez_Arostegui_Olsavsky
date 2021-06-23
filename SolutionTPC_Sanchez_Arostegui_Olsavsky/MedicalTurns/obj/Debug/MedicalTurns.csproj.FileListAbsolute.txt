@@ -116,3 +116,9 @@ C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\Solut
 C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\obj\Debug\MedicalTurns.csproj.CopyComplete
 C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\obj\Debug\MedicalTurns.dll
 C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\obj\Debug\MedicalTurns.pdb
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dominio.dll
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\negocio.dll
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dataAccess.dll
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dominio.pdb
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\negocio.pdb
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dataAccess.pdb

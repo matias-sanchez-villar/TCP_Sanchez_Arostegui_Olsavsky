@@ -4,3 +4,6 @@ C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_S
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\obj\Debug\dominio.dll
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\obj\Debug\dominio.pdb
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\bin\Debug\dataAccess.dll
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\bin\Debug\dataAccess.pdb
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\dominio\obj\Debug\dominio.csproj.CopyComplete

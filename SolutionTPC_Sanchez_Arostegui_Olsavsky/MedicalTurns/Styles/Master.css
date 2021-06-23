@@ -1,11 +1,14 @@
 ﻿
 /*-------------------------------- ESTILOS GENERALES --------------------------------*/
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 :root {
     --main-white: #e0e0e0;
     --main-gray: #ECECEC;
     --font-color: #343545;
     --accent-violet: #385399;
+    --transition-speed: 600ms;
 }
 
 * {
@@ -18,13 +21,26 @@
 body {
     background-color: var(--main-white);
     color: var(--font-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #6649b8;
 }
 
 a, a:visited{
     color: var(--font-color);
 }
 
-i{
+i {
     font-size: 25px;
 }
 
@@ -46,48 +62,142 @@ ul > li, li{
     cursor: pointer;
 }
 
-.shadow {
-    background: #e0e0e0;
-    box-shadow: 12px 12px 24px #bebebe, -12px -12px 24px #ffffff;
-}
-
 /*-------------------------------- ESTILOS DE SELECTORES --------------------------------*/
 
-
-.lateral-navbar {
-    height: 100vh;
+.navbar {
     position: fixed;
-    width: auto;
-    max-width: 300px;
-    padding: 40px;
-    box-shadow: 0px 3px 23px -2px rgba(52,53,69,0.2);
-}
-
-.lateral-navbar .lateral-navbar__icon-container{
-    height: 40%;
-}
-
-.lateral-navbar .lateral-navbar__icon-container .navbar-list{
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    gap: 24px;
-}
-
-.lateral-navbar .lateral-navbar__icon-container .navbar-list .nav-item {
-    padding: 20px;
-    border-radius: 10px;
     background-color: var(--main-white);
-    transition: all 400ms;
+    transition: width 600ms ease;
+    overflow: hidden;
+    box-shadow: 0px 3px 23px -2px rgba(52,53,69,0.3);
 }
 
-.lateral-navbar .lateral-navbar__icon-container .navbar-list .nav-item:hover .inner-nav-item {
-    transition: all 400ms;
-    display: inline-block;
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
-.lateral-navbar .lateral-navbar__icon-container .navbar-list .nav-item a.inner-nav-item {
-    margin-left: 10px;
+.nav-item {
+    width: 100%;
+}
+
+.nav-item:last-child {
+    margin-top: auto;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--font-color);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.9);
+    transition: var(--transition-speed);
+}
+
+.nav-link:hover{
+    filter: grayscale(0%) opacity(1);
+    background-color: var(--main-gray);
+    color: var(--accent-violet);
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: transparent;
+    color: inherit;
+}
+
+.link-text {
     display: none;
-    transition: all 400ms;
+    margin-left: 1rem;
+}
+
+.nav-link i, .nav-link svg {
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+/* Estilos de las letras del logo */
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--font-color);
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.logo i {
+    transform: rotate(0deg);
+    transition: var(--transition-speed);
+    font-size: 2rem;
+}
+
+.logo-text {
+    display: inline;
+    position: absolute;
+    left: -999px; /* El logo queda invisible en la posición inicial */
+    transition: var(--transition-speed);
+}
+
+.navbar:hover .logo i {
+    transform: rotate(-180deg);
+    margin-left: auto;
+}
+
+/* Pantallas chicas */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    main {
+        margin: 0;
+    }
+}
+
+/* Pantallas grandes */
+@media only screen and (min-width: 600px) {
+
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 16rem; /* Se agranda el ancho del navbar en hover */
+    }
+
+    .navbar:hover .link-text {
+        display: inline; /* Se muestra el link text */
+        font-weight: 600;
+        color: var(--font-color);
+    }
+
+    .navbar:hover .logo-text {
+        left: 0px; /* Luego de hacer el hover en el navbar el logo vuelve a su posición cero*/
+    }
 }

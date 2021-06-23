@@ -15,15 +15,15 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                N_Medico medico = new N_Medico();
-                lista = medico.Listar();
-            }
-            catch (Exception)
-            {
-                Response.Redirect("Login.aspx");
-            }
+            //try
+            //{
+            //    N_Medico medico = new N_Medico();
+            //    lista = medico.Listar();
+            //}
+            //catch (Exception)
+            //{
+            //    Response.Redirect("Login.aspx");
+            //}
         }
 
     }

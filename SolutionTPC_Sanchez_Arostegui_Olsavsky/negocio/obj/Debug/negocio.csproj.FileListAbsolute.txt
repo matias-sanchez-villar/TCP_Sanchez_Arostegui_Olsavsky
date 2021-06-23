@@ -4,3 +4,8 @@ C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_S
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.dll
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.pdb
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\dataAccess.dll
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\dominio.dll
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\dataAccess.pdb
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\bin\Debug\dominio.pdb
+C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.csproj.CopyComplete
