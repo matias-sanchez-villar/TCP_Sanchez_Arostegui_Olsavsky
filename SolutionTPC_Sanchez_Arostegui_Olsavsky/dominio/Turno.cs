@@ -12,5 +12,11 @@ namespace dominio
         public Paciente paciente { get; set; }
         public DateTime FechaHora { get; set; }
         public bool Estado { get; set; }
+
+        public Turno(Paciente paciente, Medico medico)
+        {
+            this.paciente = paciente;
+            this.medico = medico;
+        }
     }
 }

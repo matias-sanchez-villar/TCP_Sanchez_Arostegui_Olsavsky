@@ -12,9 +12,5 @@ namespace dominio
         public string ObraSocial { get; set; }
         public string NumeroAfiliado { get; set; }
 
-        public Paciente(Persona persona)
-        {
-            this.persona = persona;
-        }
     }
 }

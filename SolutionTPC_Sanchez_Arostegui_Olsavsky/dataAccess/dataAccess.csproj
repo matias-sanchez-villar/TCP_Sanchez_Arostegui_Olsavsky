@@ -42,14 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAcces.cs" />
-    <Compile Include="DA_Medico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\dominio\dominio.csproj">
-      <Project>{9fbd1716-b184-4e75-80c9-b6af37d3bd0e}</Project>
-      <Name>dominio</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
