@@ -1,3 +1,4 @@
+/*
 USE master 
 
 go  
@@ -5,6 +6,7 @@ go
 drop database Sanchez_Arostegui_Olsavsky_DB
 
 go
+*/
 
 CREATE DATABASE Sanchez_Arostegui_Olsavsky_DB
 
@@ -58,3 +60,12 @@ create table Turno(
 	Estado bit not null check(Estado = 1)
 	PRIMARY KEY (IDPaciente, IDMedico, FechaHora)
 )
+
+
+--update Medicos set Estado = 1 where ID = 1
+
+--update Medicos set Nombre = "", Apellido = "", Domicilio = "", EMail = "", Contrasena = "", Celular = "", Especialidad = "", Matricula 
+
+--select ID, DNI, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Genero, Matricula, Especialidad, Estado from Medicos
+
+--insert into Medicos (ID, DNI, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Celular, Genero, Matricula, Especialidad, Estado) values ()

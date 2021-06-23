@@ -21,9 +21,8 @@ namespace negocio
 
             try
             {
-                string Consulta = "22"; //Falta la consulta
 
-                Datos.setearConsulta(Consulta);
+                Datos.setearConsulta("select ID, DNI, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Genero, Matricula, Especialidad, Estado from Medicos");
 
                 Datos.ejecutarLectura();
 
@@ -66,7 +65,38 @@ namespace negocio
             Datos = new DataAcces();
             try
             {
-                Datos.setearConsulta("");
+                Datos.setearConsulta("update Medicos set Nombre = @Nombre, Apellido = @Apellido, Domicilio = @Domicilio, EMail = @EMail, Contrasena = @Contrasena, Celular = @Celular, Especialidad = @Especialidad, Matricula = @Matricula where ID = @ID");
+
+                Datos.setearParametro("@ID", medico.ID);
+                Datos.setearParametro("@Apellido", medico.Apellido);
+                Datos.setearParametro("@Celular", medico.Celular);
+                Datos.setearParametro("@Constrasena", medico.Constrasena);
+                Datos.setearParametro("@Domicilio", medico.Domicilio);
+                Datos.setearParametro("@Email", medico.Email);
+                Datos.setearParametro("@Especialidad", medico.Especialidad);
+                Datos.setearParametro("@FechaNacimiento", medico.FechaNacimiento);
+                Datos.setearParametro("@Matricula", medico.Matricula);
+                Datos.setearParametro("@Nombre", medico.Nombre);
+
+                Datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
+
+        public void Insertar(Medico medico)
+        {
+            Datos = new DataAcces();
+            try
+            {
+                Datos.setearConsulta("insert into Medicos (ID, DNI, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Celular, Genero, Matricula, Especialidad, Estado) values (@ID, @DNI, @Nombre, @Apellido, @FechaNacimiento, @Domicilio, @EMail, @Contrasena, @Celular, @Celular, @Genero, @Matricula, @Especialidad, @Estado)");
 
                 Datos.setearParametro("@Apellido", medico.Apellido);
                 Datos.setearParametro("@Celular", medico.Celular);
@@ -81,6 +111,8 @@ namespace negocio
                 Datos.setearParametro("@ID", medico.ID);
                 Datos.setearParametro("@Matricula", medico.Matricula);
                 Datos.setearParametro("@Nombre", medico.Nombre);
+
+                Datos.ejecutarLectura();
             }
             catch (Exception ex)
             {
@@ -92,13 +124,16 @@ namespace negocio
             }
         }
 
-
         public void Eliminar(int ID)
         {
             Datos = new DataAcces();
             try
             {
-                Datos.setearConsulta("");
+                Datos.setearConsulta("update Medicos set Estado = @Estado where ID = @ID");
+
+                Datos.setearParametro("@ID", ID);
+                Datos.setearParametro("@Estado", false);
+
                 Datos.ejecutarLectura();
             }
             catch (Exception ex)
