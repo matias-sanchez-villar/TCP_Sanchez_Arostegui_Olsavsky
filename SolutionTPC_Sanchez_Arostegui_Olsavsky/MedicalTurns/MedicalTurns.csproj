@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="Dashboard.aspx" />
     <Content Include="Scripts\App.js" />
+    <Content Include="Styles\bootstrap-grid.css" />
+    <Content Include="Styles\DasboardDef.css" />
     <Content Include="Styles\Master.css" />
     <Content Include="Turns.aspx" />
     <Content Include="Web.config" />
