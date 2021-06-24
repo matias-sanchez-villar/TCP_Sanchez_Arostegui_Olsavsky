@@ -23,7 +23,7 @@ namespace negocio
         
         public DataAcces Datos { get; set; }
 
-        public List<Turno> Listar()
+        public List<Turno> ListarTodos()
         {
             Datos = new DataAcces();
             Lista = new List<Turno>();
@@ -59,7 +59,7 @@ namespace negocio
             }
         }
 
-        public Turno GetTurno(int IDMedico, int IDpaciente, DateTime tiempo)
+        public Turno GetTurnoMPT(int IDMedico, int IDpaciente, DateTime tiempo)
         {
             Datos = new DataAcces();
             turno = new Turno();
@@ -67,7 +67,6 @@ namespace negocio
             n_paciente = new N_Paciente();
 
             /// chequear si no hay que formatear el tiempo
-
 
             try
             {
@@ -92,12 +91,14 @@ namespace negocio
         }
 
 
-        public void Modificar(Paciente paciente)
+        /// Para modificar a un turno es complicado por la clave compuesta
+        public void Modificar(Turno turno)
         {
             Datos = new DataAcces();
+
             try
             {
-                
+                Datos.setearConsulta("update Turno set IDMedico= @IDMedico, IDPaciente= @IDPaciente, Estado=@Estado where IDMedico= @IDMedico and IDPaciente= @IDPaciente");
 
                 Datos.ejecutarLectura();
             }
@@ -112,12 +113,20 @@ namespace negocio
         }
 
 
-        public void Insertar(Paciente paciente)
+        public void Insertar(Turno turno)
         {
             Datos = new DataAcces();
             try
             {
-                
+                Datos.setearConsulta("INSERT INTO Turnos(FechaHora, IDMedico, IDPaciente, Estado) VALUES(@FechaHora, @IDMedico, @IDPaciente, @Estado)");
+
+                Datos.setearParametro("@FechaHora", turno.FechaHora);
+                Datos.setearParametro("@IDMedico", turno.medico.ID);
+                Datos.setearParametro("@IDPaciente", turno.paciente.ID);
+                Datos.setearParametro("@Estado", true);
+
+                Datos.ejecutarLectura();
+
             }
             catch (Exception ex)
             {
@@ -134,7 +143,14 @@ namespace negocio
             Datos = new DataAcces();
             try
             {
-                
+                Datos.setearConsulta("INSERT INTO Turnos(FechaHora, IDMedico, IDPaciente, Estado) VALUES(@FechaHora, @IDMedico, @IDPaciente, @Estado)");
+
+                Datos.setearParametro("@FechaHora", turno.FechaHora);
+                Datos.setearParametro("@IDMedico", turno.medico.ID);
+                Datos.setearParametro("@IDPaciente", turno.paciente.ID);
+                Datos.setearParametro("@Estado", true);
+
+                Datos.EjecutarAccion();
             }
             catch (Exception ex)
             {

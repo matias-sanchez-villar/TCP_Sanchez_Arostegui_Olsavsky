@@ -116,7 +116,7 @@ namespace negocio
                 Datos.setearParametro("@NroAfiliado", paciente.NumeroAfiliado);
                 Datos.setearParametro("@Nombre", paciente.Nombre);
 
-                Datos.ejecutarLectura();
+                Datos.EjecutarAccion();
             }
             catch (Exception ex)
             {
@@ -150,7 +150,7 @@ namespace negocio
                 Datos.setearParametro("@ObraSocial", paciente.ObraSocial);
                 Datos.setearParametro("@Nombre", paciente.Nombre);
 
-                Datos.ejecutarLectura();
+                Datos.EjecutarAccion();
             }
             catch (Exception ex)
             {
@@ -172,7 +172,7 @@ namespace negocio
                 Datos.setearParametro("@ID", ID);
                 Datos.setearParametro("@Estado", false);
 
-                Datos.ejecutarLectura();
+                Datos.EjecutarAccion();
             }
             catch (Exception ex)
             {

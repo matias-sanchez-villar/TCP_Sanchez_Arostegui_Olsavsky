@@ -118,7 +118,7 @@ namespace negocio
                 Datos.setearParametro("@Matricula", medico.Matricula);
                 Datos.setearParametro("@Nombre", medico.Nombre);
 
-                Datos.ejecutarLectura();
+                Datos.EjecutarAccion();
             }
             catch (Exception ex)
             {
@@ -152,7 +152,7 @@ namespace negocio
                 Datos.setearParametro("@Matricula", medico.Matricula);
                 Datos.setearParametro("@Nombre", medico.Nombre);
 
-                Datos.ejecutarLectura();
+                Datos.EjecutarAccion();
             }
             catch (Exception ex)
             {
@@ -174,7 +174,7 @@ namespace negocio
                 Datos.setearParametro("@ID", ID);
                 Datos.setearParametro("@Estado", false);
 
-                Datos.ejecutarLectura();
+                Datos.EjecutarAccion();
             }
             catch (Exception ex)
             {

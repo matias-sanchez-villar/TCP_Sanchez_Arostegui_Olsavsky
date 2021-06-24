@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "negocio\negocio.csproj", "{57B48F45-1E38-4574-AA24-B681C9F56FC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "presentacion", "presentacion\presentacion.csproj", "{ADD6D57C-3FCF-42CA-AE6A-96BE9E7F2899}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataAccess", "dataAccess\dataAccess.csproj", "{CE8D5D2A-CBC7-4363-9D31-650375BE5874}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalTurns", "MedicalTurns\MedicalTurns.csproj", "{A1FC5803-A6C8-4124-9652-1C2FC429E5D2}"
@@ -27,10 +25,6 @@ Global
 		{57B48F45-1E38-4574-AA24-B681C9F56FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57B48F45-1E38-4574-AA24-B681C9F56FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57B48F45-1E38-4574-AA24-B681C9F56FC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADD6D57C-3FCF-42CA-AE6A-96BE9E7F2899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADD6D57C-3FCF-42CA-AE6A-96BE9E7F2899}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADD6D57C-3FCF-42CA-AE6A-96BE9E7F2899}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADD6D57C-3FCF-42CA-AE6A-96BE9E7F2899}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CE8D5D2A-CBC7-4363-9D31-650375BE5874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE8D5D2A-CBC7-4363-9D31-650375BE5874}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE8D5D2A-CBC7-4363-9D31-650375BE5874}.Release|Any CPU.ActiveCfg = Release|Any CPU

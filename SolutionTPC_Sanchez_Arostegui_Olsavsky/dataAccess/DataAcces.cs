@@ -46,7 +46,7 @@ namespace dataAccess
             get { return lector; }
         }
 
-        internal void ejecutarAccion()
+        public void EjecutarAccion()
         {
             comando.Connection = conexion;
             conexion.Open();
