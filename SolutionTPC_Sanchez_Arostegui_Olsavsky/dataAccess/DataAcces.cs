@@ -12,8 +12,14 @@ namespace dataAccess
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
-
         string cadenaConexion = "data source = (local)\\SQLEXPRESS; initial catalog =Sanchez_Arostegui_Olsavsky_DB; integrated security = true;";
+
+
+        public SqlDataReader Lector
+        {
+            get { return lector; }
+        }
+
 
         public DataAcces()
         {
@@ -37,13 +43,8 @@ namespace dataAccess
         public void cerrarConexion()
         {
             if (lector != null)
-                lector.Close();
+            lector.Close();
             conexion.Close();
-        }
-
-        public SqlDataReader Lector
-        {
-            get { return lector; }
         }
 
         public void EjecutarAccion()

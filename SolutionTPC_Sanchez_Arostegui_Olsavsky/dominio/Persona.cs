@@ -15,7 +15,6 @@ namespace dominio
         public char Genero { get; set; }
         public string Domicilio { get; set; }
         public string Email { get; set; }
-        public String Constrasena { get; set; }
         public string Celular { get; set; }
         public bool Estado { get; set; }
 

@@ -11,6 +11,5 @@ namespace dominio
     {
         public string Matricula { get; set; }
         public string Especialidad { get; set; }
-
     }
 }

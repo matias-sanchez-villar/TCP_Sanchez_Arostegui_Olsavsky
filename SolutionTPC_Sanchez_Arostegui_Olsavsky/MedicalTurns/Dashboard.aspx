@@ -32,6 +32,31 @@
             </div>
         </div>--%>
 
+        <section class="container">
+            <div class="row">
+                <table class="col-sm-12">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>N° Matrícula</th>
+                            <th>Especialidad</th>
+                        </tr>
+                    </thead>
+                  <% foreach (dominio.Medico item in listaMedicos){ %>
+
+                        <tr>
+                            <td><% = item.Apellido %>,<% = item.Nombre %></td>
+                            <td><% = item.Matricula %></td>
+                            <td><% = item.Especialidad %></td>
+                        </tr>
+
+                    <% } %>
+
+
+                </table>
+            </div>
+        </section>
+
     </div>
 
 </asp:Content>

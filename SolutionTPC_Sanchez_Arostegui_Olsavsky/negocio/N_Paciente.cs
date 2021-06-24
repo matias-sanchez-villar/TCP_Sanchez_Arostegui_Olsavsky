@@ -37,7 +37,6 @@ namespace negocio
                     paciente.NumeroAfiliado = (string)Datos.Lector["NroAfiliado"];
                     paciente.Domicilio = (string)Datos.Lector["Domicilio"];
                     paciente.Email = (string)Datos.Lector["Email"];
-                    paciente.Constrasena = (string)Datos.Lector["Pass"];
                     paciente.Celular = (string)Datos.Lector["Telefono"];
                     paciente.Estado = (bool)Datos.Lector["Estado"];
                     paciente.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
@@ -76,7 +75,6 @@ namespace negocio
                     paciente.NumeroAfiliado = (string)Datos.Lector["NroAfiliado"];
                     paciente.Domicilio = (string)Datos.Lector["Domicilio"];
                     paciente.Email = (string)Datos.Lector["Email"];
-                    paciente.Constrasena = (string)Datos.Lector["Pass"];
                     paciente.Celular = (string)Datos.Lector["Telefono"];
                     paciente.Estado = (bool)Datos.Lector["Estado"];
                     paciente.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
@@ -106,7 +104,6 @@ namespace negocio
                 Datos.setearParametro("@ID", paciente.ID);
                 Datos.setearParametro("@Apellido", paciente.Apellido);
                 Datos.setearParametro("@Celular", paciente.Celular);
-                Datos.setearParametro("@Constrasena", paciente.Constrasena);
                 Datos.setearParametro("@Domicilio", paciente.Domicilio);
                 Datos.setearParametro("@Email", paciente.Email);
                 Datos.setearParametro("@ObraSocial", paciente.ObraSocial);
@@ -136,7 +133,6 @@ namespace negocio
 
                 Datos.setearParametro("@Apellido", paciente.Apellido);
                 Datos.setearParametro("@Celular", paciente.Celular);
-                Datos.setearParametro("@Constrasena", paciente.Constrasena);
                 Datos.setearParametro("@Domicilio", paciente.Domicilio);
                 Datos.setearParametro("@Email", paciente.Email);
                 Datos.setearParametro("@NroAfiliado", paciente.NumeroAfiliado);

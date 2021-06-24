@@ -10,39 +10,33 @@ namespace negocio
 {
     public class N_Medico
     {
-        public Medico medico { get; set; }
-        public List<Medico> Lista { get; set; }
-        public DataAcces Datos { get; set; }
+        public DataAcces Datos = new DataAcces();
+        public List<Medico> Lista = new List<Medico>();
+
+        public Medico medico = new Medico();
+        public List<N_Medico> listaNegocio = new List<N_Medico>();
 
         public List<Medico> Listar()
         {
-            Datos = new DataAcces();
-            Lista = new List<Medico>();
 
             try
             {
-
-                Datos.setearConsulta("select ID, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Genero, Matricula, Especialidad, Estado from Medicos");
+                Datos.setearConsulta("SELECT ID, Apellido, NOMBRE, Domicilio, EMail, Celular, Genero, NroMatricula, Especialidad, Estado FROM MEDICOS");
 
                 Datos.ejecutarLectura();
 
                 while (Datos.Lector.Read())
                 {
-                    medico = new Medico();
 
                     medico.ID = (int)Datos.Lector["ID"];
-                    medico.Nombre = (string)Datos.Lector["Nombre"];
                     medico.Apellido = (string)Datos.Lector["Apellido"];
-                    medico.Matricula = (string)Datos.Lector["Matricula"];
-                    medico.Especialidad = (string)Datos.Lector["Especialidad"];
-                    medico.Domicilio = (string)Datos.Lector["Domicilio"];
-                    medico.Email = (string)Datos.Lector["Email"];
-                    medico.Constrasena = (string)Datos.Lector["Pass"];
-                    medico.Especialidad = (string)Datos.Lector["Especialidad"];
-                    medico.Celular = (string)Datos.Lector["Telefono"];
-                    medico.Estado = (bool)Datos.Lector["Estado"];
-                    medico.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
+                    medico.Nombre = (string)Datos.Lector["Nombre"];
+                    medico.Email = (string)Datos.Lector["EMail"];
+                    medico.Celular = (string)Datos.Lector["Celular"];
                     medico.Genero = (char)Datos.Lector["Genero"];
+                    medico.Matricula = (string)Datos.Lector["NroMatricula"];
+                    medico.Especialidad = (string)Datos.Lector["Especialidad"];
+                    medico.Estado = (bool)Datos.Lector["Estado"];
 
                     Lista.Add(medico);
                 }
@@ -78,12 +72,12 @@ namespace negocio
                     medico.Especialidad = (string)Datos.Lector["Especialidad"];
                     medico.Domicilio = (string)Datos.Lector["Domicilio"];
                     medico.Email = (string)Datos.Lector["Email"];
-                    medico.Constrasena = (string)Datos.Lector["Pass"];
                     medico.Especialidad = (string)Datos.Lector["Especialidad"];
                     medico.Celular = (string)Datos.Lector["Telefono"];
                     medico.Estado = (bool)Datos.Lector["Estado"];
                     medico.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
                     medico.Genero = (char)Datos.Lector["Genero"];
+
 
                 return medico;
             }
@@ -108,7 +102,6 @@ namespace negocio
                 Datos.setearParametro("@ID", medico.ID);
                 Datos.setearParametro("@Apellido", medico.Apellido);
                 Datos.setearParametro("@Celular", medico.Celular);
-                Datos.setearParametro("@Constrasena", medico.Constrasena);
                 Datos.setearParametro("@Domicilio", medico.Domicilio);
                 Datos.setearParametro("@Email", medico.Email);
                 Datos.setearParametro("@Especialidad", medico.Especialidad);
@@ -138,7 +131,6 @@ namespace negocio
 
                 Datos.setearParametro("@Apellido", medico.Apellido);
                 Datos.setearParametro("@Celular", medico.Celular);
-                Datos.setearParametro("@Constrasena", medico.Constrasena);
                 Datos.setearParametro("@Domicilio", medico.Domicilio);
                 Datos.setearParametro("@Email", medico.Email);
                 Datos.setearParametro("@Especialidad", medico.Especialidad);

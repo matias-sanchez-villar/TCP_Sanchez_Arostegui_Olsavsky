@@ -1,8 +1,5 @@
 ﻿
-.myrow {
-    border: 3px solid black;
-}
-
-.mycol{
-    border: 1px solid red;
+th{
+    width: 33%;
+    border: 1px solid black;
 }
