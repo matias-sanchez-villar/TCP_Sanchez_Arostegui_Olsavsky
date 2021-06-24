@@ -13,7 +13,8 @@
     <%--Debe haber un main container que contenga el contenido en cada página aspx para que este centre todo el contenido teniendo en cuenta el navbar lateral--%>
     
     <div class="main-container">
-        <div class="container" >
+
+<%--        <div class="container" >
             <div class="row myrow">
                 <div class="col mycol"> Column 1</div>
                 <div class="col mycol"> Column 2</div>
@@ -29,7 +30,8 @@
             <div class="row myrow">
                 <div class="col mycol"> Column 1</div>
             </div>
-        </div>
+        </div>--%>
+
     </div>
 
 </asp:Content>

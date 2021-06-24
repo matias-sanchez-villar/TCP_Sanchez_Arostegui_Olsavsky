@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dashboard.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Scripts\App.js" />
     <Content Include="Styles\bootstrap-grid.css" />
     <Content Include="Styles\DasboardDef.css" />
@@ -82,6 +83,13 @@
     </Compile>
     <Compile Include="Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MainStructure.Master.cs">
       <DependentUpon>MainStructure.Master</DependentUpon>
