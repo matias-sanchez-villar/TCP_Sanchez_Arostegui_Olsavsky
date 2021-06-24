@@ -22,7 +22,7 @@ namespace negocio
             try
             {
 
-                Datos.setearConsulta("select ID, DNI, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Genero, ObraSocial, NroAfiliado, Estado from Medicos");
+                Datos.setearConsulta("select ID, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Genero, ObraSocial, NroAfiliado, Estado from Medicos");
 
                 Datos.ejecutarLectura();
 
@@ -31,7 +31,6 @@ namespace negocio
                     Paciente paciente = new Paciente();
 
                     paciente.ID = (int)Datos.Lector["ID"];
-                    paciente.DNI = (string)Datos.Lector["DNI"];
                     paciente.Nombre = (string)Datos.Lector["Nombre"];
                     paciente.Apellido = (string)Datos.Lector["Apellido"];
                     paciente.ObraSocial = (string)Datos.Lector["ObraSocial"];
@@ -64,14 +63,13 @@ namespace negocio
 
             try
             {
-                Datos.setearConsulta("select ID, DNI, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Genero, ObraSocial, NroAfiliado, Estado from Medicos where ID = " + ID);
+                Datos.setearConsulta("select ID, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Genero, ObraSocial, NroAfiliado, Estado from Medicos where ID = " + ID);
 
                 Datos.ejecutarLectura();
 
                     paciente = new Paciente();
 
                     paciente.ID = (int)Datos.Lector["ID"];
-                    paciente.DNI = (string)Datos.Lector["DNI"];
                     paciente.Nombre = (string)Datos.Lector["Nombre"];
                     paciente.Apellido = (string)Datos.Lector["Apellido"];
                     paciente.ObraSocial = (string)Datos.Lector["ObraSocial"];
@@ -134,12 +132,11 @@ namespace negocio
             Datos = new DataAcces();
             try
             {
-                Datos.setearConsulta("insert into Medicos (ID, DNI, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Celular, Genero, ObraSocial, NroAfiliado, Estado) values (@ID, @DNI, @Nombre, @Apellido, @FechaNacimiento, @Domicilio, @EMail, @Contrasena, @Celular, @Celular, @Genero, @ObraSocial, @NroAfiliado, @Estado)");
+                Datos.setearConsulta("insert into Medicos (ID, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Celular, Genero, ObraSocial, NroAfiliado, Estado) values (@ID, @Nombre, @Apellido, @FechaNacimiento, @Domicilio, @EMail, @Contrasena, @Celular, @Celular, @Genero, @ObraSocial, @NroAfiliado, @Estado)");
 
                 Datos.setearParametro("@Apellido", paciente.Apellido);
                 Datos.setearParametro("@Celular", paciente.Celular);
                 Datos.setearParametro("@Constrasena", paciente.Constrasena);
-                Datos.setearParametro("@DNI", paciente.DNI);
                 Datos.setearParametro("@Domicilio", paciente.Domicilio);
                 Datos.setearParametro("@Email", paciente.Email);
                 Datos.setearParametro("@NroAfiliado", paciente.NumeroAfiliado);
