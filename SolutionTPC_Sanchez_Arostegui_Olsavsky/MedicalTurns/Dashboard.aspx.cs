@@ -13,6 +13,7 @@ namespace MedicalTurns
     public partial class Dashboard : System.Web.UI.Page
     {
         public List<Medico> listaMedicos;
+        public List<Paciente> listaPacientes;
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -27,7 +27,7 @@ namespace negocio
 
                     medico.Nombre = (string)Datos.Lector["Nombre"];
                     medico.Apellido = (string)Datos.Lector["Apellido"];
-                    medico.ID = (long)Datos.Lector["ID"];
+                    medico.ID = (int)Datos.Lector["ID"];
                     medico.Email = (string)Datos.Lector["EMail"];
                     medico.Celular = (string)Datos.Lector["Celular"];
                     medico.Matricula = (string)Datos.Lector["NroMatricula"];
@@ -49,42 +49,6 @@ namespace negocio
             }
         }
 
-        public Medico GetMedico(int ID)
-        {
-            Datos = new DataAcces();
-            Medico medico = new Medico();
-
-            try
-            {
-                Datos.setearConsulta("SELECT ID, Apellido, Nombre, Email, Celular, NroMatricula, Especialidad, Genero, Estado FROM Medicos");
-
-                Datos.ejecutarLectura();
-                
-                medico = new Medico();
-
-                medico.Nombre = (string)Datos.Lector["Nombre"];
-                medico.Apellido = (string)Datos.Lector["Apellido"];
-                medico.ID = (long)Datos.Lector["ID"];
-                medico.Email = (string)Datos.Lector["EMail"];
-                medico.Celular = (string)Datos.Lector["Celular"];
-                medico.Matricula = (string)Datos.Lector["NroMatricula"];
-                medico.Especialidad = (string)Datos.Lector["Especialidad"];
-                medico.Genero = (string)Datos.Lector["Genero"];
-                medico.Estado = (bool)Datos.Lector["Estado"];
-
-                return medico;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Datos.cerrarConexion();
-            }
-        }
-
-
         public void Modificar(Medico medico)
         {
             Datos = new DataAcces();
@@ -92,6 +56,7 @@ namespace negocio
             {   /*Arreglar el seteo con los nuevos tipos de datos*/
                 Datos.setearConsulta("update Medicos set Nombre = @Nombre, Apellido = @Apellido, Domicilio = @Domicilio, EMail = @EMail, Contrasena = @Contrasena, Celular = @Celular, Especialidad = @Especialidad, Matricula = @Matricula where ID = @ID");
 
+                //Agregar dentro del formulario correspondiente los datos que vienen del médico especifico
                 Datos.setearParametro("@ID", medico.ID);
                 Datos.setearParametro("@Apellido", medico.Apellido);
                 Datos.setearParametro("@Celular", medico.Celular);

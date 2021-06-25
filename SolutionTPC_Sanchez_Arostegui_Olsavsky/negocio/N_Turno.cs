@@ -23,72 +23,72 @@ namespace negocio
         
         public DataAcces Datos { get; set; }
 
-        public List<Turno> ListarTodos()
-        {
-            Datos = new DataAcces();
-            Lista = new List<Turno>();
-            n_medico = new N_Medico();
-            n_paciente = new N_Paciente();
+        //public List<Turno> ListarTodos()
+        //{
+        //    Datos = new DataAcces();
+        //    Lista = new List<Turno>();
+        //    n_medico = new N_Medico();
+        //    n_paciente = new N_Paciente();
 
 
-            try
-            {
-                Datos.setearConsulta("select IDPaciente, IDMedico, FechaHora, Estado from Turno");
-                Datos.ejecutarLectura();
+        //    try
+        //    {
+        //        Datos.setearConsulta("select IDPaciente, IDMedico, FechaHora, Estado from Turno");
+        //        Datos.ejecutarLectura();
 
-                while (Datos.Lector.Read())
-                {
-                    turno = new Turno();
+        //        while (Datos.Lector.Read())
+        //        {
+        //            turno = new Turno();
 
-                    turno.paciente = n_paciente.RetornarID((int)Datos.Lector["ID"]);
-                    turno.medico = n_medico.GetMedico((int)Datos.Lector["ID"]);
-                    turno.FechaHora = (DateTime)Datos.Lector["ID"];
-                    turno.Estado = (bool)Datos.Lector["Estado"];
+        //            turno.paciente = n_paciente.RetornarID((int)Datos.Lector["ID"]);
+        //            turno.medico = n_medico.GetMedico((int)Datos.Lector["ID"]);
+        //            turno.FechaHora = (DateTime)Datos.Lector["ID"];
+        //            turno.Estado = (bool)Datos.Lector["Estado"];
 
-                    Lista.Add(turno);
-                }
-                return Lista;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Datos.cerrarConexion();
-            }
-        }
+        //            Lista.Add(turno);
+        //        }
+        //        return Lista;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        Datos.cerrarConexion();
+        //    }
+        //}
 
-        public Turno GetTurnoMPT(int IDMedico, int IDpaciente, DateTime tiempo)
-        {
-            Datos = new DataAcces();
-            turno = new Turno();
-            n_medico = new N_Medico();
-            n_paciente = new N_Paciente();
+        //public Turno GetTurnoMPT(int IDMedico, int IDpaciente, DateTime tiempo)
+        //{
+        //    Datos = new DataAcces();
+        //    turno = new Turno();
+        //    n_medico = new N_Medico();
+        //    n_paciente = new N_Paciente();
 
-            /// chequear si no hay que formatear el tiempo
+        //    /// chequear si no hay que formatear el tiempo
 
-            try
-            {
-                Datos.setearConsulta("select IDPaciente, IDMedico, FechaHora, Estado from Turno where IDPaciente = " + IDpaciente + " and IDMedico = " + IDMedico + " and FechaHora = " + tiempo);
-                Datos.ejecutarLectura();
+        //    try
+        //    {
+        //        Datos.setearConsulta("select IDPaciente, IDMedico, FechaHora, Estado from Turno where IDPaciente = " + IDpaciente + " and IDMedico = " + IDMedico + " and FechaHora = " + tiempo);
+        //        Datos.ejecutarLectura();
 
-                    turno.paciente = n_paciente.RetornarID((int)Datos.Lector["IDPaciente"]);
-                    turno.medico = n_medico.GetMedico((int)Datos.Lector["IDMedico"]);
-                    turno.FechaHora = (DateTime)Datos.Lector["FechaHora"];
-                    turno.Estado = (bool)Datos.Lector["Estado"];
+        //            turno.paciente = n_paciente.RetornarID((int)Datos.Lector["IDPaciente"]);
+        //            turno.medico = n_medico.GetMedico((int)Datos.Lector["IDMedico"]);
+        //            turno.FechaHora = (DateTime)Datos.Lector["FechaHora"];
+        //            turno.Estado = (bool)Datos.Lector["Estado"];
 
-                return turno;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Datos.cerrarConexion();
-            }
-        }
+        //        return turno;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        Datos.cerrarConexion();
+        //    }
+        //}
 
 
         /// Para modificar a un turno es complicado por la clave compuesta

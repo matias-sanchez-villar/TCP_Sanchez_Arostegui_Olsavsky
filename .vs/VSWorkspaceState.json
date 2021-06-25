@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\SolutionTPC_Sanchez_Arostegui_Olsavsky",
-    "\\SolutionTPC_Sanchez_Arostegui_Olsavsky\\negocio"
+    "\\SolutionTPC_Sanchez_Arostegui_Olsavsky\\dominio",
+    "\\SolutionTPC_Sanchez_Arostegui_Olsavsky\\MedicalTurns"
   ],
-  "SelectedNode": "\\SolutionTPC_Sanchez_Arostegui_Olsavsky\\negocio\\N_Medico.cs",
+  "SelectedNode": "\\SolutionTPC_Sanchez_Arostegui_Olsavsky\\MedicalTurns\\Dashboard.aspx.cs",
   "PreviewInSolutionExplorer": false
 }

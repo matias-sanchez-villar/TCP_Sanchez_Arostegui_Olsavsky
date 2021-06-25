@@ -1,6 +1,5 @@
 USE MASTER
 CREATE DATABASE Mediturnos
-
 GO
 
 USE Mediturnos
