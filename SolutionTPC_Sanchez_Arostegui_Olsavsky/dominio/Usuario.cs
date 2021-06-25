@@ -4,10 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dominio
+namespace dominio
 {
-    class Usuario
+    public class Usuario
     {
+        public int ID { get; set; }
+        public string Email { get; set; }
+        public string Contrasena { get; set; }
+        public bool Estado { get; set; }
 
+        public Usuario()
+        {
+            Estado = true;
+        }
     }
+
+
 }

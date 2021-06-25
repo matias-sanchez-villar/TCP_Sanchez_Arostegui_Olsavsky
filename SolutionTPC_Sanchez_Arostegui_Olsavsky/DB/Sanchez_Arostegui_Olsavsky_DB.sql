@@ -1,15 +1,19 @@
-USE MASTER
+--USE MASTER
+--GO
+--DROP DATABASE Sanchez_Arostegui_Olsavsky_DB
+--GO
+
 CREATE DATABASE Mediturnos
 GO
 
 USE Mediturnos
-
 GO
 
 CREATE TABLE Usuarios(
 	ID INT PRIMARY KEY NOT NULL identity(1,1),
 	Email VARCHAR(250) UNIQUE NOT NULL,
 	Contasena Varchar(50) NOT NULL,
+	Estado bit not null,
 )
 GO
 CREATE TABLE Especialidades(
@@ -72,9 +76,3 @@ INSERT INTO Medicos([ID],[Nombre],[Apellido],[FechaNacimiento],[Domicilio],[EMai
 /* TURNOS */
 INSERT INTO Turnos([FechaHora],[IDMedico],[IDPaciente], [Estado]) VALUES('01/07/2020 07:40',1,1, 1),('01/07/2021 17:40',2,2, 1),('01/05/2020 18:30',3,3, 1),('04/04/2020 10:40',4,4, 1),('01/01/2021 11:20',1,1, 1),('01/11/2021 09:40',1,5, 1),('11/09/2021 16:30',2,7, 1),('01/08/2021 13:20',3,8, 1),('22/09/2022 13:40',4,10, 1),('19/11/2021 11:40',5,9, 1);
 
-
---update Medicos set Estado = 1 where ID = 1
-
---update Turno set estado = 1 where ID= 1
-
-update Turno set IDMedico= 22, IDPaciente= 33, Estado = true where

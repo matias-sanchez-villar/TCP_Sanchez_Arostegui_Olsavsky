@@ -20,3 +20,7 @@ C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arosteg
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.csproj.CopyComplete
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.dll
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.pdb
+C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.csprojAssemblyReference.cache
+C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.dll
+C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\negocio\obj\Debug\negocio.pdb

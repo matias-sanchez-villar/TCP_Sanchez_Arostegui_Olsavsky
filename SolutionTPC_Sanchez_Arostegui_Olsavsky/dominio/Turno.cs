@@ -8,6 +8,7 @@ namespace dominio
 {
     public class Turno
     {
+        public int ID { get; set; }
         public Medico medico { get; set; }
         public Paciente paciente { get; set; }
         public DateTime FechaHora { get; set; }
