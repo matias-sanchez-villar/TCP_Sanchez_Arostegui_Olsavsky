@@ -47,9 +47,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dataAccess\dataAccess.csproj">
+    <ProjectReference Include="..\dataAccess\DataAccess.csproj">
       <Project>{ce8d5d2a-cbc7-4363-9d31-650375be5874}</Project>
-      <Name>dataAccess</Name>
+      <Name>DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\dominio\dominio.csproj">
       <Project>{9fbd1716-b184-4e75-80c9-b6af37d3bd0e}</Project>

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "negocio\negocio.csproj", "{57B48F45-1E38-4574-AA24-B681C9F56FC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataAccess", "dataAccess\dataAccess.csproj", "{CE8D5D2A-CBC7-4363-9D31-650375BE5874}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "dataAccess\DataAccess.csproj", "{CE8D5D2A-CBC7-4363-9D31-650375BE5874}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalTurns", "MedicalTurns\MedicalTurns.csproj", "{A1FC5803-A6C8-4124-9652-1C2FC429E5D2}"
 	ProjectSection(ProjectDependencies) = postProject

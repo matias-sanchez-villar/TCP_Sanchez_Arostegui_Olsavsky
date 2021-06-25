@@ -30,17 +30,17 @@ namespace negocio
                 {
                     Paciente paciente = new Paciente();
 
-                    paciente.ID = (int)Datos.Lector["ID"];
-                    paciente.Nombre = (string)Datos.Lector["Nombre"];
-                    paciente.Apellido = (string)Datos.Lector["Apellido"];
-                    paciente.ObraSocial = (string)Datos.Lector["ObraSocial"];
-                    paciente.NumeroAfiliado = (string)Datos.Lector["NroAfiliado"];
-                    paciente.Domicilio = (string)Datos.Lector["Domicilio"];
-                    paciente.Email = (string)Datos.Lector["Email"];
-                    paciente.Celular = (string)Datos.Lector["Telefono"];
-                    paciente.Estado = (bool)Datos.Lector["Estado"];
-                    paciente.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
-                    paciente.Genero = (char)Datos.Lector["Genero"];
+                    //paciente.ID = (int)Datos.Lector["ID"];
+                    //paciente.Nombre = (string)Datos.Lector["Nombre"];
+                    //paciente.Apellido = (string)Datos.Lector["Apellido"];
+                    //paciente.ObraSocial = (string)Datos.Lector["ObraSocial"];
+                    //paciente.NumeroAfiliado = (string)Datos.Lector["NroAfiliado"];
+                    //paciente.Domicilio = (string)Datos.Lector["Domicilio"];
+                    //paciente.Email = (string)Datos.Lector["Email"];
+                    //paciente.Celular = (string)Datos.Lector["Telefono"];
+                    //paciente.Estado = (bool)Datos.Lector["Estado"];
+                    //paciente.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
+                    //paciente.Genero = (char)Datos.Lector["Genero"];
 
                     Lista.Add(paciente);
                 }
@@ -68,17 +68,17 @@ namespace negocio
 
                     paciente = new Paciente();
 
-                    paciente.ID = (int)Datos.Lector["ID"];
-                    paciente.Nombre = (string)Datos.Lector["Nombre"];
-                    paciente.Apellido = (string)Datos.Lector["Apellido"];
-                    paciente.ObraSocial = (string)Datos.Lector["ObraSocial"];
-                    paciente.NumeroAfiliado = (string)Datos.Lector["NroAfiliado"];
-                    paciente.Domicilio = (string)Datos.Lector["Domicilio"];
-                    paciente.Email = (string)Datos.Lector["Email"];
-                    paciente.Celular = (string)Datos.Lector["Telefono"];
-                    paciente.Estado = (bool)Datos.Lector["Estado"];
-                    paciente.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
-                    paciente.Genero = (char)Datos.Lector["Genero"];
+                    //paciente.ID = (int)Datos.Lector["ID"];
+                    //paciente.Nombre = (string)Datos.Lector["Nombre"];
+                    //paciente.Apellido = (string)Datos.Lector["Apellido"];
+                    //paciente.ObraSocial = (string)Datos.Lector["ObraSocial"];
+                    //paciente.NumeroAfiliado = (string)Datos.Lector["NroAfiliado"];
+                    //paciente.Domicilio = (string)Datos.Lector["Domicilio"];
+                    //paciente.Email = (string)Datos.Lector["Email"];
+                    //paciente.Celular = (string)Datos.Lector["Telefono"];
+                    //paciente.Estado = (bool)Datos.Lector["Estado"];
+                    //paciente.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
+                    //paciente.Genero = (char)Datos.Lector["Genero"];
 
                     Lista.Add(paciente);
                 return paciente;

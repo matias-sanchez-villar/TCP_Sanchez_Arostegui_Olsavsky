@@ -7,8 +7,8 @@
     <ProjectGuid>{9FBD1716-B184-4E75-80C9-B6AF37D3BD0E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>dominio</RootNamespace>
-    <AssemblyName>dominio</AssemblyName>
+    <RootNamespace>Dominio</RootNamespace>
+    <AssemblyName>Dominio</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -48,9 +48,9 @@
     <Compile Include="Turno.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dataAccess\dataAccess.csproj">
+    <ProjectReference Include="..\dataAccess\DataAccess.csproj">
       <Project>{ce8d5d2a-cbc7-4363-9d31-650375be5874}</Project>
-      <Name>dataAccess</Name>
+      <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

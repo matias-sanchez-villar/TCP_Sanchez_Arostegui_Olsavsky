@@ -11,6 +11,7 @@
     <link rel="stylesheet" runat="server" href="Styles/Master.css" />
     <link href="Styles/bootstrap-grid.css" rel="stylesheet" />
     <link href="Styles/DasboardDef.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" /> 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 </head>
@@ -58,28 +59,6 @@
     </ul>
   </nav>
 
-        <%
-        
-            /*
-                Aca listamos los medicos Doro .. lo podes hacer en cualquier paguina con esta master peague
-                Copiando y pegando todo el form y el codigo del MainStructure.Master.cs
-                
-                Atencion esto no fue probado -> por lo tanto se puede romper, no te asustes
-
-
-                foreach (Dominio.Medico item in Lista)
-                {
-                    item.Nombre;
-                    item.Apellido;
-                    .......
-                    ......
-                }
-
-            */
-            
-        %>
-
-
         <form id="form1" runat="server">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
@@ -90,6 +69,16 @@
         </footer>
 
         <script src="Scripts/App.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>  
+
+        <script>
+            $(document).ready(function () {
+
+                $('#data-table').DataTable({});
+
+            });
+        </script>
 
     </body>
 </html>

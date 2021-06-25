@@ -14,27 +14,8 @@
     
     <div class="main-container">
 
-<%--        <div class="container" >
-            <div class="row myrow">
-                <div class="col mycol"> Column 1</div>
-                <div class="col mycol"> Column 2</div>
-                <div class="col mycol"> Column 3</div>
-                <div class="col mycol"> Column 4</div>
-            </div>        
-
-            <div class="row myrow">
-                <div class="col-md-8 col-sm-12 mycol"> Column 1</div>
-                <div class="col-md-4 col-sm-12 mycol"> Column 2</div>
-            </div>        
-        
-            <div class="row myrow">
-                <div class="col mycol"> Column 1</div>
-            </div>
-        </div>--%>
-
         <section class="container">
-            <div class="row">
-                <table class="col-sm-12">
+                <table  id="data-table" style="width: 100%;">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -42,6 +23,7 @@
                             <th>Especialidad</th>
                         </tr>
                     </thead>
+
                   <% foreach (dominio.Medico item in listaMedicos){ %>
 
                         <tr>
@@ -52,9 +34,7 @@
 
                     <% } %>
 
-
                 </table>
-            </div>
         </section>
 
     </div>
