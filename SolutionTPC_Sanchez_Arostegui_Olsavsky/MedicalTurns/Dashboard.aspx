@@ -20,26 +20,16 @@
                         <tr>
                             <th>Nombre</th>
                             <th>N° Matrícula</th>
-                            <th>Especialidad</th>
+                            <th>ID Especialidad</th>
                         </tr>
                     </thead>
 
-<%--                  <% foreach (dominio.Medico item in listaMedicos){ %>
+                  <% foreach (dominio.Medico item in listaMedicos){ %>
 
                         <tr>
                             <td><% = item.Apellido %>,<% = item.Nombre %></td>
                             <td><% = item.Matricula %></td>
-                            <td><% = item.Especialidad %></td>
-                        </tr>
-
-                    <% } %>--%>
-
-                   <% foreach (dominio.Paciente item in listaPacientes){ %>
-
-                        <tr>
-                            <td><% = item.Apellido %>,<% = item.Nombre %></td>
-                            <td><% = item.Matricula %></td>
-                            <td><% = item.Especialidad %></td>
+                            <td><% = item.IDEspecialidad %></td>
                         </tr>
 
                     <% } %>

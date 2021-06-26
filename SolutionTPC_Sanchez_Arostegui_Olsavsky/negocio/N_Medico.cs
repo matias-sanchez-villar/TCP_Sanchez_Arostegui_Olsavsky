@@ -18,22 +18,32 @@ namespace negocio
 
             try
             {
-                Datos.setearConsulta("SELECT ID, Apellido, Nombre, Email, Celular, NroMatricula, Especialidad, Genero, Estado FROM Medicos");
+                string select = "SELECT M.ID, M.IDUsuario, M.IDEspecialidad, M.Apellido, M.Nombre, M.FechaNacimiento, M.Domicilio, M.Celular, M.Genero, M.Matricula";
+                string from = "FROM Medicos M";
+                string join = "M JOIN Usuarios U on M.IDUsuario = U.ID";
+                string query = select + from;
+
+                Datos.setearConsulta(query);
                 Datos.ejecutarLectura();
 
                 while(Datos.Lector.Read())
                 {
                     Medico medico = new Medico();
 
-                    medico.Nombre = (string)Datos.Lector["Nombre"];
-                    medico.Apellido = (string)Datos.Lector["Apellido"];
                     medico.ID = (int)Datos.Lector["ID"];
-                    medico.Email = (string)Datos.Lector["EMail"];
+                    medico.IDEspecialidad = (int)Datos.Lector["IDEspecialidad"];
+                    medico.Apellido = (string)Datos.Lector["Apellido"];
+                    medico.Nombre = (string)Datos.Lector["Nombre"];
+                    medico.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
+                    medico.Domicilio = (string)Datos.Lector["Domicilio"];
                     medico.Celular = (string)Datos.Lector["Celular"];
-                    medico.Matricula = (string)Datos.Lector["NroMatricula"];
-                    medico.Especialidad = (string)Datos.Lector["Especialidad"];
                     medico.Genero = (string)Datos.Lector["Genero"];
-                    medico.Estado = (bool)Datos.Lector["Estado"];
+                    medico.Matricula = (string)Datos.Lector["Matricula"];
+
+                    //medico.Usuario.ID = (int)Datos.Lector["IDUsuario"];
+                    //medico.Usuario = new Usuario((int)Datos.Lector["U.ID"], (string)Datos.Lector["Usuario"]);
+                    //medico.Usuario.Email = (string)Datos.Lector["Email"];
+                    //medico.Usuario.Contrasena = (string)Datos.Lector["Contrasena"];
 
                     Lista.Add(medico);
                 }
@@ -49,88 +59,88 @@ namespace negocio
             }
         }
 
-        public void Modificar(Medico medico)
-        {
-            Datos = new DataAcces();
-            try
-            {   /*Arreglar el seteo con los nuevos tipos de datos*/
-                Datos.setearConsulta("update Medicos set Nombre = @Nombre, Apellido = @Apellido, Domicilio = @Domicilio, EMail = @EMail, Contrasena = @Contrasena, Celular = @Celular, Especialidad = @Especialidad, Matricula = @Matricula where ID = @ID");
+        //public void Modificar(Medico medico)
+        //{
+        //    Datos = new DataAcces();
+        //    try
+        //    {   /*Arreglar el seteo con los nuevos tipos de datos*/
+        //        Datos.setearConsulta("update Medicos set Nombre = @Nombre, Apellido = @Apellido, Domicilio = @Domicilio, EMail = @EMail, Contrasena = @Contrasena, Celular = @Celular, Especialidad = @Especialidad, Matricula = @Matricula where ID = @ID");
 
-                //Agregar dentro del formulario correspondiente los datos que vienen del médico especifico
-                Datos.setearParametro("@ID", medico.ID);
-                Datos.setearParametro("@Apellido", medico.Apellido);
-                Datos.setearParametro("@Celular", medico.Celular);
-                Datos.setearParametro("@Domicilio", medico.Domicilio);
-                Datos.setearParametro("@Email", medico.Email);
-                Datos.setearParametro("@Especialidad", medico.Especialidad);
-                Datos.setearParametro("@FechaNacimiento", medico.FechaNacimiento);
-                Datos.setearParametro("@Matricula", medico.Matricula);
-                Datos.setearParametro("@Nombre", medico.Nombre);
+        //        //Agregar dentro del formulario correspondiente los datos que vienen del médico especifico
+        //        Datos.setearParametro("@ID", medico.ID);
+        //        Datos.setearParametro("@Apellido", medico.Apellido);
+        //        Datos.setearParametro("@Celular", medico.Celular);
+        //        Datos.setearParametro("@Domicilio", medico.Domicilio);
+        //        Datos.setearParametro("@Email", medico.Email);
+        //        Datos.setearParametro("@Especialidad", medico.Especialidad);
+        //        Datos.setearParametro("@FechaNacimiento", medico.FechaNacimiento);
+        //        Datos.setearParametro("@Matricula", medico.Matricula);
+        //        Datos.setearParametro("@Nombre", medico.Nombre);
 
-                Datos.EjecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Datos.cerrarConexion();
-            }
-        }
+        //        Datos.EjecutarAccion();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        Datos.cerrarConexion();
+        //    }
+        //}
 
 
-        public void Cargar(Medico medico)
-        {
-            Datos = new DataAcces();
-            try
-            {
-                Datos.setearConsulta("insert into Medicos (ID, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Celular, Genero, Matricula, Especialidad, Estado) values (@ID, @Nombre, @Apellido, @FechaNacimiento, @Domicilio, @EMail, @Contrasena, @Celular, @Celular, @Genero, @Matricula, @Especialidad, @Estado)");
+        //public void Cargar(Medico medico)
+        //{
+        //    Datos = new DataAcces();
+        //    try
+        //    {
+        //        Datos.setearConsulta("insert into Medicos (ID, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Celular, Genero, Matricula, Especialidad, Estado) values (@ID, @Nombre, @Apellido, @FechaNacimiento, @Domicilio, @EMail, @Contrasena, @Celular, @Celular, @Genero, @Matricula, @Especialidad, @Estado)");
 
-                Datos.setearParametro("@Apellido", medico.Apellido);
-                Datos.setearParametro("@Celular", medico.Celular);
-                Datos.setearParametro("@Domicilio", medico.Domicilio);
-                Datos.setearParametro("@Email", medico.Email);
-                Datos.setearParametro("@Especialidad", medico.Especialidad);
-                Datos.setearParametro("@Estado", medico.Estado);
-                Datos.setearParametro("@FechaNacimiento", medico.FechaNacimiento);
-                Datos.setearParametro("@Genero", medico.Genero);
-                Datos.setearParametro("@ID", medico.ID);
-                Datos.setearParametro("@Matricula", medico.Matricula);
-                Datos.setearParametro("@Nombre", medico.Nombre);
+        //        Datos.setearParametro("@Apellido", medico.Apellido);
+        //        Datos.setearParametro("@Celular", medico.Celular);
+        //        Datos.setearParametro("@Domicilio", medico.Domicilio);
+        //        Datos.setearParametro("@Email", medico.Email);
+        //        Datos.setearParametro("@Especialidad", medico.Especialidad);
+        //        Datos.setearParametro("@Estado", medico.Estado);
+        //        Datos.setearParametro("@FechaNacimiento", medico.FechaNacimiento);
+        //        Datos.setearParametro("@Genero", medico.Genero);
+        //        Datos.setearParametro("@ID", medico.ID);
+        //        Datos.setearParametro("@Matricula", medico.Matricula);
+        //        Datos.setearParametro("@Nombre", medico.Nombre);
 
-                Datos.EjecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Datos.cerrarConexion();
-            }
-        }
+        //        Datos.EjecutarAccion();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        Datos.cerrarConexion();
+        //    }
+        //}
 
-        public void Eliminar(int ID)
-        {
-            Datos = new DataAcces();
-            try
-            {
-                Datos.setearConsulta("update Medicos set Estado = @Estado where ID = @ID");
+        //public void Eliminar(int ID)
+        //{
+        //    Datos = new DataAcces();
+        //    try
+        //    {
+        //        Datos.setearConsulta("update Medicos set Estado = @Estado where ID = @ID");
 
-                Datos.setearParametro("@ID", ID);
-                Datos.setearParametro("@Estado", false);
+        //        Datos.setearParametro("@ID", ID);
+        //        Datos.setearParametro("@Estado", false);
 
-                Datos.EjecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Datos.cerrarConexion();
-            }
-        }
+        //        Datos.EjecutarAccion();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        Datos.cerrarConexion();
+        //    }
+        //}
     }
 }

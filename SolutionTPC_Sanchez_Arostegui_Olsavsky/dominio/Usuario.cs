@@ -13,10 +13,29 @@ namespace dominio
         public string Contrasena { get; set; }
         public bool Estado { get; set; }
 
-        public Usuario()
+        public Usuario(int _ID)
         {
-            Estado = true;
+            this.ID = _ID;
         }
+
+        public Usuario(string _Email, string _Contrasena)
+        {
+            this.Email = _Email;
+            this.Contrasena = _Contrasena;
+
+        }
+
+        public Usuario(bool _estado)
+        {
+            this.Estado = _estado;
+
+        }
+
+        public override string ToString()
+        {
+            return this.Email;
+        }
+
     }
 
 
