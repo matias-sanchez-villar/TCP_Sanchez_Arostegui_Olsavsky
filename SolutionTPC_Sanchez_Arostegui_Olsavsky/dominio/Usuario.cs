@@ -13,6 +13,7 @@ namespace dominio
         public string Contrasena { get; set; }
         public bool Estado { get; set; }
 
+        /*
         public Usuario(int _ID)
         {
             this.ID = _ID;
@@ -35,6 +36,7 @@ namespace dominio
         {
             return this.Email;
         }
+        */
 
     }
 

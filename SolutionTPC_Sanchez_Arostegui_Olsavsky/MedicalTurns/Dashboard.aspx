@@ -29,7 +29,9 @@
                         <tr>
                             <td><% = item.Apellido %>,<% = item.Nombre %></td>
                             <td><% = item.Matricula %></td>
-                            <td><% = item.IDEspecialidad %></td>
+                            <td><% = item.Especialidad %></td>
+                            <td><% = item.Usuario.Email %></td>
+                            <td><% = item.Usuario.Estado %></td>
                         </tr>
 
                     <% } %>

@@ -10,7 +10,7 @@ namespace dominio
     public class Medico : Persona
     {
         public int ID { get; set; }
-        public int IDEspecialidad { get; set; }
+        public string Especialidad { get; set; }
         public string Matricula { get; set; }
     }
 }

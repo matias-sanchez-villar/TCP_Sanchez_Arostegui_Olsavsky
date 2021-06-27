@@ -12,7 +12,6 @@ namespace dataAccess
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
-        //string cadenaConexion = "data source = (local)\\SQLEXPRESS; initial catalog =Sanchez_Arostegui_Olsavsky_DB; integrated security = true;";
         string cadenaConexion = "data source = (local)\\SQLEXPRESS; initial catalog =Mediturnos; integrated security = true;";
 
 

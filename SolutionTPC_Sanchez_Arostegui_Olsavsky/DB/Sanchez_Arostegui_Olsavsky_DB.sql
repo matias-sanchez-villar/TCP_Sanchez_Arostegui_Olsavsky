@@ -1,7 +1,7 @@
 --USE MASTER
 --GO
-GO
-DROP DATABASE Mediturnos
+--GO
+DROP DATABASE Sanchez_Arostegui_Olsavsky_DB
 GO
 --GO
 
@@ -67,11 +67,15 @@ CREATE TABLE Turnos(
 -- ## DATOS ####
 -- #############
 
--- Revisar con Pablito
+-- Revisar con Pablito y Dorito
 CREATE TABLE CALENDARIO(
-	ID int identity(1,1),
+	ID int Primary key identity(1,1),
 	IDMedico int foreign key references Medicos(id),
-	Primary key(ID,IDMedico)
+	HorarioInicio time not null,
+	HorarioFin time not null,
+	Repite bit not null,
+	Estado bit not null
+	--Primary key(ID,IDMedico)
 )
 
 Set dateformat 'DMY'
@@ -82,3 +86,17 @@ Set dateformat 'DMY'
 --INSERT INTO Medicos([ID],[Nombre],[Apellido],[FechaNacimiento],[Domicilio],[EMail], [Celular], [Genero], [NroMatricula], [Especialidad], [Estado]) VALUES(1,'Quiroga','Horacio','14/03/1954', 'Av. Cordoba 1111', 'Hor_q@libros.com.ar', '1129098765', 'M', '12345', 'Clinico', 1),(2,'Funes','Alejandro','12/03/1964', 'Av. Coronel Diaz 2345', 'funes@elmemorioso.com', '112365478', 'M', '222222', 'Psiquiatria', 1),(3,'Maldonado','Alejandro','24/03/1994', 'Av. Radiografo 2345', 'tecuro@tetrato.com', '1144337898', 'M', '444444', 'Traumatologia', 1),(4,'De Arco','Juana','01/01/1966', 'Av. Las Batallas 6777', 'juanita@tecacha.com', '11345678', 'F', '55555', 'Cardiologia', 1),(5,'Mercolario','Marian','24/03/1955', 'Loquesea 1322', 'marinero@lala.com', '1123433322', 'M', '667767', 'Urologia', 1),(6,'Rucci','Paola','24/07/1978', 'Av. Sueños 2222', 'lamdeci@salvadora.com', '1122987456', 'F', '888776', 'Neurologia', 1);
 /* TURNOS */
 --INSERT INTO Turnos([FechaHora],[IDMedico],[IDPaciente], [Estado]) VALUES('01/07/2020 07:40',1,1, 1),('01/07/2021 17:40',2,2, 1),('01/05/2020 18:30',3,3, 1),('04/04/2020 10:40',4,4, 1),('01/01/2021 11:20',1,1, 1),('01/11/2021 09:40',1,5, 1),('11/09/2021 16:30',2,7, 1),('01/08/2021 13:20',3,8, 1),('22/09/2022 13:40',4,10, 1),('19/11/2021 11:40',5,9, 1);
+
+
+//9 Usuarios
+insert into Usuarios (Email, Contasena, Estado) VALUES ('Pepe@gmail.com', '1234', 1) , ('Pato@hotmail.com', '1234', 1), ('Paisa@gmail.ar', '1234', 1), ('Doro@hotmail.com', '1234', 1), ('Pablo@gmail.com', '1234', 1), ('Pablo22@gmail.com', '1234', 1), ('Toto@gmail.com', '1234', 1), ('Elepa_roro@gmail.com', '1234', 1), ('Medic_bom@gmail.com', '1234', 1)
+
+//8 Especialidades
+insert into Especialidades (Especialidad) values ('Dermatología'), ('Oftalmología'), ('Traumatología'), ('Urología'), ('Oftalmología'), ('Otorrinolaringología'), ('Ginecología'), ('CARDIOLOGIA')
+
+//5 medicos
+insert into Medicos(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Genero, Matricula, IDUsuario, IDEspecialidad) values ('Pepe','Luis','Falsa 123','1234560','24/03/1994','M','1234', 1, 1), ('Pato','Goye','Estol 321','2234542','20/05/1984','M','2234', 2, 2), ('Matias','Paisa','Blegrano 456','8954624','09/07/1996','M','7894', 3, 1),('Elsa','Alfano','Argent 753','7893214','10/10/2000','M','6666', 9, 5),('Coco','Rococo','Roca 5503','2312655','15/08/2005','M','4466', 8, 5)
+
+
+
+
