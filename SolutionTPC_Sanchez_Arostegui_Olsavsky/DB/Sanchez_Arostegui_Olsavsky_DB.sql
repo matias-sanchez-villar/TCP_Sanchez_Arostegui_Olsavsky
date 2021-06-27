@@ -30,7 +30,7 @@ CREATE TABLE ObrasSociales(
 GO
 CREATE TABLE Pacientes(
 	ID INT PRIMARY KEY NOT NULL identity(1,1), 
-	IDUsuario INT not null Foreign key references Usuarios(ID)
+	IDUsuario INT not null Foreign key references Usuarios(ID),
 	IDObraSocial INT Foreign key references ObrasSociales(ID) NOT NULL,
 	Apellido VARCHAR(100) NOT NULL, 
 	Nombre VARCHAR(100) NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE Pacientes(
 	Domicilio VARCHAR(250) NULL,
 	Celular VARCHAR(50) NULL,
     Genero CHAR NOT NULL CHECK (Genero IN ('M', 'F', 'O')),
-    NroAfiliado varchar (40) NULL,
+    NroAfiliado varchar (40) NULL
 )
 GO
 CREATE TABLE Medicos(
