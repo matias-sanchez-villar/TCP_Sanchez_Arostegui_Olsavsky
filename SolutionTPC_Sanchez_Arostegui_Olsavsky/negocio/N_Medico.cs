@@ -19,11 +19,11 @@ namespace negocio
 
             try
             {
-                string Select = "SELECT M.ID, M.Apellido, M.Nombre, M.FechaNacimiento, M.Domicilio, M.Celular, M.Genero, M.Matricula, U.Email, U.Estado, E.Especialidad";
-                string From = "FROM Medicos M";
-                string JoinU = "inner join Usuarios U on M.IDUsuario = U.ID";
-                string JoinE = "inner join Especialidades E on E.ID = M.IDEspecialidad";
-                string Where = "where U.Estado = 1";
+                string Select = " SELECT M.ID, M.Apellido, M.Nombre, M.FechaNacimiento, M.Domicilio, M.Celular, M.Genero, M.Matricula, U.Email, U.Estado, E.Especialidad ";
+                string From = " FROM Medicos M ";
+                string JoinU = " inner join Usuarios U on M.IDUsuario = U.ID ";
+                string JoinE = " inner join Especialidades E on E.ID = M.IDEspecialidad ";
+                string Where = " where U.Estado = 1 ";
                 string query = Select + From + JoinU + JoinE + Where;
 
                 Datos.setearConsulta(query);
@@ -33,19 +33,16 @@ namespace negocio
                 {
                     Medico medico = new Medico();
 
-                    medico.FechaNacimiento = new DateTime();
-
-                    medico.ID = (int)Datos.Lector["M.ID"];
-                    medico.Apellido = (string)Datos.Lector["M.Apellido"];
-                    medico.Nombre = (string)Datos.Lector["M.Nombre"];
-                    medico.FechaNacimiento = (DateTime)Datos.Lector["M.FechaNacimiento"];
-                    medico.Domicilio = (string)Datos.Lector["M.Domicilio"];
-                    medico.Celular = (string)Datos.Lector["M.Celular"];
-                    medico.Genero = (string)Datos.Lector["M.Genero"];
-                    medico.Matricula = (string)Datos.Lector["M.Matricula"];
-                    medico.Usuario.Email = (string)Datos.Lector["U.Email"];
-                    medico.Usuario.Estado = (bool)Datos.Lector["U.Estado"];
-                    medico.Especialidad = (string)Datos.Lector["E.Especialidad"];
+                    medico.ID = (int)Datos.Lector["ID"];
+                    medico.Apellido = (string)Datos.Lector["Apellido"];
+                    medico.Nombre = (string)Datos.Lector["Nombre"];
+                    medico.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
+                    medico.Domicilio = (string)Datos.Lector["Domicilio"];
+                    medico.Celular = (string)Datos.Lector["Celular"];
+                    medico.Genero = (string)Datos.Lector["Genero"];
+                    medico.Matricula = (string)Datos.Lector["Matricula"];
+                    medico.Usuario.Email = (string)Datos.Lector["Email"];
+                    medico.Especialidad = (string)Datos.Lector["Especialidad"];
 
                     //medico.Usuario.ID = (int)Datos.Lector["IDUsuario"];
                     //medico.Usuario = new Usuario((int)Datos.Lector["U.ID"], (string)Datos.Lector["Usuario"]);

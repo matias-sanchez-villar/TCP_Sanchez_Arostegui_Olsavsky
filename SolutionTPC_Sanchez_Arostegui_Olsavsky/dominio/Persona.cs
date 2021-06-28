@@ -15,5 +15,10 @@ namespace dominio
         public string Genero { get; set; }
         public string Domicilio { get; set; }
         public string Celular { get; set; }
+
+        public Persona()
+        {
+            Usuario = new Usuario();
+        }
     }
 }
