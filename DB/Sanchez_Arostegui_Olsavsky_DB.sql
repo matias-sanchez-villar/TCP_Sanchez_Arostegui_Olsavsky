@@ -134,3 +134,13 @@ insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gen
 ('Dante','Abecia','Bolivar 3015','1439630','19981117','M','6541', 17, 1), 
 ('Chanta','Pirola','San Martin 645','7414560','19980729','M','9874', 18, 3), 
 ('Pablo','Bonfilio','Belgrano 456','1334852','19940520','M','9512', 19, 1)
+
+--turnos 7
+insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
+('2021-10-23 11:44:11', 1, 1, 1),
+('2021-11-12 10:24:45', 4, 3, 1),
+('2021-12-17 17:10:10', 2, 5, 1),
+('2021-09-24 16:35:17', 1, 2, 1),
+('2021-09-07 12:55:26', 7, 3, 1),
+('2021-10-21 10:36:35', 3, 7, 1),
+('2021-06-30 09:21:44', 2, 4, 0)
