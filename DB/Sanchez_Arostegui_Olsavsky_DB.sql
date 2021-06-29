@@ -144,3 +144,8 @@ insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
 ('2021-09-07 12:55:26', 7, 3, 1),
 ('2021-10-21 10:36:35', 3, 7, 1),
 ('2021-06-30 09:21:44', 2, 4, 0)
+
+-- 2 maneras de resolverlo unos inner join a usuario y a pacientes
+-- o en el programa ir asignandole a cada ID (Medico y Usuario) 
+-- lo que retorna los metodos de los objetos de Negocio
+select t.ID, T.FechaHora, t.Estado from Turnos t
