@@ -1,9 +1,8 @@
---USE MASTER
---GO
---GO
---DROP DATABASE Sanchez_Arostegui_Olsavsky_DB
---GO
---GO
+/*
+use master
+drop database Mediturnos
+go
+*/
 
 CREATE DATABASE Mediturnos
 GO
@@ -80,7 +79,7 @@ CREATE TABLE CALENDARIO(
 
 Set dateformat 'DMY'
 
---18 Usuarios
+--20 Usuarios
 insert into Usuarios (Email, Contasena, Estado) VALUES
 ('Pepe@gmail.com', '1234', 1), 
 ('Pato@hotmail.com', '1234', 1),
@@ -124,7 +123,7 @@ insert into Medicos(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gener
 insert into ObrasSociales(ObraSocial) values ('DIVA'), ('OSDE'), ('MEDAFI'), ('GALENO'), ('MEDICUS'), ('IOMA')
 
 
---10 pacientes
+--9 pacientes
 insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Genero, NroAfiliado, IDUsuario, IDObraSocial) values
 ('Maria','Gonzales','Rivadavia 1233','1234560','19961118','F','1234', 11, 1), 
 ('Mariel','Espert','Güemes 1223','2312555','19980223','F','7412', 12, 2), 
@@ -135,5 +134,3 @@ insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gen
 ('Dante','Abecia','Bolivar 3015','1439630','19981117','M','6541', 17, 1), 
 ('Chanta','Pirola','San Martin 645','7414560','19980729','M','9874', 18, 3), 
 ('Pablo','Bonfilio','Belgrano 456','1334852','19940520','M','9512', 19, 1)
-
-
