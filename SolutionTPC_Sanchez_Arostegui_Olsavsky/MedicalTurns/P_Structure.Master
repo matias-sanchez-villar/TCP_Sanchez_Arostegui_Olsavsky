@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainStructure.master.cs" Inherits="MedicalTurns.MainStructure" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="P_Structure.Master.cs" Inherits="MedicalTurns.MainStructure" %>
 
 <!DOCTYPE html>
 
@@ -81,4 +81,5 @@
         </script>
 
     </body>
+
 </html>

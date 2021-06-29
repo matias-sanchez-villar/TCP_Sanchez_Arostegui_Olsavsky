@@ -67,36 +67,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dashboard.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="P_Dashboard.aspx" />
+    <Content Include="P_Login.aspx" />
     <Content Include="Scripts\App.js" />
     <Content Include="Styles\bootstrap-grid.css" />
     <Content Include="Styles\DasboardDef.css" />
+    <Content Include="Styles\Generic_login.css" />
     <Content Include="Styles\Master.css" />
     <Content Include="Turns.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dashboard.aspx.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
+    <Compile Include="P_Dashboard.aspx.cs">
+      <DependentUpon>P_Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Dashboard.aspx.designer.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
+    <Compile Include="P_Dashboard.aspx.designer.cs">
+      <DependentUpon>P_Dashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="P_Login.aspx.cs">
+      <DependentUpon>P_Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="P_Login.aspx.designer.cs">
+      <DependentUpon>P_Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MainStructure.Master.cs">
-      <DependentUpon>MainStructure.Master</DependentUpon>
+    <Compile Include="P_Structure.Master.cs">
+      <DependentUpon>P_Structure.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MainStructure.Master.designer.cs">
-      <DependentUpon>MainStructure.Master</DependentUpon>
+    <Compile Include="P_Structure.Master.designer.cs">
+      <DependentUpon>P_Structure.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Turns.aspx.cs">
@@ -106,9 +108,16 @@
     <Compile Include="Turns.aspx.designer.cs">
       <DependentUpon>Turns.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MainStructure.Master" />
+    <Content Include="P_Structure.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

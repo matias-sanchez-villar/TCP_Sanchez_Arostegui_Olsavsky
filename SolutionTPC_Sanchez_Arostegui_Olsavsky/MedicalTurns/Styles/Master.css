@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-    --main-white: #e0e0e0;
+    --main-white: #F3FAFF;
     --main-gray: #ECECEC;
     --font-color: #343545;
     --accent-violet: #385399;
@@ -54,7 +54,6 @@ ul > li, li{
 
 .main-container {
     margin-left: 5rem;
-    border: 1px solid green;
 }
 /*-------------------------------- ESTILOS DE SELECTORES --------------------------------*/
 .navbar {

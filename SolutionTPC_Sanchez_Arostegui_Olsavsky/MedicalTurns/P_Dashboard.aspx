@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainStructure.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="MedicalTurns.Dashboard" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/P_Structure.Master" AutoEventWireup="true" CodeBehind="P_Dashboard.aspx.cs" Inherits="MedicalTurns.Dashboard" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -35,38 +35,6 @@
                             <td><% = item.Apellido %>,<% = item.Nombre %></td>
                             <td><% = item.Matricula %></td>
                             <td><% = item.Especialidad %></td>
-                            <td><% = item.Usuario.Email %></td>
-                        </tr>
-
-                    <% } %>
-
-                </table>
-        </section>
-
-    </div>
-
-    <%
-        ///Listamos paciente
-    %>
-
-    <div class="main-container">
-
-        <section class="container">
-                <table  style="width: 100%;">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>N° Matrícula</th>
-                            <th>ID Especialidad</th>
-                        </tr>
-                    </thead>
-
-                  <% foreach (dominio.Paciente item in listaPaciente){ %>
-
-                        <tr>
-                            <td><% = item.Apellido %>,<% = item.Nombre %></td>
-                            <td><% = item.ObraSocial %></td>
-                            <td><% = item.NroAfiliado %></td>
                             <td><% = item.Usuario.Email %></td>
                         </tr>
 
