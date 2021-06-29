@@ -17,6 +17,10 @@ namespace dominio
         public Turno()
         {
             Estado = true;
+
+            medico = new Medico();
+
+            paciente = new Paciente();
         }
     }
 }

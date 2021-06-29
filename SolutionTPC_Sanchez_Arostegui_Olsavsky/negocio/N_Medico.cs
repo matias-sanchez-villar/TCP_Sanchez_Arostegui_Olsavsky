@@ -10,12 +10,14 @@ namespace negocio
 {
     public class N_Medico
     {
-        
+
+        List<Medico> Lista;
+        DataAcces Datos;
 
         public List<Medico> Listar()
         {
-            List<Medico>  Lista = new List<Medico>();
-            DataAcces Datos = new DataAcces();
+            Lista = new List<Medico>();
+            Datos = new DataAcces();
 
             try
             {
@@ -43,11 +45,6 @@ namespace negocio
                     medico.Matricula = (string)Datos.Lector["Matricula"];
                     medico.Usuario.Email = (string)Datos.Lector["Email"];
                     medico.Especialidad = (string)Datos.Lector["Especialidad"];
-
-                    //medico.Usuario.ID = (int)Datos.Lector["IDUsuario"];
-                    //medico.Usuario = new Usuario((int)Datos.Lector["U.ID"], (string)Datos.Lector["Usuario"]);
-                    //medico.Usuario.Email = (string)Datos.Lector["Email"];
-                    //medico.Usuario.Contrasena = (string)Datos.Lector["Contrasena"];
 
                     Lista.Add(medico);
                 }

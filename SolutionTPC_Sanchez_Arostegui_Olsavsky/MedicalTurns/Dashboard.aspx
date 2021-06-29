@@ -11,7 +11,12 @@
 
 
     <%--Debe haber un main container que contenga el contenido en cada página aspx para que este centre todo el contenido teniendo en cuenta el navbar lateral--%>
+   
     
+    <%
+        ///Listamos paciente
+    %>
+
     <div class="main-container">
 
         <section class="container">
@@ -31,7 +36,38 @@
                             <td><% = item.Matricula %></td>
                             <td><% = item.Especialidad %></td>
                             <td><% = item.Usuario.Email %></td>
-                            <td><% = item.Usuario.Estado %></td>
+                        </tr>
+
+                    <% } %>
+
+                </table>
+        </section>
+
+    </div>
+
+    <%
+        ///Listamos paciente
+    %>
+
+    <div class="main-container">
+
+        <section class="container">
+                <table  style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>N° Matrícula</th>
+                            <th>ID Especialidad</th>
+                        </tr>
+                    </thead>
+
+                  <% foreach (dominio.Paciente item in listaPaciente){ %>
+
+                        <tr>
+                            <td><% = item.Apellido %>,<% = item.Nombre %></td>
+                            <td><% = item.ObraSocial %></td>
+                            <td><% = item.NroAfiliado %></td>
+                            <td><% = item.Usuario.Email %></td>
                         </tr>
 
                     <% } %>
