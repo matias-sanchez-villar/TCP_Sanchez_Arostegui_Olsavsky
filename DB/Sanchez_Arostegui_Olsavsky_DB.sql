@@ -59,7 +59,7 @@ CREATE TABLE Turnos(
   FechaHora DATETIME NOT NULL CHECK (FechaHora > GETDATE()),
   IDMedico INT NOT NULL FOREIGN KEY REFERENCES Medicos(ID),
   IDPaciente INT NOT NULL FOREIGN KEY REFERENCES Pacientes(ID),
-  Estado BIT not null,
+  Estado int not null, --0=turno no-vigente-cancelado,1=turno vigente-agendado,2=Asistió al turno,3=Turno-Re-Agendado, 4=Faltó al turno
 )
 
 -- #############
@@ -130,7 +130,7 @@ insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gen
 ('Muestra','Ejemplo','Brown 1123','4563321','19940205','F','8523', 13, 5), 
 ('Delfina','Rapani','Alberdi 453','4594514','19801225','F','1234', 14, 4), 
 ('Magali','Ginzo','Rosas 1208','9893295','19990703','F','9632', 15, 1), 
-('Carolina','Perez','Artigas 1024','1130060','19910420','F','8945', 16, 6), 
+('Carolina','Perez','Artigas 1024','1130060','19910402','F','8945', 16, 6), 
 ('Dante','Abecia','Bolivar 3015','1439630','19981117','M','6541', 17, 1), 
 ('Chanta','Pirola','San Martin 645','7414560','19980729','M','9874', 18, 3), 
 ('Pablo','Bonfilio','Belgrano 456','1334852','19940520','M','9512', 19, 1)
@@ -149,3 +149,4 @@ insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
 -- o en el programa ir asignandole a cada ID (Medico y Usuario) 
 -- lo que retorna los metodos de los objetos de Negocio
 select t.ID, T.FechaHora, t.Estado from Turnos t
+select * from Turnos
