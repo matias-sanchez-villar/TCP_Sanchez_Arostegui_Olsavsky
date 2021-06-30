@@ -104,6 +104,40 @@ namespace negocio
             }
         }
 
+        public void Cargar(Paciente paciente)
+        {
+            Datos = new DataAcces();
+
+            N_Usuario usuario = new N_Usuario();
+            try
+            {
+
+                Datos.setearConsulta(" insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Genero, NroAfiliado, IDUsuario, IDObraSocial) values ");
+
+                Datos.setearParametro("@Nombre", paciente.Nombre);
+                Datos.setearParametro("@Apellido", paciente.Apellido);
+                Datos.setearParametro("@Domicilio", paciente.Domicilio);
+                Datos.setearParametro("@Celular", paciente.Celular);
+                Datos.setearParametro("@FechaNacimiento", paciente.FechaNacimiento);
+                Datos.setearParametro("@Genero", paciente.Genero);
+                Datos.setearParametro("@NroAfiliado", paciente.NroAfiliado);
+                Datos.setearParametro("@IDUsuario", usuario.Cargar(paciente.Usuario));
+               
+                //Datos.setearParametro("@IDObraSocial", paciente.IDObraSocial);
+
+                Datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
         /*
         public Paciente RetornarID(int ID)
         {

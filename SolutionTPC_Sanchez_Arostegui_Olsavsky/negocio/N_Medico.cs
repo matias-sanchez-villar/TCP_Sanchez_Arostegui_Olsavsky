@@ -89,8 +89,41 @@ namespace negocio
                     medico.Usuario.Email = (string)Datos.Lector["Email"];
                     medico.Especialidad = (string)Datos.Lector["Especialidad"];
 
-                
                 return medico;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
+        public void Cargar(Medico medico)
+        {
+            Datos = new DataAcces();
+
+            N_Usuario usuario = new N_Usuario();
+            try
+            {
+
+                Datos.setearConsulta(" insert into Medicos(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Genero, Matricula, IDUsuario, IDEspecialidad) values ");
+
+                Datos.setearParametro("@Nombre", medico.Nombre);
+                Datos.setearParametro("@Apellido", medico.Apellido);
+                Datos.setearParametro("@Domicilio", medico.Domicilio);
+                Datos.setearParametro("@Celular", medico.Celular);
+                Datos.setearParametro("@FechaNacimiento", medico.FechaNacimiento);
+                Datos.setearParametro("@Genero", medico.Genero);
+                Datos.setearParametro("@Matricula", medico.Matricula);
+                Datos.setearParametro("@IDUsuario", usuario.Cargar(medico.Usuario));
+                
+                ///Datos.setearParametro("@IDEspecialidad", medico.Especialidad); es un int de ID y carga un string/varchar
+
+                Datos.EjecutarAccion();
+
             }
             catch (Exception ex)
             {
