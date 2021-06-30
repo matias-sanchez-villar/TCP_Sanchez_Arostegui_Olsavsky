@@ -61,7 +61,7 @@ GO
 
 CREATE TABLE Turnos(
   ID INT Primary Key Not null identity(1,1),
-  FechaHora SmallDateTime NOT NULL CHECK (FechaHora > GETDATE()),
+  FechaHora DateTime NOT NULL CHECK (FechaHora > GETDATE()),
   IDMedico INT NOT NULL FOREIGN KEY REFERENCES Medicos(ID),
   IDPaciente INT NOT NULL FOREIGN KEY REFERENCES Pacientes(ID),
   Estado int not null FOREIGN KEY REFERENCES EstadoTurno(ID)
