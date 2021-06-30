@@ -61,6 +61,49 @@ namespace negocio
             }
         }
 
+        public Paciente BuscarPacienteID(int ID)
+        {
+            Datos = new DataAcces();
+
+            try
+            {
+
+                string Select = " select p.ID, p.Nombre, p.Apellido, p.FechaNacimiento, p.Domicilio, p.Celular, p.Genero, p.NroAfiliado, o.ObraSocial, u.Email ";
+                string From = " from Pacientes p ";
+                string JoinU = " inner join Usuarios u on u.ID = p.IDUsuario ";
+                string JoinE = " inner join ObrasSociales o on o.ID = p.IDObraSocial ";
+                string Where = " where u.Estado = 1 and p.ID = " + ID;
+                string query = Select + From + JoinU + JoinE + Where;
+
+                Datos.setearConsulta(query);
+
+                Datos.ejecutarLectura();
+
+                    Paciente paciente = new Paciente();
+
+                    paciente.ID = (int)Datos.Lector["ID"];
+                    paciente.Nombre = (string)Datos.Lector["Nombre"];
+                    paciente.Apellido = (string)Datos.Lector["Apellido"];
+                    paciente.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
+                    paciente.Domicilio = (string)Datos.Lector["Domicilio"];
+                    paciente.Celular = (string)Datos.Lector["Celular"];
+                    paciente.Genero = (string)Datos.Lector["Genero"];
+                    paciente.NroAfiliado = (string)Datos.Lector["NroAfiliado"];
+                    paciente.ObraSocial = (string)Datos.Lector["ObraSocial"];
+                    paciente.Usuario.Email = (string)Datos.Lector["Email"];
+
+                return paciente;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
         /*
         public Paciente RetornarID(int ID)
         {

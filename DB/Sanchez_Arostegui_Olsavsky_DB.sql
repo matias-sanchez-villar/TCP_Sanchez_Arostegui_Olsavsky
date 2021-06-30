@@ -1,8 +1,7 @@
-/*
+
 use master
 drop database Mediturnos
 go
-*/
 
 CREATE DATABASE Mediturnos
 GO
@@ -62,25 +61,10 @@ GO
 
 CREATE TABLE Turnos(
   ID INT Primary Key Not null identity(1,1),
-  FechaHora DATETIME NOT NULL CHECK (FechaHora > GETDATE()),
+  FechaHora SmallDateTime NOT NULL CHECK (FechaHora > GETDATE()),
   IDMedico INT NOT NULL FOREIGN KEY REFERENCES Medicos(ID),
   IDPaciente INT NOT NULL FOREIGN KEY REFERENCES Pacientes(ID),
-  Estado int not null FOREIGN KEY REFERENCES EstadoTurno(ID), 
-)
-
--- #############
--- ## DATOS ####
--- #############
-
--- Revisar con Pablito y Dorito
-CREATE TABLE CALENDARIO(
-	ID int Primary key identity(1,1),
-	IDMedico int foreign key references Medicos(id),
-	HorarioInicio time not null,
-	HorarioFin time not null,
-	Repite bit not null,
-	Estado bit not null
-	--Primary key(ID,IDMedico)
+  Estado int not null FOREIGN KEY REFERENCES EstadoTurno(ID)
 )
 
 Set dateformat 'DMY'
@@ -143,16 +127,39 @@ insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gen
 
 --turnos 7
 insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
-('2021-10-23 11:44:11', 1, 1, 1),
-('2021-11-12 10:24:45', 4, 3, 1),
-('2021-12-17 17:10:10', 2, 5, 1),
-('2021-09-24 16:35:17', 1, 2, 1),
-('2021-09-07 12:55:26', 7, 3, 1),
-('2021-10-21 10:36:35', 3, 7, 1),
-('2021-06-30 09:21:44', 2, 4, 0)
+('2021-10-23 11:44', 1, 1, 1),
+('2021-11-12 10:24', 4, 3, 1),
+('2021-12-17 17:10', 2, 5, 1),
+('2021-09-24 16:35', 1, 2, 1),
+('2021-09-07 12:55', 7, 3, 1),
+('2021-10-21 10:36', 3, 7, 1),
+('2021-06-30 09:21', 2, 4, 1)
 
--- 2 maneras de resolverlo unos inner join a usuario y a pacientes
--- o en el programa ir asignandole a cada ID (Medico y Usuario) 
--- lo que retorna los metodos de los objetos de Negocio
-select t.ID, T.FechaHora, t.Estado from Turnos t
-select * from Turnos
+
+
+
+/*
+
+-- Revisar con Pablito y Dorito  --> y en medico agregar el intervalos en minutos 40, 20, 160
+CREATE TABLE DisponibilidadHoraria(
+	ID int Primary key identity(1,1),
+	IDMedico int foreign key references Medicos(id),
+	Dia date not null,
+	HorarioInicio time not null,
+	HorarioFin time not null,
+	Repite bit not null,
+	Estado bit not null
+)
+
+go
+--- estos son los horarios cortados 
+create table Horarios
+(
+	ID tinyint primary key identity(1,1) not null,
+	IDDisponibilidadHoraria tinyint foreign key references DisponibilidadHoraria(ID) not null,
+	HorarioInicio time not null,
+	HorarioFin time not null
+)
+
+
+*/
