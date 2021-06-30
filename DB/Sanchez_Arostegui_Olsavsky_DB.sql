@@ -54,12 +54,18 @@ CREATE TABLE Medicos(
 )
 GO
 
+CREATE TABLE EstadoTurno(
+	ID INT Primary Key NOT NULL identity(1,1),
+	EstadoTurno varchar(15) NOT NULL --0=turno no-vigente-cancelado,1=turno vigente-agendado,2=Asistió al turno,3=Turno-Re-Agendado, 4=Faltó al turno
+)
+GO
+
 CREATE TABLE Turnos(
   ID INT Primary Key Not null identity(1,1),
   FechaHora DATETIME NOT NULL CHECK (FechaHora > GETDATE()),
   IDMedico INT NOT NULL FOREIGN KEY REFERENCES Medicos(ID),
   IDPaciente INT NOT NULL FOREIGN KEY REFERENCES Pacientes(ID),
-  Estado int not null, --0=turno no-vigente-cancelado,1=turno vigente-agendado,2=Asistió al turno,3=Turno-Re-Agendado, 4=Faltó al turno
+  Estado int not null FOREIGN KEY REFERENCES EstadoTurno(ID), 
 )
 
 -- #############
