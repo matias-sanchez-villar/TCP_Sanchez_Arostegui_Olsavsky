@@ -12,7 +12,7 @@
            <div class="main-container">
             <h2>CARGAR PACIENTE</h2>
 
-            <form action="" method="post" name="FormCargaPaciente" onsubmit="return (validateForm());">
+            <form action="" method="post" name="FormCargaPaciente" onsubmit="return validateForm()">
               <label for="Nombre">Nombre: </label><br>
               <input type="text" id="Nombre" name="Nombre" value=""><br>
               <label for="Apellido">Apellido: </label><br>
