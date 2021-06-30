@@ -112,7 +112,7 @@ namespace negocio
             try
             {
 
-                Datos.setearConsulta(" insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Genero, NroAfiliado, IDUsuario, IDObraSocial) values ");
+                Datos.setearConsulta(" insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Genero, NroAfiliado, IDUsuario, IDObraSocial) values (@Nombre, @Apellido, @Domicilio, @Celular, @FechaNacimiento, @Genero, @NroAfiliado, @IDUsuario, @IDObraSocial) ");
 
                 Datos.setearParametro("@Nombre", paciente.Nombre);
                 Datos.setearParametro("@Apellido", paciente.Apellido);
@@ -122,8 +122,8 @@ namespace negocio
                 Datos.setearParametro("@Genero", paciente.Genero);
                 Datos.setearParametro("@NroAfiliado", paciente.NroAfiliado);
                 Datos.setearParametro("@IDUsuario", usuario.Cargar(paciente.Usuario));
-               
-                //Datos.setearParametro("@IDObraSocial", paciente.IDObraSocial);
+
+                //Datos.setearParametro("@IDObraSocial", paciente.IDObraSocial); es un int de ID y carga un string/varchar
 
                 Datos.EjecutarAccion();
 
@@ -137,45 +137,6 @@ namespace negocio
                 Datos.cerrarConexion();
             }
         }
-
-        /*
-        public Paciente RetornarID(int ID)
-        {
-            Datos = new DataAcces();
-
-            try
-            {
-                Datos.setearConsulta("select ID, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Genero, ObraSocial, NroAfiliado, Estado from Medicos where ID = " + ID);
-
-                Datos.ejecutarLectura();
-
-                   // paciente = new Paciente();
-
-                    //paciente.ID = (int)Datos.Lector["ID"];
-                    //paciente.Nombre = (string)Datos.Lector["Nombre"];
-                    //paciente.Apellido = (string)Datos.Lector["Apellido"];
-                    //paciente.ObraSocial = (string)Datos.Lector["ObraSocial"];
-                    //paciente.NumeroAfiliado = (string)Datos.Lector["NroAfiliado"];
-                    //paciente.Domicilio = (string)Datos.Lector["Domicilio"];
-                    //paciente.Email = (string)Datos.Lector["Email"];
-                    //paciente.Celular = (string)Datos.Lector["Telefono"];
-                    //paciente.Estado = (bool)Datos.Lector["Estado"];
-                    //paciente.FechaNacimiento = (DateTime)Datos.Lector["FechaNacimiento"];
-                    //paciente.Genero = (char)Datos.Lector["Genero"];
-
-                    Lista.Add(paciente);
-                return paciente;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Datos.cerrarConexion();
-            }
-        }
-        */
 
         //public void Modificar(Paciente paciente)
         //{
@@ -192,38 +153,6 @@ namespace negocio
         //        Datos.setearParametro("@ObraSocial", paciente.ObraSocial);
         //        Datos.setearParametro("@FechaNacimiento", paciente.FechaNacimiento);
         //        Datos.setearParametro("@NroAfiliado", paciente.NumeroAfiliado);
-        //        Datos.setearParametro("@Nombre", paciente.Nombre);
-
-        //        Datos.EjecutarAccion();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        Datos.cerrarConexion();
-        //    }
-        //}
-
-
-        //public void Insertar(Paciente paciente)
-        //{
-        //    Datos = new DataAcces();
-        //    try
-        //    {
-        //        Datos.setearConsulta("insert into Medicos (ID, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Celular, Genero, ObraSocial, NroAfiliado, Estado) values (@ID, @Nombre, @Apellido, @FechaNacimiento, @Domicilio, @EMail, @Contrasena, @Celular, @Celular, @Genero, @ObraSocial, @NroAfiliado, @Estado)");
-
-        //        Datos.setearParametro("@Apellido", paciente.Apellido);
-        //        Datos.setearParametro("@Celular", paciente.Celular);
-        //        Datos.setearParametro("@Domicilio", paciente.Domicilio);
-        //        Datos.setearParametro("@Email", paciente.Email);
-        //        Datos.setearParametro("@NroAfiliado", paciente.NumeroAfiliado);
-        //        Datos.setearParametro("@Estado", paciente.Estado);
-        //        Datos.setearParametro("@FechaNacimiento", paciente.FechaNacimiento);
-        //        Datos.setearParametro("@Genero", paciente.Genero);
-        //        Datos.setearParametro("@ID", paciente.ID);
-        //        Datos.setearParametro("@ObraSocial", paciente.ObraSocial);
         //        Datos.setearParametro("@Nombre", paciente.Nombre);
 
         //        Datos.EjecutarAccion();

@@ -109,7 +109,7 @@ namespace negocio
             try
             {
 
-                Datos.setearConsulta(" insert into Medicos(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Genero, Matricula, IDUsuario, IDEspecialidad) values ");
+                Datos.setearConsulta(" insert into Medicos(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Genero, Matricula, IDUsuario, IDEspecialidad) values (@Nombre, @Apellido, @Domicilio, @Celular, @FechaNacimiento, @Genero, @Matricula, @IDUsuario, @IDEspecialidad) ");
 
                 Datos.setearParametro("@Nombre", medico.Nombre);
                 Datos.setearParametro("@Apellido", medico.Apellido);
@@ -164,38 +164,7 @@ namespace negocio
         //        Datos.cerrarConexion();
         //    }
         //}
-
-
-        //public void Cargar(Medico medico)
-        //{
-        //    Datos = new DataAcces();
-        //    try
-        //    {
-        //        Datos.setearConsulta("insert into Medicos (ID, Nombre, Apellido, FechaNacimiento, Domicilio, EMail, Contrasena, Celular, Celular, Genero, Matricula, Especialidad, Estado) values (@ID, @Nombre, @Apellido, @FechaNacimiento, @Domicilio, @EMail, @Contrasena, @Celular, @Celular, @Genero, @Matricula, @Especialidad, @Estado)");
-
-        //        Datos.setearParametro("@Apellido", medico.Apellido);
-        //        Datos.setearParametro("@Celular", medico.Celular);
-        //        Datos.setearParametro("@Domicilio", medico.Domicilio);
-        //        Datos.setearParametro("@Email", medico.Email);
-        //        Datos.setearParametro("@Especialidad", medico.Especialidad);
-        //        Datos.setearParametro("@Estado", medico.Estado);
-        //        Datos.setearParametro("@FechaNacimiento", medico.FechaNacimiento);
-        //        Datos.setearParametro("@Genero", medico.Genero);
-        //        Datos.setearParametro("@ID", medico.ID);
-        //        Datos.setearParametro("@Matricula", medico.Matricula);
-        //        Datos.setearParametro("@Nombre", medico.Nombre);
-
-        //        Datos.EjecutarAccion();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        Datos.cerrarConexion();
-        //    }
-        //}
+       
 
         //public void Eliminar(int ID)
         //{
