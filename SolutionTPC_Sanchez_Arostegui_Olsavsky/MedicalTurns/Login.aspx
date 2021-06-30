@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#"  AutoEventWireup="true" CodeBehind="P_Login.aspx.cs" Inherits="MedicalTurns.Login" %>
+﻿<%@ Page Title="" Language="C#"  AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="MedicalTurns.Login" %>
 
 <asp:Content ContentPlaceHolderID="head">
     <link href="Styles/bootstrap-grid.css" rel="stylesheet" />
@@ -8,10 +8,9 @@
 
 <asp:PlaceHolder runat="server" ID="PlaceHolder1">
     <section class="login-container">
-
         <div class="row">
 
-            <form action="/action_page.php">
+            <form action="">
                 <h1>Mediturns</h1>
                 <div class="formcontainer">
                     <div class="container">
@@ -21,14 +20,11 @@
                         <label for="psw"><strong>Password</strong></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
                     </div>
-                    <button type="submit" onclick="">Login</button>
-                    <asp:Button runat="server" Text="Button" />
+                    <button type="submit" >Login</button>
                     <div class="container">
                         <span style="text-align: center;"><a href="#">Forgot password?</a></span>
                     </div>
             </form>
-
-
         </div>
 
     </section>

@@ -6,12 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using dominio;
 using negocio;
-using System.Data.SqlClient;
 
 namespace MedicalTurns
 {
-    public partial class Dashboard : System.Web.UI.Page
+    public partial class WebForm2 : System.Web.UI.Page
     {
+
         public List<Medico> listaMedicos;
         public List<Paciente> listaPaciente;
 
@@ -39,6 +39,5 @@ namespace MedicalTurns
                 //Response.Redirect("Dashboard.aspx");
             }
         }
-
     }
 }
