@@ -71,6 +71,7 @@
     <Content Include="P_Dashboard.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\App.js" />
+    <Content Include="Scripts\Validations.js" />
     <Content Include="Styles\bootstrap-grid.css" />
     <Content Include="Styles\Generic_dashboard.css" />
     <Content Include="Styles\Generic_login.css" />
