@@ -40,15 +40,18 @@ namespace negocio
 
         public int RetornarID(string Email)
         {
-            Datos = new DataAcces();
+            DataAcces Datos2 = new DataAcces();
             int ID;
 
             try
             {
-                Datos.setearConsulta(" select ID from Usuarios where Email = " + Email);
-                Datos.ejecutarLectura();
+                Datos2.setearConsulta(" select ID from Usuarios where Email = '" + Email + "' ");
+                Datos2.ejecutarLectura();
 
-                return ID = (int)Datos.Lector["ID"];
+                ID = (int)Datos2.Lector["ID"];
+                
+                Datos2.cerrarConexion();// <<<<<<<<<<<<<---------------------acaa esta ahora el problema hago el push y seguilo de aca
+                return ID ;
 
             }
             catch (Exception ex)
@@ -57,7 +60,7 @@ namespace negocio
             }
             finally
             {
-                Datos.cerrarConexion();
+                Datos2.cerrarConexion();
             }
         }
 

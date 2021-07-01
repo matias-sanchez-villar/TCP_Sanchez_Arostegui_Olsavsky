@@ -113,7 +113,6 @@ namespace negocio
             
             try
             {
-
                 Datos.setearConsulta(" insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Genero, NroAfiliado, IDUsuario, IDObraSocial) values (@Nombre, @Apellido, @Domicilio, @Celular, @FechaNacimiento, @Genero, @NroAfiliado, @IDUsuario, @IDObraSocial) ");
 
                 Datos.setearParametro("@Nombre", paciente.Nombre);
@@ -125,17 +124,18 @@ namespace negocio
                 Datos.setearParametro("@NroAfiliado", paciente.NroAfiliado);
 
                 usuAux = paciente.Usuario;
-
-                Datos.setearParametro("@IDUsuario", usuario.Cargar(usuAux));
+                usuAux.ID = usuario.Cargar(usuAux);
+                Datos.setearParametro("@IDUsuario", usuAux.ID);
 
                 Datos.setearParametro("@IDObraSocial", paciente.obraSoc.ID);
 
                 Datos.EjecutarAccion();
 
+                
             }
             catch (Exception ex)
             {
-                throw ex;
+                ex.Message.ToString();
             }
             finally
             {

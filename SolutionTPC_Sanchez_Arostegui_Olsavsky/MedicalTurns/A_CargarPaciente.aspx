@@ -31,6 +31,7 @@
          
                <asp:Button ID="BtnSubmit" OnClientClick="return patientValidations()" runat="server" Text="Create patient" type="submit" OnClick="BtnSubmit_Click" />        
             </div>
+          </div>
 
         </body>
        
