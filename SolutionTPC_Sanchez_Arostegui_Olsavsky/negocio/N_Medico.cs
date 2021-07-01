@@ -44,7 +44,7 @@ namespace negocio
                     medico.Genero = (string)Datos.Lector["Genero"];
                     medico.Matricula = (string)Datos.Lector["Matricula"];
                     medico.Usuario.Email = (string)Datos.Lector["Email"];
-                    medico.Especialidad = (string)Datos.Lector["Especialidad"];
+                    medico.especialidad.Nombre = (string)Datos.Lector["Especialidad"];
 
                     Lista.Add(medico);
                 }
@@ -87,7 +87,7 @@ namespace negocio
                     medico.Genero = (string)Datos.Lector["Genero"];
                     medico.Matricula = (string)Datos.Lector["Matricula"];
                     medico.Usuario.Email = (string)Datos.Lector["Email"];
-                    medico.Especialidad = (string)Datos.Lector["Especialidad"];
+                    medico.especialidad.Nombre = (string)Datos.Lector["Especialidad"];
 
                 return medico;
             }

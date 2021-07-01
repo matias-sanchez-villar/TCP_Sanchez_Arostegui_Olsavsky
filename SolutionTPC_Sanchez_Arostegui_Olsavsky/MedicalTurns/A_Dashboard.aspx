@@ -34,7 +34,7 @@
                         <tr>
                             <td><% = item.Apellido %>,<% = item.Nombre %></td>
                             <td><% = item.Matricula %></td>
-                            <td><% = item.Especialidad %></td>
+                            <td><% = item.especialidad.Nombre %></td>
                             <td><% = item.Usuario.Email %></td>
                         </tr>
 

@@ -12,5 +12,10 @@ namespace dominio
         public int ID { get; set; }
         public Especialidad especialidad { get; set; }
         public string Matricula { get; set; }
+
+        public Medico()
+        {
+            especialidad = new Especialidad();
+        }
     }
 }
