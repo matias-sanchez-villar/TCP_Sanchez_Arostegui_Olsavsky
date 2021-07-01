@@ -44,7 +44,7 @@ namespace negocio
                     paciente.Celular = (string)Datos.Lector["Celular"];
                     paciente.Genero = (string)Datos.Lector["Genero"];
                     paciente.NroAfiliado = (string)Datos.Lector["NroAfiliado"];
-                    paciente.obraSoc.Nombre = (string)Datos.Lector["ObraSocial"];
+                    paciente.obraSocial.Nombre = (string)Datos.Lector["ObraSocial"];
                     paciente.Usuario.Email = (string)Datos.Lector["Email"];
 
                     Lista.Add(paciente);
@@ -72,7 +72,7 @@ namespace negocio
                 string From = " from Pacientes p ";
                 string JoinU = " inner join Usuarios u on u.ID = p.IDUsuario ";
                 string JoinE = " inner join ObrasSociales o on o.ID = p.IDObraSocial ";
-                string Where = " where u.Estado = 1 and p.ID = " + ID;
+                string Where = " where u.Estado = 1 and p.ID = " + ID + "";
                 string query = Select + From + JoinU + JoinE + Where;
 
                 Datos.setearConsulta(query);
@@ -89,7 +89,7 @@ namespace negocio
                     paciente.Celular = (string)Datos.Lector["Celular"];
                     paciente.Genero = (string)Datos.Lector["Genero"];
                     paciente.NroAfiliado = (string)Datos.Lector["NroAfiliado"];
-                    paciente.obraSoc.Nombre = (string)Datos.Lector["ObraSocial"];
+                    paciente.obraSocial.Nombre = (string)Datos.Lector["ObraSocial"];
                     paciente.Usuario.Email = (string)Datos.Lector["Email"];
 
                 return paciente;
@@ -109,7 +109,6 @@ namespace negocio
             Datos = new DataAcces();
 
             N_Usuario usuario = new N_Usuario();
-            Usuario usuAux = new Usuario();
             
             try
             {
@@ -123,11 +122,12 @@ namespace negocio
                 Datos.setearParametro("@Genero", paciente.Genero);
                 Datos.setearParametro("@NroAfiliado", paciente.NroAfiliado);
 
-                usuAux = paciente.Usuario;
-                usuAux.ID = usuario.Cargar(usuAux);
-                Datos.setearParametro("@IDUsuario", usuAux.ID);
+                usuario.Cargar(paciente.Usuario);
 
-                Datos.setearParametro("@IDObraSocial", paciente.obraSoc.ID);
+                paciente.Usuario.ID = usuario.RetornarID(paciente.Usuario.Email);
+
+                Datos.setearParametro("@IDUsuario", paciente.Usuario.ID);
+                Datos.setearParametro("@IDObraSocial", paciente.obraSocial.ID);
 
                 Datos.EjecutarAccion();
 

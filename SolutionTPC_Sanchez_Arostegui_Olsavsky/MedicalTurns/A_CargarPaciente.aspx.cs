@@ -44,7 +44,7 @@ namespace MedicalTurns
             pacAux.Apellido = Apellido.Text;
             pacAux.FechaNacimiento = DateTime.Parse(Nacimiento.Text);
             pacAux.Genero = Genero.SelectedValue;
-            pacAux.obraSoc.ID = Convert.ToInt32(ObraSocial.SelectedValue.ToString());
+            pacAux.obraSocial.ID = Convert.ToInt32(ObraSocial.SelectedValue.ToString());
             pacAux.Domicilio = Domicilio.Text;
             pacAux.Celular = Celular.Text;
             pacAux.NroAfiliado = Afiliado.Text;

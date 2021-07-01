@@ -8,25 +8,23 @@ using dataAccess;
 
 namespace negocio
 {
-    class N_Usuario
+    public class N_Usuario
     {
-        public DataAcces Datos = new DataAcces();
+        public DataAcces Datos;
 
-        public int Cargar(Usuario usuario)
+        public void Cargar(Usuario usuario)
         {
             Datos = new DataAcces();
 
             try
             {
-                Datos.setearConsulta(" insert into Usuarios (Email, Contasena, Estado) VALUES(@Email, @Contasena, @Estado)");
+                Datos.setearConsulta(" insert into Usuarios (Email, Contasena, Estado) VALUES( @Email, @Contasena, @Estado )");
 
                 Datos.setearParametro("@Email", usuario.Email);
                 Datos.setearParametro("@Contasena", usuario.Contrasena);
                 Datos.setearParametro("@Estado", 1);
 
                 Datos.EjecutarAccion();
-
-                return this.RetornarID(usuario.Email);
             }
             catch (Exception ex)
             {
@@ -40,17 +38,20 @@ namespace negocio
 
         public int RetornarID(string Email)
         {
-            DataAcces Datos2 = new DataAcces();
+            Datos = new DataAcces();
             int ID;
 
             try
             {
-                Datos2.setearConsulta(" select ID from Usuarios where Email = '" + Email + "' ");
-                Datos2.ejecutarLectura();
+                Datos.setearConsulta(" select ID from Usuarios where Email = @Email ");
 
-                ID = (int)Datos2.Lector["ID"];
+                Datos.setearParametro("@Email", Email);
+
+                Datos.ejecutarLectura();
+
+                ID = (int)Datos.Lector["ID"];
                 
-                Datos2.cerrarConexion();// <<<<<<<<<<<<<---------------------acaa esta ahora el problema hago el push y seguilo de aca
+                Datos.cerrarConexion();
                 return ID ;
 
             }
@@ -60,7 +61,7 @@ namespace negocio
             }
             finally
             {
-                Datos2.cerrarConexion();
+                Datos.cerrarConexion();
             }
         }
 

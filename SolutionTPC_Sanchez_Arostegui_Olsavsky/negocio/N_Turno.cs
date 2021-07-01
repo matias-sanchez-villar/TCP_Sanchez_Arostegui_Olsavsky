@@ -68,7 +68,7 @@ namespace negocio
 
             try
             {
-                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Estado from Turnos where IDMedico =  " + ID);
+                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Estado from Turnos where IDMedico =  " + ID + "");
 
                 Datos.setearConsulta(query);
 
