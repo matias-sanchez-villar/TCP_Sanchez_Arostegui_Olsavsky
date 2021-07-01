@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="N_Medico.cs" />
+    <Compile Include="N_ObraSocial.cs" />
     <Compile Include="N_Paciente.cs" />
     <Compile Include="N_Turno.cs" />
     <Compile Include="N_Usuario.cs" />

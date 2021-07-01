@@ -18,11 +18,11 @@ namespace negocio
 
             try
             {
-                Datos.setearConsulta(" insert into Usuarios (Email, Contasena, Estado) VALUES ");
+                Datos.setearConsulta(" insert into Usuarios (Email, Contasena, Estado) VALUES(@Email, @Contasena, @Estado)");
 
                 Datos.setearParametro("@Email", usuario.Email);
                 Datos.setearParametro("@Contasena", usuario.Contrasena);
-                Datos.setearParametro("@Estado", true);
+                Datos.setearParametro("@Estado", 1);
 
                 Datos.EjecutarAccion();
 

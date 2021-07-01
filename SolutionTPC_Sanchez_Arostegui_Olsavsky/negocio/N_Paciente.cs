@@ -44,7 +44,7 @@ namespace negocio
                     paciente.Celular = (string)Datos.Lector["Celular"];
                     paciente.Genero = (string)Datos.Lector["Genero"];
                     paciente.NroAfiliado = (string)Datos.Lector["NroAfiliado"];
-                    paciente.ObraSocial = (string)Datos.Lector["ObraSocial"];
+                    paciente.obraSoc.Nombre = (string)Datos.Lector["ObraSocial"];
                     paciente.Usuario.Email = (string)Datos.Lector["Email"];
 
                     Lista.Add(paciente);
@@ -89,7 +89,7 @@ namespace negocio
                     paciente.Celular = (string)Datos.Lector["Celular"];
                     paciente.Genero = (string)Datos.Lector["Genero"];
                     paciente.NroAfiliado = (string)Datos.Lector["NroAfiliado"];
-                    paciente.ObraSocial = (string)Datos.Lector["ObraSocial"];
+                    paciente.obraSoc.Nombre = (string)Datos.Lector["ObraSocial"];
                     paciente.Usuario.Email = (string)Datos.Lector["Email"];
 
                 return paciente;
@@ -109,6 +109,8 @@ namespace negocio
             Datos = new DataAcces();
 
             N_Usuario usuario = new N_Usuario();
+            Usuario usuAux = new Usuario();
+            
             try
             {
 
@@ -121,9 +123,12 @@ namespace negocio
                 Datos.setearParametro("@FechaNacimiento", paciente.FechaNacimiento);
                 Datos.setearParametro("@Genero", paciente.Genero);
                 Datos.setearParametro("@NroAfiliado", paciente.NroAfiliado);
-                Datos.setearParametro("@IDUsuario", usuario.Cargar(paciente.Usuario));
 
-                //Datos.setearParametro("@IDObraSocial", paciente.IDObraSocial); es un int de ID y carga un string/varchar
+                usuAux = paciente.Usuario;
+
+                Datos.setearParametro("@IDUsuario", usuario.Cargar(usuAux));
+
+                Datos.setearParametro("@IDObraSocial", paciente.obraSoc.ID);
 
                 Datos.EjecutarAccion();
 
