@@ -21,7 +21,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta(" select ID, ObraSocial from ObrasSociales ");
+                datos.setearConsulta(" select ID, Especialidad from Especialidades ");
 
                 datos.ejecutarLectura();
 
