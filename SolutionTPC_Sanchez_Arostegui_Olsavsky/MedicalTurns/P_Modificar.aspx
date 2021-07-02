@@ -27,8 +27,7 @@
                <asp:TextBox ID="Celular" placeholder="<% = paciente.Celular %>" MaxLength="50" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
                <asp:TextBox ID="Afiliado" placeholder="<% = paciente.NroAfiliado %>" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
                
-         
-               <asp:Button ID="BtnModificar" OnClientClick="return patientValidations()" runat="server" Text="Create patient" type="submit"  />        
+               <asp:Button ID="BtnModificar" runat="server" Text="Modificar" OnClientClick="return patientValidations()" type="submit" OnClick="BtnModificar_Click"/>     
             </div>
           </div>
 

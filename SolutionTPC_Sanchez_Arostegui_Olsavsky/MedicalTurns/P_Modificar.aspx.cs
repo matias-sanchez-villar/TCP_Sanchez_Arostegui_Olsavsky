@@ -80,5 +80,31 @@ namespace MedicalTurns
                 throw ex;
             }
         }
+
+        protected void BtnModificar_Click(object sender, EventArgs e)
+        {
+            Page.Validate();
+
+            if (Page.IsValid)
+            {
+                N_Paciente negocio = new N_Paciente();
+                Paciente pacAux = new Paciente();
+
+                pacAux.Nombre = Nombre.Text;
+                pacAux.Apellido = Apellido.Text;
+                pacAux.FechaNacimiento = DateTime.Parse(Nacimiento.Text);
+                pacAux.Genero = Genero.SelectedValue;
+                pacAux.obraSocial.ID = Convert.ToInt32(ObraSocial.SelectedValue.ToString());
+                pacAux.Domicilio = Domicilio.Text;
+                pacAux.Celular = Celular.Text;
+                pacAux.NroAfiliado = Afiliado.Text;
+
+                pacAux.Usuario.Email = Email.Text;
+                pacAux.Usuario.Contrasena = "root";
+
+                negocio.Modificar(pacAux);
+                Response.Redirect("A_Dashboard.aspx");
+            }
+        }
     }
 }
