@@ -151,7 +151,7 @@ namespace negocio
 
             try
             {
-                Datos.setearConsulta(" update Pacientes set Nombre = @Nombre, Apellido = @Apellido, Domicilio = @Domicilio, Celular = @Celular, FechaNacimiento = @FechaNacimiento, Genero = @Genero, NroAfiliado = @NroAfiliado, IDUsuario = @IDUsuario, IDObraSocial = @IDObraSocial where ID = @ID ");
+                Datos.setearConsulta(" update Pacientes set Nombre = @Nombre, Apellido = @Apellido, Domicilio = @Domicilio, Celular = @Celular, FechaNacimiento = @FechaNacimiento, Genero = @Genero, NroAfiliado = @NroAfiliado, IDObraSocial = @IDObraSocial where ID = @ID ");
 
                 Datos.setearParametro("@ID", paciente.ID);
                 Datos.setearParametro("@Nombre", paciente.Nombre);
@@ -164,11 +164,9 @@ namespace negocio
 
                 usuario.Modificar(paciente.Usuario);
 
-                Datos.setearParametro("@IDUsuario", paciente.Usuario.ID);
                 Datos.setearParametro("@IDObraSocial", paciente.obraSocial.ID);
 
                 Datos.EjecutarAccion();
-
 
             }
             catch (Exception ex)

@@ -112,7 +112,6 @@ insert into Medicos(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gener
 --6 Obras sociales
 insert into ObrasSociales(ObraSocial) values ('DIVA'), ('OSDE'), ('MEDAFI'), ('GALENO'), ('MEDICUS'), ('IOMA')
 
-
 --9 pacientes
 insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Genero, NroAfiliado, IDUsuario, IDObraSocial) values
 ('Maria','Gonzales','Rivadavia 1233','1234560','19961118','F','1234', 11, 1), 

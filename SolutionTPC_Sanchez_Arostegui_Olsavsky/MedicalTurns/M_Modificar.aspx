@@ -19,17 +19,18 @@
                     <asp:listitem text="O" value="O"></asp:listitem>
                </asp:DropDownList>
 
-               <asp:DropDownList ID="ObraSocial" runat="server" ClientIDMode="Static"></asp:DropDownList>
+               <asp:DropDownList ID="Especialidad" runat="server" ClientIDMode="Static"></asp:DropDownList>
                <asp:TextBox ID="Email" placeholder="Email" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
+               <asp:TextBox ID="Contrasena" placeholder="Contaseña" MaxLength="30" runat="server" required ClientIDMode="Static"></asp:TextBox>
                <asp:TextBox ID="Domicilio" placeholder="Adress" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
                <asp:TextBox ID="Celular" placeholder="Phone" MaxLength="50" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Afiliado" placeholder="Credential number" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
+               <asp:TextBox ID="Matricula" placeholder="Credential number" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
                
          
-               <asp:Button ID="BtnSubmit" OnClientClick="return patientValidations()" runat="server" Text="Create patient" type="submit" OnClick="BtnSubmit_Click" />        
+               <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClientClick="return patientValidations()" type="submit" OnClick="btnModificar_Click"/>   
             </div>
           </div>
 
-        </body>
+     </body>
 
 </asp:Content>

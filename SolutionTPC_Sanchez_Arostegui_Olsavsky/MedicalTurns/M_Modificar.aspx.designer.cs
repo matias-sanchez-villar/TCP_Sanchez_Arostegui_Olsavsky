@@ -51,13 +51,13 @@ namespace MedicalTurns
         protected global::System.Web.UI.WebControls.DropDownList Genero;
 
         /// <summary>
-        /// Control ObraSocial.
+        /// Control Especialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ObraSocial;
+        protected global::System.Web.UI.WebControls.DropDownList Especialidad;
 
         /// <summary>
         /// Control Email.
@@ -67,6 +67,15 @@ namespace MedicalTurns
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Email;
+
+        /// <summary>
+        /// Control Contrasena.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Contrasena;
 
         /// <summary>
         /// Control Domicilio.
@@ -87,21 +96,21 @@ namespace MedicalTurns
         protected global::System.Web.UI.WebControls.TextBox Celular;
 
         /// <summary>
-        /// Control Afiliado.
+        /// Control Matricula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Afiliado;
+        protected global::System.Web.UI.WebControls.TextBox Matricula;
 
         /// <summary>
-        /// Control BtnSubmit.
+        /// Control btnModificar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSubmit;
+        protected global::System.Web.UI.WebControls.Button btnModificar;
     }
 }
