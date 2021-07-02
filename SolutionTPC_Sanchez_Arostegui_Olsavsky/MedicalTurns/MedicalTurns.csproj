@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="A_CargarPaciente.aspx" />
+    <Content Include="ModificarObraSocial.aspx" />
     <Content Include="M_Modificar.aspx" />
     <Content Include="P_Dashboard.aspx" />
     <Content Include="Login.aspx" />
@@ -97,6 +98,13 @@
     </Compile>
     <Compile Include="A_Structure.Master.designer.cs">
       <DependentUpon>A_Structure.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarObraSocial.aspx.cs">
+      <DependentUpon>ModificarObraSocial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarObraSocial.aspx.designer.cs">
+      <DependentUpon>ModificarObraSocial.aspx</DependentUpon>
     </Compile>
     <Compile Include="M_Modificar.aspx.cs">
       <DependentUpon>M_Modificar.aspx</DependentUpon>
