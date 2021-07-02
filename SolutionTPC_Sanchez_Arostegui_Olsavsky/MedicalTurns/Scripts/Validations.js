@@ -6,6 +6,7 @@
         return false;
     }
 
+
 /*    COMENTARIO: ESTOS SON LOS INPUTS EN LOS QUE VOY A VALIDAR
                <label for="Nombre">Nombre: </label><br>
               <input type="text" id="Nombre" name="Nombre" value=""><br>

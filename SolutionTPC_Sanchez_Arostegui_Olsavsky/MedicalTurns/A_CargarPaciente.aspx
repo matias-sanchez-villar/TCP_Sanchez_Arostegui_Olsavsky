@@ -6,6 +6,18 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <script>    
+            function validateForm2() {
+                var nombre = document.getElementById("Nombre").value;
+                console.log(nombre);
+            if (nombre === "" || nombre.length < 1) {
+                alert("Debe escribir un Nombre");
+                return false;
+            }
+            return true
+    </script>
+
+
         <body>
 
            <div class="main-container">
@@ -13,7 +25,7 @@
             <h2>CARGAR PACIENTE</h2>
                <div class="container generic-form">
 
-               <asp:TextBox ID="Nombre" placeholder="Name" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
+               <asp:TextBox ID="Nombre" placeholder="Name" MaxLength="100" runat="server"  ClientIDMode="Static"></asp:TextBox>
                <asp:TextBox ID="Apellido" placeholder="Second name" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
                <asp:TextBox ID="Nacimiento" placeholder="Birth date" type="date" runat="server" required ClientIDMode="Static"></asp:TextBox>
                <asp:DropDownList ID="Genero" runat="server" ClientIDMode="Static">
@@ -29,7 +41,7 @@
                <asp:TextBox ID="Afiliado" placeholder="Credential number" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
                
          
-               <asp:Button ID="BtnSubmit" OnClientClick="return patientValidations()" runat="server" Text="Create patient" type="submit" OnClick="BtnSubmit_Click" />        
+               <asp:Button ID="BtnSubmit" OnClientClick="return validateForm2()" runat="server" Text="Create patient" type="submit" OnClick="BtnSubmit_Click" />        
             </div>
           </div>
 

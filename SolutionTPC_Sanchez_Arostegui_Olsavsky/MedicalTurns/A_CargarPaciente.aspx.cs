@@ -29,23 +29,31 @@ namespace MedicalTurns
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-            N_Paciente negocio = new N_Paciente();
-            Paciente pacAux = new Paciente();
+            Page.Validate();
+            if (!Page.IsValid) return;
 
-            pacAux.Nombre = Nombre.Text;
-            pacAux.Apellido = Apellido.Text;
-            pacAux.FechaNacimiento = DateTime.Parse(Nacimiento.Text);
-            pacAux.Genero = Genero.SelectedValue;
-            pacAux.obraSocial.ID = Convert.ToInt32(ObraSocial.SelectedValue.ToString());
-            pacAux.Domicilio = Domicilio.Text;
-            pacAux.Celular = Celular.Text;
-            pacAux.NroAfiliado = Afiliado.Text;
+            else
+            {
+                N_Paciente negocio = new N_Paciente();
+                Paciente pacAux = new Paciente();
 
-            pacAux.Usuario.Email = Email.Text;
-            pacAux.Usuario.Contrasena = "root";
+                pacAux.Nombre = Nombre.Text;
+                pacAux.Apellido = Apellido.Text;
+                pacAux.FechaNacimiento = DateTime.Parse(Nacimiento.Text);
+                pacAux.Genero = Genero.SelectedValue;
+                pacAux.obraSocial.ID = Convert.ToInt32(ObraSocial.SelectedValue.ToString());
+                pacAux.Domicilio = Domicilio.Text;
+                pacAux.Celular = Celular.Text;
+                pacAux.NroAfiliado = Afiliado.Text;
 
-            negocio.Cargar(pacAux);
-            Response.Redirect("A_Dashboard.aspx");
+                pacAux.Usuario.Email = Email.Text;
+                pacAux.Usuario.Contrasena = "root";
+
+                negocio.Cargar(pacAux);
+                Response.Redirect("A_Dashboard.aspx");
+            }
+
+            
         }
     }
 }
