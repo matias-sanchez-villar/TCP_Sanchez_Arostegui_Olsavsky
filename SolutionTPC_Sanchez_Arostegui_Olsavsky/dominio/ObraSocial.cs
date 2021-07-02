@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using dataAccess;
 
-namespace Dominio
+namespace dominio
 {
     public class ObraSocial
     {

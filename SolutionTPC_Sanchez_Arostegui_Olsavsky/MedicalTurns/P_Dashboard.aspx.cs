@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using dominio;
 using negocio;
-using System.Data.SqlClient;
 
 namespace MedicalTurns
 {
@@ -19,13 +18,6 @@ namespace MedicalTurns
         {
             try
             {
-                ///Listamos a medico
-                N_Medico medicoNegocio = new N_Medico();
-                listaMedicos = medicoNegocio.Listar();
-
-                Session.Add("Medicos", listaMedicos);
-
-
                 ///Listamos Paciente
                 N_Paciente paciente = new N_Paciente();
                 listaPaciente = paciente.Listar();
