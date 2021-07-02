@@ -12,7 +12,7 @@ namespace MedicalTurns
     public partial class P_Modificar : System.Web.UI.Page
     {
         public List<Paciente> lista;
-        public Paciente paciente;
+        public Paciente paciente = new Paciente();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -88,22 +88,21 @@ namespace MedicalTurns
             if (Page.IsValid)
             {
                 N_Paciente negocio = new N_Paciente();
-                Paciente pacAux = new Paciente();
 
-                pacAux.Nombre = Nombre.Text;
-                pacAux.Apellido = Apellido.Text;
-                pacAux.FechaNacimiento = DateTime.Parse(Nacimiento.Text);
-                pacAux.Genero = Genero.SelectedValue;
-                pacAux.obraSocial.ID = Convert.ToInt32(ObraSocial.SelectedValue.ToString());
-                pacAux.Domicilio = Domicilio.Text;
-                pacAux.Celular = Celular.Text;
-                pacAux.NroAfiliado = Afiliado.Text;
+                paciente.Nombre = Nombre.Text;
+                paciente.Apellido = Apellido.Text;
+                paciente.FechaNacimiento = DateTime.Parse(Nacimiento.Text);
+                paciente.Genero = Genero.SelectedValue;
+                paciente.obraSocial.ID = Convert.ToInt32(ObraSocial.SelectedValue.ToString());
+                paciente.Domicilio = Domicilio.Text;
+                paciente.Celular = Celular.Text;
+                paciente.NroAfiliado = Afiliado.Text;
 
-                pacAux.Usuario.Email = Email.Text;
-                pacAux.Usuario.Contrasena = "root";
+                paciente.Usuario.Email = Email.Text;
+                paciente.Usuario.Contrasena = Contrasena.Text;
 
-                negocio.Modificar(pacAux);
-                Response.Redirect("A_Dashboard.aspx");
+                negocio.Modificar(paciente);
+                Response.Redirect("P_Dashboard.aspx");
             }
         }
     }
