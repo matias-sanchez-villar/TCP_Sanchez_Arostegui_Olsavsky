@@ -7,7 +7,7 @@
 
            <div class="main-container">
 
-            <h2>CARGAR PACIENTE</h2>
+            <h2>MODIFICAR MEDICO</h2>
                <div class="container generic-form">
 
                <asp:TextBox ID="Nombre" placeholder="Name" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>

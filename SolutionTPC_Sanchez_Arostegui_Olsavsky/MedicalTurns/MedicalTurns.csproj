@@ -67,6 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="A_CargarEspecialidad.aspx" />
+    <Content Include="A_CargarMedico.aspx" />
+    <Content Include="A_CargarObraSocial.aspx" />
     <Content Include="A_CargarPaciente.aspx" />
     <Content Include="M_Modificar.aspx" />
     <Content Include="P_Dashboard.aspx" />
@@ -84,6 +87,27 @@
     <Content Include="A_Dashboard.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="A_CargarEspecialidad.aspx.cs">
+      <DependentUpon>A_CargarEspecialidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_CargarEspecialidad.aspx.designer.cs">
+      <DependentUpon>A_CargarEspecialidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A_CargarMedico.aspx.cs">
+      <DependentUpon>A_CargarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_CargarMedico.aspx.designer.cs">
+      <DependentUpon>A_CargarMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A_CargarObraSocial.aspx.cs">
+      <DependentUpon>A_CargarObraSocial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_CargarObraSocial.aspx.designer.cs">
+      <DependentUpon>A_CargarObraSocial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="A_CargarPaciente.aspx.cs">
       <DependentUpon>A_CargarPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
