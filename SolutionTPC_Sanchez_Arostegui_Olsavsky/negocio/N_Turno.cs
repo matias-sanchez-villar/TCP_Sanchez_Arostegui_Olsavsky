@@ -164,5 +164,32 @@ namespace negocio
         }
 
 
+        public void Modificar(Turno turno)
+        {
+            Datos = new DataAcces();
+            try
+            {
+                Datos.setearConsulta(" update Turnos set FechaHora = @FechaHora, IDMedico = @IDMedico, IDPaciente = @IDPaciente, Estado ID = @ID");
+
+                Datos.setearParametro("@FechaHora", turno.ID);
+                Datos.setearParametro("@FechaHora", turno.FechaHora);
+                Datos.setearParametro("@IDMedico", turno.medico.ID);
+                Datos.setearParametro("@IDPaciente", turno.paciente.ID);
+                Datos.setearParametro("@Estado", true);
+
+                Datos.ejecutarLectura();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
+
     }
 }

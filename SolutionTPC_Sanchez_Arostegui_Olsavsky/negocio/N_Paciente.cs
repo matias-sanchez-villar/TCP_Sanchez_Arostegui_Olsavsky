@@ -143,34 +143,43 @@ namespace negocio
             }
         }
 
-        //public void Modificar(Paciente paciente)
-        //{
-        //    Datos = new DataAcces();
-        //    try
-        //    {
-        //        Datos.setearConsulta("update Medicos set Nombre = @Nombre, Apellido = @Apellido, Domicilio = @Domicilio, EMail = @EMail, Contrasena = @Contrasena, Celular = @Celular, ObraSocial = @ObraSocial, NroAfiliado = @NroAfiliado where ID = @ID");
+        public void Modificar(Paciente paciente)
+        {
+            Datos = new DataAcces();
 
-        //        Datos.setearParametro("@ID", paciente.ID);
-        //        Datos.setearParametro("@Apellido", paciente.Apellido);
-        //        Datos.setearParametro("@Celular", paciente.Celular);
-        //        Datos.setearParametro("@Domicilio", paciente.Domicilio);
-        //        Datos.setearParametro("@Email", paciente.Email);
-        //        Datos.setearParametro("@ObraSocial", paciente.ObraSocial);
-        //        Datos.setearParametro("@FechaNacimiento", paciente.FechaNacimiento);
-        //        Datos.setearParametro("@NroAfiliado", paciente.NumeroAfiliado);
-        //        Datos.setearParametro("@Nombre", paciente.Nombre);
+            N_Usuario usuario = new N_Usuario();
 
-        //        Datos.EjecutarAccion();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        Datos.cerrarConexion();
-        //    }
-        //}
+            try
+            {
+                Datos.setearConsulta(" update Pacientes set Nombre = @Nombre, Apellido = @Apellido, Domicilio = @Domicilio, Celular = @Celular, FechaNacimiento = @FechaNacimiento, Genero = @Genero, NroAfiliado = @NroAfiliado, IDUsuario = @IDUsuario, IDObraSocial = @IDObraSocial where ID = @ID ");
+
+                Datos.setearParametro("@ID", paciente.ID);
+                Datos.setearParametro("@Nombre", paciente.Nombre);
+                Datos.setearParametro("@Apellido", paciente.Apellido);
+                Datos.setearParametro("@Domicilio", paciente.Domicilio);
+                Datos.setearParametro("@Celular", paciente.Celular);
+                Datos.setearParametro("@FechaNacimiento", paciente.FechaNacimiento);
+                Datos.setearParametro("@Genero", paciente.Genero);
+                Datos.setearParametro("@NroAfiliado", paciente.NroAfiliado);
+
+                usuario.Modificar(paciente.Usuario);
+
+                Datos.setearParametro("@IDUsuario", paciente.Usuario.ID);
+                Datos.setearParametro("@IDObraSocial", paciente.obraSocial.ID);
+
+                Datos.EjecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
 
         //public void Eliminar(int ID)
         //{

@@ -45,5 +45,28 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-    }
-}
+
+        public void Modificar(Especialidad especialidad)
+        {
+            datos = new DataAcces();
+
+            try
+            {
+                datos.setearConsulta(" update Especialidades set Especialidad = @Especialidad where ID = @ID  ");
+
+                datos.setearParametro("@ID", especialidad.ID);
+                datos.setearParametro("@Nombre", especialidad.Nombre);
+
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+            }
+        }

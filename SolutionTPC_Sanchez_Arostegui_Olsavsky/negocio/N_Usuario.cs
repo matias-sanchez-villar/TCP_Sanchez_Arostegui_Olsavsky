@@ -65,5 +65,30 @@ namespace negocio
             }
         }
 
+        public void Modificar(Usuario usuario)
+        {
+            Datos = new DataAcces();
+
+            try
+            {
+                Datos.setearConsulta(" update Usuarios set Email = @Email, Contasena = @Contasena, Estado = @Estado where ID = @ID )");
+
+                Datos.setearParametro("@ID", usuario.ID);
+                Datos.setearParametro("@Email", usuario.Email);
+                Datos.setearParametro("@Contasena", usuario.Contrasena);
+                Datos.setearParametro("@Estado", 1);
+
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
     }
 }
