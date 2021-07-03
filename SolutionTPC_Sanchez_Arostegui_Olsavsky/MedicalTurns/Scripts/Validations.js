@@ -1,24 +1,30 @@
 ﻿function validateForm() {
-    let nombre = document.getElementById("Nombre").value;
-
-    if (nombre === "" || nombre.length > 1) {
-        alert("Debe escribir un Nombre");
-        return false;
-    }
-
-}
-
-console.log(document.querySelector('#Nombre'));
+    var nombre = document.getElementById("Nombre").value;
+    var apellido = document.getElementById("Apellido").value;
+    var nacimiento = document.getElementById("Nacimiento").value;
+    const fecha = new Date(nacimiento); //+ " 00:00"
+    const hoy = new Date();
 
 
-function validateForm2() {
-    let nombre = document.getElementById("Nombre").value;
-    console.log(nombre);
     if (nombre === "" || nombre.length < 1) {
-
         alert("Debe escribir un Nombre");
         return false;
-
     }
-    return true
+    if (apellido === "" || apellido.length < 1) {
+        alert("Debe escribir un Apellido");
+        return false;
+    }
+    if (fecha > hoy) {
+        alert("Debe ingresar una fecha válida");
+        return false;
+    }
+
+
+    
+
+
 }
+
+//console.log(document.querySelector('#Nombre'));
+
+

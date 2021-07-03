@@ -23,13 +23,13 @@
                </asp:DropDownList>
 
                <asp:DropDownList ID="ObraSocial" runat="server" ClientIDMode="Static"></asp:DropDownList>
-               <asp:TextBox ID="Email" placeholder="Email" type="text" required MaxLength="250" runat="server" ClientIDMode="Static"></asp:TextBox>
+               <asp:TextBox ID="Email" placeholder="Email" type="email" required MaxLength="250" runat="server" ClientIDMode="Static"></asp:TextBox>
                <asp:TextBox ID="Domicilio" placeholder="Adress" type="text" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
                <asp:TextBox ID="Celular" placeholder="Phone" MaxLength="50" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
                <asp:TextBox ID="Afiliado" placeholder="Credential number" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
                
          
-               <asp:Button ID="BtnSubmit" OnClientClick="return validateForm2()" runat="server" Text="Create patient" type="submit" OnClick="BtnSubmit_Click" />        
+               <asp:Button ID="BtnSubmit" OnClientClick="return validateForm()" runat="server" Text="Create patient" type="submit" OnClick="BtnSubmit_Click" />        
             </div>
           </div>
 

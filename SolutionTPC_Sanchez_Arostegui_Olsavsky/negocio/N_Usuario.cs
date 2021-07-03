@@ -39,7 +39,7 @@ namespace negocio
         public int RetornarID(string Email)
         {
             Datos = new DataAcces();
-            int ID;
+            int ID=-1;                      
 
             try
             {
@@ -49,7 +49,10 @@ namespace negocio
 
                 Datos.ejecutarLectura();
 
-                ID = (int)Datos.Lector["ID"];
+                while (Datos.Lector.Read())                   ///CHEQUEAR ESTA PRUEBA DEL WHILE 
+                {
+                    ID = (int)Datos.Lector["ID"];
+                }
                 
                 Datos.cerrarConexion();
                 return ID ;
