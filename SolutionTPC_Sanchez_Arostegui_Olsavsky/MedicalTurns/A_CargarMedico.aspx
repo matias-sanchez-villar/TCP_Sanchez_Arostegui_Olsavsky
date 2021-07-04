@@ -3,67 +3,39 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-
-
      <body>
 
-           <div class="main-container">
+         <div class="main-container">
 
-            <h2>CARGAR PACIENTE</h2>
-               <div class="container generic-form">
+             <div class="form-container">
+                 <h2>UPLOAD DOCTOR</h2>
 
-               <asp:TextBox ID="Nombre" placeholder="Name" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Apellido" placeholder="Second name" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Nacimiento" placeholder="Birth date" type="date" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:DropDownList ID="Genero" runat="server" ClientIDMode="Static">
-                    <asp:listitem text="M" value="M"></asp:listitem>
-                    <asp:listitem text="F" value="F"></asp:listitem>
-                    <asp:listitem text="O" value="O"></asp:listitem>
-               </asp:DropDownList>
+                 <div class="generic-form row contanier">
 
-               <asp:DropDownList ID="ObraSocial" runat="server" ClientIDMode="Static"></asp:DropDownList>
-               <asp:TextBox ID="Email" placeholder="Email" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Domicilio" placeholder="Adress" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Celular" placeholder="Phone" MaxLength="50" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Afiliado" placeholder="Credential number" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               
-         
-               <asp:Button ID="BtnSubmit" OnClientClick="return patientValidations()" runat="server" Text="Create patient" type="submit" OnClick="BtnSubmit_Click" />        
-            </div>
-          </div>
+                     <asp:TextBox ID="TextBox8" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Name" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                     <asp:TextBox ID="TextBox9" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Second name" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                     <asp:TextBox ID="TextBox10" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Birth date" type="date" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                     <asp:DropDownList ID="DropDownList3" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" runat="server" ClientIDMode="Static">
+                         <asp:ListItem Text="M" Value="M"></asp:ListItem>
+                         <asp:ListItem Text="F" Value="F"></asp:ListItem>
+                         <asp:ListItem Text="O" Value="O"></asp:ListItem>
+                     </asp:DropDownList>
 
-        </body>
-       
-</asp:Content> <body>
+                     <asp:TextBox ID="TextBox11" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Email" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                     <asp:TextBox ID="TextBox12" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Adress" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                     <asp:TextBox ID="TextBox13" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Phone" MaxLength="50" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                     <asp:TextBox ID="TextBox14" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Registration number" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                     <div class="m-auto col-sm-12 col-md-4 col-lg-3 p-1"></div>
 
-           <div class="main-container">
+                     <asp:Button ID="BtnSubmit" CssClass="col-sm-8 col-md-3 mt-3 m-auto" OnClientClick="return patientValidations()" runat="server" Text="Create medic" type="submit" OnClick="BtnSubmit_Click" />
 
-            <h2>CARGAR MEDICO</h2>
-               <div class="container generic-form">
 
-               <asp:TextBox ID="TextBox1" placeholder="Name" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="TextBox2" placeholder="Second name" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="TextBox3" placeholder="Birth date" type="date" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:DropDownList ID="DropDownList1" runat="server" ClientIDMode="Static">
-                    <asp:listitem text="M" value="M"></asp:listitem>
-                    <asp:listitem text="F" value="F"></asp:listitem>
-                    <asp:listitem text="O" value="O"></asp:listitem>
-               </asp:DropDownList>
+                 </div>
+             </div>
 
-               <asp:DropDownList ID="DropDownList2" runat="server" ClientIDMode="Static"></asp:DropDownList>
-               <asp:TextBox ID="TextBox4" placeholder="Email" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="TextBox5" placeholder="Adress" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="TextBox6" placeholder="Phone" MaxLength="50" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="TextBox7" placeholder="Matricula number" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               
-         
-               <asp:Button ID="Button1" OnClientClick="return patientValidations()" runat="server" Text="Create patient" type="submit" OnClick="BtnSubmit_Click" />        
-            
-                   <asp:Button ID="Button2" runat="server" Text="Button" />
-               </div>
-          </div>
+         </div>
 
         </body>
        
-</asp:Content>
+</asp:Content> 
+

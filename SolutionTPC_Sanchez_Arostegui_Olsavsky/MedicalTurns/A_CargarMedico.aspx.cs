@@ -13,5 +13,10 @@ namespace MedicalTurns
         {
 
         }
+
+        protected void BtnSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

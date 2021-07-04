@@ -2,3 +2,9 @@
 th{
     width: 33%;
 }
+
+.main-container{
+    width: 100%;
+    display: flex;
+    border: 2px solid red;
+}

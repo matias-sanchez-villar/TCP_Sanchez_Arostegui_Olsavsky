@@ -52,9 +52,6 @@ ul > li, li{
     cursor: pointer;
 }
 
-.main-container {
-    margin-left: 5rem;
-}
 /*-------------------------------- ESTILOS DE SELECTORES --------------------------------*/
 .navbar {
     position: fixed;

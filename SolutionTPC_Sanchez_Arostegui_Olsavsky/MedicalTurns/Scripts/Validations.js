@@ -1,4 +1,7 @@
-﻿function validateForm() {
+﻿
+
+
+function validateForm() {
     var nombre = document.getElementById("Nombre").value;
     var apellido = document.getElementById("Apellido").value;
     var nacimiento = document.getElementById("Nacimiento").value;
@@ -19,12 +22,6 @@
         return false;
     }
 
-
-    
-
-
 }
-
-//console.log(document.querySelector('#Nombre'));
 
 
