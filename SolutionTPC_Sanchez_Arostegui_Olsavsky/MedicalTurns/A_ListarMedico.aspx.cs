@@ -9,19 +9,19 @@ using negocio;
 
 namespace MedicalTurns
 {
-    public partial class Dashboard : System.Web.UI.Page
+    public partial class A_ListarMedico : System.Web.UI.Page
     {
-        public List<Paciente> listaPaciente;
+        public List<Medico> lista;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             try
             {
-                ///Listamos Paciente
-                N_Paciente paciente = new N_Paciente();
-                listaPaciente = paciente.Listar();
+                N_Medico medico = new N_Medico();
+                lista = medico.Listar();
 
-                Session.Add("Paciente", listaPaciente);
+                Session.Add("Medico", lista);
 
             }
             catch (Exception ex)
@@ -29,7 +29,7 @@ namespace MedicalTurns
                 ex.Message.ToString();
                 //Response.Redirect("Dashboard.aspx");
             }
-        }
 
+        }
     }
 }

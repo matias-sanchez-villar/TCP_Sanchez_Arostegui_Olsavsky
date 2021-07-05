@@ -17,6 +17,8 @@ namespace MedicalTurns
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            ListarMedico();
+
         }
 
         public void ListarMedico()
@@ -24,13 +26,21 @@ namespace MedicalTurns
             try
             {
 
-                if (!string.IsNullOrEmpty(Request.QueryString["ID"]) && Session["Medico"] == null)
+                if (!(string.IsNullOrEmpty(Request.QueryString["ID"])) && Session["Medico"] != null)
                 {
                     int ID = int.Parse(Request.QueryString["ID"]);
 
                     lista = (List<Medico>)Session["Pacientes"];
 
                     medico = lista.Find(x => x.ID == ID);
+
+                    Nombre.Text = medico.Nombre;
+                    Apellido.Text = medico.Apellido;
+                    Nacimiento.Text = String.Format("{0:yyyy-MM-dd}", medico.FechaNacimiento);
+                    Email.Text = medico.Usuario.Email;
+                    Domicilio.Text = medico.Domicilio;
+                    Celular.Text = medico.Celular;
+                    Matricula.Text = medico.Matricula;
 
                     listarEspecialidades();
                 }

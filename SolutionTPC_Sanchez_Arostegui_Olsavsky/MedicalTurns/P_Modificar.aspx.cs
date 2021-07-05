@@ -26,13 +26,22 @@ namespace MedicalTurns
             try
             {
 
-                if (!string.IsNullOrEmpty(Request.QueryString["ID"]) && Session["Pacientes"] == null)
+                if (!(string.IsNullOrEmpty(Request.QueryString["ID"])) && Session["Paciente"] != null)
                 {
                     int ID = int.Parse(Request.QueryString["ID"]);
 
-                    lista = (List<Paciente>)Session["Pacientes"];
+                    lista = (List<Paciente>)Session["Paciente"];
 
                     paciente = lista.Find(x => x.ID == ID);
+
+                    Nombre.Text = paciente.Nombre;
+                    Apellido.Text = paciente.Apellido;
+                    Nacimiento.Text = String.Format("{0:yyyy-MM-dd}", paciente.FechaNacimiento);
+                    Email.Text = paciente.Usuario.Email;
+                    Domicilio.Text = paciente.Domicilio;
+                    Celular.Text = paciente.Celular;
+                    Afiliado.Text = paciente.NroAfiliado;
+
 
                     listarObrasSociales();
                 }
