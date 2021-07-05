@@ -26,29 +26,8 @@
         <%-- 2 o 4 trajetas con informacion --%>
 
         <%-- Traer turnos del paciente --%>
-        <section class="container">
-                <table  id="data-table" style="width: 100%;">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>N° Matrícula</th>
-                            <th>ID Especialidad</th>
-                            <th>Mail</th>
-                        </tr>
-                    </thead>
 
-                  <% foreach (dominio.Paciente item in listaPaciente){ %>
 
-                        <tr>
-                            <td><% = item.Apellido %>,<% = item.Nombre %></td>
-                            <td><% = String.Format("{0:yyyy-MM-dd}", item.FechaNacimiento) %></td>
-                            <td><% = item.Usuario.Email %></td>
-                            <td><a href="P_Modificar.aspx?ID=<% = item.ID %>">Modificar</a></td>
-                        </tr>
-
-                    <% } %>
-
-                </table>
         </section>
 
     </div>

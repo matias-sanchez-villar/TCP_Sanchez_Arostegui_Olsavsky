@@ -46,7 +46,7 @@ namespace MedicalTurns
                 }
                 else
                 {
-                    Response.Redirect("P_Dashboard.aspx");
+                    Response.Redirect("A_Dashboard.aspx");
                 }
 
             }
@@ -107,7 +107,7 @@ namespace MedicalTurns
                 paciente.NroAfiliado = Afiliado.Text;
 
                 paciente.Usuario.Email = Email.Text;
-                paciente.Usuario.Contrasena = Contrasena.Text;
+                //paciente.Usuario.Contrasena = Contrasena.Text;
 
                 negocio.Modificar(paciente);
                 Response.Redirect("P_Dashboard.aspx");

@@ -10,7 +10,7 @@
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" runat="server" href="Styles/Master.css" />
     <link href="Styles/bootstrap-grid.css" rel="stylesheet" />
-    <link href="Styles/DasboardDef.css" rel="stylesheet" />
+    <link href="Styles/Generic_dashboard.css" rel="stylesheet" />
     <link href="Styles/Forms.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" /> 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -91,13 +91,14 @@
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>  
 
-<%--        <script>
+        <script>
             $(document).ready(function () {
 
                 $('#data-table').DataTable({});
+                $('#data-table2').DataTable({});
 
             });
-        </script>--%>
+        </script>
 
     </body>
 
