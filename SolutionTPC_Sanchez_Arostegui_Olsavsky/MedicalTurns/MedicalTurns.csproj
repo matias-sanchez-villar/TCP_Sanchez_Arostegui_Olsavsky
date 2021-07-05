@@ -73,6 +73,8 @@
     <Content Include="A_CargarPaciente.aspx" />
     <Content Include="A_ListarMedico.aspx" />
     <Content Include="A_ListarPacientes.aspx" />
+    <Content Include="A_ModificarMedico.aspx" />
+    <Content Include="A_ModificarPaciente.aspx" />
     <Content Include="M_Modificar.aspx" />
     <Content Include="P_Dashboard.aspx" />
     <Content Include="Login.aspx" />
@@ -131,6 +133,20 @@
     </Compile>
     <Compile Include="A_ListarPacientes.aspx.designer.cs">
       <DependentUpon>A_ListarPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A_ModificarMedico.aspx.cs">
+      <DependentUpon>A_ModificarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_ModificarMedico.aspx.designer.cs">
+      <DependentUpon>A_ModificarMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A_ModificarPaciente.aspx.cs">
+      <DependentUpon>A_ModificarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_ModificarPaciente.aspx.designer.cs">
+      <DependentUpon>A_ModificarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="A_Structure.Master.cs">
       <DependentUpon>A_Structure.Master</DependentUpon>
