@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/A_Structure.Master" AutoEventWireup="true" CodeBehind="A_ModificarMedico.aspx.cs" Inherits="MedicalTurns.A_ModificarMedico" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/A_Structure.Master" AutoEventWireup="true" CodeBehind="A_ModificarMedico.aspx.cs" Inherits="MedicalTurns.A_ModificarMedico" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -21,7 +21,7 @@
 
                <asp:DropDownList ID="Especialidad" runat="server" ClientIDMode="Static"></asp:DropDownList>
                <asp:TextBox ID="Email" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Contrasena" placeholder="Contaseña" MaxLength="30" runat="server" required ClientIDMode="Static"></asp:TextBox>
+               <asp:TextBox ID="Contrasena" placeholder="Contaseña" MaxLength="30" runat="server" ClientIDMode="Static"></asp:TextBox>
                <asp:TextBox ID="Domicilio" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
                <asp:TextBox ID="Celular" MaxLength="50" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
                <asp:TextBox ID="Matricula" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>

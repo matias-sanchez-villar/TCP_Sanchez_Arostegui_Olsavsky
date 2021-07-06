@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/A_Structure.Master" AutoEventWireup="true" CodeBehind="A_Dashboard.aspx.cs" Inherits="MedicalTurns.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/A_Structure.Master" AutoEventWireup="true" CodeBehind="A_Dashboard.aspx.cs" Inherits="MedicalTurns.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
@@ -62,7 +62,7 @@
                             <td><% = String.Format("{0:yyyy-MM-dd}", item.FechaNacimiento) %></td>
                             <td><% = item.Usuario.Email %></td>
                             <td>
-                                <a href="A_ModificarPaciente.aspx?ID=<% = item.ID %>&IDUsuario=<% = item.Usuario.ID %>"><i class="far fa-edit"></i></a>
+                                <a href="A_ModificarPaciente.aspx?ID=<% = item.ID %>"><i class="far fa-edit"></i></a>
                                 <a href="A_EliminarPaciente.aspx?ID=<% = item.ID %>"><i class="fas fa-trash-alt"></i></a>
 
                             </td>

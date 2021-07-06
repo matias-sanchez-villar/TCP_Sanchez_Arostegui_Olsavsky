@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/M_Structure.Master" AutoEventWireup="true" CodeBehind="M_Modificar.aspx.cs" Inherits="MedicalTurns.M_Modificar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Medico/M_Structure.Master" AutoEventWireup="true" CodeBehind="M_Modificar.aspx.cs" Inherits="MedicalTurns.M_Modificar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
