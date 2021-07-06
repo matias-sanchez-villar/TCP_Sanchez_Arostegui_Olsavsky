@@ -19,11 +19,14 @@ namespace MedicalTurns
         {
             try
             {
+                EliminarPaciente();
+                EliminarMedico();
+
                 ///Listamos a medico
                 N_Medico medicoNegocio = new N_Medico();
                 listaMedicos = medicoNegocio.Listar();
 
-                Session.Add("Medicos", listaMedicos);
+                Session.Add("Medico", listaMedicos);
 
 
                 ///Listamos Paciente
@@ -39,5 +42,62 @@ namespace MedicalTurns
                 //Response.Redirect("Dashboard.aspx");
             }
         }
+
+        protected void EliminarMedico()
+        {
+            List<Medico> lista;
+            Medico medico = new Medico();
+            N_Medico negocio = new N_Medico();
+
+            try
+            {
+
+                if (!(string.IsNullOrEmpty(Request.QueryString["IDMedico"])) && Session["Medico"] != null)
+                {
+                    int ID = int.Parse(Request.QueryString["IDMedico"]);
+
+                    lista = (List<Medico>)Session["Paciente"];
+
+                    medico = lista.Find(x => x.ID == ID);
+
+                    negocio.eliminar(medico);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void EliminarPaciente()
+        {
+            List<Paciente> lista;
+            Paciente paciente = new Paciente();
+            N_Paciente negocio = new N_Paciente();
+
+            try
+            {
+
+                if (!(string.IsNullOrEmpty(Request.QueryString["IDPaciente"])) && Session["Paciente"] != null)
+                {
+                    int ID = int.Parse(Request.QueryString["IDPaciente"]);
+
+                    lista = (List<Paciente>)Session["Paciente"];
+
+                    paciente = lista.Find(x => x.ID == ID);
+
+                    negocio.eliminar(paciente);
+                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

@@ -79,7 +79,7 @@ namespace negocio
                 Datos.setearParametro("@ID", usuario.ID);
                 Datos.setearParametro("@Email", usuario.Email);
                 Datos.setearParametro("@Contasena", usuario.Contrasena);
-                Datos.setearParametro("@Estado", 1);
+                Datos.setearParametro("@Estado", usuario.Estado);
 
                 Datos.EjecutarAccion();
             }

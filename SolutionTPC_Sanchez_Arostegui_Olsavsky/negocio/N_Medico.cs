@@ -149,6 +149,7 @@ namespace negocio
 
                 Datos.setearConsulta(" update Medicos set Nombre = @Nombre, Apellido = @Apellido, Domicilio = @Domicilio, Celular = @Celular, FechaNacimiento = @FechaNacimiento, Genero = @Genero, Matricula = @Matricula, IDEspecialidad = @IDEspecialidad where ID = @ID ");
 
+                Datos.setearParametro("@ID", medico.ID);
                 Datos.setearParametro("@Nombre", medico.Nombre);
                 Datos.setearParametro("@Apellido", medico.Apellido);
                 Datos.setearParametro("@Domicilio", medico.Domicilio);
@@ -161,8 +162,6 @@ namespace negocio
 
                 Datos.setearParametro("@IDEspecialidad", medico.especialidad.ID);
 
-                Datos.setearParametro("@ID", medico.ID);
-
                 Datos.EjecutarAccion();
 
             }
@@ -173,6 +172,22 @@ namespace negocio
             finally
             {
                 Datos.cerrarConexion();
+            }
+        }
+
+        public void eliminar(Medico medico)
+        {
+            try
+            {
+                N_Usuario usuario = new N_Usuario();
+
+                medico.Usuario.Estado = false;
+
+                usuario.Modificar(medico.Usuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 

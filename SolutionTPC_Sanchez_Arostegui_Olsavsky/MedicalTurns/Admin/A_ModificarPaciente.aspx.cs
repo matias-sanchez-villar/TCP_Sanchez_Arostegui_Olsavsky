@@ -112,6 +112,7 @@ namespace MedicalTurns
                 paciente.Celular = Celular.Text;
                 paciente.NroAfiliado = Afiliado.Text;
                 paciente.Usuario.Email = Email.Text;
+
                 if (Contrasena.Text != null)
                 {
                     paciente.Usuario.Contrasena = Contrasena.Text;

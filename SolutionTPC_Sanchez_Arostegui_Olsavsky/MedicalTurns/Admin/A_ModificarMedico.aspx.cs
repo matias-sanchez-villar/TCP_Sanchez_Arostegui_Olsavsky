@@ -17,7 +17,10 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ListarMedico();
+            if (!IsPostBack)
+            {
+                ListarMedico();
+            }
         }
 
         public void ListarMedico()
@@ -104,9 +107,12 @@ namespace MedicalTurns
                 medico.Domicilio = Domicilio.Text;
                 medico.Celular = Celular.Text;
                 medico.Matricula = Matricula.Text;
-
                 medico.Usuario.Email = Email.Text;
-                medico.Usuario.Contrasena = Contrasena.Text;
+
+                if (Contrasena.Text != null)
+                {
+                    medico.Usuario.Contrasena = Contrasena.Text;
+                }
 
                 negocio.Modificar(medico);
                 Response.Redirect("P_Dashboard.aspx");

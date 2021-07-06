@@ -165,9 +165,7 @@ namespace negocio
                 Datos.setearParametro("@NroAfiliado", paciente.NroAfiliado);
 
                 usuario.Modificar(paciente.Usuario);
-                paciente.Usuario.ID = usuario.RetornarID(paciente.Usuario.Email);
 
-                Datos.setearParametro("@IDUsuario", paciente.Usuario.ID);
                 Datos.setearParametro("@IDObraSocial", paciente.obraSocial.ID);
 
                 Datos.EjecutarAccion();
@@ -183,26 +181,22 @@ namespace negocio
             }
         }
 
-        //public void Eliminar(int ID)
-        //{
-        //    Datos = new DataAcces();
-        //    try
-        //    {
-        //        Datos.setearConsulta("update Paciente set Estado = @Estado where ID = @ID");
+        public void eliminar(Paciente paciente)
+        {
+            try
+            {
+                N_Usuario usuario = new N_Usuario();
 
-        //        Datos.setearParametro("@ID", ID);
-        //        Datos.setearParametro("@Estado", false);
+                paciente.Usuario.Estado = false;
 
-        //        Datos.EjecutarAccion();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        Datos.cerrarConexion();
-        //    }
-        //}
+                usuario.Modificar(paciente.Usuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }
