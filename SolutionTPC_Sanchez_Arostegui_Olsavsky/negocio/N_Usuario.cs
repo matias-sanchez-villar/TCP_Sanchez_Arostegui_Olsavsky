@@ -74,7 +74,7 @@ namespace negocio
 
             try
             {
-                Datos.setearConsulta(" update Usuarios set Email = @Email, Contasena = @Contasena, Estado = @Estado where ID = @ID )");
+                Datos.setearConsulta(" update Usuarios set Email = @Email, Contasena = @Contasena, Estado = @Estado where ID = @ID ");
 
                 Datos.setearParametro("@ID", usuario.ID);
                 Datos.setearParametro("@Email", usuario.Email);

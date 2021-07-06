@@ -14,10 +14,13 @@ namespace MedicalTurns
 
         public List<Paciente> lista;
         public Paciente paciente = new Paciente();
-       
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            ListarPaciente();
+            if (!IsPostBack)
+            {
+                ListarPaciente();
+            }
         }
 
         public void ListarPaciente()
@@ -33,6 +36,7 @@ namespace MedicalTurns
 
                     paciente = lista.Find(x => x.ID == ID);
 
+                    
                     Nombre.Text = paciente.Nombre;
                     Apellido.Text = paciente.Apellido;
                     Nacimiento.Text = String.Format("{0:yyyy-MM-dd}", paciente.FechaNacimiento);
@@ -91,7 +95,9 @@ namespace MedicalTurns
 
         protected void BtnModificar_Click(object sender, EventArgs e)
         {
-            Page.Validate();
+
+            /*COMENTO ESTO QUE ESTABA ANTES
+             * Page.Validate();
 
             if (Page.IsValid)
             {
@@ -111,7 +117,36 @@ namespace MedicalTurns
 
                 negocio.Modificar(paciente);
                 Response.Redirect("P_Dashboard.aspx");
+            
+            }*/
+
+            Page.Validate();
+            if (!Page.IsValid) return;
+
+            else
+            {
+                N_Paciente negocio = new N_Paciente();
+                Paciente pacAux = new Paciente();
+
+                pacAux.ID = int.Parse(Request.QueryString["ID"]);
+                pacAux.Nombre = Nombre.Text;
+                pacAux.Apellido = Apellido.Text;
+                pacAux.FechaNacimiento = DateTime.Parse(Nacimiento.Text);
+                pacAux.Genero = Genero.SelectedValue;
+                pacAux.obraSocial.ID = Convert.ToInt32(ObraSocial.SelectedValue.ToString());
+                pacAux.Domicilio = Domicilio.Text;
+                pacAux.Celular = Celular.Text;
+                pacAux.NroAfiliado = Afiliado.Text;
+                pacAux.Usuario.ID = int.Parse(Request.QueryString["IDUsuario"]);
+                pacAux.Usuario.Email = Email.Text;
+                pacAux.Usuario.Contrasena = "root";
+                
+                
+
+                negocio.Modificar(pacAux);
+                Response.Redirect("A_Dashboard.aspx");
             }
+
         }
     }
 }

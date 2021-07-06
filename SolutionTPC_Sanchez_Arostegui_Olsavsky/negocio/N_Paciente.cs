@@ -21,7 +21,7 @@ namespace negocio
             try
             {
 
-                string Select = " select p.ID, p.Nombre, p.Apellido, p.FechaNacimiento, p.Domicilio, p.Celular, p.Genero, p.NroAfiliado, o.ObraSocial, u.Email ";
+                string Select = " select p.ID, p.Nombre, p.Apellido, p.FechaNacimiento, p.Domicilio, p.Celular, p.Genero, p.NroAfiliado, o.ObraSocial, u.Email, u.ID as IDUsuario, o.ID as IDObraSocial ";
                 string From = " from Pacientes p ";
                 string JoinU = " inner join Usuarios u on u.ID = p.IDUsuario ";
                 string JoinE = " inner join ObrasSociales o on o.ID = p.IDObraSocial ";
@@ -45,7 +45,9 @@ namespace negocio
                     paciente.Genero = (string)Datos.Lector["Genero"];
                     paciente.NroAfiliado = (string)Datos.Lector["NroAfiliado"];
                     paciente.obraSocial.Nombre = (string)Datos.Lector["ObraSocial"];
+                    paciente.obraSocial.ID = (int)Datos.Lector["IDObraSocial"];
                     paciente.Usuario.Email = (string)Datos.Lector["Email"];
+                    paciente.Usuario.ID = (int)Datos.Lector["IDUsuario"];
 
                     Lista.Add(paciente);
                 }
@@ -163,7 +165,9 @@ namespace negocio
                 Datos.setearParametro("@NroAfiliado", paciente.NroAfiliado);
 
                 usuario.Modificar(paciente.Usuario);
+                paciente.Usuario.ID = usuario.RetornarID(paciente.Usuario.Email);
 
+                Datos.setearParametro("@IDUsuario", paciente.Usuario.ID);
                 Datos.setearParametro("@IDObraSocial", paciente.obraSocial.ID);
 
                 Datos.EjecutarAccion();

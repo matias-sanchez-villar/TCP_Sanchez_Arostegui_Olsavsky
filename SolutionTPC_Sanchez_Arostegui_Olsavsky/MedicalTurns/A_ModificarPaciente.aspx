@@ -12,6 +12,7 @@
 
                     <div class="generic-form row contanier">
 
+                        
                         <asp:TextBox CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" ID="Nombre" placeholder="Name" type="text" required MaxLength="100" runat="server" ClientIDMode="Static"></asp:TextBox>
                         <asp:TextBox ID="Apellido" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Second name" MaxLength="100" type="text" runat="server" required ClientIDMode="Static"></asp:TextBox>
                         <asp:TextBox ID="Nacimiento" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Birth date" type="date" runat="server" ClientIDMode="Static"></asp:TextBox>
@@ -27,7 +28,7 @@
                         <asp:TextBox ID="Celular" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Phone" MaxLength="50" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
                         <asp:TextBox ID="Afiliado" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Credential number" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
 
-                        <asp:Button ID="BtnModificar" CssClass="col-sm-8 col-md-4 m-auto mt-3" runat="server" Text="Modificar" OnClientClick="return patientValidations()" type="submit" OnClick="BtnModificar_Click"/>     
+                        <asp:Button ID="BtnModificar" CssClass="col-sm-8 col-md-4 m-auto mt-3" runat="server" Text="Modificar" OnClientClick="return validateForm()" type="submit" OnClick="BtnModificar_Click"/>     
 
                     </div>
                 </div>
