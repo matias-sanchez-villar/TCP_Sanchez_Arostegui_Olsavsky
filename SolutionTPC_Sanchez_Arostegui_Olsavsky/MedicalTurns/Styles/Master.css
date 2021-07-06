@@ -29,11 +29,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    background: #1e1e24;
+    background: var(--main-white);
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #6649b8;
+    background: var(--accent-violet);
 }
 
 a, a:visited{

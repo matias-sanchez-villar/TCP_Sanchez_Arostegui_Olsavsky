@@ -4,8 +4,9 @@
     "\\SolutionTPC_Sanchez_Arostegui_Olsavsky",
     "\\SolutionTPC_Sanchez_Arostegui_Olsavsky\\dominio",
     "\\SolutionTPC_Sanchez_Arostegui_Olsavsky\\MedicalTurns",
+    "\\SolutionTPC_Sanchez_Arostegui_Olsavsky\\MedicalTurns\\Admin",
     "\\SolutionTPC_Sanchez_Arostegui_Olsavsky\\negocio"
   ],
-  "SelectedNode": "\\SolutionTPC_Sanchez_Arostegui_Olsavsky\\negocio\\N_Usuario.cs",
+  "SelectedNode": "\\SolutionTPC_Sanchez_Arostegui_Olsavsky\\MedicalTurns\\Admin\\A_Dashboard.aspx.cs",
   "PreviewInSolutionExplorer": false
 }

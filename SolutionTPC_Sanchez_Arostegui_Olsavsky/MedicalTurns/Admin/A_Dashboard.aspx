@@ -18,14 +18,20 @@
         <%-- 2 o 4 trajetas con informacion --%>
 
 
-        <section class="container table-container">
+        <section class="table-container">
+
+            <div class="table-title-container">
+                <h3>Doctors</h3>
+                <hr />
+            </div>
+
                 <table  id="data-table" style="width: 100%;">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>N° Matrícula</th>
-                            <th>ID Especialidad</th>
-                            <th>Mail</th>
+                            <th>Name</th>
+                            <th>Certification number</th>
+                            <th>Specialty</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
 
@@ -46,14 +52,20 @@
                 </table>
         </section>
 
-        <section class="container table-container">
+        <section class="table-container">
+
+            <div class="table-title-container">
+                <h3>Patients</h3>
+                <hr />
+            </div>
+
 
                 <table  id="data-table2" style="width: 100%;">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>N° Matrícula</th>
-                            <th>ID Especialidad</th>
+                            <th>Name</th>
+                            <th>Birth date</th>
+                            <th>Email</th>
                             <th>Actions</th>
                         </tr>
                     </thead>

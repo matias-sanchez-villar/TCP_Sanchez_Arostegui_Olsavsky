@@ -1,15 +1,59 @@
-﻿
+﻿@import 'Styles/Master.css';
+
 th{
     width: 33%;
 }
 
-.main-container{
-    width: 100%;
+.main-container {
     display: flex;
-    border: 2px solid red;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 90%;
+    gap: 35px;
+    margin-block: 50px;
+    gap: 50px;
 }
 
-.table-container{
+
+.table-container {
     min-height: 500px;
-    border: 2px solid red;
+    width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--main-white);
+    box-shadow: 0px 0px 20px var(--main-gray);
+}
+
+
+.table-title-container{
+    /*padding: 15px;*/
+    margin-bottom: 25px;
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+#data-table_filter, #data-table_length {
+    margin-bottom: 20px;
+}
+
+.odd {
+    background-color: #FFF !important;
+    transition: all 400ms ease-out;
+}
+
+.even {
+    background-color: var(--main-white) !important;
+    transition: all 200ms ease-out;
+}
+
+td{
+    text-align: center;
+    cursor: pointer;
+}
+
+.odd:hover, .even:hover {
+    transition: all 200ms ease-in;
+    transform: scale(1.01);
 }

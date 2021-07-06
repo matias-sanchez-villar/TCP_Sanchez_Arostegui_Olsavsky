@@ -12,9 +12,12 @@ namespace MedicalTurns
     public partial class A_CargarPaciente : System.Web.UI.Page
     {
         public List<ObraSocial> listaObrasSociales;
+        public List<Paciente> listaPaciente;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Lista las obras sociales adentro del cargador combo box
             N_ObraSocial aux = new N_ObraSocial();
             listaObrasSociales = aux.listar();
 
@@ -25,10 +28,17 @@ namespace MedicalTurns
                 ListItem listItemAux = new ListItem(nombreAux, valueAux);
                 ObraSocial.Items.Add(listItemAux);
             }
+
+            N_Paciente paciente = new N_Paciente();
+            listaPaciente = paciente.Listar();
+
+            Session.Add("Paciente", listaPaciente);
+
         }
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
+            // Hace el upload del paciente a la base de datos
             Page.Validate();
             if (!Page.IsValid) return;
 
@@ -51,9 +61,35 @@ namespace MedicalTurns
 
                 negocio.Cargar(pacAux);
                 Response.Redirect("A_Dashboard.aspx");
-            }
+            }            
+        }
 
-            
+        protected void EliminarPaciente()
+        {
+            List<Paciente> lista;
+            Paciente paciente = new Paciente();
+            N_Paciente negocio = new N_Paciente();
+
+            try
+            {
+
+                if (!(string.IsNullOrEmpty(Request.QueryString["IDPaciente"])) && Session["Paciente"] != null)
+                {
+                    int ID = int.Parse(Request.QueryString["IDPaciente"]);
+
+                    lista = (List<Paciente>)Session["Paciente"];
+
+                    paciente = lista.Find(x => x.ID == ID);
+
+                    negocio.eliminar(paciente);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
