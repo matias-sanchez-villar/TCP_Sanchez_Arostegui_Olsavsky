@@ -17,7 +17,10 @@ namespace MedicalTurns
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            ListarPaciente();
+            if (!IsPostBack)
+            {
+                ListarPaciente();
+            }
 
         }
 
@@ -34,6 +37,7 @@ namespace MedicalTurns
 
                     paciente = lista.Find(x => x.ID == ID);
 
+
                     Nombre.Text = paciente.Nombre;
                     Apellido.Text = paciente.Apellido;
                     Nacimiento.Text = String.Format("{0:yyyy-MM-dd}", paciente.FechaNacimiento);
@@ -47,7 +51,7 @@ namespace MedicalTurns
                 }
                 else
                 {
-                    Response.Redirect("P_Dashboard.aspx");
+                    Response.Redirect("A_Dashboard.aspx");
                 }
 
             }
@@ -93,11 +97,13 @@ namespace MedicalTurns
         protected void BtnModificar_Click(object sender, EventArgs e)
         {
             Page.Validate();
+            if (!Page.IsValid) return;
 
-            if (Page.IsValid)
+            else
             {
                 N_Paciente negocio = new N_Paciente();
 
+                paciente.ID = int.Parse(Request.QueryString["ID"]);
                 paciente.Nombre = Nombre.Text;
                 paciente.Apellido = Apellido.Text;
                 paciente.FechaNacimiento = DateTime.Parse(Nacimiento.Text);
@@ -106,13 +112,19 @@ namespace MedicalTurns
                 paciente.Domicilio = Domicilio.Text;
                 paciente.Celular = Celular.Text;
                 paciente.NroAfiliado = Afiliado.Text;
-
                 paciente.Usuario.Email = Email.Text;
-                paciente.Usuario.Contrasena = Contrasena.Text;
+
+                if (Contrasena.Text != null)
+                {
+                    paciente.Usuario.Contrasena = Contrasena.Text;
+                }
 
                 negocio.Modificar(paciente);
-                Response.Redirect("P_Dashboard.aspx");
+                Response.Redirect("A_Dashboard.aspx");
             }
         }
+
+
+
     }
 }

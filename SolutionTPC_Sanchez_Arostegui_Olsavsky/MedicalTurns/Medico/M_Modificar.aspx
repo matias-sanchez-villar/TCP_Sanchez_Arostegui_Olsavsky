@@ -5,32 +5,37 @@
 
     <body>
 
-           <div class="main-container">
+             <div class="main-container">
 
-            <h2>MODIFICAR MEDICO</h2>
-               <div class="container generic-form">
+                <div class="form-container">
+                    <h2>MODIFICAR MEDICO</h2>
 
-               <asp:TextBox ID="Nombre" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Apellido" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Nacimiento" type="date" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:DropDownList ID="Genero" runat="server" ClientIDMode="Static">
-                    <asp:listitem text="M" value="M"></asp:listitem>
-                    <asp:listitem text="F" value="F"></asp:listitem>
-                    <asp:listitem text="O" value="O"></asp:listitem>
-               </asp:DropDownList>
+                    <div class="generic-form row contanier">
 
-               <asp:DropDownList ID="Especialidad" runat="server" ClientIDMode="Static"></asp:DropDownList>
-               <asp:TextBox ID="Email" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Contrasena" placeholder="Contaseña" MaxLength="30" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Domicilio" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Celular" MaxLength="50" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               <asp:TextBox ID="Matricula" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               
-         
-               <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClientClick="return patientValidations()" type="submit" OnClick="btnModificar_Click"/>   
+                        
+                        <asp:TextBox CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" ID="Nombre" placeholder="Name" type="text" required MaxLength="100" runat="server" ClientIDMode="Static"></asp:TextBox>
+                        <asp:TextBox ID="Apellido" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Second name" MaxLength="100" type="text" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                        <asp:TextBox ID="Nacimiento" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Birth date" type="date" runat="server" ClientIDMode="Static"></asp:TextBox>
+                        <asp:DropDownList ID="Genero" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" runat="server" ClientIDMode="Static">
+                            <asp:ListItem Text="M" Value="M"></asp:ListItem>
+                            <asp:ListItem Text="F" Value="F"></asp:ListItem>
+                            <asp:ListItem Text="O" Value="O"></asp:ListItem>
+                        </asp:DropDownList>
+
+                        <asp:DropDownList ID="Especialidad" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" runat="server" ClientIDMode="Static"></asp:DropDownList>
+                        <asp:TextBox ID="Email" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Email" type="email" required MaxLength="250" runat="server" ClientIDMode="Static"></asp:TextBox>
+                        <asp:TextBox ID="Domicilio" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Adress" type="text" MaxLength="250" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                        <asp:TextBox ID="Contrasena" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Contaseña" MaxLength="30" runat="server" ClientIDMode="Static"></asp:TextBox>
+                        <asp:TextBox ID="Celular" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Phone" MaxLength="50" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                        <asp:TextBox ID="Matricula" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Matricula" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
+
+                        <asp:Button ID="BtnModificar" CssClass="col-sm-8 col-md-4 m-auto mt-3" runat="server" Text="Modificar" OnClientClick="return validateForm()" type="submit" OnClick="BtnModificar_Click"/>     
+
+                    </div>
+                </div>
+
             </div>
-          </div>
 
-     </body>
+        </body>
 
 </asp:Content>

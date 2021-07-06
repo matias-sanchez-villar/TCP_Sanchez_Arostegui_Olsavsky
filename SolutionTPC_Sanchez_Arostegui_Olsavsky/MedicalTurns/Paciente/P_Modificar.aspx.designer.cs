@@ -69,15 +69,6 @@ namespace MedicalTurns
         protected global::System.Web.UI.WebControls.TextBox Email;
 
         /// <summary>
-        /// Control Contrasena.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Contrasena;
-
-        /// <summary>
         /// Control Domicilio.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace MedicalTurns
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Domicilio;
+
+        /// <summary>
+        /// Control Contrasena.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Contrasena;
 
         /// <summary>
         /// Control Celular.
