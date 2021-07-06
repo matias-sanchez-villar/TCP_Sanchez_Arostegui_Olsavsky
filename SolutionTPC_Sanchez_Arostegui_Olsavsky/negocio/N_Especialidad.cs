@@ -30,7 +30,7 @@ namespace negocio
                     Especialidad aux = new Especialidad();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["ObraSocial"];
+                    aux.Nombre = (string)datos.Lector["Especialidad"];
 
                     lista.Add(aux);
                 }

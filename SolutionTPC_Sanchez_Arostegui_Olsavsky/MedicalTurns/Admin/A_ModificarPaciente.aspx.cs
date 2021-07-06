@@ -66,7 +66,6 @@ namespace MedicalTurns
             try
             {
 
-
                 List<ObraSocial> listaObrasSociales = new List<ObraSocial>();
                 N_ObraSocial aux = new N_ObraSocial();
                 listaObrasSociales = aux.listar();

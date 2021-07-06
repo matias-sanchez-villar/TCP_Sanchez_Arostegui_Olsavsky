@@ -32,7 +32,7 @@ namespace MedicalTurns
                 {
                     int ID = int.Parse(Request.QueryString["ID"]);
 
-                    lista = (List<Medico>)Session["Pacientes"];
+                    lista = (List<Medico>)Session["Medico"];
 
                     medico = lista.Find(x => x.ID == ID);
 
@@ -48,7 +48,7 @@ namespace MedicalTurns
                 }
                 else
                 {
-                    Response.Redirect("P_Dashboard.aspx");
+                    Response.Redirect("A_Dashboard.aspx");
                 }
 
             }
@@ -91,7 +91,7 @@ namespace MedicalTurns
             }
         }
 
-        protected void btnModificar_Click(object sender, EventArgs e)
+        protected void BtnModificar_Click1(object sender, EventArgs e)
         {
             Page.Validate();
 
@@ -115,7 +115,7 @@ namespace MedicalTurns
                 }
 
                 negocio.Modificar(medico);
-                Response.Redirect("P_Dashboard.aspx");
+                Response.Redirect("A_Dashboard.aspx");
             }
         }
     }
