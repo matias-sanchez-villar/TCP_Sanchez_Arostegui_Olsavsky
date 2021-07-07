@@ -75,10 +75,10 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta(" update Especialidades set Especialidad = @Especialidad where ID = @ID  ");
+                datos.setearConsulta(" update Especialidades set Especialidad = @Especialidad  where ID = @ID  ");
 
                 datos.setearParametro("@ID", especialidad.ID);
-                datos.setearParametro("@Nombre", especialidad.Nombre);
+                datos.setearParametro("@Especialidad", especialidad.Nombre);
 
                 datos.EjecutarAccion();
 
@@ -93,5 +93,6 @@ namespace negocio
 
             }
         }
+
     }
 }

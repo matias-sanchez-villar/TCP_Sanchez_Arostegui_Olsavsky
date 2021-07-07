@@ -70,17 +70,17 @@ namespace negocio
             }
         }
 
-
         public void Modificar(ObraSocial obraSocial)
         {
             datos = new DataAcces();
 
             try
             {
-                datos.setearConsulta(" update ObrasSociales set ObraSocial = @ObraSocial where ID = @ID  ");
+                datos.setearConsulta(" update ObrasSociales set ObraSocial = @ObraSocial  where ID = @ID ");
 
                 datos.setearParametro("@ID", obraSocial.ID);
-                datos.setearParametro("@Nombre", obraSocial.Nombre);
+
+                datos.setearParametro("@ObraSocial", obraSocial.Nombre);
 
                 datos.EjecutarAccion();
 
@@ -92,7 +92,10 @@ namespace negocio
             finally
             {
                 datos.cerrarConexion();
+
             }
         }
+
+
     }
 }

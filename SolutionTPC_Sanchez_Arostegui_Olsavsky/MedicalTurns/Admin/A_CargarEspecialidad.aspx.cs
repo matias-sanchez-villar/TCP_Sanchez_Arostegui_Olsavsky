@@ -39,5 +39,31 @@ namespace MedicalTurns
                 Response.Redirect("A_CargarEspecialidad.aspx");
             }
         }
+
+        public void Modificar()
+        {
+            N_Especialidad Negocio = new N_Especialidad();
+            Especialidad especialidad = new Especialidad();
+
+            try
+            {
+
+                if (!(string.IsNullOrEmpty(Request.QueryString["ID"])) && Session["Especialidad"] != null)
+                {
+                    int ID = int.Parse(Request.QueryString["ID"]);
+
+                    lista = (List<Especialidad>)Session["Especialidad"];
+
+                    especialidad = lista.Find(x => x.ID == ID);
+
+                    Negocio.Modificar(especialidad);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

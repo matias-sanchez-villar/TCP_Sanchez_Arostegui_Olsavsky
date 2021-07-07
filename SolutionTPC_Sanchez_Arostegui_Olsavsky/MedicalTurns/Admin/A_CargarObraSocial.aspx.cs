@@ -15,6 +15,8 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Modificar();
+
             N_ObraSocial Negocio = new N_ObraSocial();
             
             lista = Negocio.listar();
@@ -36,6 +38,32 @@ namespace MedicalTurns
 
                 Negocio.Cargar(obraSocial);
                 Response.Redirect("A_CargarObraSocial.aspx");
+            }
+        }
+
+        public void Modificar()
+        {
+            ObraSocial obrasocial = new ObraSocial();
+            N_ObraSocial negocio = new N_ObraSocial();
+
+            try
+            {
+
+                if (!(string.IsNullOrEmpty(Request.QueryString["ID"])) && Session["ObraSocial"] != null)
+                {
+                    int ID = int.Parse(Request.QueryString["ID"]);
+
+                    lista = (List<ObraSocial>)Session["ObraSocial"];
+
+                    obrasocial = lista.Find(x => x.ID == ID);
+
+                    negocio.Modificar(obrasocial);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

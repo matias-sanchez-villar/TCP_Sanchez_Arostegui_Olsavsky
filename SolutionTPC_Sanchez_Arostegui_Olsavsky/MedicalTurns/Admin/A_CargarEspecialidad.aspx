@@ -40,7 +40,7 @@
                                    <tr>
                                        <td><% = item.Nombre %></td>
                                        <td>
-                                            <a href="A_CargarEspecialidad.aspx?ID=<% = item.ID %>"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="A_CargarEspecialidad.aspx?ID=<% = item.ID %>"><i class="far fa-edit"></i></a>
                                        </td>
                                    </tr>
 
