@@ -59,7 +59,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="A_CargarEspecialidad.aspx" class="nav-link">
                         <i class="fas fa-briefcase-medical"></i>
                         <span class="link-text">Specialties</span>
                     </a>

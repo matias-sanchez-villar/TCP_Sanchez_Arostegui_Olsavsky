@@ -46,6 +46,30 @@ namespace negocio
             }
         }
 
+        public void Cargar(ObraSocial obraSocial)
+        {
+            datos = new DataAcces();
+
+            try
+            {
+
+                datos.setearConsulta(" insert into ObrasSociales (ObraSocial) values (@ObraSocial) ");
+
+                datos.setearParametro("@ObraSocial", obraSocial.Nombre);
+
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
 
         public void Modificar(ObraSocial obraSocial)
         {

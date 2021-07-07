@@ -7,18 +7,46 @@
 
         <body>
 
-           <div class="main-container">
+            <div class="main-container">
 
-            <h2>CARGAR ESPECIALIDAD</h2>
-               <div class="container generic-form">
+                <h2>CARGAR ESPECIALIDAD</h2>
+                <div class="container generic-form">
 
-               <asp:TextBox ID="Especialidad" placeholder="Especialidad" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               
-                   <asp:Button ID="Button1" runat="server" Text="Button" />
-                       
-                    
+                    <asp:TextBox ID="Especialidad" placeholder="Especialidad" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
+
+                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+
+                </div>
             </div>
-          </div>
+                       
+                   <section class="table-container">
+
+                       <div class="table-title-container">
+                           <h3>Especialidades</h3>
+                           <hr />
+                       </div>
+
+                       <table id="data-table" style="width: 100%;">
+                           <thead>
+                               <tr>
+                                   <th>Name</th>
+                                   <th>Actions</th>
+                               </tr>
+                           </thead>
+
+                           <% foreach (dominio.Especialidad item in lista)
+                               { %>
+
+                                   <tr>
+                                       <td><% = item.Nombre %></td>
+                                       <td>
+                                            <a href="A_CargarEspecialidad.aspx?ID=<% = item.ID %>"><i class="fas fa-trash-alt"></i></a>
+                                       </td>
+                                   </tr>
+
+                           <% } %>
+                       </table>
+                   </section>
 
         </body>
 </asp:Content>

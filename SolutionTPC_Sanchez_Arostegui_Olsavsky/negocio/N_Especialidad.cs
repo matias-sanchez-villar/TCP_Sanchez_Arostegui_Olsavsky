@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using dominio;
 using dataAccess;
 
-
 namespace negocio
 {
     public class N_Especialidad
@@ -35,6 +34,30 @@ namespace negocio
                     lista.Add(aux);
                 }
                 return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void Cargar(Especialidad especialidad)
+        {
+            datos = new DataAcces();
+
+            try
+            {
+
+                datos.setearConsulta(" insert into Especialidades (Especialidad) values (@Especialidad) ");
+
+                datos.setearParametro("@Especialidad", especialidad.Nombre);
+
+                datos.EjecutarAccion();
+
             }
             catch (Exception ex)
             {
