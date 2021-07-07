@@ -6,47 +6,50 @@
 
         <body>
 
-           <div class="main-container">
+            <div class="main-container">
 
-            <h2>CARGAR OBRA SOCIAL</h2>
-               <div class="container generic-form">
+                <h2>CARGAR OBRA SOCIAL</h2>
+                <div class="container generic-form">
 
-               <asp:TextBox ID="ObraSocial" placeholder="Obra Social" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
-               
-               <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+                    <asp:TextBox ID="ObraSocial" placeholder="Specialty" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
 
-            </div>
-          </div>
+                    <asp:Button ID="btnAgregar" CssClass="BtnSubmit" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
 
-
-            <section class="table-container">
-
-                <div class="table-title-container">
-                    <h3>Especialidades</h3>
-                    <hr />
                 </div>
 
-                <table id="data-table" style="width: 100%;">
-                    <thead>
+
+
+                <section class="table-container">
+
+                    <div class="table-title-container">
+                        <h3>Especialidades</h3>
+                        <hr />
+                    </div>
+
+                    <table id="data-table" style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <% foreach (dominio.ObraSocial item in lista)
+                            { %>
+
                         <tr>
-                            <th>Name</th>
-                            <th>Actions</th>
+                            <td><% = item.Nombre %></td>
+                            <td>
+                                <a href="A_CargarObraSocial.aspx?ID=<% = item.ID %>"><i class="far fa-edit"></i></a>
+                            </td>
                         </tr>
-                    </thead>
 
-                    <% foreach (dominio.ObraSocial item in lista)
-                        { %>
+                        <% } %>
+                    </table>
+                </section>
 
-                    <tr>
-                        <td><% = item.Nombre %></td>
-                        <td>
-                            <a href="A_CargarObraSocial.aspx?ID=<% = item.ID %>"><i class="far fa-edit"></i></a>
-                        </td>
-                    </tr>
 
-                    <% } %>
-                </table>
-            </section>
+            </div>
 
 
         </body>

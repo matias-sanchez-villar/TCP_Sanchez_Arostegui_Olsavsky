@@ -12,13 +12,12 @@
                 <h2>CARGAR ESPECIALIDAD</h2>
                 <div class="container generic-form">
 
-                    <asp:TextBox ID="Especialidad" placeholder="Especialidad" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox ID="Especialidad" placeholder="Specialty" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
 
-                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+                    <asp:Button ID="btnAgregar" CssClass="BtnSubmit" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
 
                 </div>
-            </div>
-                       
+                
                    <section class="table-container">
 
                        <div class="table-title-container">
@@ -47,6 +46,9 @@
                            <% } %>
                        </table>
                    </section>
+
+            </div>
+                       
 
         </body>
 </asp:Content>

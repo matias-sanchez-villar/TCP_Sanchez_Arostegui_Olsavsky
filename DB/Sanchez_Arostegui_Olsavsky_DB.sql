@@ -1,6 +1,6 @@
 
 use master
-drop database Mediturnos
+CREATE database Mediturnos
 go
 
 CREATE DATABASE Mediturnos
@@ -55,7 +55,7 @@ GO
 
 CREATE TABLE EstadoTurno(
 	ID INT Primary Key NOT NULL identity(1,1),
-	EstadoTurno varchar(15) NOT NULL --0=turno no-vigente-cancelado,1=turno vigente-agendado,2=Asistió al turno,3=Turno-Re-Agendado, 4=Faltó al turno
+	EstadoTurno varchar(15) NOT NULL 
 )
 GO
 
@@ -124,15 +124,25 @@ insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gen
 ('Chanta','Pirola','San Martin 645','7414560','19980729','M','9874', 18, 3), 
 ('Pablo','Bonfilio','Belgrano 456','1334852','19940520','M','9512', 19, 1)
 
+-- Estados de turnos
+insert into EstadoTurno(EstadoTurno) values
+('Agendado'),
+('Cancelado'),
+('Asistido'),
+('Reagendado'),
+('Ausente')
+
+
+--0=turno no-vigente-cancelado,1=turno vigente-agendado,2=Asistió al turno,3=Turno-Re-Agendado, 4=Faltó al turno
 --turnos 7
 insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
-('2021-10-23 11:44', 1, 1, 1),
-('2021-11-12 10:24', 4, 3, 1),
-('2021-12-17 17:10', 2, 5, 1),
-('2021-09-24 16:35', 1, 2, 1),
-('2021-09-07 12:55', 7, 3, 1),
-('2021-10-21 10:36', 3, 7, 1),
-('2021-06-30 09:21', 2, 4, 1)
+('23-10-2021 11:44', 1, 1, 1),
+('12-11-2021 10:24', 4, 3, 2),
+('17-12-2021 17:10', 2, 5, 3),
+('24-09-2021 16:35', 1, 2, 4),
+('12-08-2021 12:55', 7, 3, 5),
+('13-09-2021 10:36', 3, 7, 1),
+('08-07-2022 09:21', 2, 4, 1)
 
 
 

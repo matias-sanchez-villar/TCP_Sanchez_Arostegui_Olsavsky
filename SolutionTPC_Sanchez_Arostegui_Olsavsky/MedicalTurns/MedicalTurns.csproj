@@ -68,12 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\A_CargarEspecialidad.aspx" />
-    <Content Include="Admin\A_CargarMedico.aspx" />
     <Content Include="Admin\A_EliminarPaciente.aspx" />
     <Content Include="Admin\A_Medicos.aspx" />
     <Content Include="Admin\A_CargarObraSocial.aspx" />
     <Content Include="Admin\A_CargarPaciente.aspx" />
-    <Content Include="Admin\A_ListarMedico.aspx" />
     <Content Include="Admin\A_ListarPacientes.aspx" />
     <Content Include="Admin\A_ModificarMedico.aspx" />
     <Content Include="Admin\A_ModificarPaciente.aspx" />
@@ -100,13 +98,6 @@
     </Compile>
     <Compile Include="Admin\A_CargarEspecialidad.aspx.designer.cs">
       <DependentUpon>A_CargarEspecialidad.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\A_CargarMedico.aspx.cs">
-      <DependentUpon>A_CargarMedico.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\A_CargarMedico.aspx.designer.cs">
-      <DependentUpon>A_CargarMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\A_EliminarPaciente.aspx.cs">
       <DependentUpon>A_EliminarPaciente.aspx</DependentUpon>
@@ -135,13 +126,6 @@
     </Compile>
     <Compile Include="Admin\A_CargarPaciente.aspx.designer.cs">
       <DependentUpon>A_CargarPaciente.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\A_ListarMedico.aspx.cs">
-      <DependentUpon>A_ListarMedico.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\A_ListarMedico.aspx.designer.cs">
-      <DependentUpon>A_ListarMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\A_ListarPacientes.aspx.cs">
       <DependentUpon>A_ListarPacientes.aspx</DependentUpon>

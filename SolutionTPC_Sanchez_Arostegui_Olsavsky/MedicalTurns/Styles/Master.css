@@ -90,17 +90,12 @@ ul > li, li{
     transition: var(--transition-speed);
 }
 
-.nav-link:hover{
-    filter: grayscale(0%) opacity(1);
-    background-color: var(--main-gray);
-    color: var(--accent-violet);
-}
-
 .nav-link:hover {
     filter: grayscale(0%) opacity(1);
-    background-color: transparent;
-    color: inherit;
+    background-color: var(--main-gray);
 }
+
+
 
 .link-text {
     display: none;

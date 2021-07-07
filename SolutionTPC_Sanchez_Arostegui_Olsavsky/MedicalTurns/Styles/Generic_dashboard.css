@@ -55,5 +55,5 @@ td{
 
 .odd:hover, .even:hover {
     transition: all 200ms ease-in;
-    transform: scale(1.01);
+    box-shadow: 0px 0px 10px rgba(0,0,0,.2);
 }

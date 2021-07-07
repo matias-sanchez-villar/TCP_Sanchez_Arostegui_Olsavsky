@@ -62,8 +62,8 @@
                         <td><% = String.Format("{0:yyyy-MM-dd}", item.FechaNacimiento) %></td>
                         <td><% = item.Usuario.Email %></td>
                         <td>
-                            <a href="A_ModificarPaciente.aspx?ID=<% = item.ID %>"><i class="far fa-edit"></i></a>
-                            <a href="A_Dashboard.aspx?IDPaciente=<% = item.ID %>"><i class="fas fa-trash-alt"></i></a>
+                            <a href="A_ModificarPaciente.aspx?ID=<% = item.ID %>"><i class="far fa-edit editItem"></i></a>
+                            <a href="A_Dashboard.aspx?IDPaciente=<% = item.ID %>"><i class="fas fa-trash-alt removeItem"></i></a>
                         </td>
                     </tr>
 

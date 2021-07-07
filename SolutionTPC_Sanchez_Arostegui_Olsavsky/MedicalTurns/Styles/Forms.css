@@ -38,9 +38,26 @@
     box-shadow: 0px 3px 23px rgba(52,53,69,0.1);
 }
 
-#ContentPlaceHolder1_BtnSubmit {
+#ContentPlaceHolder1_BtnSubmit, .BtnSubmit {
     background-color: var(--accent-violet);
     color: white;
     font-weight: 600;
     letter-spacing: .05em;
+    cursor: pointer;
+}
+
+.BtnSubmit{
+    width: 120px;
+    margin-left: 18px;
+}
+
+.removeItem {
+    fill: #FB3640;
+    color: #FB3640;
+    margin-left: 12px;
+}
+
+.editItem {
+    fill: #3a015c;
+    color: #3a015c;
 }
