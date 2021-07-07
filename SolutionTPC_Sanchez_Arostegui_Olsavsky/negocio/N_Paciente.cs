@@ -182,8 +182,35 @@ namespace negocio
             }
         }
 
-        public void eliminar(Paciente paciente)
+        public void Eliminar(Paciente paciente)
         {
+
+            Datos = new DataAcces();
+
+            N_Usuario usuario = new N_Usuario();
+
+            try
+            {
+
+                Datos.setearParametro("@ID", paciente.ID);
+                
+                Datos.setearConsulta(" delete from Pacientes where ID = @ID ");
+
+                usuario.Eliminar(paciente.Usuario);
+
+                Datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+
+            /*
             try
             {
                 N_Usuario usuario = new N_Usuario();
@@ -196,6 +223,7 @@ namespace negocio
             {
                 throw ex;
             }
+            */
         }
 
 

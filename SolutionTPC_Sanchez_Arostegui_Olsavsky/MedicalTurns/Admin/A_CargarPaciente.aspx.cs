@@ -64,32 +64,5 @@ namespace MedicalTurns
             }            
         }
 
-        protected void EliminarPaciente()
-        {
-            List<Paciente> lista;
-            Paciente paciente = new Paciente();
-            N_Paciente negocio = new N_Paciente();
-
-            try
-            {
-
-                if (!(string.IsNullOrEmpty(Request.QueryString["IDPaciente"])) && Session["Paciente"] != null)
-                {
-                    int ID = int.Parse(Request.QueryString["IDPaciente"]);
-
-                    lista = (List<Paciente>)Session["Paciente"];
-
-                    paciente = lista.Find(x => x.ID == ID);
-
-                    negocio.eliminar(paciente);
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
     }
 }

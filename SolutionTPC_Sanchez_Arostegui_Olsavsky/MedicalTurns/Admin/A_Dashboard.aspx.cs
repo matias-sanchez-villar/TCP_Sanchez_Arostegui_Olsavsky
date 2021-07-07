@@ -14,6 +14,7 @@ namespace MedicalTurns
 
         public List<Medico> listaMedicos;
         public List<Paciente> listaPaciente;
+        public Paciente pacienteAEliminar { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,10 +33,14 @@ namespace MedicalTurns
 
                 Session.Add("Paciente", listaPaciente);
 
-                if (bool.Parse(Request.QueryString["eliminarMedico"]) == true) EliminarMedico();
+                /* intente pero hay errores con esta metodologia
+                int eliminarMedico = int.Parse(Request.QueryString["eliminarMedico"]);
+                int eliminarPaciente = int.Parse(Request.QueryString["eliminarPaciente"]);
 
-                if (bool.Parse(Request.QueryString["eliminarPaciente"]) == true) EliminarPaciente();
+                if (int.Parse(Request.QueryString["eliminarMedico"]) == 1) EliminarMedico();
 
+                if (int.Parse(Request.QueryString["eliminarPaciente"]) == 1) EliminarPaciente();
+                */
             }
             catch (Exception ex)
             {
@@ -46,6 +51,7 @@ namespace MedicalTurns
 
         protected void EliminarMedico()
         {
+
             List<Medico> lista;
             Medico medico = new Medico();
             N_Medico negocio = new N_Medico();
@@ -74,31 +80,58 @@ namespace MedicalTurns
 
         protected void EliminarPaciente()
         {
-            List<Paciente> lista;
-            Paciente paciente = new Paciente();
+
+            int IDPaciente = int.Parse(Request.QueryString["ID"]);
             N_Paciente negocio = new N_Paciente();
 
-            try
-            {
+            pacienteAEliminar = RetornarPaciente();
 
-                if (!(string.IsNullOrEmpty(Request.QueryString["IDPaciente"])) && Session["Paciente"] != null)
-                {
-                    int ID = int.Parse(Request.QueryString["IDPaciente"]);
+            pacienteAEliminar.ID = IDPaciente;
 
-                    lista = (List<Paciente>)Session["Paciente"];
 
-                    paciente = lista.Find(x => x.ID == ID);
+            negocio.Eliminar(pacienteAEliminar);
+            Response.Redirect("A_Dashboard.aspx");
 
-                    negocio.eliminar(paciente);
-                    
-                }
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
 
-    }
+        protected Paciente RetornarPaciente()
+        {
+            int ID = int.Parse(Request.QueryString["ID"]);
+
+            listaPaciente = (List<Paciente>)Session["Paciente"];
+
+            pacienteAEliminar = new Paciente();
+
+            return pacienteAEliminar = listaPaciente.Find(x => x.ID == ID);
+        }
+
+        /*   
+           List<Paciente> lista;
+           Paciente paciente = new Paciente();
+           N_Paciente negocio = new N_Paciente();
+
+           try
+           {
+
+               if (!(string.IsNullOrEmpty(Request.QueryString["IDPaciente"])) && Session["Paciente"] != null)
+               {
+                   int ID = int.Parse(Request.QueryString["IDPaciente"]);
+
+                   lista = (List<Paciente>)Session["Paciente"];
+
+                   paciente = lista.Find(x => x.ID == ID);
+
+                   negocio.eliminar(paciente);
+
+               }
+
+           }
+           catch (Exception ex)
+           {
+               throw ex;
+           }
+       */
+    }   
 }
+

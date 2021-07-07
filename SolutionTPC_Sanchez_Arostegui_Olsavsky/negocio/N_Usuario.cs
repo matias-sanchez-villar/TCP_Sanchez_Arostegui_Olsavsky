@@ -39,7 +39,7 @@ namespace negocio
         public int RetornarID(string Email)
         {
             Datos = new DataAcces();
-            int ID=-1;                      
+            int ID = -1;
 
             try
             {
@@ -53,9 +53,9 @@ namespace negocio
                 {
                     ID = (int)Datos.Lector["ID"];
                 }
-                
+
                 Datos.cerrarConexion();
-                return ID ;
+                return ID;
 
             }
             catch (Exception ex)
@@ -93,5 +93,28 @@ namespace negocio
             }
         }
 
+        public void Eliminar(Usuario usuario)
+        {
+            Datos = new DataAcces();
+
+            try
+            {
+
+                Datos.setearParametro("@ID", usuario.ID);
+
+                Datos.setearConsulta(" delete from Usuarios where ID = @ID ");
+
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+
+        }
     }
 }

@@ -70,7 +70,7 @@ CREATE TABLE Turnos(
 Set dateformat 'DMY'
 
 --20 Usuarios
-insert into Usuarios (Email, Contasena, Estado) VALUES
+insert into Usuarios (Email, Contrasena, Estado) VALUES
 ('Pepe@gmail.com', '1234', 1), 
 ('Pato@hotmail.com', '1234', 1),
 ('Paisa@gmail.ar', '1234', 1),
