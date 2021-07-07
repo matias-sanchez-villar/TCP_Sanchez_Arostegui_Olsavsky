@@ -19,8 +19,7 @@ namespace MedicalTurns
         {
             try
             {
-                EliminarPaciente();
-                EliminarMedico();
+                
 
                 ///Listamos a medico
                 N_Medico medicoNegocio = new N_Medico();
@@ -34,6 +33,10 @@ namespace MedicalTurns
                 listaPaciente = paciente.Listar();
 
                 Session.Add("Paciente", listaPaciente);
+
+                if (bool.Parse(Request.QueryString["eliminarMedico"]) == true) EliminarMedico();
+
+                if (bool.Parse(Request.QueryString["eliminarPaciente"]) == true) EliminarPaciente();
 
             }
             catch (Exception ex)
