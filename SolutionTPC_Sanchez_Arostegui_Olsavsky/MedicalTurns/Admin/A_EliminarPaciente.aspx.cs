@@ -13,7 +13,8 @@ namespace MedicalTurns.Admin
         {
 
         }
-
+        
+        /*
         protected void EliminarPaciente_Click(object sender, EventArgs e)
         {
             int IDPaciente = int.Parse(Request.QueryString["ID"]);
@@ -40,6 +41,6 @@ namespace MedicalTurns.Admin
 
             return pacienteAEliminar = listaPaciente.Find(x => x.ID == ID);
         }
-    }
+        */
     }
 }

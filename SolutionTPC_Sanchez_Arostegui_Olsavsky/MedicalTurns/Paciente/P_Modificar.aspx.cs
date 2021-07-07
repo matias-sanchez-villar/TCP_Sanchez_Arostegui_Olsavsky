@@ -31,12 +31,7 @@ namespace MedicalTurns
 
                 if (!(string.IsNullOrEmpty(Request.QueryString["ID"])) && Session["Paciente"] != null)
                 {
-                    int ID = int.Parse(Request.QueryString["ID"]);
-
-                    lista = (List<Paciente>)Session["Paciente"];
-
-                    paciente = lista.Find(x => x.ID == ID);
-
+                    paciente = RetornarPaciente();
 
                     Nombre.Text = paciente.Nombre;
                     Apellido.Text = paciente.Apellido;
@@ -45,7 +40,6 @@ namespace MedicalTurns
                     Domicilio.Text = paciente.Domicilio;
                     Celular.Text = paciente.Celular;
                     Afiliado.Text = paciente.NroAfiliado;
-
 
                     listarObrasSociales();
                 }
@@ -66,7 +60,6 @@ namespace MedicalTurns
         {
             try
             {
-
 
                 List<ObraSocial> listaObrasSociales = new List<ObraSocial>();
                 N_ObraSocial aux = new N_ObraSocial();
@@ -96,6 +89,7 @@ namespace MedicalTurns
 
         protected void BtnModificar_Click(object sender, EventArgs e)
         {
+
             Page.Validate();
             if (!Page.IsValid) return;
 
@@ -103,7 +97,8 @@ namespace MedicalTurns
             {
                 N_Paciente negocio = new N_Paciente();
 
-                paciente.ID = int.Parse(Request.QueryString["ID"]);
+                paciente = RetornarPaciente();
+
                 paciente.Nombre = Nombre.Text;
                 paciente.Apellido = Apellido.Text;
                 paciente.FechaNacimiento = DateTime.Parse(Nacimiento.Text);
@@ -114,7 +109,7 @@ namespace MedicalTurns
                 paciente.NroAfiliado = Afiliado.Text;
                 paciente.Usuario.Email = Email.Text;
 
-                if (Contrasena.Text != null)
+                if (Contrasena.Text == null)
                 {
                     paciente.Usuario.Contrasena = Contrasena.Text;
                 }
@@ -122,6 +117,17 @@ namespace MedicalTurns
                 negocio.Modificar(paciente);
                 Response.Redirect("A_Dashboard.aspx");
             }
+        }
+
+        protected Paciente RetornarPaciente()
+        {
+            int ID = int.Parse(Request.QueryString["ID"]);
+
+            lista = (List<Paciente>)Session["Paciente"];
+
+            paciente = new Paciente();
+
+            return paciente = lista.Find(x => x.ID == ID);
         }
 
 

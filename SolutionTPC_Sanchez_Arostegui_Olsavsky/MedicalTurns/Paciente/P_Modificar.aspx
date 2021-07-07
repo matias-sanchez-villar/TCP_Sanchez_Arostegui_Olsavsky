@@ -5,7 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <body>
-
              <div class="main-container">
 
                 <div class="form-container">
