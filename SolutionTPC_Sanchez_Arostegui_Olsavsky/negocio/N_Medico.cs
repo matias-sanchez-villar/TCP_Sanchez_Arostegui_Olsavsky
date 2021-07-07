@@ -21,7 +21,7 @@ namespace negocio
 
             try
             {
-                string Select = " SELECT M.ID, M.Apellido, M.Nombre, M.FechaNacimiento, M.Domicilio, M.Celular, M.Genero, M.Matricula, U.Email, U.Estado, E.Especialidad ";
+                string Select = " SELECT M.ID, M.Apellido, M.Nombre, M.FechaNacimiento, M.Domicilio, M.Celular, M.Genero, M.Matricula, U.Email, U.Estado, E.Especialidad, u.Contrasena, u.ID as IDUsuario, e.ID as IDEspecialidad ";
                 string From = " FROM Medicos M ";
                 string JoinU = " inner join Usuarios U on M.IDUsuario = U.ID ";
                 string JoinE = " inner join Especialidades E on E.ID = M.IDEspecialidad ";
@@ -43,7 +43,10 @@ namespace negocio
                     medico.Celular = (string)Datos.Lector["Celular"];
                     medico.Genero = (string)Datos.Lector["Genero"];
                     medico.Matricula = (string)Datos.Lector["Matricula"];
+                    medico.Usuario.ID = (int)Datos.Lector["IDUsuario"];
+                    medico.Usuario.Contrasena = (string)Datos.Lector["Contrasena"];
                     medico.Usuario.Email = (string)Datos.Lector["Email"];
+                    medico.especialidad.ID = (int)Datos.Lector["IDEspecialidad"];
                     medico.especialidad.Nombre = (string)Datos.Lector["Especialidad"];
 
                     Lista.Add(medico);

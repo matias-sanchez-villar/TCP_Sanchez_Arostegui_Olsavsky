@@ -18,10 +18,10 @@ namespace negocio
 
             try
             {
-                Datos.setearConsulta(" insert into Usuarios (Email, Contasena, Estado) VALUES( @Email, @Contasena, @Estado )");
+                Datos.setearConsulta(" insert into Usuarios (Email, Contrasena, Estado) VALUES( @Email, @Contrasena, @Estado )");
 
                 Datos.setearParametro("@Email", usuario.Email);
-                Datos.setearParametro("@Contasena", usuario.Contrasena);
+                Datos.setearParametro("@Contrasena", usuario.Contrasena);
                 Datos.setearParametro("@Estado", 1);
 
                 Datos.EjecutarAccion();
@@ -74,11 +74,11 @@ namespace negocio
 
             try
             {
-                Datos.setearConsulta(" update Usuarios set Email = @Email, Contasena = @Contasena, Estado = @Estado where ID = @ID ");
+                Datos.setearConsulta(" update Usuarios set Email = @Email, Contrasena = @Contrasena, Estado = @Estado where ID = @ID ");
 
                 Datos.setearParametro("@ID", usuario.ID);
                 Datos.setearParametro("@Email", usuario.Email);
-                Datos.setearParametro("@Contasena", usuario.Contrasena);
+                Datos.setearParametro("@Contrasena", usuario.Contrasena);
                 Datos.setearParametro("@Estado", usuario.Estado);
 
                 Datos.EjecutarAccion();

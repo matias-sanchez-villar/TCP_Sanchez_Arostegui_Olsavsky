@@ -12,7 +12,7 @@ GO
 CREATE TABLE Usuarios(
 	ID INT PRIMARY KEY NOT NULL identity(1,1),
 	Email VARCHAR(250) UNIQUE NOT NULL,
-	Contasena Varchar(50) NOT NULL,
+	Contrasena Varchar(50) NOT NULL,
 	Estado bit not null,
 )
 GO

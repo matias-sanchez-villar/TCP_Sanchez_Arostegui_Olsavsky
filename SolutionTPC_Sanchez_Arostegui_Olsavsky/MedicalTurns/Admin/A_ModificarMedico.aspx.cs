@@ -30,11 +30,7 @@ namespace MedicalTurns
 
                 if (!(string.IsNullOrEmpty(Request.QueryString["ID"])) && Session["Medico"] != null)
                 {
-                    int ID = int.Parse(Request.QueryString["ID"]);
-
-                    lista = (List<Medico>)Session["Medico"];
-
-                    medico = lista.Find(x => x.ID == ID);
+                    medico = RetornarMedico();
 
                     Nombre.Text = medico.Nombre;
                     Apellido.Text = medico.Apellido;
@@ -99,6 +95,8 @@ namespace MedicalTurns
             {
                 N_Medico negocio = new N_Medico();
 
+                medico = RetornarMedico();
+
                 medico.Nombre = Nombre.Text;
                 medico.Apellido = Apellido.Text;
                 medico.FechaNacimiento = DateTime.Parse(Nacimiento.Text);
@@ -109,7 +107,7 @@ namespace MedicalTurns
                 medico.Matricula = Matricula.Text;
                 medico.Usuario.Email = Email.Text;
 
-                if (Contrasena.Text != null)
+                if (Contrasena.Text == null)
                 {
                     medico.Usuario.Contrasena = Contrasena.Text;
                 }
@@ -118,5 +116,17 @@ namespace MedicalTurns
                 Response.Redirect("A_Dashboard.aspx");
             }
         }
+
+        protected Medico RetornarMedico()
+        {
+            int ID = int.Parse(Request.QueryString["ID"]);
+
+            lista = (List<Medico>)Session["Medico"];
+
+            medico = new Medico();
+
+            return medico = lista.Find(x => x.ID == ID);
+        }
+
     }
 }

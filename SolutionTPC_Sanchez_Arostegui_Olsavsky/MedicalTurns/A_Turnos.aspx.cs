@@ -7,21 +7,19 @@ using System.Web.UI.WebControls;
 using dominio;
 using negocio;
 
-
 namespace MedicalTurns
 {
-    public partial class A_ListarPacientes : System.Web.UI.Page
+    public partial class A_Turnos : System.Web.UI.Page
     {
-        public List<Paciente> lista;
-        
+        public List<Turno> lista;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            N_Paciente paciente = new N_Paciente();
+            N_Turno Negocio = new N_Turno();
 
-            lista = paciente.Listar();
+            lista = Negocio.Listar();
 
-            Session.Add("Paciente", lista);
-
+            Session.Add("Turno", lista);
         }
     }
 }

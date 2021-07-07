@@ -75,6 +75,7 @@
     <Content Include="Admin\A_ListarPacientes.aspx" />
     <Content Include="Admin\A_ModificarMedico.aspx" />
     <Content Include="Admin\A_ModificarPaciente.aspx" />
+    <Content Include="A_Turnos.aspx" />
     <Content Include="Medico\M_Modificar.aspx" />
     <Content Include="Paciente\P_Dashboard.aspx" />
     <Content Include="Login.aspx" />
@@ -153,6 +154,13 @@
     </Compile>
     <Compile Include="Admin\A_Structure.Master.designer.cs">
       <DependentUpon>A_Structure.Master</DependentUpon>
+    </Compile>
+    <Compile Include="A_Turnos.aspx.cs">
+      <DependentUpon>A_Turnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_Turnos.aspx.designer.cs">
+      <DependentUpon>A_Turnos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Medico\M_Modificar.aspx.cs">
       <DependentUpon>M_Modificar.aspx</DependentUpon>

@@ -19,8 +19,6 @@ namespace MedicalTurns
         {
             try
             {
-                
-
                 ///Listamos a medico
                 N_Medico medicoNegocio = new N_Medico();
                 listaMedicos = medicoNegocio.Listar();

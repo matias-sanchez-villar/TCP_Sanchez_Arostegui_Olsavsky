@@ -13,7 +13,7 @@ namespace MedicalTurns
     {
 
         public List<Paciente> lista;
-        public Paciente paciente = new Paciente();
+        public Paciente paciente { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,13 +30,8 @@ namespace MedicalTurns
 
                 if (!(string.IsNullOrEmpty(Request.QueryString["ID"])) && Session["Paciente"] != null)
                 {
-                    int ID = int.Parse(Request.QueryString["ID"]);
+                    paciente = RetornarPaciente();
 
-                    lista = (List<Paciente>)Session["Paciente"];
-
-                    paciente = lista.Find(x => x.ID == ID);
-
-                    
                     Nombre.Text = paciente.Nombre;
                     Apellido.Text = paciente.Apellido;
                     Nacimiento.Text = String.Format("{0:yyyy-MM-dd}", paciente.FechaNacimiento);
@@ -44,7 +39,6 @@ namespace MedicalTurns
                     Domicilio.Text = paciente.Domicilio;
                     Celular.Text = paciente.Celular;
                     Afiliado.Text = paciente.NroAfiliado;
-
 
                     listarObrasSociales();
                 }
@@ -101,7 +95,8 @@ namespace MedicalTurns
             {
                 N_Paciente negocio = new N_Paciente();
 
-                paciente.ID = int.Parse(Request.QueryString["ID"]);
+                paciente = RetornarPaciente();
+                
                 paciente.Nombre = Nombre.Text;
                 paciente.Apellido = Apellido.Text;
                 paciente.FechaNacimiento = DateTime.Parse(Nacimiento.Text);
@@ -112,7 +107,7 @@ namespace MedicalTurns
                 paciente.NroAfiliado = Afiliado.Text;
                 paciente.Usuario.Email = Email.Text;
 
-                if (Contrasena.Text != null)
+                if (Contrasena.Text == null)
                 {
                     paciente.Usuario.Contrasena = Contrasena.Text;
                 }
@@ -121,6 +116,17 @@ namespace MedicalTurns
                 Response.Redirect("A_Dashboard.aspx");
             }
 
+        }
+
+        protected Paciente RetornarPaciente()
+        {
+            int ID = int.Parse(Request.QueryString["ID"]);
+
+            lista = (List<Paciente>)Session["Paciente"];
+
+            paciente = new Paciente();
+
+           return paciente = lista.Find(x => x.ID == ID);
         }
     }
 }
