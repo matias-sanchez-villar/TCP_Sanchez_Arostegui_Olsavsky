@@ -58,7 +58,7 @@
                         { %>
 
                     <tr>
-                        <td><% = item.Apellido %>,<% = item.Nombre %></td>
+                        <td><% = item.Apellido %>, <% = item.Nombre %></td>
                         <td><% = String.Format("{0:yyyy-MM-dd}", item.FechaNacimiento) %></td>
                         <td><% = item.Usuario.Email %></td>
                         <td>

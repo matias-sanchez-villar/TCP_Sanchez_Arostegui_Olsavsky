@@ -15,23 +15,23 @@ namespace MedicalTurns
     {
 
         /// <summary>
-        /// Control Email Medico.
+        /// Control Medico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email Medico;
-        
+        protected global::System.Web.UI.WebControls.TextBox Medico;
+
         /// <summary>
-        /// Control Email Paciente.
+        /// Control Paciente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email Paciente;
-        
+        protected global::System.Web.UI.WebControls.TextBox Paciente;
+
         /// <summary>
         /// Control Fecha.
         /// </summary>
@@ -51,12 +51,12 @@ namespace MedicalTurns
         protected global::System.Web.UI.WebControls.TextBox Horarios;
 
         /// <summary>
-        /// Control BtnSubmit.
+        /// Control btnAgregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSubmit;
+        protected global::System.Web.UI.WebControls.Button btnAgregar;
     }
 }

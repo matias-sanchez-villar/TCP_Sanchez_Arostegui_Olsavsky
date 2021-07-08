@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-            <body>
+    <body>
 
         <div class="main-container">
 
@@ -14,12 +14,12 @@
 
                 <div class="generic-form row contanier">
 
-                    <asp:TextBox ID="Email Medico" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Name" type="text" required MaxLength="100" runat="server" ClientIDMode="Static"></asp:TextBox>
-                    <asp:TextBox ID="Email Paciente" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Second name" MaxLength="100" type="text" runat="server" required ClientIDMode="Static"></asp:TextBox>
-                    <asp:TextBox ID="Fecha" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Birth date" type="date" runat="server" ClientIDMode="Static"></asp:TextBox>
-                    <asp:TextBox ID="Horarios" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Birth date" type="date" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox ID="Medico" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Email Medico" type="text" required MaxLength="100" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox ID="Paciente" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Email Paciente" MaxLength="100" type="text" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox ID="Fecha" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Fecha turno" type="date" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox ID="Horarios" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Horarios" type="date" runat="server" ClientIDMode="Static"></asp:TextBox>
 
-                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="return validateForm()" runat="server" Text="Create Turno" type="submit" OnClick="BtnSubmit_Click" />
+                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="btnAgregar" OnClientClick="return validateForm()" runat="server" Text="Create Turno" type="submit" />
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                         <td><% = item.paciente.Apellido %>, <% = item.paciente.Nombre %></td>
                         <td><% = item.FechaHora %></td>
                         <td>
-                            <a href="#" >Ver mas</a>
+                            <a href="#">Detalle</a>
                         </td>
                     </tr>
 

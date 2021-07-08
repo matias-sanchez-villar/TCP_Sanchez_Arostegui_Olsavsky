@@ -55,7 +55,7 @@
                         { %>
 
                     <tr>
-                        <td><% = item.Apellido %>,<% = item.Nombre %></td>
+                        <td><% = item.Apellido %>, <% = item.Nombre %></td>
                         <td><% = item.Matricula %></td>
                         <td><% = item.especialidad.Nombre %></td>
                         <td>

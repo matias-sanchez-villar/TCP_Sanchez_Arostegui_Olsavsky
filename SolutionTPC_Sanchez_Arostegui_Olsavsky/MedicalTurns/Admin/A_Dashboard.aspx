@@ -38,7 +38,7 @@
                   <% foreach (dominio.Medico item in listaMedicos){ %>
 
                         <tr>
-                            <td><% = item.Apellido %>,<% = item.Nombre %></td>
+                            <td><% = item.Apellido %>, <% = item.Nombre %></td>
                             <td><% = item.Matricula %></td>
                             <td><% = item.especialidad.Nombre %></td>
                             <td>
@@ -73,7 +73,7 @@
                   <% foreach (dominio.Paciente item in listaPaciente){ %>
 
                         <tr>
-                            <td><% = item.Apellido %>,<% = item.Nombre %></td>
+                            <td><% = item.Apellido %>, <% = item.Nombre %></td>
                             <td><% = String.Format("{0:yyyy-MM-dd}", item.FechaNacimiento) %></td>
                             <td><% = item.Usuario.Email %></td>
                             <td>
