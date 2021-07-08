@@ -68,9 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\A_CargarEspecialidad.aspx" />
-    <Content Include="Admin\A_Medicos.aspx" />
+    <Content Include="Admin\A_CargarMedico.aspx" />
     <Content Include="Admin\A_CargarObraSocial.aspx" />
-    <Content Include="Admin\A_Paciente.aspx" />
+    <Content Include="Admin\A_CargarPaciente.aspx" />
     <Content Include="Admin\A_ModificarMedico.aspx" />
     <Content Include="Admin\A_ModificarPaciente.aspx" />
     <Content Include="A_Turnos.aspx" />
@@ -97,12 +97,12 @@
     <Compile Include="Admin\A_CargarEspecialidad.aspx.designer.cs">
       <DependentUpon>A_CargarEspecialidad.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\A_Medicos.aspx.cs">
-      <DependentUpon>A_Medicos.aspx</DependentUpon>
+    <Compile Include="Admin\A_CargarMedico.aspx.cs">
+      <DependentUpon>A_CargarMedico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\A_Medicos.aspx.designer.cs">
-      <DependentUpon>A_Medicos.aspx</DependentUpon>
+    <Compile Include="Admin\A_CargarMedico.aspx.designer.cs">
+      <DependentUpon>A_CargarMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\A_CargarObraSocial.aspx.cs">
       <DependentUpon>A_CargarObraSocial.aspx</DependentUpon>
@@ -111,12 +111,12 @@
     <Compile Include="Admin\A_CargarObraSocial.aspx.designer.cs">
       <DependentUpon>A_CargarObraSocial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\A_Paciente.aspx.cs">
-      <DependentUpon>A_Paciente.aspx</DependentUpon>
+    <Compile Include="Admin\A_CargarPaciente.aspx.cs">
+      <DependentUpon>A_CargarPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\A_Paciente.aspx.designer.cs">
-      <DependentUpon>A_Paciente.aspx</DependentUpon>
+    <Compile Include="Admin\A_CargarPaciente.aspx.designer.cs">
+      <DependentUpon>A_CargarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\A_ModificarMedico.aspx.cs">
       <DependentUpon>A_ModificarMedico.aspx</DependentUpon>

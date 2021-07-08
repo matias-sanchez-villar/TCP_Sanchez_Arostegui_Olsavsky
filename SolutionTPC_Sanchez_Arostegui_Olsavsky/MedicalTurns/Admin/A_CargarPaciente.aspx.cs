@@ -95,7 +95,7 @@ namespace MedicalTurns
                 pacAux.Usuario.Contrasena = "root";
 
                 negocio.Cargar(pacAux);
-                Response.Redirect("A_Paciente.aspx");
+                Response.Redirect("A_CargarPaciente.aspx");
             }            
         }
 

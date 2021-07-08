@@ -38,14 +38,14 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="A_Medicos.aspx" class="nav-link">
+                    <a href="A_CargarMedicos.aspx" class="nav-link">
                         <i class="fas fa-user-md" style="padding-left: 3px;"></i>
                         <span class="link-text">Doctors</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="A_Paciente.aspx" class="nav-link">
+                    <a href="A_CargarPaciente.aspx" class="nav-link">
                         <i class="fas fa-users"></i>
                         <span class="link-text">Patients</span>
                     </a>
