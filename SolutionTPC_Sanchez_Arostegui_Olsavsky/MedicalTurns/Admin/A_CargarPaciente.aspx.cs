@@ -17,7 +17,17 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Lista las obras sociales adentro del cargador combo box
+            listarObrasSociales();
+
+            N_Paciente paciente = new N_Paciente();
+            listaPaciente = paciente.Listar();
+
+            Session.Add("Paciente", listaPaciente);
+
+        }
+
+        protected void listarObrasSociales()
+        {
             N_ObraSocial aux = new N_ObraSocial();
             listaObrasSociales = aux.listar();
 
@@ -28,17 +38,10 @@ namespace MedicalTurns
                 ListItem listItemAux = new ListItem(nombreAux, valueAux);
                 ObraSocial.Items.Add(listItemAux);
             }
-
-            N_Paciente paciente = new N_Paciente();
-            listaPaciente = paciente.Listar();
-
-            Session.Add("Paciente", listaPaciente);
-
         }
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-            // Hace el upload del paciente a la base de datos
             Page.Validate();
             if (!Page.IsValid) return;
 
@@ -60,7 +63,7 @@ namespace MedicalTurns
                 pacAux.Usuario.Contrasena = "root";
 
                 negocio.Cargar(pacAux);
-                Response.Redirect("A_Dashboard.aspx");
+                Response.Redirect("A_CargarPaciente.aspx");
             }            
         }
 
