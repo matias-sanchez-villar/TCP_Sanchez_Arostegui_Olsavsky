@@ -178,15 +178,21 @@ namespace negocio
             }
         }
 
-        public void eliminar(Medico medico)
+        public void Eliminar(Medico medico)
         {
             try
             {
+                Datos = new DataAcces();
+
                 N_Usuario usuario = new N_Usuario();
 
-                medico.Usuario.Estado = false;
+                Datos.setearConsulta(" delete from Medicos where ID = @ID ");
 
-                usuario.Modificar(medico.Usuario);
+                Datos.setearParametro("@ID", medico.ID);
+
+                Datos.EjecutarAccion();
+
+                usuario.Eliminar(medico.Usuario);
             }
             catch (Exception ex)
             {

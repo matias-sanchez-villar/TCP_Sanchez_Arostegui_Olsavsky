@@ -99,10 +99,9 @@ namespace negocio
 
             try
             {
+                Datos.setearConsulta(" delete from Usuarios where ID = @ID ");
 
                 Datos.setearParametro("@ID", usuario.ID);
-
-                Datos.setearConsulta(" delete from Usuarios where ID = @ID ");
 
                 Datos.EjecutarAccion();
             }

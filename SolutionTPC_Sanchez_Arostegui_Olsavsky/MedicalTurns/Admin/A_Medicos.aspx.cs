@@ -50,7 +50,7 @@ namespace MedicalTurns
 
                     medico = lista.Find(x => x.ID == ID);
 
-                    negocio.eliminar(medico);
+                    negocio.Eliminar(medico);
 
                 }
 

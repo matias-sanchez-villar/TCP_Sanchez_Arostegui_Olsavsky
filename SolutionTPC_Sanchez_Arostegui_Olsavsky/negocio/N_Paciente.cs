@@ -191,14 +191,13 @@ namespace negocio
 
             try
             {
-
-                Datos.setearParametro("@ID", paciente.ID);
-                
                 Datos.setearConsulta(" delete from Pacientes where ID = @ID ");
 
-                usuario.Eliminar(paciente.Usuario);
+                Datos.setearParametro("@ID", paciente.ID);
 
                 Datos.EjecutarAccion();
+
+                usuario.Eliminar(paciente.Usuario);
 
             }
             catch (Exception ex)
@@ -210,20 +209,6 @@ namespace negocio
                 Datos.cerrarConexion();
             }
 
-            /*
-            try
-            {
-                N_Usuario usuario = new N_Usuario();
-
-                paciente.Usuario.Estado = false;
-
-                usuario.Modificar(paciente.Usuario);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            */
         }
 
 

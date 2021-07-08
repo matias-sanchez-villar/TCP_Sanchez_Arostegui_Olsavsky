@@ -59,10 +59,6 @@ namespace MedicalTurns
 
                     negocio.Eliminar(medico);
                 }
-                else
-                {
-                    Response.Redirect("A_Dashboard.aspx");
-                }
             }
             catch (Exception ex)
             {
@@ -82,10 +78,6 @@ namespace MedicalTurns
 
                     negocio.Eliminar(paciente);
                 }
-                else
-                {
-                    Response.Redirect("A_Dashboard.aspx");
-                }
             }
             catch (Exception ex)
             {
@@ -95,7 +87,7 @@ namespace MedicalTurns
 
         protected Medico RetornarMedico()
         {
-            int ID = int.Parse(Request.QueryString["ID"]);
+            int ID = int.Parse(Request.QueryString["IDMedico"]);
 
             listaMedicos = (List<Medico>)Session["Medico"];
 
@@ -106,7 +98,7 @@ namespace MedicalTurns
 
         protected Paciente RetornarPaciente()
         {
-            int ID = int.Parse(Request.QueryString["ID"]);
+            int ID = int.Parse(Request.QueryString["IDPaciente"]);
 
             listaPaciente = (List<Paciente>)Session["Paciente"];
 
