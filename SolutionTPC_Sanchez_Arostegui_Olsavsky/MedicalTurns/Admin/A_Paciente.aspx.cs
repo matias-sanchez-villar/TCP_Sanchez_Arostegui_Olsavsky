@@ -14,9 +14,12 @@ namespace MedicalTurns
         public List<ObraSocial> listaObrasSociales;
         public List<Paciente> listaPaciente;
 
+        public Paciente paciente = new Paciente();
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            EliminarPaciente();
             listarObrasSociales();
 
             N_Paciente paciente = new N_Paciente();
@@ -24,6 +27,35 @@ namespace MedicalTurns
 
             Session.Add("Paciente", listaPaciente);
 
+        }
+
+        protected void EliminarPaciente()
+        {
+            try
+            {
+                if (!(string.IsNullOrEmpty(Request.QueryString["IDPaciente"])) && Session["Paciente"] != null)
+                {
+                    N_Paciente negocio = new N_Paciente();
+
+                    paciente = RetornarPaciente();
+
+                    negocio.Eliminar(paciente);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected Paciente RetornarPaciente()
+        {
+            int ID = int.Parse(Request.QueryString["IDPaciente"]);
+
+            listaPaciente = (List<Paciente>)Session["Paciente"];
+
+            return paciente = listaPaciente.Find(x => x.ID == ID);
         }
 
         protected void listarObrasSociales()
@@ -63,7 +95,7 @@ namespace MedicalTurns
                 pacAux.Usuario.Contrasena = "root";
 
                 negocio.Cargar(pacAux);
-                Response.Redirect("A_CargarPaciente.aspx");
+                Response.Redirect("A_Paciente.aspx");
             }            
         }
 
