@@ -39,9 +39,21 @@ function validateEmail(email) {
     return regex.test(String(email).toLowerCase());
 }
 
+function validateFecha(date) { ////HAY QUE HACER ESTA FUNCION DE VALIDAR Q LA FECHA DE NAC SEA MENOR O IGUAL AL DIA DE HOY
+    var nacimiento = document.getElementById("Nacimiento").value;
+    const fecha = new Date(nacimiento);
+    const hoy = new Date();
+
+    if (fecha > hoy) {
+        alert("Debe ingresar una fecha válida");
+        return false;
+    }
+}
+
 function validateForm() {
 
     let validator = 0;
+    
 
     validator += validateText(document.querySelector('#Nombre').textContent);
 
@@ -49,7 +61,9 @@ function validateForm() {
 
     validator += validateEmail(document.querySelector('#Email').textContent);
 
-    validator == 0 ? return true : return false
+    validator += validateFecha(document.querySelector('#Nacimiento').textContent);
 
+    validator == 0 ? return true : return false;
 
+    
 }
