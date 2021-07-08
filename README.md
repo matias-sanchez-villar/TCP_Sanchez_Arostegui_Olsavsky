@@ -19,3 +19,8 @@
 **Modelo de dominio**
 
 ![ProgramacionIII-Modelo de dominio](https://user-images.githubusercontent.com/60631478/122834064-523bb600-d2c4-11eb-9587-31b711097eeb.png)
+
+------------------------------
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
