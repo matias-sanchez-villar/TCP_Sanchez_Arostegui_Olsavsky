@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\A_CargarEspecialidad.aspx" />
-    <Content Include="Admin\A_EliminarPaciente.aspx" />
     <Content Include="Admin\A_Medicos.aspx" />
     <Content Include="Admin\A_CargarObraSocial.aspx" />
     <Content Include="Admin\A_CargarPaciente.aspx" />
@@ -98,13 +97,6 @@
     </Compile>
     <Compile Include="Admin\A_CargarEspecialidad.aspx.designer.cs">
       <DependentUpon>A_CargarEspecialidad.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\A_EliminarPaciente.aspx.cs">
-      <DependentUpon>A_EliminarPaciente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\A_EliminarPaciente.aspx.designer.cs">
-      <DependentUpon>A_EliminarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\A_Medicos.aspx.cs">
       <DependentUpon>A_Medicos.aspx</DependentUpon>
