@@ -9,15 +9,15 @@ using negocio;
 
 namespace MedicalTurns
 {
-    public partial class A_Turnos : System.Web.UI.Page
+    public partial class A_CargarTurno1 : System.Web.UI.Page
     {
-        public List<Turno> lista;
+        public List<Turno> lista = new List<Turno>();
+        public N_Turno negocio = new N_Turno();
+        public Turno turno = new Turno();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            N_Turno Negocio = new N_Turno();
-
-            lista = Negocio.Listar();
+            lista = negocio.Listar();
 
             Session.Add("Turno", lista);
         }
