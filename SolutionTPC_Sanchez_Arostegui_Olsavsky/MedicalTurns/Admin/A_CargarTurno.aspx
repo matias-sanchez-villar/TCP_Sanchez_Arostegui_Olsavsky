@@ -10,7 +10,7 @@
 
             <div class="form-container">
 
-                <h2>UPLOAD PATIENT</h2>
+                <h2>UPLOAD TURNOS</h2>
 
                 <div class="generic-form row contanier">
 
