@@ -43,7 +43,6 @@
 
                     <% foreach (dominio.Turno item in lista)
                         { %>
-
                     <tr>
                         <td><% = item.medico.Apellido %>, <% = item.medico.Nombre %></td>
                         <td><% = item.paciente.Apellido %>, <% = item.paciente.Nombre %></td>

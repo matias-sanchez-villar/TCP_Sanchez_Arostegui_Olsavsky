@@ -68,6 +68,8 @@ namespace negocio
         {
             Datos = new DataAcces();
 
+            Paciente paciente = new Paciente();
+
             try
             {
 
@@ -75,14 +77,16 @@ namespace negocio
                 string From = " from Pacientes p ";
                 string JoinU = " inner join Usuarios u on u.ID = p.IDUsuario ";
                 string JoinE = " inner join ObrasSociales o on o.ID = p.IDObraSocial ";
-                string Where = " where u.Estado = 1 and p.ID = " + ID + "";
+                string Where = " where u.Estado = 1 and p.ID = @ID";
                 string query = Select + From + JoinU + JoinE + Where;
 
                 Datos.setearConsulta(query);
 
+                Datos.setearParametro("@ID", ID);
+
                 Datos.ejecutarLectura();
 
-                    Paciente paciente = new Paciente();
+                Datos.Lector.Read();
 
                     paciente.ID = (int)Datos.Lector["ID"];
                     paciente.Nombre = (string)Datos.Lector["Nombre"];

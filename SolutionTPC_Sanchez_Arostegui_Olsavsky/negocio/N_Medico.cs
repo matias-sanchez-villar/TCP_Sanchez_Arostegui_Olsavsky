@@ -67,19 +67,24 @@ namespace negocio
         {
             Datos = new DataAcces();
 
+            Medico medico = new Medico();
+
             try
             {
                 string Select = " SELECT M.ID, M.Apellido, M.Nombre, M.FechaNacimiento, M.Domicilio, M.Celular, M.Genero, M.Matricula, U.Email, U.Estado, E.Especialidad ";
                 string From = " FROM Medicos M ";
                 string JoinU = " inner join Usuarios U on M.IDUsuario = U.ID ";
                 string JoinE = " inner join Especialidades E on E.ID = M.IDEspecialidad ";
-                string Where = " where U.Estado = 1 and M.ID = " + ID + "";
+                string Where = " where U.Estado = 1 and M.ID = @ID ";
                 string query = Select + From + JoinU + JoinE + Where;
 
                 Datos.setearConsulta(query);
+
+                Datos.setearParametro("@ID", ID);
+
                 Datos.ejecutarLectura();
 
-                    Medico medico = new Medico();
+                Datos.Lector.Read();
 
                     medico.ID = (int)Datos.Lector["ID"];
                     medico.Apellido = (string)Datos.Lector["Apellido"];
