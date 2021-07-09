@@ -50,6 +50,7 @@ CREATE TABLE Medicos(
 	Celular VARCHAR(50) NULL,
     Genero CHAR NOT NULL CHECK (Genero IN ('M', 'F', 'O')),
     Matricula varchar (40) NULL,
+
 )
 GO
 
@@ -148,7 +149,7 @@ insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
 
 
 /*
-
+/////ESTA OPCION PUEDE IR /// INTERVALO DE UNA HORA POR SESION 
 -- Revisar con Pablito y Dorito  --> y en medico agregar el intervalos en minutos 40, 20, 160
 CREATE TABLE DisponibilidadHoraria(
 	ID int Primary key identity(1,1),
