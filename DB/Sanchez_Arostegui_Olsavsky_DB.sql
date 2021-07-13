@@ -62,11 +62,25 @@ GO
 
 CREATE TABLE Turnos(
   ID INT Primary Key Not null identity(1,1),
-  FechaHora DateTime NOT NULL CHECK (FechaHora > GETDATE()),
+  FechaHora DateTime NOT NULL CHECK (FechaHora > GETDATE()), ---- > CAST(DATEPART(m, GETDATE()) AS VARCHAR) if VARCHAR==Dia,  muestro al paciente los turnos dados, y los turnos disponibles
   IDMedico INT NOT NULL FOREIGN KEY REFERENCES Medicos(ID),
   IDPaciente INT NOT NULL FOREIGN KEY REFERENCES Pacientes(ID),
   Estado int not null FOREIGN KEY REFERENCES EstadoTurno(ID)
 )
+go
+
+CREATE TABLE DisponibilidadHoraria(
+	ID int Primary key identity(1,1),
+	IDMedico int foreign key references Medicos(id),
+	Dia date not null,  ----->lun mar 13/7/2021 ----varchar(10) (lunes, martes, miercoles, jueves, viernes, sabado, domingo) || IDDia = 1, 2, 3, 4, 5,6,7
+	HorarioInicio time not null,
+	HorarioFin time not null,
+	Estado bit not null      
+)
+go
+--use master
+--GO
+--CAST(DATEPART(m, GETDATE()) AS VARCHAR)
 
 Set dateformat 'DMY'
 
@@ -154,15 +168,16 @@ insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
 CREATE TABLE DisponibilidadHoraria(
 	ID int Primary key identity(1,1),
 	IDMedico int foreign key references Medicos(id),
-	Dia date not null,
+	Dia date not null,  ----->lun mar 13/7/2021 ----varchar(10) (lunes, martes, miercoles, jueves, viernes, sabado, domingo) || IDDia = 1, 2, 3, 4, 5,6,7
 	HorarioInicio time not null,
 	HorarioFin time not null,
-	Repite bit not null,
-	Estado bit not null
+	Estado bit not null      
 )
 
 go
+*/
 --- estos son los horarios cortados 
+/*
 create table Horarios
 (
 	ID tinyint primary key identity(1,1) not null,
