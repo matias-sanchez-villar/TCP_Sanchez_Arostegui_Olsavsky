@@ -72,15 +72,12 @@ go
 CREATE TABLE DisponibilidadHoraria(
 	ID int Primary key identity(1,1),
 	IDMedico int foreign key references Medicos(id),
-	Dia date not null,  ----->lun mar 13/7/2021 ----varchar(10) (lunes, martes, miercoles, jueves, viernes, sabado, domingo) || IDDia = 1, 2, 3, 4, 5,6,7
+	Dia varchar(10) not null,  
 	HorarioInicio time not null,
 	HorarioFin time not null,
 	Estado bit not null      
 )
 go
---use master
---GO
---CAST(DATEPART(m, GETDATE()) AS VARCHAR)
 
 Set dateformat 'DMY'
 
@@ -120,9 +117,8 @@ insert into Medicos(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gener
 ('Pablo','Sorrivas','gorriti 53','9893295','19940815','M','7894', 6, 3),
 ('Tota','Garcia','San Martin 4562','4594514','19801226','F','9874', 7, 5),
 ('Elsa','mazzochi','Saavedra 894','7594214','19880317','F','4561', 8, 7),
-('Daina','Alfano','Castelli 1539','4563321','19900101','F','6541', 9, 7),
+('Daiana','Alfano','Castelli 1539','4563321','19900101','F','6541', 9, 7),
 ('Gonzalo','gomez','Roca 32312','2312555','19961118','M','3691', 10, 7)
-
 
 --6 Obras sociales
 insert into ObrasSociales(ObraSocial) values ('DIVA'), ('OSDE'), ('MEDAFI'), ('GALENO'), ('MEDICUS'), ('IOMA')
@@ -147,8 +143,6 @@ insert into EstadoTurno(EstadoTurno) values
 ('Reagendado'),
 ('Ausente')
 
-
---0=turno no-vigente-cancelado,1=turno vigente-agendado,2=Asistió al turno,3=Turno-Re-Agendado, 4=Faltó al turno
 --turnos 7
 insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
 ('23-10-2021 11:44', 1, 1, 1),
@@ -160,31 +154,8 @@ insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
 ('08-07-2022 09:21', 2, 4, 1)
 
 
+select datename(dw,getdate()) -- devuelve el nombre en ingles (Lunes, Martes, etc pero en ingles)
 
+select datename(weekday,getdate()) -- devuelve el nombre en ingles (Lunes, Martes, etc pero en ingles)
 
-/*
-/////ESTA OPCION PUEDE IR /// INTERVALO DE UNA HORA POR SESION 
--- Revisar con Pablito y Dorito  --> y en medico agregar el intervalos en minutos 40, 20, 160
-CREATE TABLE DisponibilidadHoraria(
-	ID int Primary key identity(1,1),
-	IDMedico int foreign key references Medicos(id),
-	Dia date not null,  ----->lun mar 13/7/2021 ----varchar(10) (lunes, martes, miercoles, jueves, viernes, sabado, domingo) || IDDia = 1, 2, 3, 4, 5,6,7
-	HorarioInicio time not null,
-	HorarioFin time not null,
-	Estado bit not null      
-)
-
-go
-*/
---- estos son los horarios cortados 
-/*
-create table Horarios
-(
-	ID tinyint primary key identity(1,1) not null,
-	IDDisponibilidadHoraria tinyint foreign key references DisponibilidadHoraria(ID) not null,
-	HorarioInicio time not null,
-	HorarioFin time not null
-)
-
-
-*/
+select datepart(dw,getdate()) -- Creo que obtengo el numero del dia de la semana Domingo = 1 Lunes = 2

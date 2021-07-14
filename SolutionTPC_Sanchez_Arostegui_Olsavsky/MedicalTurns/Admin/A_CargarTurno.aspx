@@ -14,7 +14,9 @@
 
                 <div class="generic-form row contanier">
 
-                    <asp:TextBox ID="Medico" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Email Medico" type="text" required MaxLength="100" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    <asp:DropDownList ID="ddlEspecialidad" AutoPostBack="true" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" OnSelectedIndexChanged="ddlEspecialidad_SelectedIndexChanged"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlMedico" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1"></asp:DropDownList>
+
                     <asp:TextBox ID="Paciente" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Email Paciente" MaxLength="100" type="text" runat="server" required ClientIDMode="Static"></asp:TextBox>
                     <asp:TextBox ID="Fecha" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Fecha turno" type="date" runat="server" ClientIDMode="Static"></asp:TextBox>
                     <asp:TextBox ID="Horarios" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Horarios" type="date" runat="server" ClientIDMode="Static"></asp:TextBox>
@@ -41,7 +43,7 @@
                         </tr>
                     </thead>
 
-                    <% foreach (dominio.Turno item in lista)
+                    <% foreach (dominio.Turno item in Tlista)
                         { %>
                     <tr>
                         <td><% = item.medico.Apellido %>, <% = item.medico.Nombre %></td>
