@@ -31,7 +31,14 @@ namespace negocio
 
             try
             {
-                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Motivo, IDEstado from Turnos ");
+                string Select = " select T.ID, FechaHora, IDMedico, IDPaciente, Motivo, IDEstado ";
+                string From = " from Turnos t ";
+                string JoinM = " inner join Medicos M on m.ID = t.IDMedico ";
+                string JoinP = " inner join Pacientes p on p.ID = t.IDPaciente ";
+                string JoinU = " inner join Usuarios u on u.ID = p.IDUsuario ";
+                string JoinUS = " inner join Usuarios us on us.ID = m.IDUsuario ";
+                string Where = " where u.Estado = 1 and us.Estado = 1 ";
+                string query = Select + From + JoinM + JoinP + JoinU + JoinUS + Where;
 
                 Datos.setearConsulta(query);
 
@@ -200,6 +207,28 @@ namespace negocio
             }
         }
 
+        public void Eliminar(Turno turno)
+        {
+            Datos = new DataAcces();
+
+            try
+            {
+                Datos.setearConsulta(" delete from Turnos where ID = @ID");
+
+                Datos.setearParametro("@ID", turno.ID);
+
+                Datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
 
     }
 }

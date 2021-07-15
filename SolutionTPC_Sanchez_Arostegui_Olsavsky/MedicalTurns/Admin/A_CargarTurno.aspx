@@ -60,9 +60,9 @@
                         <td><% = item.paciente.Apellido %>, <% = item.paciente.Nombre %></td>
                         <td><% = item.FechaHora %></td>
                         <td style="width: 200px;">
-                                <a href="#"><i class="fas fa-info-circle"></i></a>
-                                <a href="#" style="margin-left: 15px;"><i class="far fa-edit editItem"></i></a>
-                                <a href="#"><i class="fas fa-trash-alt removeItem"></i></a>
+                                <a href="<% = item.ID %>"><i class="fas fa-info-circle"></i></a>
+                                <a href="<% = item.ID %>" style="margin-left: 15px;"><i class="far fa-edit editItem"></i></a>
+                                <a href="?ID=<% = item.ID %>"><i class="fas fa-trash-alt removeItem"></i></a>
                         </td>
                     </tr>
 

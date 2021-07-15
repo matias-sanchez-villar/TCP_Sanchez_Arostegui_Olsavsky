@@ -40,7 +40,7 @@
                         <tr>
                             <td><% = item.Nombre %></td>
                             <td>
-                                <a href="A_CargarObraSocial.aspx?ID=<% = item.ID %>"><i class="far fa-edit"></i></a>
+                                <a href="?ID=<% = item.ID %>"><i class="far fa-edit"></i></a>
                             </td>
                         </tr>
 
