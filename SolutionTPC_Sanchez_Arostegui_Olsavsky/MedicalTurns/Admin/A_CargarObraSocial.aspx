@@ -8,12 +8,12 @@
 
             <div class="main-container">
 
-                <h2>CARGAR OBRA SOCIAL</h2>
+                <h2>UPLOAD CLINICAL SUPPORT</h2>
                 <div class="container generic-form">
 
-                    <asp:TextBox ID="ObraSocial" placeholder="Specialty" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox ID="ObraSocial" placeholder="Clinical support" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
 
-                    <asp:Button ID="btnAgregar" CssClass="BtnSubmit" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+                    <asp:Button ID="btnAgregar" CssClass="BtnSubmit" runat="server" Text="ADD" OnClick="btnAgregar_Click" />
 
                 </div>
 
@@ -22,7 +22,7 @@
                 <section class="table-container">
 
                     <div class="table-title-container">
-                        <h3>Especialidades</h3>
+                        <h3>Medical supports</h3>
                         <hr />
                     </div>
 

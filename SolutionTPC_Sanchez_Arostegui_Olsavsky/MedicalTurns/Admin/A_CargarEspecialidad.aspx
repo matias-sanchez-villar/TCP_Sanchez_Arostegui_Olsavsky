@@ -14,14 +14,14 @@
 
                     <asp:TextBox ID="Especialidad" placeholder="Specialty" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
 
-                    <asp:Button ID="btnAgregar" CssClass="BtnSubmit" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+                    <asp:Button ID="btnAgregar" CssClass="BtnSubmit" runat="server" Text="ADD" OnClick="btnAgregar_Click" />
 
                 </div>
                 
                    <section class="table-container">
 
                        <div class="table-title-container">
-                           <h3>Especialidades</h3>
+                           <h3>Specialties</h3>
                            <hr />
                        </div>
 

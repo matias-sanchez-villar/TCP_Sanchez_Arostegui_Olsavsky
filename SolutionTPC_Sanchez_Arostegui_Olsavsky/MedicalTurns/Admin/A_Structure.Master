@@ -38,6 +38,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="A_CargarTurno.aspx" class="nav-link">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span class="link-text">Turns</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="A_CargarMedico.aspx" class="nav-link">
                         <i class="fas fa-user-md" style="padding-left: 3px;"></i>
                         <span class="link-text">Doctors</span>

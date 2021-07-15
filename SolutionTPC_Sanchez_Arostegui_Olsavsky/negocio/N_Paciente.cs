@@ -195,7 +195,7 @@ namespace negocio
 
             try
             {
-                Datos.setearConsulta(" delete from Pacientes where ID = @ID ");
+                Datos.setearConsulta("Delete from Pacientes where ID = @ID");
 
                 Datos.setearParametro("@ID", paciente.ID);
 

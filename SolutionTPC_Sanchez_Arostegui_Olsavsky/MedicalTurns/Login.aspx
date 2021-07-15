@@ -20,7 +20,9 @@
                         <label for="psw"><strong>Password</strong></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
                     </div>
-                    <button type="submit" >Login</button>
+
+                    <asp:Button id="submit-btn" runat="server" Text="Login" type="submit"/>
+
                     <div class="container">
                         <span style="text-align: center;"><a href="#">Forgot password?</a></span>
                     </div>

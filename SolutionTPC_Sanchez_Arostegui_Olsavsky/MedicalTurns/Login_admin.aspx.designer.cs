@@ -11,25 +11,25 @@ namespace MedicalTurns
 {
 
 
-    public partial class Login
+    public partial class Login_admin
     {
 
         /// <summary>
-        /// Control PlaceHolder1.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        //protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control submit-btn.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        //protected global::System.Web.UI.WebControls.Button submit-btn;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

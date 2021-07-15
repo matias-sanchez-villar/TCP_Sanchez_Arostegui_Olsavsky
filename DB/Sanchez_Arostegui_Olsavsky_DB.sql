@@ -1,11 +1,6 @@
-
-use master
+USE MASTER
 CREATE database Mediturnos
-go
-
-CREATE DATABASE Mediturnos
 GO
-
 USE Mediturnos
 GO
 
@@ -156,6 +151,8 @@ insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
 
 select datename(dw,getdate()) -- devuelve el nombre en ingles (Lunes, Martes, etc pero en ingles)
 
-select datename(weekday,getdate()) -- devuelve el nombre en ingles (Lunes, Martes, etc pero en ingles)
+select datename(weekday,getdate()) 
+-- devuelve el nombre en ingles (Lunes, Martes, etc pero en ingles)
 
-select datepart(dw,getdate()) -- Creo que obtengo el numero del dia de la semana Domingo = 1 Lunes = 2
+select datepart(dw,getdate()) 
+-- Creo que obtengo el numero del dia de la semana Domingo = 1 Lunes = 2

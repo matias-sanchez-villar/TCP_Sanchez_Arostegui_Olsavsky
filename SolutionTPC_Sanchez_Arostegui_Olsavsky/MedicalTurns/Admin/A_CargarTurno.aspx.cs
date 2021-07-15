@@ -19,15 +19,25 @@ namespace MedicalTurns
         public N_Medico Mnegocio = new N_Medico();
         public Medico medico = new Medico();
 
+        public List<Paciente> Plista = new List<Paciente>();
+        public N_Paciente Pnegocio = new N_Paciente();
+        public Paciente paciente = new Paciente();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                // Carga los turnos en session
                 Tlista = Tnegocio.Listar();
+                Session.Add("Turno", Tlista);
 
+                // Lista las especialidades en el drop down list
                 listarEspecialidades();
 
-                Session.Add("Turno", Tlista);
+                // Lista los pacientes en el drop down list
+                listarPacientes();
+
+
             }
         }
 
@@ -55,21 +65,51 @@ namespace MedicalTurns
             }
         }
 
+        public void listarPacientes()
+        {
+            try
+            {
+                Plista = Pnegocio.Listar();
+
+                foreach (dominio.Paciente item in Plista)
+                {
+                    string nombreAux = item.Nombre.ToString();
+                    string apellidoAux = item.Apellido.ToString();
+                    string completeName = nombreAux + " " + apellidoAux;
+                    string IDpaciente = item.ID.ToString();
+
+                    ListItem listItemAux = new ListItem(completeName, IDpaciente);
+                    ddlPaciente.Items.Add(listItemAux);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         protected void ddlEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             int ID = int.Parse(ddlEspecialidad.SelectedItem.Value);
 
             Mlista = Mnegocio.ListarEspecialidad(ID);
 
+            ddlMedico.Items.Clear();
+
             foreach (dominio.Medico item in Mlista)
             {
 
-                ddlMedico.DataSource = Mlista;
-                ddlMedico.DataTextField = "Nombre";
-                ddlMedico.DataValueField = "ID";
-                ddlMedico.DataBind();
+                string nombreAux = item.Nombre.ToString();
+                string apellidoAux = item.Apellido.ToString();
+                string completeName = nombreAux + " " + apellidoAux;
+                string IDpaciente = item.ID.ToString();
+
+                ListItem listItemAux = new ListItem(completeName, IDpaciente);
+                ddlMedico.Items.Add(listItemAux);
 
             }
         }
+
     }
 }
