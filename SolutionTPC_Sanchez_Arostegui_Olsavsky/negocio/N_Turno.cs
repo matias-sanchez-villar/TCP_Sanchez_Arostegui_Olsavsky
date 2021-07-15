@@ -18,6 +18,8 @@ namespace negocio
 
         public N_Paciente paciente { get; set; }
 
+        public N_Estado estado { get; set; }
+
         public List<Turno> Listar()
         {
             Datos = new DataAcces();
@@ -25,10 +27,11 @@ namespace negocio
 
             medico = new N_Medico();
             paciente = new N_Paciente();
+            estado = new N_Estado();
 
             try
             {
-                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Estado from Turnos ");
+                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Motivo, IDEstado from Turnos ");
 
                 Datos.setearConsulta(query);
 
@@ -40,9 +43,13 @@ namespace negocio
 
                     turno.ID = (int)Datos.Lector["ID"];
                     turno.FechaHora = (DateTime)Datos.Lector["FechaHora"];
+
                     turno.medico = (Medico)medico.BuscarMedicoID ( turno.medico.ID = (int)Datos.Lector["IDMedico"] );
                     turno.paciente = (Paciente)paciente.BuscarPacienteID ( turno.paciente.ID = (int)Datos.Lector["IDPaciente"] );
-                    turno.Estado = (int)Datos.Lector["Estado"];
+
+                    turno.Motivo = (string)Datos.Lector["Motivo"];
+
+                    turno.estado =  (Estado)estado.ListarID((int)Datos.Lector["IDEstado"]);
 
                     Lista.Add(turno);
                 }
@@ -68,7 +75,7 @@ namespace negocio
 
             try
             {
-                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Estado from Turnos where IDMedico =  " + ID + "");
+                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Motivo, IDEstado from Turnos where IDMedico =  " + ID + "");
 
                 Datos.setearConsulta(query);
 
@@ -82,7 +89,8 @@ namespace negocio
                     turno.FechaHora = (DateTime)Datos.Lector["FechaHora"];
                     turno.medico = (Medico)medico.BuscarMedicoID(turno.medico.ID = (int)Datos.Lector["IDMedico"]);
                     turno.paciente = (Paciente)paciente.BuscarPacienteID(turno.paciente.ID = (int)Datos.Lector["IDPaciente"]);
-                    turno.Estado = (int)Datos.Lector["Estado"];
+                    turno.Motivo = (string)Datos.Lector["Motivo"];
+                    turno.estado = (Estado)estado.ListarID((int)Datos.Lector["IDEstado"]);
 
                     Lista.Add(turno);
                 }
@@ -108,7 +116,7 @@ namespace negocio
 
             try
             {
-                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Estado from Turnos where IDPaciente =  " + ID);
+                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Motivo, IDEstado from Turnos where IDPaciente =  " + ID);
 
                 Datos.setearConsulta(query);
 
@@ -122,7 +130,9 @@ namespace negocio
                     turno.FechaHora = (DateTime)Datos.Lector["FechaHora"];
                     turno.medico = (Medico)medico.BuscarMedicoID(turno.medico.ID = (int)Datos.Lector["IDMedico"]);
                     turno.paciente = (Paciente)paciente.BuscarPacienteID(turno.paciente.ID = (int)Datos.Lector["IDPaciente"]);
-                    turno.Estado = (int)Datos.Lector["Estado"];
+
+                    turno.Motivo = (string)Datos.Lector["Motivo"];
+                    turno.estado = (Estado)estado.ListarID((int)Datos.Lector["IDEstado"]);
 
                     Lista.Add(turno);
                 }

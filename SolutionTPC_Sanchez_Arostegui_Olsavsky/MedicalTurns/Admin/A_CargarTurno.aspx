@@ -26,6 +26,9 @@
 
                     <asp:TextBox ID="Fecha" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Fecha turno" type="date" runat="server" ClientIDMode="Static" required></asp:TextBox>
                     <asp:TextBox ID="Horarios" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" min="09:00" max="18:00" placeholder="Horarios" type="time" runat="server" ClientIDMode="Static" required></asp:TextBox>
+                    
+                    <asp:TextBox CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" ID="Motivo" placeholder="Motivo Consulta" type="text" required MaxLength="550" runat="server" ClientIDMode="Static"></asp:TextBox>
+
                     <div class="m-auto col-sm-12 col-md-4 col-lg-3 p-1"></div>
 
                     <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="return" runat="server" Text="Add turn" type="submit" />
