@@ -23,7 +23,7 @@
             <ul class="navbar-nav">
 
                 <li class="logo">
-                    <a href="#" class="nav-link">
+                    <a href="A_Dashboard.aspx" class="nav-link">
                         <span class="link-text logo-text">MEDITURNS</span>
                         <i class="fas fa-hospital-symbol"></i>
                     </a>
@@ -48,6 +48,13 @@
                     <a href="A_CargarMedico.aspx" class="nav-link">
                         <i class="fas fa-user-md" style="padding-left: 3px;"></i>
                         <span class="link-text">Doctors</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="A_CargarDisponibilidadHoraria.aspx" class="nav-link">
+                        <i class="fas fa-business-time"></i>
+                        <span class="link-text">Availaibilities</span>
                     </a>
                 </li>
 
@@ -103,6 +110,7 @@
 
                 $('#data-table').DataTable({});
                 $('#data-table2').DataTable({});
+                $('#data-table3').DataTable({});
 
             });
         </script>

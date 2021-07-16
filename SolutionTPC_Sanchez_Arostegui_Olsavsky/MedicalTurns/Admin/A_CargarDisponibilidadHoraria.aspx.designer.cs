@@ -24,13 +24,13 @@ namespace MedicalTurns.Admin
         protected global::System.Web.UI.WebControls.DropDownList ddlMedico;
 
         /// <summary>
-        /// Control Dia.
+        /// Control ddlDia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Dia;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDia;
 
         /// <summary>
         /// Control HorarioInicio.

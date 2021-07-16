@@ -16,7 +16,7 @@ namespace negocio
 
         public List<DisponibilidadHoraria> Listar()
         {
-
+            N_Medico NMedicoAux = new N_Medico();
             try
             {
                 Datos.setearConsulta(" select ID, IDMedico, Dia, HorarioInicio, HorarioFin, Estado from DisponibilidadHoraria ");
@@ -27,7 +27,7 @@ namespace negocio
                     DisponibilidadHoraria Disponibilidad = new DisponibilidadHoraria();
 
                     Disponibilidad.ID = (int)Datos.Lector["ID"];
-                    Disponibilidad.IDMedico = (int)Datos.Lector["IDMedico"];
+                    Disponibilidad.medicoAux = NMedicoAux.BuscarMedicoID((int)Datos.Lector["IDMedico"]);
                     Disponibilidad.Dia = (string)Datos.Lector["Dia"];
                     Disponibilidad.HoraInicio = (TimeSpan)Datos.Lector["HorarioInicio"];
                     Disponibilidad.HoraFin = (TimeSpan)Datos.Lector["HorarioFin"];
@@ -49,7 +49,7 @@ namespace negocio
 
         public List<DisponibilidadHoraria> ListarIDMedico(int ID)
         {
-
+            N_Medico NMedicoAux = new N_Medico();
             try
             {
                 Datos.setearConsulta(" select ID, IDMedico, Dia, HorarioInicio, HorarioFin, Estado from DisponibilidadHoraria where IDMedico = @ID ");
@@ -63,7 +63,7 @@ namespace negocio
                     DisponibilidadHoraria Disponibilidad = new DisponibilidadHoraria();
 
                     Disponibilidad.ID = (int)Datos.Lector["ID"];
-                    Disponibilidad.IDMedico = (int)Datos.Lector["IDMedico"];
+                    Disponibilidad.medicoAux = NMedicoAux.BuscarMedicoID((int)Datos.Lector["IDMedico"]);
                     Disponibilidad.Dia = (string)Datos.Lector["Dia"];
                     Disponibilidad.HoraInicio = (TimeSpan)Datos.Lector["HorarioInicio"];
                     Disponibilidad.HoraFin = (TimeSpan)Datos.Lector["HorarioFin"];
@@ -91,7 +91,7 @@ namespace negocio
 
                 Datos.setearConsulta(" insert into DisponibilidadHoraria (IDMedico, Dia, HorarioInicio, HorarioFin, Estado) values (@IDMedico, @Dia, @HorarioInicio, @HorarioFin, @Estado)");
 
-                Datos.setearParametro("@IDMedico", disponibilidad.IDMedico);
+                Datos.setearParametro("@IDMedico", disponibilidad.medicoAux.ID);
                 Datos.setearParametro("@Dia", disponibilidad.Dia);
                 Datos.setearParametro("@HorarioInicio", disponibilidad.HoraInicio);
                 Datos.setearParametro("@HorarioFin", disponibilidad.HoraFin);
@@ -117,7 +117,7 @@ namespace negocio
 
                 Datos.setearConsulta(" update DisponibilidadHoraria set IDMedico = @IDMedico, Dia = @Dia, HorarioInicio = @HorarioInicio, HorarioFin = @HorarioFin, Estado = @Estado ");
 
-                Datos.setearParametro("@IDMedico", disponibilidad.IDMedico);
+                Datos.setearParametro("@IDMedico", disponibilidad.medicoAux.ID);
                 Datos.setearParametro("@Dia", disponibilidad.Dia);
                 Datos.setearParametro("@HorarioInicio", disponibilidad.HoraInicio);
                 Datos.setearParametro("@HorarioFin", disponibilidad.HoraFin);
