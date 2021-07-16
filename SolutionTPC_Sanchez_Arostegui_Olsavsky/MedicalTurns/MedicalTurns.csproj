@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\A_CargarDisponibilidadHoraria.aspx" />
     <Content Include="Admin\A_CargarEspecialidad.aspx" />
     <Content Include="Admin\A_CargarMedico.aspx" />
     <Content Include="Admin\A_CargarObraSocial.aspx" />
@@ -91,6 +92,13 @@
     <Content Include="Admin\A_Dashboard.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\A_CargarDisponibilidadHoraria.aspx.cs">
+      <DependentUpon>A_CargarDisponibilidadHoraria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\A_CargarDisponibilidadHoraria.aspx.designer.cs">
+      <DependentUpon>A_CargarDisponibilidadHoraria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\A_CargarEspecialidad.aspx.cs">
       <DependentUpon>A_CargarEspecialidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
