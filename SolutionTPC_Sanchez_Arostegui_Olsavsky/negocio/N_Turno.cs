@@ -28,7 +28,7 @@ namespace negocio
 
             try
             {
-                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Estado from Turnos ");
+                string query = (" select ID, FechaHora, IDMedico, IDPaciente, IDEstado from Turnos ");
 
                 Datos.setearConsulta(query);
 
@@ -42,7 +42,7 @@ namespace negocio
                     turno.FechaHora = (DateTime)Datos.Lector["FechaHora"];
                     turno.medico = (Medico)medico.BuscarMedicoID ( turno.medico.ID = (int)Datos.Lector["IDMedico"] );
                     turno.paciente = (Paciente)paciente.BuscarPacienteID ( turno.paciente.ID = (int)Datos.Lector["IDPaciente"] );
-                    turno.Estado = (int)Datos.Lector["Estado"];
+                    turno.Estado = (int)Datos.Lector["IDEstado"];
 
                     Lista.Add(turno);
                 }

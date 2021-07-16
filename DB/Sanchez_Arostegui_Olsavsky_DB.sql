@@ -57,10 +57,12 @@ GO
 
 CREATE TABLE Turnos(
   ID INT Primary Key Not null identity(1,1),
-  FechaHora DateTime NOT NULL CHECK (FechaHora > GETDATE()), ---- > CAST(DATEPART(m, GETDATE()) AS VARCHAR) if VARCHAR==Dia,  muestro al paciente los turnos dados, y los turnos disponibles
+  ---- > CAST(DATEPART(m, GETDATE()) AS VARCHAR) if VARCHAR==Dia,  muestro al paciente los turnos dados, y los turnos disponibles
+  Fecha Date NOT NULL CHECK (Fecha > GETDATE()),
+  Hora Time NOT NULL,
   IDMedico INT NOT NULL FOREIGN KEY REFERENCES Medicos(ID),
   IDPaciente INT NOT NULL FOREIGN KEY REFERENCES Pacientes(ID),
-  Estado int not null FOREIGN KEY REFERENCES EstadoTurno(ID)
+  IDEstado int not null FOREIGN KEY REFERENCES EstadoTurno(ID)
 )
 go
 
@@ -139,7 +141,7 @@ insert into EstadoTurno(EstadoTurno) values
 ('Ausente')
 
 --turnos 7
-insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
+insert into Turnos (FechaHora, IDMedico, IDPaciente, IDEstado) values
 ('23-10-2021 11:44', 1, 1, 1),
 ('12-11-2021 10:24', 4, 3, 2),
 ('17-12-2021 17:10', 2, 5, 3),
@@ -148,11 +150,47 @@ insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
 ('13-09-2021 10:36', 3, 7, 1),
 ('08-07-2022 09:21', 2, 4, 1)
 
+-- TRIGGER PARA QUE CUANDO SE ELIMINA UN PACIENTE SE ELIMINEN SUS TURNOS Y ELIMINA SU USUARIO
+GO
+CREATE TRIGGER TR_ELIMINAR_MEDICO_TURNO ON MEDICOS
+INSTEAD OF DELETE
+AS BEGIN
+	DECLARE @IDMEDICO INT
+	DECLARE @IDUSUARIO INT
 
-select datename(dw,getdate()) -- devuelve el nombre en ingles (Lunes, Martes, etc pero en ingles)
+	SELECT @IDMEDICO = ID, @IDUSUARIO = IDUsuario FROM DELETED
 
-select datename(weekday,getdate()) 
+	DELETE FROM TURNOS WHERE IDMedico IN (SELECT ID FROM DELETED)
+	DELETE FROM MEDICOS WHERE ID = @IDMEDICO
+	DELETE FROM USUARIOS WHERE ID = @IDUSUARIO
+
+END
+GO
+
+-- TRIGGER PARA QUE CUANDO SE ELIMINA UN PACIENTE SE ELIMINEN SUS TURNOS Y ELIMINA SU USUARIO
+
+GO
+CREATE TRIGGER TR_ELIMINAR_PACIENTES_TURNO ON PACIENTES
+INSTEAD OF DELETE
+AS BEGIN
+	DECLARE @IDPACIENTE INT
+	DECLARE @IDUSUARIO INT
+
+	SELECT @IDPACIENTE = ID, @IDUSUARIO = IDUsuario FROM DELETED
+
+	DELETE FROM TURNOS WHERE IDPaciente IN (SELECT ID FROM DELETED)
+	DELETE FROM PACIENTES WHERE ID = @IDPACIENTE
+	DELETE FROM USUARIOS WHERE ID = @IDUSUARIO
+
+END
+GO
+
+
 -- devuelve el nombre en ingles (Lunes, Martes, etc pero en ingles)
+select datename(dw,getdate()) 
 
-select datepart(dw,getdate()) 
+-- devuelve el nombre en ingles (Lunes, Martes, etc pero en ingles)
+select datename(weekday,getdate()) 
+
 -- Creo que obtengo el numero del dia de la semana Domingo = 1 Lunes = 2
+select datepart(dw,getdate()) 

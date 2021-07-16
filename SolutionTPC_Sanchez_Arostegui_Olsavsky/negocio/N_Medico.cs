@@ -240,7 +240,7 @@ namespace negocio
 
                 N_Usuario usuario = new N_Usuario();
 
-                Datos.setearConsulta(" delete from Medicos where ID = @ID ");
+                Datos.setearConsulta("Delete from Medicos where ID = @ID ");
 
                 Datos.setearParametro("@ID", medico.ID);
 

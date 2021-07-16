@@ -29,7 +29,7 @@
                     <asp:TextBox ID="Matricula" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Credential number" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
 
 
-                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="return validateForm()" runat="server" Text="Create patient" type="submit" OnClick="BtnSubmit_Click" />
+                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="return validateForm()" runat="server" Text="Create doctor" type="submit" OnClick="BtnSubmit_Click" />
 
                 </div>
             </div>

@@ -104,7 +104,7 @@ namespace MedicalTurns
                 medico.Usuario.Contrasena = "root";
 
                 negocio.Cargar(medico);
-                Response.Redirect("A_CargarMedicos.aspx");
+                Response.Redirect("A_Dashboard.aspx");
             }
         }
     }
