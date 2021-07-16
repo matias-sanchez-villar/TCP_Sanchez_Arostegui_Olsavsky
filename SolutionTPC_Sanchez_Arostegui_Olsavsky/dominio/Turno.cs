@@ -12,12 +12,16 @@ namespace dominio
         public Medico medico { get; set; }
         public Paciente paciente { get; set; }
         public DateTime FechaHora { get; set; }
-        public Estado estado { get; set; }
-        public string Motivo { get; set; }
-
+        public int Estado { get; set; }   /*0=turno no-vigente-cancelado, 
+                                            1=turno vigente-agendado,
+                                            2=Asistió al turno
+                                            3=Turno-Re-Agendado
+                                            4=Faltó al turno
+                                            */
+   
         public Turno()
         {
-            estado = new Estado();
+            Estado = 1;
 
             medico = new Medico();
 

@@ -44,13 +44,14 @@ CREATE TABLE Medicos(
 	Domicilio VARCHAR(250) NULL,
 	Celular VARCHAR(50) NULL,
     Genero CHAR NOT NULL CHECK (Genero IN ('M', 'F', 'O')),
-    Matricula varchar (40) NULL
+    Matricula varchar (40) NULL,
+
 )
 GO
 
 CREATE TABLE EstadoTurno(
 	ID INT Primary Key NOT NULL identity(1,1),
-	Nombre varchar(15) NOT NULL 
+	EstadoTurno varchar(15) NOT NULL 
 )
 GO
 
@@ -59,8 +60,7 @@ CREATE TABLE Turnos(
   FechaHora DateTime NOT NULL CHECK (FechaHora > GETDATE()), ---- > CAST(DATEPART(m, GETDATE()) AS VARCHAR) if VARCHAR==Dia,  muestro al paciente los turnos dados, y los turnos disponibles
   IDMedico INT NOT NULL FOREIGN KEY REFERENCES Medicos(ID),
   IDPaciente INT NOT NULL FOREIGN KEY REFERENCES Pacientes(ID),
-  Motivo varchar(550) null,
-  IDEstado int not null FOREIGN KEY REFERENCES EstadoTurno(ID)
+  Estado int not null FOREIGN KEY REFERENCES EstadoTurno(ID)
 )
 go
 
@@ -131,7 +131,7 @@ insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gen
 ('Pablo','Bonfilio','Belgrano 456','1334852','19940520','M','9512', 19, 1)
 
 -- Estados de turnos
-insert into EstadoTurno(Nombre) values
+insert into EstadoTurno(EstadoTurno) values
 ('Agendado'),
 ('Cancelado'),
 ('Asistido'),
@@ -139,14 +139,14 @@ insert into EstadoTurno(Nombre) values
 ('Ausente')
 
 --turnos 7
-insert into Turnos (FechaHora, IDMedico, IDPaciente, Motivo, IDEstado) values
-('23-10-2021 11:44', 1, 1, 'Dolor',1),
-('12-11-2021 10:24', 4, 3, 'Urgencia', 2),
-('17-12-2021 17:10', 2, 5, 'Dolor de cabeza', 3),
-('24-09-2021 16:35', 1, 2, 'levanta fiebre', 4),
-('12-08-2021 12:55', 7, 3, 'Mucho Dolor', 5),
-('13-09-2021 10:36', 3, 7, 'No escucha', 1),
-('08-07-2022 09:21', 2, 4, 'Chequeo', 1)
+insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values
+('23-10-2021 11:44', 1, 1, 1),
+('12-11-2021 10:24', 4, 3, 2),
+('17-12-2021 17:10', 2, 5, 3),
+('24-09-2021 16:35', 1, 2, 4),
+('12-08-2021 12:55', 7, 3, 5),
+('13-09-2021 10:36', 3, 7, 1),
+('08-07-2022 09:21', 2, 4, 1)
 
 
 select datename(dw,getdate()) -- devuelve el nombre en ingles (Lunes, Martes, etc pero en ingles)
