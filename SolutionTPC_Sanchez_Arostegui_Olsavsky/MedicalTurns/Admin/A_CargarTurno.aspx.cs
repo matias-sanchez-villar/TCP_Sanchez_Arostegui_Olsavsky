@@ -27,10 +27,6 @@ namespace MedicalTurns
         {
             if (!IsPostBack)
             {
-
-                // Eliminar Turno
-                EliminarTurno();
-
                 // Carga los turnos en session
                 Tlista = Tnegocio.Listar();
                 Session.Add("Turno", Tlista);
@@ -40,6 +36,7 @@ namespace MedicalTurns
 
                 // Lista los pacientes en el drop down list
                 listarPacientes();
+
 
             }
         }
@@ -112,38 +109,6 @@ namespace MedicalTurns
                 ddlMedico.Items.Add(listItemAux);
 
             }
-        }
-
-        public void EliminarTurno()
-        {
-            try
-            {
-                if (!(string.IsNullOrEmpty(Request.QueryString["ID"])) && Session["Turno"] != null)
-                {
-                    Tnegocio = new N_Turno();
-
-                    turno = retornarTurno();
-
-                    Tnegocio.Eliminar(turno);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public Turno retornarTurno()
-        {
-            int ID = int.Parse(Request.QueryString["ID"]);
-
-            Tlista = new List<Turno>();
-
-            Tlista = (List<Turno>)Session["Turno"];
-
-            turno = new Turno();
-
-            return turno = Tlista.Find(x => x.ID == ID);
         }
 
     }

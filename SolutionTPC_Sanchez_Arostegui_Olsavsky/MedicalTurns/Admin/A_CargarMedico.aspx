@@ -60,7 +60,7 @@
                         <td><% = item.especialidad.Nombre %></td>
                         <td>
                             <a href="A_ModificarMedico.aspx?ID=<% = item.ID %>"><i class="far fa-edit editItem"></i></a>
-                            <a href="?IDMedico=<% = item.ID %>"><i class="fas fa-trash-alt removeItem"></i></a>
+                            <a href="A_Dashboard.aspx?IDMedico=<% = item.ID %>"><i class="fas fa-trash-alt removeItem"></i></a>
                         </td>
                     </tr>
 

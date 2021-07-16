@@ -234,21 +234,23 @@ namespace negocio
 
         public void Eliminar(Medico medico)
         {
-            N_Usuario usuario = new N_Usuario();
             try
             {
-                medico.Usuario.Estado = false;
+                Datos = new DataAcces();
 
-                usuario.Modificar(medico.Usuario);
+                N_Usuario usuario = new N_Usuario();
 
+                Datos.setearConsulta(" delete from Medicos where ID = @ID ");
+
+                Datos.setearParametro("@ID", medico.ID);
+
+                Datos.EjecutarAccion();
+
+                usuario.Eliminar(medico.Usuario);
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Datos.cerrarConexion();
             }
         }
 
