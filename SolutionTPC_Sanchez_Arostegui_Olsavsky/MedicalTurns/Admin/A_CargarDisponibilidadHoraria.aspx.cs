@@ -21,6 +21,8 @@ namespace MedicalTurns.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            EliminarDH();
+
             if (!IsPostBack)
             {
                 // Carga la disponibilidad en session
@@ -31,6 +33,36 @@ namespace MedicalTurns.Admin
 
             listarMedicos();
         }
+
+        protected DisponibilidadHoraria RetornarDH()
+        {
+            int ID = int.Parse(Request.QueryString["ID"]);
+
+            DHlista = (List<DisponibilidadHoraria>)Session["DisponibilidadHoraria"];
+
+            return disponibilidadHoraria = DHlista.Find(x => x.ID == ID);
+        }
+
+        protected void EliminarDH()
+        {
+            try
+            {
+                if (!(string.IsNullOrEmpty(Request.QueryString["ID"])) && Session["DisponibilidadHoraria"] != null)
+                {
+                    N_DisponibilidadHoraria negocio = new N_DisponibilidadHoraria();
+
+                    disponibilidadHoraria = RetornarDH();
+
+                    negocio.Eliminar(disponibilidadHoraria);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         public void listarMedicos()
         {

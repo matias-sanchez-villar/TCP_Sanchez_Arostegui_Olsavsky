@@ -63,7 +63,7 @@
                         <td style="width: 20%;"><% = item.HoraInicio %></td>
                         <td style="width: 20%;"><% = item.HoraFin %></td>
 
-                        <td style="width: 20%;"><a href="#"><i class="fas fa-trash-alt removeItem"></i></a></td>
+                        <td style="width: 20%;"><a href="?ID=<% = item.ID %>"><i class="fas fa-trash-alt removeItem"></i></a></td>
                     </tr>
 
                     <% } %>
