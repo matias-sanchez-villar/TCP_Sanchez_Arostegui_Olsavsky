@@ -28,7 +28,7 @@ namespace negocio
 
             try
             {
-                string query = (" select ID, FechaHora, IDMedico, IDPaciente, IDEstado from Turnos ");
+               string query = (" select ID, Fecha, Hora, IDMedico, IDPaciente, Estado from Turnos ");
 
                 Datos.setearConsulta(query);
 
@@ -39,10 +39,11 @@ namespace negocio
                     Turno turno = new Turno();
 
                     turno.ID = (int)Datos.Lector["ID"];
-                    turno.FechaHora = (DateTime)Datos.Lector["FechaHora"];
+                    turno.Fecha = (DateTime)Datos.Lector["Fecha"];
+                    turno.Hora = (TimeSpan)Datos.Lector["Hora"];
                     turno.medico = (Medico)medico.BuscarMedicoID ( turno.medico.ID = (int)Datos.Lector["IDMedico"] );
                     turno.paciente = (Paciente)paciente.BuscarPacienteID ( turno.paciente.ID = (int)Datos.Lector["IDPaciente"] );
-                    turno.Estado = (int)Datos.Lector["IDEstado"];
+                    turno.Estado = (string)Datos.Lector["Estado"];
 
                     Lista.Add(turno);
                 }
@@ -58,124 +59,14 @@ namespace negocio
             }
         }
 
-        public List<Turno> ListarMedicoID(int ID)
-        {
-            Datos = new DataAcces();
-            Lista = new List<Turno>();
-
-            medico = new N_Medico();
-            paciente = new N_Paciente();
-
-            try
-            {
-                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Estado from Turnos where IDMedico =  " + ID + "");
-
-                Datos.setearConsulta(query);
-
-                Datos.ejecutarLectura();
-
-                while (Datos.Lector.Read())
-                {
-                    Turno turno = new Turno();
-
-                    turno.ID = (int)Datos.Lector["ID"];
-                    turno.FechaHora = (DateTime)Datos.Lector["FechaHora"];
-                    turno.medico = (Medico)medico.BuscarMedicoID(turno.medico.ID = (int)Datos.Lector["IDMedico"]);
-                    turno.paciente = (Paciente)paciente.BuscarPacienteID(turno.paciente.ID = (int)Datos.Lector["IDPaciente"]);
-                    turno.Estado = (int)Datos.Lector["Estado"];
-
-                    Lista.Add(turno);
-                }
-                return Lista;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Datos.cerrarConexion();
-            }
-        }
-
-        public List<Turno> ListarPacienteID(int ID)
-        {
-            Datos = new DataAcces();
-            Lista = new List<Turno>();
-
-            medico = new N_Medico();
-            paciente = new N_Paciente();
-
-            try
-            {
-                string query = (" select ID, FechaHora, IDMedico, IDPaciente, Estado from Turnos where IDPaciente =  " + ID);
-
-                Datos.setearConsulta(query);
-
-                Datos.ejecutarLectura();
-
-                while (Datos.Lector.Read())
-                {
-                    Turno turno = new Turno();
-
-                    turno.ID = (int)Datos.Lector["ID"];
-                    turno.FechaHora = (DateTime)Datos.Lector["FechaHora"];
-                    turno.medico = (Medico)medico.BuscarMedicoID(turno.medico.ID = (int)Datos.Lector["IDMedico"]);
-                    turno.paciente = (Paciente)paciente.BuscarPacienteID(turno.paciente.ID = (int)Datos.Lector["IDPaciente"]);
-                    turno.Estado = (int)Datos.Lector["Estado"];
-
-                    Lista.Add(turno);
-                }
-                return Lista;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Datos.cerrarConexion();
-            }
-        }
-
-        public void Cargar(Turno turno)
+        public void Eliminar(Turno turno)
         {
             Datos = new DataAcces();
             try
             {
-                Datos.setearConsulta(" insert into Turnos (FechaHora, IDMedico, IDPaciente, Estado) values (@FechaHora, @IDMedico, @IDPaciente, @Estado) ");
-
-                Datos.setearParametro("@FechaHora", turno.FechaHora);
-                Datos.setearParametro("@IDMedico", turno.medico.ID);
-                Datos.setearParametro("@IDPaciente", turno.paciente.ID);
-                Datos.setearParametro("@Estado", true);
-
-                Datos.ejecutarLectura();
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Datos.cerrarConexion();
-            }
-        }
-
-
-        public void Modificar(Turno turno)
-        {
-            Datos = new DataAcces();
-            try
-            {
-                Datos.setearConsulta(" update Turnos set FechaHora = @FechaHora, IDMedico = @IDMedico, IDPaciente = @IDPaciente, Estado ID = @ID");
+                Datos.setearConsulta(" Delete Turnos where ID = @ID");
 
                 Datos.setearParametro("@FechaHora", turno.ID);
-                Datos.setearParametro("@FechaHora", turno.FechaHora);
-                Datos.setearParametro("@IDMedico", turno.medico.ID);
-                Datos.setearParametro("@IDPaciente", turno.paciente.ID);
-                Datos.setearParametro("@Estado", true);
 
                 Datos.ejecutarLectura();
 

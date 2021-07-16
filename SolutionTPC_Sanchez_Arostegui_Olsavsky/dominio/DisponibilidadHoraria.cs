@@ -11,8 +11,8 @@ namespace dominio
         public int ID { get; set; }
         public int IDMedico { get; set; }
         public string Dia { get; set; }
-        public DateTime HoraInicio { get; set; }
-        public DateTime HoraFin { get; set; }
+        public TimeSpan HoraInicio { get; set; }
+        public TimeSpan HoraFin { get; set; }
         public bool Estado { get; set; }
     }
 }

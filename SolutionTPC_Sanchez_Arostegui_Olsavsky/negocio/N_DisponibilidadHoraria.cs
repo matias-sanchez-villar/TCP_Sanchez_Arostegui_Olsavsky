@@ -29,8 +29,8 @@ namespace negocio
                     Disponibilidad.ID = (int)Datos.Lector["ID"];
                     Disponibilidad.IDMedico = (int)Datos.Lector["IDMedico"];
                     Disponibilidad.Dia = (string)Datos.Lector["Dia"];
-                    Disponibilidad.HoraInicio = (DateTime)Datos.Lector["HorarioInicio"];
-                    Disponibilidad.HoraFin = (DateTime)Datos.Lector["HorarioFin"];
+                    Disponibilidad.HoraInicio = (TimeSpan)Datos.Lector["HorarioInicio"];
+                    Disponibilidad.HoraFin = (TimeSpan)Datos.Lector["HorarioFin"];
                     Disponibilidad.Estado = (bool)Datos.Lector["Estado"];
 
                     Lista.Add(Disponibilidad);
@@ -65,8 +65,8 @@ namespace negocio
                     Disponibilidad.ID = (int)Datos.Lector["ID"];
                     Disponibilidad.IDMedico = (int)Datos.Lector["IDMedico"];
                     Disponibilidad.Dia = (string)Datos.Lector["Dia"];
-                    Disponibilidad.HoraInicio = (DateTime)Datos.Lector["HorarioInicio"];
-                    Disponibilidad.HoraFin = (DateTime)Datos.Lector["HorarioFin"];
+                    Disponibilidad.HoraInicio = (TimeSpan)Datos.Lector["HorarioInicio"];
+                    Disponibilidad.HoraFin = (TimeSpan)Datos.Lector["HorarioFin"];
                     Disponibilidad.Estado = (bool)Datos.Lector["Estado"];
 
                     Lista.Add(Disponibilidad);

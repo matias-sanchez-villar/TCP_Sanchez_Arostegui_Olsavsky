@@ -55,7 +55,7 @@
                     <tr>
                         <td><% = item.medico.Apellido %>, <% = item.medico.Nombre %></td>
                         <td><% = item.paciente.Apellido %>, <% = item.paciente.Nombre %></td>
-                        <td><% = item.FechaHora %></td>
+                        <td><% = String.Format("{0:yyyy-MM-dd}", item.Fecha) %> <% = item.Hora %> </td>
                         <td style="width: 200px;">
                                 <a href="#"><i class="fas fa-info-circle"></i></a>
                                 <a href="#" style="margin-left: 15px;"><i class="far fa-edit editItem"></i></a>
