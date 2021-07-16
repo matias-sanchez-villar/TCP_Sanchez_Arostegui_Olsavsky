@@ -8,7 +8,7 @@ CREATE TABLE Usuarios(
 	ID INT PRIMARY KEY NOT NULL identity(1,1),
 	Email VARCHAR(250) UNIQUE NOT NULL,
 	Contrasena Varchar(50) NOT NULL,
-	Estado bit not null,
+	Estado bit not null
 )
 GO
 CREATE TABLE Especialidades(
@@ -44,14 +44,7 @@ CREATE TABLE Medicos(
 	Domicilio VARCHAR(250) NULL,
 	Celular VARCHAR(50) NULL,
     Genero CHAR NOT NULL CHECK (Genero IN ('M', 'F', 'O')),
-    Matricula varchar (40) NULL,
-
-)
-GO
-
-CREATE TABLE EstadoTurno(
-	ID INT Primary Key NOT NULL identity(1,1),
-	EstadoTurno varchar(15) NOT NULL 
+    Matricula varchar (40) NULL
 )
 GO
 
@@ -62,7 +55,8 @@ CREATE TABLE Turnos(
   Hora Time NOT NULL,
   IDMedico INT NOT NULL FOREIGN KEY REFERENCES Medicos(ID),
   IDPaciente INT NOT NULL FOREIGN KEY REFERENCES Pacientes(ID),
-  IDEstado int not null FOREIGN KEY REFERENCES EstadoTurno(ID)
+  Estado varchar(20) not null,
+  Descripcion varchar(550) null
 )
 go
 
@@ -117,6 +111,33 @@ insert into Medicos(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gener
 ('Daiana','Alfano','Castelli 1539','4563321','19900101','F','6541', 9, 7),
 ('Gonzalo','gomez','Roca 32312','2312555','19961118','M','3691', 10, 7)
 
+--25 fechas -- a completar
+insert into DisponibilidadHoraria (IDMedico, Dia, HorarioInicio, HorarioFin, Estado) values
+(1, 'Friday', '12:00:00', '17:00:00', 1),
+(1, 'Monday', '12:00:00', '17:00:00', 1),
+(2, 'Friday', '16:00:00', '18:00:00', 1),
+(2, 'Friday', '09:00:00', '12:00:00', 1),
+(3, 'Monday', '09:00:00', '18:00:00', 1),
+(3, 'Tuesday', '17:00:00', '22:00:00', 1),
+(4, 'Friday', '13:00:00', '20:00:00', 1),
+(4, 'Monday', '09:00:00', '12:00:00', 1),
+(5, 'Friday', '10:00:00', '13:00:00', 1),
+(5, 'Tuesday', '22:00:00', '00:00:00', 1),
+(6, 'Friday', '12:00:00', '16:00:00', 1),
+(6, 'Monday', '11:00:00', '13:00:00', 1),
+(7, 'Tuesday', '12:00:00', '19:00:00', 1),
+(7, 'Friday', '08:00:00', '12:00:00', 1),
+(7, 'Friday', '17:00:00', '22:00:00', 1),
+(8, 'Tuesday', '09:00:00', '12:00:00', 1),
+(8, 'Friday', '18:00:00', '22:00:00', 1),
+(8, 'Monday', '13:00:00', '18:00:00', 1),
+(9, 'Friday', '08:00:00', '12:00:00', 1),
+(9, 'Friday', '16:00:00', '20:00:00', 1),
+(9, 'Monday', '09:00:00', '13:00:00', 1),
+(10, 'Friday', '16:00:00', '22:00:00', 1),
+(10, 'Tuesday', '12:00:00', '16:00:00', 1),
+(10, 'Monday', '14:00:00', '18:00:00', 1)
+
 --6 Obras sociales
 insert into ObrasSociales(ObraSocial) values ('DIVA'), ('OSDE'), ('MEDAFI'), ('GALENO'), ('MEDICUS'), ('IOMA')
 
@@ -132,23 +153,15 @@ insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gen
 ('Chanta','Pirola','San Martin 645','7414560','19980729','M','9874', 18, 3), 
 ('Pablo','Bonfilio','Belgrano 456','1334852','19940520','M','9512', 19, 1)
 
--- Estados de turnos
-insert into EstadoTurno(EstadoTurno) values
-('Agendado'),
-('Cancelado'),
-('Asistido'),
-('Reagendado'),
-('Ausente')
-
 --turnos 7
-insert into Turnos (FechaHora, IDMedico, IDPaciente, IDEstado) values
-('23-10-2021 11:44', 1, 1, 1),
-('12-11-2021 10:24', 4, 3, 2),
-('17-12-2021 17:10', 2, 5, 3),
-('24-09-2021 16:35', 1, 2, 4),
-('12-08-2021 12:55', 7, 3, 5),
-('13-09-2021 10:36', 3, 7, 1),
-('08-07-2022 09:21', 2, 4, 1)
+insert into Turnos (Fecha, Hora, IDMedico, IDPaciente, Estado) values
+('23-10-2021', '13:00:00', 1, 1, 'Agendado'),
+('12-11-2021', '12:00:00', 4, 3, 'Agendado'),
+('17-12-2021', '12:00:00', 2, 5, 'Agendado'),
+('24-09-2021', '12:00:00', 1, 2,'Agendado'),
+('12-08-2021', '12:00:00', 7, 3, 'Agendado'),
+('13-09-2021', '12:00:00', 3, 7, 'Agendado'),
+('08-07-2022', '12:00:00', 2, 4, 'Agendado')
 
 -- TRIGGER PARA QUE CUANDO SE ELIMINA UN PACIENTE SE ELIMINEN SUS TURNOS Y ELIMINA SU USUARIO
 GO
@@ -183,7 +196,18 @@ AS BEGIN
 	DELETE FROM USUARIOS WHERE ID = @IDUSUARIO
 
 END
-GO
+
+/*
+
+-- Estados de turnos  -->> drop dawn list
+
+insert into EstadoTurno(EstadoTurno) values
+('Agendado'),
+('Cancelado'),
+('Asistido'),
+('Reagendado'),
+('Ausente')
+
 
 
 -- devuelve el nombre en ingles (Lunes, Martes, etc pero en ingles)
@@ -194,3 +218,6 @@ select datename(weekday,getdate())
 
 -- Creo que obtengo el numero del dia de la semana Domingo = 1 Lunes = 2
 select datepart(dw,getdate()) 
+
+
+*/
