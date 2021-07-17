@@ -55,6 +55,8 @@ namespace MedicalTurns.Admin
 
                     negocio.Eliminar(disponibilidadHoraria);
 
+                    Response.Redirect("A_CargarDisponibilidadHoraria.aspx");
+
                 }
             }
             catch (Exception ex)
@@ -99,6 +101,8 @@ namespace MedicalTurns.Admin
             disponibilidadHoraria.HoraFin = TimeSpan.Parse(HorarioFin.Text);
 
             DHnegocio.Cargar(disponibilidadHoraria);
+
+            Response.Redirect("A_CargarDisponibilidadHoraria.aspx");
         }
     }
 }

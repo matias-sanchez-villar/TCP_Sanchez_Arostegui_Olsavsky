@@ -41,6 +41,8 @@ namespace MedicalTurns
 
                     negocio.Eliminar(paciente);
 
+                    Response.Redirect("A_CargarPaciente.aspx");
+
                 }
             }
             catch (Exception ex)
@@ -95,7 +97,7 @@ namespace MedicalTurns
                 pacAux.Usuario.Contrasena = "root";
 
                 negocio.Cargar(pacAux);
-                Response.Redirect("A_Dashboard.aspx");
+                Response.Redirect("A_CargarPaciente.aspx");
             }            
         }
 

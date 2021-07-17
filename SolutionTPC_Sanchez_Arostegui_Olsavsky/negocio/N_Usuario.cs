@@ -39,8 +39,6 @@ namespace negocio
         public int RetornarID(string Email)
         {
             Datos = new DataAcces();
-            int ID = -1;
-
             try
             {
                 Datos.setearConsulta(" select ID from Usuarios where Email = @Email ");
@@ -49,12 +47,12 @@ namespace negocio
 
                 Datos.ejecutarLectura();
 
-                while (Datos.Lector.Read())                   ///CHEQUEAR ESTA PRUEBA DEL WHILE 
-                {
-                    ID = (int)Datos.Lector["ID"];
-                }
+                Datos.Lector.Read();
+
+                int ID = (int)Datos.Lector["ID"];
 
                 Datos.cerrarConexion();
+
                 return ID;
 
             }
