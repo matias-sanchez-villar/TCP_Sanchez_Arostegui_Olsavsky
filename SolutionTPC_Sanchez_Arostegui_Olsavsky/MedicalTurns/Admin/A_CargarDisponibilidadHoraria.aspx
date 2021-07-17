@@ -37,6 +37,7 @@
                 </div>
             </div>
 
+
             <section class="table-container">
 
                 <div class="table-title-container">
@@ -45,29 +46,30 @@
                 </div>
 
 
-                <table id="data-table4" style="width: 100%;">
+                <table id="data-table2" style="width: 100%;">
                     <thead>
                         <tr>
-                            <th style="width: 25%;">Doctor</th>
-                            <th style="width: 25%;">Day</th>
-                            <th style="width: 25%;">Check-in time</th>
-                            <th style="width: 25%;">Check-out time</th>
+                            <th>Doctor</th>
+                            <th>Day</th>
+                            <th>DCheck-in time</th>
+                            <th>Check-out time</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
 
                     <% foreach (dominio.DisponibilidadHoraria item in DHlista)
                         { %>
                     <tr>
-                        <td style="width: 20%;"><% = item.medicoAux.Apellido %>, <% = item.medicoAux.Nombre %></td>
-                        <td style="width: 20%;"><% = item.Dia %></td>
-                        <td style="width: 20%;"><% = item.HoraInicio %></td>
-                        <td style="width: 20%;"><% = item.HoraFin %></td>
-
-                        <td style="width: 20%;"><a href="?ID=<% = item.ID %>"><i class="fas fa-trash-alt removeItem"></i></a></td>
+                        <td><% = item.medicoAux.Nombre %>, <% = item.medicoAux.Apellido %></td>
+                        <td><% = item.Dia %></td>
+                        <td><% = item.HoraInicio %></td>
+                        <td><% = item.HoraFin %></td>
+                        <td style="width: 100px;">
+                            <a href="?ID=<% = item.ID %>"><i class="fas fa-trash-alt removeItem"></i></a>
+                        </td>
                     </tr>
 
                     <% } %>
-                    
                 </table>
 
             </section>
