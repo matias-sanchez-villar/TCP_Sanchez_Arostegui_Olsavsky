@@ -92,17 +92,22 @@ namespace MedicalTurns.Admin
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid) return;
 
-            medico = Mnegocio.BuscarMedicoID(int.Parse(ddlMedico.SelectedItem.Value));
+            else
+            {
+                medico = Mnegocio.BuscarMedicoID(int.Parse(ddlMedico.SelectedItem.Value));
 
-            disponibilidadHoraria.medicoAux = medico;
-            disponibilidadHoraria.Dia = ddlDia.SelectedValue;
-            disponibilidadHoraria.HoraInicio = TimeSpan.Parse(HorarioInicio.Text);
-            disponibilidadHoraria.HoraFin = TimeSpan.Parse(HorarioFin.Text);
+                disponibilidadHoraria.medicoAux = medico;
+                disponibilidadHoraria.Dia = ddlDia.SelectedValue;
+                disponibilidadHoraria.HoraInicio = TimeSpan.Parse(HorarioInicio.Text);
+                disponibilidadHoraria.HoraFin = TimeSpan.Parse(HorarioFin.Text);
 
-            DHnegocio.Cargar(disponibilidadHoraria);
+                DHnegocio.Cargar(disponibilidadHoraria);
 
-            Response.Redirect("A_CargarDisponibilidadHoraria.aspx");
+                Response.Redirect("A_CargarDisponibilidadHoraria.aspx");
+            }
         }
     }
 }
