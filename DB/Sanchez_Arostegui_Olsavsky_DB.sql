@@ -1,8 +1,11 @@
 USE MASTER
-CREATE database Mediturnos
+go
+create database Mediturnos
 GO
 USE Mediturnos
 GO
+SET LANGUAGE English
+go
 
 CREATE TABLE Usuarios(
 	ID INT PRIMARY KEY NOT NULL identity(1,1),
@@ -70,7 +73,6 @@ CREATE TABLE DisponibilidadHoraria(
 )
 go
 
-Set dateformat 'DMY'
 
 --20 Usuarios
 insert into Usuarios (Email, Contrasena, Estado) VALUES
