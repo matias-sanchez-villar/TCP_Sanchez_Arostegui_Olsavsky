@@ -59,6 +59,93 @@ namespace negocio
             }
         }
 
+        public List<Turno> ListarIDMedico(int ID)
+        {
+            Datos = new DataAcces();
+            Lista = new List<Turno>();
+
+            medico = new N_Medico();
+            paciente = new N_Paciente();
+
+            try
+            {
+                string query = (" select ID, Fecha, Hora, IDMedico, IDPaciente, Estado from Turnos where IDMedico = @ID ");
+
+                Datos.setearConsulta(query);
+
+                Datos.setearParametro("@ID", ID);
+
+                Datos.ejecutarLectura();
+
+                while (Datos.Lector.Read())
+                {
+                    Turno turno = new Turno();
+
+                    turno.ID = (int)Datos.Lector["ID"];
+                    turno.Fecha = (DateTime)Datos.Lector["Fecha"];
+                    turno.Hora = (TimeSpan)Datos.Lector["Hora"];
+                    turno.medico = (Medico)medico.BuscarMedicoID(turno.medico.ID = (int)Datos.Lector["IDMedico"]);
+                    turno.paciente = (Paciente)paciente.BuscarPacienteID(turno.paciente.ID = (int)Datos.Lector["IDPaciente"]);
+                    turno.Estado = (string)Datos.Lector["Estado"];
+
+                    Lista.Add(turno);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
+        public List<Turno> ListarIDMedicoFecha(int ID, DateTime Fecha)
+        {
+            Datos = new DataAcces();
+            Lista = new List<Turno>();
+
+            medico = new N_Medico();
+            paciente = new N_Paciente();
+
+            try
+            {
+                string query = (" select ID, Fecha, Hora, IDMedico, IDPaciente, Estado from Turnos where IDMedico = @ID and Fecha = @Fecha ");
+
+                Datos.setearConsulta(query);
+
+                Datos.setearParametro("@ID", ID);
+                Datos.setearParametro("@Fecha", Fecha);
+
+                Datos.ejecutarLectura();
+
+                while (Datos.Lector.Read())
+                {
+                    Turno turno = new Turno();
+
+                    turno.ID = (int)Datos.Lector["ID"];
+                    turno.Fecha = (DateTime)Datos.Lector["Fecha"];
+                    turno.Hora = (TimeSpan)Datos.Lector["Hora"];
+                    turno.medico = (Medico)medico.BuscarMedicoID(turno.medico.ID = (int)Datos.Lector["IDMedico"]);
+                    turno.paciente = (Paciente)paciente.BuscarPacienteID(turno.paciente.ID = (int)Datos.Lector["IDPaciente"]);
+                    turno.Estado = (string)Datos.Lector["Estado"];
+
+                    Lista.Add(turno);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
         public void Eliminar(Turno turno)
         {
             Datos = new DataAcces();

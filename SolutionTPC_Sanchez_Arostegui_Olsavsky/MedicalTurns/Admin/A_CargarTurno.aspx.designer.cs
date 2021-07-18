@@ -51,6 +51,15 @@ namespace MedicalTurns
         protected global::System.Web.UI.WebControls.TextBox Fecha;
 
         /// <summary>
+        /// Control cFecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar cFecha;
+
+        /// <summary>
         /// Control Horarios.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace MedicalTurns
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Horarios;
+
+        /// <summary>
+        /// Control ddlHorarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlHorarios;
 
         /// <summary>
         /// Control BtnSubmit.

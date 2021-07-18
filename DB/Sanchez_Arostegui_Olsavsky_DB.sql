@@ -221,4 +221,3 @@ select datepart(dw,getdate())
 
 
 */
-

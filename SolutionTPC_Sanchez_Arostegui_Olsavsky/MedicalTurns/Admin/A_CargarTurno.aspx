@@ -17,18 +17,28 @@
                     <asp:DropDownList ID="ddlEspecialidad" AutoPostBack="true" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" OnSelectedIndexChanged="ddlEspecialidad_SelectedIndexChanged" required>
                         <asp:ListItem Text="Specialty" Value="#" />
                     </asp:DropDownList>
-                    <asp:DropDownList ID="ddlMedico" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" required>
+
+                    <asp:DropDownList ID="ddlMedico" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1">
                         <asp:ListItem Text="Doctor" Value="#" />
                     </asp:DropDownList>
+
                     <asp:DropDownList ID="ddlPaciente" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" required>
                         <asp:ListItem Text="Patient" Value="#" />
                     </asp:DropDownList>
 
-                    <asp:TextBox ID="Fecha" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Fecha turno" type="date" runat="server" ClientIDMode="Static" required></asp:TextBox>
-                    <asp:TextBox ID="Horarios" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" min="09:00" max="18:00" placeholder="Horarios" type="time" runat="server" ClientIDMode="Static" required></asp:TextBox>
+                    <!--<asp:TextBox ID="Fecha" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Fecha turno" type="date" runat="server" ClientIDMode="Static" required></asp:TextBox>-->
+                    
+                    <asp:Calendar ID="cFecha" Format="dd-MM-yyyy" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Fecha turno" runat="server" required ClientIDMode="Static" OnSelectionChanged="cFecha_SelectionChanged"></asp:Calendar>
+                    
+                    <!--<asp:TextBox ID="Horarios" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" min="09:00" max="18:00" placeholder="Horarios" type="time" runat="server" ClientIDMode="Static" required></asp:TextBox>-->
+                    
+                    <asp:DropDownList ID="ddlHorarios" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" required>
+                        <asp:ListItem Text="Horarios" Value="#" />
+                    </asp:DropDownList>
+
                     <div class="m-auto col-sm-12 col-md-4 col-lg-3 p-1"></div>
 
-                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="return" runat="server" Text="Add turn" type="submit" />
+                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="return" runat="server" Text="Add turn" type="submit" OnClick="BtnSubmit_Click" />
                 </div>
             </div>
 
