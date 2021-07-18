@@ -146,6 +146,37 @@ namespace negocio
             }
         }
 
+        public void Cargar(Turno Turno)
+        {
+            Datos = new DataAcces();
+
+            ///Deberiamos validar que no exista un turno para este MEdico y paciente en dicho horario y dia 
+            
+            try
+            {
+                
+                Datos.setearConsulta(" insert into Turnos(Fecha, Hora, IDMedico, IDPaciente, Estado) values (@Fecha, @Hora, @IDMedico, @IDPaciente, @Estado) ");
+
+               
+                Datos.setearParametro("@Fecha", Turno.Fecha);
+                Datos.setearParametro("@Hora", Turno.Hora);
+                Datos.setearParametro("@IDMedico", Turno.medico.ID);
+                Datos.setearParametro("@IDPaciente", Turno.paciente.ID);
+                Datos.setearParametro("@Estado", Turno.Estado);
+               
+                Datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
         public void Eliminar(Turno turno)
         {
             Datos = new DataAcces();

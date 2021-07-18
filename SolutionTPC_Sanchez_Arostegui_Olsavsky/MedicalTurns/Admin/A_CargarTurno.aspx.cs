@@ -29,11 +29,13 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Carga los turnos en session
+            Tlista = Tnegocio.Listar();
+            Session.Add("Turno", Tlista);
+
             if (!IsPostBack)
             {
-                // Carga los turnos en session
-                Tlista = Tnegocio.Listar();
-                Session.Add("Turno", Tlista);
+                
 
                 // Lista las especialidades en el drop down list
                 listarEspecialidades();
@@ -117,6 +119,24 @@ namespace MedicalTurns
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid) return;
+
+            else
+            {
+                N_Turno NTurno = new N_Turno();
+                Turno turnoAux = new Turno();
+                            
+                        
+                turnoAux.Fecha = cFecha.SelectedDate;
+                turnoAux.Hora = TimeSpan.Parse(ddlHorarios.SelectedValue);
+                turnoAux.medico.ID = Convert.ToInt32(ddlMedico.SelectedValue.ToString());
+                turnoAux.paciente.ID = Convert.ToInt32(ddlPaciente.SelectedValue.ToString());
+
+                NTurno.Cargar(turnoAux);
+                Response.Redirect("A_CargarTurno.aspx");
+            }
+
             /*
                 Otra Opcion es dejar que el usuario introduzca el horario, cada un intevalo definido y fijarse
                 si estan en la BD turnos si no existe se lo asignamos y si existe no le dejamos
@@ -131,19 +151,20 @@ namespace MedicalTurns
             int ID = int.Parse(ddlMedico.SelectedItem.Value);
             DateTime fecha = cFecha.SelectedDate;
 
-            TimeSpan Intervalo = new TimeSpan(00, 30, 00);
+            TimeSpan Intervalo = new TimeSpan(01, 00, 00);
 
             DHlista = DHnegocio.ListarIDMedicoFecha(ID, fecha);
 
             foreach (dominio.DisponibilidadHoraria item in DHlista)
             {
-                while ((item.HoraInicio + Intervalo) == item.HoraFin)
+                while ((item.HoraInicio + Intervalo) <= item.HoraFin)
                 {
                     //falta un if o algo que haga el primero igual y al segundo le sume
-                    TimeSpan tiempo = item.HoraInicio + Intervalo;
+                    TimeSpan tiempo = item.HoraInicio;
 
                     ListItem listItemAux = new ListItem(tiempo.ToString(), tiempo.ToString());
                     ddlHorarios.Items.Add(listItemAux);
+                    item.HoraInicio = item.HoraInicio + Intervalo;
                 }
             }
         }
