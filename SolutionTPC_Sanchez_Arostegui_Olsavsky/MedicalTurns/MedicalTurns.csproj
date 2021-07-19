@@ -75,10 +75,10 @@
     <Content Include="Admin\A_ModificarMedico.aspx" />
     <Content Include="Admin\A_ModificarPaciente.aspx" />
     <Content Include="Admin\A_CargarTurno.aspx" />
-    <Content Include="Login_admin.aspx" />
+    <Content Include="Assets\Doctor.svg" />
+    <Content Include="LoginDef.aspx" />
     <Content Include="Medico\M_Modificar.aspx" />
     <Content Include="Paciente\P_Dashboard.aspx" />
-    <Content Include="Login.aspx" />
     <Content Include="Paciente\P_Modificar.aspx" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\Validations.js" />
@@ -155,12 +155,19 @@
     <Compile Include="Admin\A_CargarTurno.aspx.designer.cs">
       <DependentUpon>A_CargarTurno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login_admin.aspx.cs">
-      <DependentUpon>Login_admin.aspx</DependentUpon>
+    <Compile Include="Login.Master.cs">
+      <DependentUpon>Login.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login_admin.aspx.designer.cs">
-      <DependentUpon>Login_admin.aspx</DependentUpon>
+    <Compile Include="Login.Master.designer.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDef.aspx.cs">
+      <DependentUpon>LoginDef.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginDef.aspx.designer.cs">
+      <DependentUpon>LoginDef.aspx</DependentUpon>
     </Compile>
     <Compile Include="Medico\M_Modificar.aspx.cs">
       <DependentUpon>M_Modificar.aspx</DependentUpon>
@@ -175,13 +182,6 @@
     </Compile>
     <Compile Include="Paciente\P_Dashboard.aspx.designer.cs">
       <DependentUpon>P_Dashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paciente\P_Modificar.aspx.cs">
       <DependentUpon>P_Modificar.aspx</DependentUpon>
@@ -223,6 +223,7 @@
   <ItemGroup>
     <Content Include="Paciente\P_Structure.Master" />
     <Content Include="Admin\A_Structure.Master" />
+    <Content Include="Login.Master" />
     <None Include="packages.config" />
     <Content Include="Medico\M_Structure.Master" />
     <None Include="Web.Debug.config">
@@ -232,9 +233,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\dominio\dominio.csproj">
       <Project>{9fbd1716-b184-4e75-80c9-b6af37d3bd0e}</Project>

@@ -7,10 +7,12 @@ GO
 SET LANGUAGE English
 go
 
+
 CREATE TABLE Usuarios(
 	ID INT PRIMARY KEY NOT NULL identity(1,1),
 	Email VARCHAR(250) UNIQUE NOT NULL,
 	Contrasena Varchar(50) NOT NULL,
+	TipoUsuario int NOT NULL,
 	Estado bit not null
 )
 GO
@@ -75,27 +77,30 @@ go
 
 
 --20 Usuarios
-insert into Usuarios (Email, Contrasena, Estado) VALUES
-('Pepe@gmail.com', '1234', 1), 
-('Pato@hotmail.com', '1234', 1),
-('Paisa@gmail.ar', '1234', 1),
-('Doro@hotmail.com', '1234', 1), 
-('Pablo@gmail.com', '1234', 1), 
-('Pablo22@gmail.com', '1234', 1), 
-('Toto@gmail.com', '1234', 1), 
-('Elepa_roro@gmail.com', '1234', 1), 
-('Medic_bom@gmail.com', '1234', 1),
-('gonzagomez@yahoo.com', '1234', 1),
-('pipi99@yahoo.com', '1234', 1),
-('marispert@gmail.com', '1234', 1),
-('ejemplo@gmail.com', '1234', 1),
-('pedro_escov@gmail.com', '1234', 1),
-('delfi_per@yahoo.com.ar', '1234', 1),
-('magali1996@gmail.com', '1234', 1),
-('caroperez12@gmail.com', '1234', 1),
-('DanteClick@gmail.com', '1234', 1),
-('ElChanta@gmail.com', '1234', 1),
-('pablobonf@yahoo.com.ar', '1234', 1)
+insert into Usuarios (Email, Contrasena, Estado, tipoUsuario) VALUES
+('Pepe@gmail.com', '1234', 1, 1), 
+('Pato@hotmail.com', '1234', 1, 1),
+('Paisa@gmail.ar', '1234', 1, 1),
+('Doro@hotmail.com', '1234', 1, 1), 
+('Pablo@gmail.com', '1234', 1, 1), 
+('Pablo22@gmail.com', '1234', 1, 1), 
+('Toto@gmail.com', '1234', 1, 1), 
+('Elepa_roro@gmail.com', '1234', 1, 1), 
+('Medic_bom@gmail.com', '1234', 1, 1),
+('gonzagomez@yahoo.com', '1234', 1, 1),
+
+('pipi99@yahoo.com', '1234', 1, 2),
+('marispert@gmail.com', '1234', 1, 2),
+('ejemplo@gmail.com', '1234', 1, 2),
+('pedro_escov@gmail.com', '1234', 1, 2),
+('delfi_per@yahoo.com.ar', '1234', 1, 2),
+('magali1996@gmail.com', '1234', 1, 2),
+('caroperez12@gmail.com', '1234', 1, 2),
+('DanteClick@gmail.com', '1234', 1, 2),
+('ElChanta@gmail.com', '1234', 1, 2),
+('pablobonf@yahoo.com.ar', '1234', 1, 2),
+
+('root@root', 'admin', 1, 3)
 
 --8 Especialidades
 insert into Especialidades (Especialidad) values ('Dermatología'), ('Oftalmología'), ('Traumatología'), ('Urología'), ('Oftalmología'), ('Otorrinolaringología'), ('Ginecología'), ('CARDIOLOGIA')

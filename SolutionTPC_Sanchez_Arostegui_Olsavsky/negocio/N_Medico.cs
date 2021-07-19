@@ -176,6 +176,7 @@ namespace negocio
                 Datos.setearParametro("@Genero", medico.Genero);
                 Datos.setearParametro("@Matricula", medico.Matricula);
 
+                medico.Usuario.tipoUsuario = 1;
                 usuario.Cargar(medico.Usuario);
                 medico.Usuario.ID = usuario.RetornarID(medico.Usuario.Email);
 

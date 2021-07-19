@@ -129,6 +129,8 @@ namespace negocio
                 Datos.setearParametro("@Genero", paciente.Genero);
                 Datos.setearParametro("@NroAfiliado", paciente.NroAfiliado);
 
+                paciente.Usuario.tipoUsuario = 2;
+
                 usuario.Cargar(paciente.Usuario);
 
                 paciente.Usuario.ID = usuario.RetornarID(paciente.Usuario.Email);

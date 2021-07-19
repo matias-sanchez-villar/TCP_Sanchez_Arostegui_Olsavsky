@@ -103,6 +103,7 @@ namespace MedicalTurns
 
                 medico.Usuario.Email = Email.Text;
                 medico.Usuario.Contrasena = "root";
+                medico.Usuario.tipoUsuario = 1;
 
                 negocio.Cargar(medico);
                 Response.Redirect("A_CargarMedico.aspx");

@@ -12,17 +12,56 @@ namespace negocio
     {
         public DataAcces Datos;
 
+        public List<Usuario> listar()
+        {
+            List<Usuario> userList = new List<Usuario>();
+            Datos = new DataAcces();
+
+            try
+            {
+                string query = " SELECT U.ID, U.Email, U.Contrasena, U.TipoUsuario FROM Usuarios U ";
+
+                Datos.setearConsulta(query);
+                Datos.ejecutarLectura();
+
+                while(Datos.Lector.Read())
+                {
+                    Usuario user = new Usuario();
+
+                    user.ID = (int)Datos.Lector["ID"];
+                    user.Email = (string)Datos.Lector["Email"];
+                    user.Contrasena = (string)Datos.Lector["Contrasena"];
+                    user.tipoUsuario = (int)Datos.Lector["TipoUsuario"];
+                    user.Estado = false;
+
+                    userList.Add(user);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+
+            return userList;
+        }
+
         public void Cargar(Usuario usuario)
         {
             Datos = new DataAcces();
 
             try
             {
-                Datos.setearConsulta(" insert into Usuarios (Email, Contrasena, Estado) VALUES( @Email, @Contrasena, @Estado )");
+                Datos.setearConsulta(" insert into Usuarios (Email, Contrasena, Estado, TipoUsuario) VALUES( @Email, @Contrasena, @Estado, @TipoUsuario )");
 
                 Datos.setearParametro("@Email", usuario.Email);
                 Datos.setearParametro("@Contrasena", usuario.Contrasena);
                 Datos.setearParametro("@Estado", 1);
+                Datos.setearParametro("@TipoUsuario", usuario.tipoUsuario);
 
                 Datos.EjecutarAccion();
             }
