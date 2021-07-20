@@ -43,15 +43,16 @@ namespace MedicalTurns.Admin
         {
             turno = Tnegocio.ListarID(int.Parse(Request.QueryString["ID"]));
 
-            lblEspecialidad.Text = turno.medico.especialidad.Nombre;
-            lblMedico.Text = turno.medico.Nombre;
-            lblPaciente.Text = turno.paciente.Nombre;
+            lblEspecialidad.Text = "Especialidad: " +  turno.medico.especialidad.Nombre;
+            lblMedico.Text = "Medico: " + turno.medico.Nombre;
+            lblPaciente.Text = "Paciente: " + turno.paciente.Nombre;
 
         }
 
         protected void cFecha_SelectionChanged(object sender, EventArgs e)
         {
-            int ID = int.Parse(Request.QueryString["ID"]);
+            turno = Tnegocio.ListarID(int.Parse(Request.QueryString["ID"]));
+
             DateTime fecha = cFecha.SelectedDate;
             DateTime thisDay = DateTime.Now;
 
@@ -60,9 +61,9 @@ namespace MedicalTurns.Admin
 
                 TimeSpan Intervalo = new TimeSpan(01, 00, 00);
 
-                DHlista = DHnegocio.ListarIDMedicoFecha(ID, fecha);
+                DHlista = DHnegocio.ListarIDMedicoFecha(turno.medico.ID, fecha);
 
-                Tlista = Tnegocio.ListarIDMedicoFecha(ID, fecha);
+                Tlista = Tnegocio.ListarIDMedicoFecha(turno.medico.ID, fecha);
 
 
                 foreach (dominio.DisponibilidadHoraria item in DHlista)
@@ -81,6 +82,19 @@ namespace MedicalTurns.Admin
                     }
                 }
             }
+        }
+
+        protected void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            turno = Tnegocio.ListarID(int.Parse(Request.QueryString["ID"]));
+
+            turno.Fecha = cFecha.SelectedDate;
+            turno.Hora = TimeSpan.Parse(ddlHorarios.SelectedValue);
+            turno.Estado = ddlEstado.SelectedValue.ToString();
+
+            Tnegocio.Modificar(turno);
+
+            Response.Redirect("A_CargarTurno.aspx");
         }
     }
 }

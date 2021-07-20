@@ -106,19 +106,20 @@ namespace negocio
         {
             Datos = new DataAcces();
 
+            medico = new N_Medico();
+
             paciente = new N_Paciente();
 
             try
             {
-                string query = (" select ID, Fecha, Hora, IDMedico, IDPaciente, Estado from Turnos where ID = @ID ");
+                string query = (" select ID, Fecha, Hora, IDMedico, IDPaciente, Estado from Turnos where ID = " + ID );
 
                 Datos.setearConsulta(query);
-
-                Datos.setearParametro("@ID", ID);
 
                 Datos.ejecutarLectura();
 
                 Datos.Lector.Read();
+
                     Turno turno = new Turno();
 
                     turno.ID = (int)Datos.Lector["ID"];
@@ -236,7 +237,32 @@ namespace negocio
             }
         }
 
+        public void Modificar(Turno turno)
+        {
+            Datos = new DataAcces();
 
+            try
+            {
+
+                Datos.setearConsulta(" insert into Turnos(Fecha, Hora, IDMedico, IDPaciente, Estado) values (@Fecha, @Hora, @IDMedico, @IDPaciente, @Estado) ");
+
+
+                Datos.setearParametro("@Fecha", turno.Fecha);
+                Datos.setearParametro("@Hora", turno.Hora);
+                Datos.setearParametro("@Estado", turno.Estado);
+
+                Datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
 
 
     }
