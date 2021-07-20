@@ -120,6 +120,40 @@ namespace negocio
             }
         }
 
+        public List<DisponibilidadHoraria> ListarIDMedicoFecha(int ID, string fecha)
+        {
+            N_Medico NMedicoAux = new N_Medico();
+            try
+            {
+                Datos.setearConsulta(" select ID, IDMedico, Dia, HorarioInicio, HorarioFin, Estado from DisponibilidadHoraria where IDMedico = " + ID + " and Dia like '" + fecha + "' ");
+
+                Datos.ejecutarLectura();
+
+                while (Datos.Lector.Read())
+                {
+                    DisponibilidadHoraria Disponibilidad = new DisponibilidadHoraria();
+
+                    Disponibilidad.ID = (int)Datos.Lector["ID"];
+                    Disponibilidad.medicoAux = NMedicoAux.BuscarMedicoID((int)Datos.Lector["IDMedico"]);
+                    Disponibilidad.Dia = (string)Datos.Lector["Dia"];
+                    Disponibilidad.HoraInicio = (TimeSpan)Datos.Lector["HorarioInicio"];
+                    Disponibilidad.HoraFin = (TimeSpan)Datos.Lector["HorarioFin"];
+                    Disponibilidad.Estado = (bool)Datos.Lector["Estado"];
+
+                    Lista.Add(Disponibilidad);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
         public void Cargar(DisponibilidadHoraria disponibilidad)
         {
 

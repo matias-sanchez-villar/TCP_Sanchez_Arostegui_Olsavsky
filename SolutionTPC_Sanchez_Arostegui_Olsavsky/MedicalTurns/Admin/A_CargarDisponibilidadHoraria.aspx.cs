@@ -101,13 +101,69 @@ namespace MedicalTurns.Admin
 
                 disponibilidadHoraria.medicoAux = medico;
                 disponibilidadHoraria.Dia = ddlDia.SelectedValue;
-                disponibilidadHoraria.HoraInicio = TimeSpan.Parse(HorarioInicio.Text);
-                disponibilidadHoraria.HoraFin = TimeSpan.Parse(HorarioFin.Text);
+                disponibilidadHoraria.HoraInicio = TimeSpan.Parse(ddlHoraInicio.SelectedValue);
+                disponibilidadHoraria.HoraFin = TimeSpan.Parse(ddlHoraFin.SelectedValue);
 
-                DHnegocio.Cargar(disponibilidadHoraria);
+                if (disponibilidadHoraria.HoraInicio < disponibilidadHoraria.HoraFin)
+                {
+                    DHnegocio.Cargar(disponibilidadHoraria);
+                }
 
                 Response.Redirect("A_CargarDisponibilidadHoraria.aspx");
             }
         }
+
+        protected void ddlDia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ddlHoraInicio.Items.Clear();
+            ddlHoraFin.Items.Clear();
+
+            TimeSpan Intervalo = new TimeSpan(00, 30, 00);
+            TimeSpan Fin = new TimeSpan(23, 30, 0);
+            TimeSpan Inicio = new TimeSpan(00, 00, 0);
+
+            while (Inicio != Fin)
+            {
+
+                if (CompararHoras(Inicio))
+                {
+                     ListItem listItemAux = new ListItem(Inicio.ToString(), Inicio.ToString());
+                     ddlHoraInicio.Items.Add(listItemAux);
+                     ddlHoraFin.Items.Add(listItemAux);
+                }
+
+                Inicio += Intervalo;
+
+            }
+
+            if (CompararHoras(Fin))
+            {
+                ListItem listItemAux = new ListItem(Fin.ToString(), Fin.ToString());
+                ddlHoraInicio.Items.Add(listItemAux);
+                ddlHoraFin.Items.Add(listItemAux);
+            }
+
+        }
+
+        protected bool CompararHoras(TimeSpan Inicio)
+        {
+            int ID = int.Parse(ddlMedico.SelectedItem.Value);
+            string Dia = (string)ddlDia.SelectedItem.Value;
+
+            DHlista = DHnegocio.ListarIDMedicoFecha(ID, Dia);
+
+            foreach (dominio.DisponibilidadHoraria item in DHlista)
+            {
+
+                if (Inicio >= item.HoraInicio && Inicio <= item.HoraFin)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
     }
 }

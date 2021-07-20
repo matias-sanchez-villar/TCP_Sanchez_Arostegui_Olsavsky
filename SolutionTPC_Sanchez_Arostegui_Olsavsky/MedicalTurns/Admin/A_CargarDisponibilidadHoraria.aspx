@@ -19,7 +19,7 @@
                     </asp:DropDownList>
 
 
-                    <asp:DropDownList id="ddlDia" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" runat="server">
+                    <asp:DropDownList id="ddlDia" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" runat="server" OnSelectedIndexChanged="ddlDia_SelectedIndexChanged" AutoPostBack="true">
                         <asp:ListItem Text="Weekday" Value="#" />
                         <asp:ListItem Text="Monday" Value="Monday" />
                         <asp:ListItem Text="Tuesday" Value="Tuesday" />
@@ -30,8 +30,14 @@
                         <asp:ListItem Text="Sunday" Value="Sunday" />
                     </asp:DropDownList>
                     
-                    <asp:TextBox TextMode="Time" format="HH:mm" ID="HorarioInicio" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Horario inicio" type="time" runat="server" ClientIDMode="Static" required></asp:TextBox>
-                    <asp:TextBox TextMode="Time" format="HH:mm" ID="HorarioFin" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Horario Fin" type="time" runat="server" ClientIDMode="Static" required></asp:TextBox>
+
+                    <asp:DropDownList ID="ddlHoraInicio" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" required>
+                        <asp:ListItem Text="Hora Inicio" Value="#" />
+                    </asp:DropDownList>
+
+                    <asp:DropDownList ID="ddlHoraFin" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" required>
+                        <asp:ListItem Text="Hora Fin" Value="#" />
+                    </asp:DropDownList>
 
                     <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="return true" runat="server" Text="ADD AVAILABILITY" type="submit" OnClick="BtnSubmit_Click" />
                 </div>

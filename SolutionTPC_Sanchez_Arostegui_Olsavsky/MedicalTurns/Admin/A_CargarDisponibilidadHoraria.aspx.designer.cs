@@ -33,22 +33,22 @@ namespace MedicalTurns.Admin
         protected global::System.Web.UI.WebControls.DropDownList ddlDia;
 
         /// <summary>
-        /// Control HorarioInicio.
+        /// Control ddlHoraInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox HorarioInicio;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHoraInicio;
 
         /// <summary>
-        /// Control HorarioFin.
+        /// Control ddlHoraFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox HorarioFin;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHoraFin;
 
         /// <summary>
         /// Control BtnSubmit.
