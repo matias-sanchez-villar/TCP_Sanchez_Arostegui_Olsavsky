@@ -244,9 +244,9 @@ namespace negocio
             try
             {
 
-                Datos.setearConsulta(" insert into Turnos(Fecha, Hora, IDMedico, IDPaciente, Estado) values (@Fecha, @Hora, @IDMedico, @IDPaciente, @Estado) ");
+                Datos.setearConsulta(" update Turnos set Fecha = @Fecha, Hora = @Hora, Estado = @Estado where ID = @ID ");
 
-
+                Datos.setearParametro("@ID", turno.ID);
                 Datos.setearParametro("@Fecha", turno.Fecha);
                 Datos.setearParametro("@Hora", turno.Hora);
                 Datos.setearParametro("@Estado", turno.Estado);
