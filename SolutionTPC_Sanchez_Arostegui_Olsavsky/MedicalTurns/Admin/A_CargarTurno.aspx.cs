@@ -134,16 +134,9 @@ namespace MedicalTurns
                 turnoAux.paciente.ID = Convert.ToInt32(ddlPaciente.SelectedValue.ToString());
 
                 NTurno.Cargar(turnoAux);
+
                 Response.Redirect("A_CargarTurno.aspx");
             }
-
-            /*
-                Otra Opcion es dejar que el usuario introduzca el horario, cada un intevalo definido y fijarse
-                si estan en la BD turnos si no existe se lo asignamos y si existe no le dejamos
-
-                Pero no puede poner horarios mayores o menores al horario de cada medico con respecto a su horario -> 
-                esto se soluciona creando otro evento en DropDownList Medico .!!
-             */
         }
 
         protected void cFecha_SelectionChanged(object sender, EventArgs e)
@@ -155,15 +148,21 @@ namespace MedicalTurns
 
             DHlista = DHnegocio.ListarIDMedicoFecha(ID, fecha);
 
+            Tlista = Tnegocio.ListarIDMedicoFecha(ID, fecha);
+
+
             foreach (dominio.DisponibilidadHoraria item in DHlista)
             {
                 while ((item.HoraInicio + Intervalo) <= item.HoraFin)
                 {
-                    //falta un if o algo que haga el primero igual y al segundo le sume
                     TimeSpan tiempo = item.HoraInicio;
 
-                    ListItem listItemAux = new ListItem(tiempo.ToString(), tiempo.ToString());
-                    ddlHorarios.Items.Add(listItemAux);
+                    if(Tlista.Exists(x => x.Hora != tiempo))
+                    {
+                        ListItem listItemAux = new ListItem(tiempo.ToString(), tiempo.ToString());
+                        ddlHorarios.Items.Add(listItemAux);
+                    }
+
                     item.HoraInicio = item.HoraInicio + Intervalo;
                 }
             }

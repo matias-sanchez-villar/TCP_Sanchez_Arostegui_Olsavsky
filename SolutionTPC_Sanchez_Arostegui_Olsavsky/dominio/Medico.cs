@@ -16,6 +16,8 @@ namespace dominio
         public Medico()
         {
             especialidad = new Especialidad();
+
+            Usuario.tipoUsuario = 1;
         }
     }
 }

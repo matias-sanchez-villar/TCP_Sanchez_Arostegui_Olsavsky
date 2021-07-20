@@ -88,10 +88,10 @@ namespace negocio
             N_Medico NMedicoAux = new N_Medico();
             try
             {
-                Datos.setearConsulta("select ID, IDMedico, Dia, HorarioInicio, HorarioFin, Estado from DisponibilidadHoraria where IDMedico = @ID and Dia ='Monday'  ");
+                Datos.setearConsulta("select ID, IDMedico, Dia, HorarioInicio, HorarioFin, Estado from DisponibilidadHoraria where IDMedico = @ID and Dia = datename(weekday, @Fecha)   ");
 
                 Datos.setearParametro("@ID", ID);
-                //Datos.setearParametro("@Fecha", fecha); COMENTO PORQUE NO TRAE BIEN LA FECHA DEL CALENDARIO y saque de la consulta: datename(dw, @Fecha)
+                Datos.setearParametro("@Fecha", fecha);
 
                 Datos.ejecutarLectura();
 

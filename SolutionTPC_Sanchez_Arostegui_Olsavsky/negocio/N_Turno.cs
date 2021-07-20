@@ -149,8 +149,6 @@ namespace negocio
         public void Cargar(Turno Turno)
         {
             Datos = new DataAcces();
-
-            ///Deberiamos validar que no exista un turno para este MEdico y paciente en dicho horario y dia 
             
             try
             {

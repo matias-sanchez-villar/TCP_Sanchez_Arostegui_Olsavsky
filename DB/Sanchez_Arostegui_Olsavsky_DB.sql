@@ -55,7 +55,6 @@ GO
 
 CREATE TABLE Turnos(
   ID INT Primary Key Not null identity(1,1),
-  ---- > CAST(DATEPART(m, GETDATE()) AS VARCHAR) if VARCHAR==Dia,  muestro al paciente los turnos dados, y los turnos disponibles
   Fecha Date NOT NULL CHECK (Fecha > GETDATE()),
   Hora Time NOT NULL,
   IDMedico INT NOT NULL FOREIGN KEY REFERENCES Medicos(ID),
@@ -160,6 +159,8 @@ insert into Pacientes(Nombre, Apellido, Domicilio, Celular, FechaNacimiento, Gen
 ('Chanta','Pirola','San Martin 645','7414560','19980729','M','9874', 18, 3), 
 ('Pablo','Bonfilio','Belgrano 456','1334852','19940520','M','9512', 19, 1)
 
+
+Set dateformat 'DMY'
 --turnos 7
 insert into Turnos (Fecha, Hora, IDMedico, IDPaciente, Estado) values
 ('23-10-2021', '13:00:00', 1, 1, 'Agendado'),

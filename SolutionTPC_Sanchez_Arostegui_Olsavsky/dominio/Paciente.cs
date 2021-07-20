@@ -16,6 +16,8 @@ namespace dominio
         public Paciente()
         {
             obraSocial = new ObraSocial();
+
+            Usuario.tipoUsuario = 2;
         }
     }
 }
