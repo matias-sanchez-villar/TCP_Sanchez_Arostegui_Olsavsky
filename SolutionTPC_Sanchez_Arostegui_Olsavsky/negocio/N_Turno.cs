@@ -102,6 +102,45 @@ namespace negocio
             }
         }
 
+        public Turno ListarID(int ID)
+        {
+            Datos = new DataAcces();
+
+            paciente = new N_Paciente();
+
+            try
+            {
+                string query = (" select ID, Fecha, Hora, IDMedico, IDPaciente, Estado from Turnos where ID = @ID ");
+
+                Datos.setearConsulta(query);
+
+                Datos.setearParametro("@ID", ID);
+
+                Datos.ejecutarLectura();
+
+                Datos.Lector.Read();
+                    Turno turno = new Turno();
+
+                    turno.ID = (int)Datos.Lector["ID"];
+                    turno.Fecha = (DateTime)Datos.Lector["Fecha"];
+                    turno.Hora = (TimeSpan)Datos.Lector["Hora"];
+                    turno.medico = (Medico)medico.BuscarMedicoID(turno.medico.ID = (int)Datos.Lector["IDMedico"]);
+                    turno.paciente = (Paciente)paciente.BuscarPacienteID(turno.paciente.ID = (int)Datos.Lector["IDPaciente"]);
+                    turno.Estado = (string)Datos.Lector["Estado"];
+
+                 
+                return turno;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
         public List<Turno> ListarIDMedicoFecha(int ID, DateTime Fecha)
         {
             Datos = new DataAcces();

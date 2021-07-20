@@ -25,12 +25,8 @@
                     <asp:DropDownList ID="ddlPaciente" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" required>
                         <asp:ListItem Text="Patient" Value="#" />
                     </asp:DropDownList>
-
-                    <!--<asp:TextBox ID="Fecha" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Fecha turno" type="date" runat="server" ClientIDMode="Static" required></asp:TextBox>-->
                     
                     <asp:Calendar ID="cFecha" Format="dd-MM-yyyy" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Fecha turno" runat="server" required ClientIDMode="Static" OnSelectionChanged="cFecha_SelectionChanged"></asp:Calendar>
-                    
-                    <!--<asp:TextBox ID="Horarios" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" min="09:00" max="18:00" placeholder="Horarios" type="time" runat="server" ClientIDMode="Static" required></asp:TextBox>-->
                     
                     <asp:DropDownList ID="ddlHorarios" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" required>
                         <asp:ListItem Text="Horarios" Value="#" />
@@ -68,7 +64,7 @@
                         <td><% = String.Format("{0:yyyy-MM-dd}", item.Fecha) %> <% = item.Hora %> </td>
                         <td style="width: 200px;">
                                 <a href="#"><i class="fas fa-info-circle"></i></a>
-                                <a href="#" style="margin-left: 15px;"><i class="far fa-edit editItem"></i></a>
+                                <a href="A_ModificarTurno.aspx?ID=<% = item.ID %>" style="margin-left: 15px;"><i class="far fa-edit editItem"></i></a>
                                 <a href="#"><i class="fas fa-trash-alt removeItem"></i></a>
                         </td>
                     </tr>

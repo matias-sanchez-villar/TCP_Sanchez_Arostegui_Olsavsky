@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using dominio;
+using negocio;
+
+namespace MedicalTurns.Admin
+{
+    public partial class A_ModificarTurno : System.Web.UI.Page
+    {
+        public List<Turno> Tlista = new List<Turno>();
+        public N_Turno Tnegocio = new N_Turno();
+        public Turno turno = new Turno();
+
+        public List<Medico> Mlista = new List<Medico>();
+        public N_Medico Mnegocio = new N_Medico();
+        public Medico medico = new Medico();
+
+        public List<Paciente> Plista = new List<Paciente>();
+        public N_Paciente Pnegocio = new N_Paciente();
+        public Paciente paciente = new Paciente();
+
+        public List<DisponibilidadHoraria> DHlista = new List<DisponibilidadHoraria>();
+        public N_DisponibilidadHoraria DHnegocio = new N_DisponibilidadHoraria();
+        public DisponibilidadHoraria disponibilidadHorarias = new DisponibilidadHoraria();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrEmpty(Request.QueryString["ID"])))
+            {
+                CargarDatos();
+            }
+            else
+            {
+                Response.Redirect("A_Dashboard.aspx");
+            }
+        }
+
+        protected void CargarDatos()
+        {
+            turno = Tnegocio.ListarID(int.Parse(Request.QueryString["ID"]));
+
+            lblEspecialidad.Text = turno.medico.especialidad.Nombre;
+            lblMedico.Text = turno.medico.Nombre;
+            lblPaciente.Text = turno.paciente.Nombre;
+
+        }
+
+        protected void cFecha_SelectionChanged(object sender, EventArgs e)
+        {
+            int ID = int.Parse(Request.QueryString["ID"]);
+            DateTime fecha = cFecha.SelectedDate;
+            DateTime thisDay = DateTime.Now;
+
+            if (fecha > thisDay)
+            {
+
+                TimeSpan Intervalo = new TimeSpan(01, 00, 00);
+
+                DHlista = DHnegocio.ListarIDMedicoFecha(ID, fecha);
+
+                Tlista = Tnegocio.ListarIDMedicoFecha(ID, fecha);
+
+
+                foreach (dominio.DisponibilidadHoraria item in DHlista)
+                {
+                    while ((item.HoraInicio + Intervalo) <= item.HoraFin)
+                    {
+                        TimeSpan tiempo = item.HoraInicio;
+
+                        if (Tlista.Exists(x => x.Hora != tiempo))
+                        {
+                            ListItem listItemAux = new ListItem(tiempo.ToString(), tiempo.ToString());
+                            ddlHorarios.Items.Add(listItemAux);
+                        }
+
+                        item.HoraInicio = item.HoraInicio + Intervalo;
+                    }
+                }
+            }
+        }
+    }
+}
