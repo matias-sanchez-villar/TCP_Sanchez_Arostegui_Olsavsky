@@ -143,27 +143,32 @@ namespace MedicalTurns
         {
             int ID = int.Parse(ddlMedico.SelectedItem.Value);
             DateTime fecha = cFecha.SelectedDate;
+            DateTime thisDay = DateTime.Now;
 
-            TimeSpan Intervalo = new TimeSpan(01, 00, 00);
-
-            DHlista = DHnegocio.ListarIDMedicoFecha(ID, fecha);
-
-            Tlista = Tnegocio.ListarIDMedicoFecha(ID, fecha);
-
-
-            foreach (dominio.DisponibilidadHoraria item in DHlista)
+            if (fecha > thisDay)
             {
-                while ((item.HoraInicio + Intervalo) <= item.HoraFin)
+
+                TimeSpan Intervalo = new TimeSpan(01, 00, 00);
+
+                DHlista = DHnegocio.ListarIDMedicoFecha(ID, fecha);
+
+                Tlista = Tnegocio.ListarIDMedicoFecha(ID, fecha);
+
+
+                foreach (dominio.DisponibilidadHoraria item in DHlista)
                 {
-                    TimeSpan tiempo = item.HoraInicio;
-
-                    if(Tlista.Exists(x => x.Hora != tiempo))
+                    while ((item.HoraInicio + Intervalo) <= item.HoraFin)
                     {
-                        ListItem listItemAux = new ListItem(tiempo.ToString(), tiempo.ToString());
-                        ddlHorarios.Items.Add(listItemAux);
-                    }
+                        TimeSpan tiempo = item.HoraInicio;
 
-                    item.HoraInicio = item.HoraInicio + Intervalo;
+                        if (Tlista.Exists(x => x.Hora != tiempo))
+                        {
+                            ListItem listItemAux = new ListItem(tiempo.ToString(), tiempo.ToString());
+                            ddlHorarios.Items.Add(listItemAux);
+                        }
+
+                        item.HoraInicio = item.HoraInicio + Intervalo;
+                    }
                 }
             }
         }
