@@ -26,18 +26,32 @@ namespace MedicalTurns
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Page.Validate();
-            if (!Page.IsValid) return;
+            N_ObraSocial Negocio = new N_ObraSocial();
+            ObraSocial obraSocial = new ObraSocial();
 
-            else
+            if (!(string.IsNullOrEmpty(Request.QueryString["ID"])))
             {
-                N_ObraSocial Negocio = new N_ObraSocial();
-                ObraSocial obraSocial = new ObraSocial();
+
+                int ID = int.Parse(Request.QueryString["ID"]);
+
+                lista = (List<ObraSocial>)Session["ObraSocial"];
+
+                obraSocial = lista.Find(x => x.ID == ID);
 
                 obraSocial.Nombre = ObraSocial.Text;
 
-                Negocio.Cargar(obraSocial);
+                Negocio.Modificar(obraSocial);
+
                 Response.Redirect("A_CargarObraSocial.aspx");
+
+            }
+            else
+            {
+
+                    obraSocial.Nombre = ObraSocial.Text;
+                    Negocio.Cargar(obraSocial);
+                    Response.Redirect("A_CargarObraSocial.aspx");
+
             }
         }
 
@@ -57,7 +71,10 @@ namespace MedicalTurns
 
                     obrasocial = lista.Find(x => x.ID == ID);
 
-                    negocio.Modificar(obrasocial);
+                    ObraSocial.Attributes.Add("placeholder", obrasocial.Nombre);
+
+
+                    btnAgregar.Text = "Modificar";
                 }
 
             }
