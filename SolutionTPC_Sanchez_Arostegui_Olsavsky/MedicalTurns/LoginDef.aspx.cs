@@ -15,6 +15,12 @@ namespace MedicalTurns
         public List<Usuario> userListAux = new List<Usuario>();
         public N_Usuario n_Usuario = new N_Usuario();
 
+        public Medico medicoAux = new Medico();
+        public N_Medico negocioMedico = new N_Medico();
+
+        public Paciente pacienteAux = new Paciente();
+        public N_Paciente negocioPaciente = new N_Paciente();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             userListAux = n_Usuario.listar();
@@ -39,9 +45,13 @@ namespace MedicalTurns
                     switch (usuAux.tipoUsuario)
                     {
                         case 1:
+                            medicoAux = negocioMedico.BuscarMedicoIDUsuario(usuAux);
+                            Session.Add("MedicoSettings", medicoAux);
                             Response.Redirect("Medico/M_Dashboard.aspx");
                             break;
                         case 2:
+                            pacienteAux = negocioPaciente.BuscarPacienteIdUsuario(usuAux);
+                            Session.Add("PacienteSettings", pacienteAux);
                             Response.Redirect("Paciente/P_Dashboard.aspx");
                             break;
                         case 3:

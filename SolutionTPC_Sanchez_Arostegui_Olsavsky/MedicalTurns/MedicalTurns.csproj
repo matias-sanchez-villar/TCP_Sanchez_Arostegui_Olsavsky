@@ -80,8 +80,10 @@
     <Content Include="Assets\Doctor.svg" />
     <Content Include="LoginDef.aspx" />
     <Content Include="Medico\M_Modificar.aspx" />
+    <Content Include="Medico\M_Settings.aspx" />
     <Content Include="Paciente\P_Dashboard.aspx" />
     <Content Include="Paciente\P_Modificar.aspx" />
+    <Content Include="Paciente\P_settings.aspx" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\Validations.js" />
     <Content Include="Styles\bootstrap-grid.css" />
@@ -192,6 +194,13 @@
     <Compile Include="Medico\M_Modificar.aspx.designer.cs">
       <DependentUpon>M_Modificar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Medico\M_Settings.aspx.cs">
+      <DependentUpon>M_Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Medico\M_Settings.aspx.designer.cs">
+      <DependentUpon>M_Settings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paciente\P_Dashboard.aspx.cs">
       <DependentUpon>P_Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -234,6 +243,13 @@
     </Compile>
     <Compile Include="Admin\A_Dashboard.aspx.designer.cs">
       <DependentUpon>A_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\P_settings.aspx.cs">
+      <DependentUpon>P_settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\P_settings.aspx.designer.cs">
+      <DependentUpon>P_settings.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

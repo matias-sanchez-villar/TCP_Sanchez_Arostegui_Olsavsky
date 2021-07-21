@@ -8,11 +8,14 @@
     <title>Dashboard</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
     <link rel="stylesheet" runat="server" href="../Styles/Master.css" />
     <link href="../Styles/bootstrap-grid.css" rel="stylesheet" />
-    <link href="../Styles/DasboardDef.css" rel="stylesheet" />
+    <link href="../Styles/Generic_dashboard.css" rel="stylesheet" />
+    <link href="../Styles/Forms.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" /> 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <script type="text/javascript" src="/Scripts/Validations.js"></script>
 </head>
     
@@ -22,21 +25,21 @@
     <ul class="navbar-nav">
 
       <li class="logo">
-        <a href="#" class="nav-link">
+        <a href="M_Dashboard.aspx" class="nav-link">
           <span class="link-text logo-text">MEDITURNS</span>
           <i class="fas fa-hospital-symbol"></i>
         </a>
       </li>
 
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="M_Dashboard.aspx" class="nav-link">
           <i class="fas fa-clinic-medical"></i>
           <span class="link-text">Home</span>
         </a>
       </li>
 
         <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="M_Settings.aspx" class="nav-link">
                 <i class="fas fa-cog"></i>
                 <span class="link-text">Settings</span>
             </a>

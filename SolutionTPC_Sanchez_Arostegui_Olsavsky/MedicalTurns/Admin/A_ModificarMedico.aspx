@@ -8,7 +8,7 @@
              <div class="main-container">
 
                 <div class="form-container">
-                    <h2>MODIFICAR MEDICO</h2>
+                    <h2>UPDATE DOCTOR</h2>
 
                     <div class="generic-form row contanier">
 

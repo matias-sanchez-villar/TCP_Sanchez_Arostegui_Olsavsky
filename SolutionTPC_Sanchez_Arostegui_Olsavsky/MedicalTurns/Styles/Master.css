@@ -7,7 +7,7 @@
     --main-white: #F3FAFF;
     --main-gray: #ECECEC;
     --font-color: #343545;
-    --accent-violet: #385399;
+    --accent-violet: rgb(170, 88, 255);
     --transition-speed: 600ms;
 }
 
