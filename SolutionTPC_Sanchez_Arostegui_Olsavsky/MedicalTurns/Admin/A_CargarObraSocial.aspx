@@ -8,7 +8,7 @@
 
             <div class="main-container">
 
-                <h2>UPLOAD CLINICAL SUPPORT</h2>
+                <h2>UPLOAD MEDICAL SUPPORT</h2>
                 <div class="container generic-form">
 
                     <asp:TextBox ID="ObraSocial" placeholder="Clinical support" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>

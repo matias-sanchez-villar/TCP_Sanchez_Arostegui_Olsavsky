@@ -15,6 +15,7 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Modificar();
 
             N_Especialidad Negocio = new N_Especialidad();
             lista = Negocio.listar();
@@ -25,19 +26,33 @@ namespace MedicalTurns
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Page.Validate();
-            if (!Page.IsValid) return;
+            N_Especialidad Negocio = new N_Especialidad();
+            Especialidad especialidad = new Especialidad();
 
-            else
+            if (!(string.IsNullOrEmpty(Request.QueryString["ID"])))
             {
-                N_Especialidad Negocio = new N_Especialidad();
-                Especialidad especialidad = new Especialidad();
+
+                int ID = int.Parse(Request.QueryString["ID"]);
+
+                lista = (List<Especialidad>)Session["Especialidad"];
+
+                especialidad = lista.Find(x => x.ID == ID);
 
                 especialidad.Nombre = Especialidad.Text;
 
-                Negocio.Cargar(especialidad);
-                Response.Redirect("A_CargarEspecialidad.aspx");
+
+                Negocio.Modificar(especialidad);
+
             }
+            else
+            {
+                especialidad.Nombre = Especialidad.Text;
+
+                Negocio.Cargar(especialidad);
+                
+            }
+
+            Response.Redirect("A_CargarEspecialidad.aspx");
         }
 
         public void Modificar()
@@ -56,7 +71,8 @@ namespace MedicalTurns
 
                     especialidad = lista.Find(x => x.ID == ID);
 
-                    Negocio.Modificar(especialidad);
+                    Especialidad.Attributes.Add("placeholder", especialidad.Nombre);
+                    btnAgregar.Text = "Modificar";
                 }
 
             }
