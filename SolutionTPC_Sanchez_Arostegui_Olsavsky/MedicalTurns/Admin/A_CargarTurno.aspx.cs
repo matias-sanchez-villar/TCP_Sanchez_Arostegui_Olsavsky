@@ -141,6 +141,8 @@ namespace MedicalTurns
 
         protected void cFecha_SelectionChanged(object sender, EventArgs e)
         {
+            ddlHorarios.Items.Clear();
+
             int ID = int.Parse(ddlMedico.SelectedItem.Value);
             DateTime fecha = cFecha.SelectedDate;
             DateTime thisDay = DateTime.Now;
@@ -161,7 +163,7 @@ namespace MedicalTurns
                     {
                         TimeSpan tiempo = item.HoraInicio;
 
-                        //if (Tlista.Exists(x => x.Hora != tiempo)) // COMEnto esto porque no esta funcionando y no muestra turnos
+                        if (Tlista.Exists(x => x.Hora == tiempo))
                         {
                             ListItem listItemAux = new ListItem(tiempo.ToString(), tiempo.ToString());
                             ddlHorarios.Items.Add(listItemAux);
