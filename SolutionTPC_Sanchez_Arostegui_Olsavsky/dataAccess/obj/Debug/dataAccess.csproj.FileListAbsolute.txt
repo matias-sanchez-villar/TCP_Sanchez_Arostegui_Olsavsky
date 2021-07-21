@@ -4,15 +4,14 @@ C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_S
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\dataAccess.csproj.CoreCompileInputs.cache
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\dataAccess.dll
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP FINAL\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\dataAccess.pdb
-C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\bin\Debug\dataAccess.dll
-C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\bin\Debug\dataAccess.pdb
-C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
-C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
-C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\dataAccess.dll
-C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\dataAccess.pdb
 C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\bin\Debug\dataAccess.dll
 C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\bin\Debug\dataAccess.pdb
 C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
 C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\dataAccess.dll
 C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\dataAccess.pdb
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\bin\Debug\dataAccess.dll
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\bin\Debug\dataAccess.pdb
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\dataAccess.dll
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\dataAccess.pdb

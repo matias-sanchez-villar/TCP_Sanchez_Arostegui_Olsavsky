@@ -51,6 +51,10 @@ namespace MedicalTurns.Admin
 
         protected void cFecha_SelectionChanged(object sender, EventArgs e)
         {
+            ddlHorarios.Items.Clear();
+            ListItem listItemAuxxx = new ListItem("Horario", "Horario");
+            ddlHorarios.Items.Add(listItemAuxxx);
+
             turno = Tnegocio.ListarID(int.Parse(Request.QueryString["ID"]));
 
             DateTime fecha = cFecha.SelectedDate;
@@ -72,7 +76,7 @@ namespace MedicalTurns.Admin
                     {
                         TimeSpan tiempo = item.HoraInicio;
 
-                        if (Tlista.Exists(x => x.Hora != tiempo))
+                        if (!(Tlista.Exists(x => x.Hora == tiempo)))
                         {
                             ListItem listItemAux = new ListItem(tiempo.ToString(), tiempo.ToString());
                             ddlHorarios.Items.Add(listItemAux);
@@ -84,7 +88,7 @@ namespace MedicalTurns.Admin
             }
         }
 
-        protected void BtnSubmit_Click(object sender, EventArgs e)
+        protected void btnModificar_Click1(object sender, EventArgs e)
         {
             turno = Tnegocio.ListarID(int.Parse(Request.QueryString["ID"]));
 
@@ -92,7 +96,7 @@ namespace MedicalTurns.Admin
             turno.Hora = TimeSpan.Parse(ddlHorarios.SelectedValue);
             turno.Estado = ddlEstado.SelectedValue.ToString();
 
-            //Tnegocio.Modificar(turno);
+            Tnegocio.Modificar(turno);
 
             Response.Redirect("A_CargarTurno.aspx");
         }

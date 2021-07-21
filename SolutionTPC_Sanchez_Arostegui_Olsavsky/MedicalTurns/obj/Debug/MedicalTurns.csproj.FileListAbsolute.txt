@@ -122,6 +122,12 @@ C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_S
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dominio.pdb
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\negocio.pdb
 C:\Users\arost\Desktop\Isidoro\Facultad\Programación III\TP Final\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dataAccess.pdb
+C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\Dominio.dll
+C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\negocio.dll
+C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dataAccess.dll
+C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\Dominio.pdb
+C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\negocio.pdb
+C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dataAccess.pdb
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\MedicalTurns.dll.config
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\MedicalTurns.dll
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\MedicalTurns.pdb
@@ -174,11 +180,11 @@ C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arosteg
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\roslyn\vbc.rsp
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\roslyn\VBCSCompiler.exe
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dominio.dll
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\Dominio.dll
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\negocio.dll
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dataAccess.dll
-C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dominio.pdb
+C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\Dominio.pdb
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\negocio.pdb
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dataAccess.pdb
@@ -187,9 +193,3 @@ C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arosteg
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\obj\Debug\MedicalTurns.csproj.CopyComplete
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\obj\Debug\MedicalTurns.dll
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\obj\Debug\MedicalTurns.pdb
-C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\Dominio.dll
-C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\negocio.dll
-C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dataAccess.dll
-C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\Dominio.pdb
-C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\negocio.pdb
-C:\Users\Pablo\Documents\TPC FINAL (PROG 3)\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\MedicalTurns\bin\dataAccess.pdb

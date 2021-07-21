@@ -19,7 +19,7 @@
                 <label class="form-label">Mensaje</label>
                 <asp:TextBox runat="server" TextMode="MultiLine" runat="server" ID="txtMensaje" cssclass="form-control"></asp:TextBox>
             </div>
-            <asp:Button runat="server" Text="Aceptar" CssClass="btn btn-primary" OnClick="btnAceptar_Click" ID="btnAceptar"/>
+            
         </div>
         <div class="col"></div>
     </div>

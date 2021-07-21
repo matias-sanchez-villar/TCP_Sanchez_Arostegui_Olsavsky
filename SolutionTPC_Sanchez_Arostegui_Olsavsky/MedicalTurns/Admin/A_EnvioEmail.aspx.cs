@@ -17,7 +17,7 @@ namespace MedicalTurns.Admin
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            EmailService emailService = new EmailService();
+            /*EmailService emailService = new EmailService();
             emailService.armarCorreo(txtEmail.Text, txtAsunto.Text, txtMensaje.Text);
             try
             {
@@ -26,7 +26,7 @@ namespace MedicalTurns.Admin
             catch (Exception ex)
             {
                 Session.Add("error", ex);
-            }
+            }*/
 
         }
     
