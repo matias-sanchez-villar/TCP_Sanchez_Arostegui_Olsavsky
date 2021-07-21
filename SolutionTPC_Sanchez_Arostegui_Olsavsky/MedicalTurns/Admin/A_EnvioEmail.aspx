@@ -1,8 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/A_Structure.Master" AutoEventWireup="true" CodeBehind="A_EnvioEmail.aspx.cs" Inherits="MedicalTurns.Admin.A_EnvioEmail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <body>  
     <div class="row">
         <div class="col-2"></div>
         <div class="col">
@@ -19,11 +22,11 @@
                 <label class="form-label">Mensaje</label>
                 <asp:TextBox runat="server" TextMode="MultiLine" runat="server" ID="txtMensaje" cssclass="form-control"></asp:TextBox>
             </div>
-            
+            <asp:Button Text="Aceptar" CssClass="btn btn-primary" OnClick="btnAceptar_Click" ID="btnAceptar" runat="server" />
         </div>
         <div class="col"></div>
     </div>
 
-
+   </body>
 
 </asp:Content>

@@ -11,15 +11,14 @@ namespace negocio
 {
     public class N_EmailService
     {
-        public class EmailService
-        {
+        
             private MailMessage email;
             private SmtpClient server;
 
-            public EmailService()
+            public N_EmailService()
             {
                 server = new SmtpClient();
-                server.Credentials = new NetworkCredential("programationiii@gmail.com", "programacion3");
+                server.Credentials = new NetworkCredential("mmediturns@gmail.com", "mediturns123");
                 server.EnableSsl = true;
                 server.Port = 587;
                 server.Host = "smtp.gmail.com";
@@ -32,7 +31,7 @@ namespace negocio
                 email.To.Add(emailDestino);
                 email.Subject = asunto;
                 email.IsBodyHtml = true;
-                email.Body = "<h1>Reporte de materias a las que se ha inscripto</h1> <br>Hola, te inscribiste.... bla bla";
+                email.Body = "<h1>Datos de Contacto Mediturnos</h1> <br>Hola, recibimos tus datos de contacto, te contactaremos pronto";
                 //email.Body = cuerpo;
 
             }
@@ -50,6 +49,6 @@ namespace negocio
             }
 
 
-        }
+        
     }
 }
