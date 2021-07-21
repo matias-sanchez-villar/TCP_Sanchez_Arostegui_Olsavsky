@@ -92,7 +92,7 @@ namespace MedicalTurns.Admin
             turno.Hora = TimeSpan.Parse(ddlHorarios.SelectedValue);
             turno.Estado = ddlEstado.SelectedValue.ToString();
 
-            Tnegocio.Modificar(turno);
+            //Tnegocio.Modificar(turno);
 
             Response.Redirect("A_CargarTurno.aspx");
         }
