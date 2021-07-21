@@ -88,7 +88,7 @@ namespace negocio
             N_Medico NMedicoAux = new N_Medico();
             try
             {
-                Datos.setearConsulta("select ID, IDMedico, Dia, HorarioInicio, HorarioFin, Estado from DisponibilidadHoraria where IDMedico = @ID and Dia like @Fecha ");
+                Datos.setearConsulta("select ID, IDMedico, Dia, HorarioInicio, HorarioFin, Estado from DisponibilidadHoraria where IDMedico = @ID and Dia like @Fecha");
 
                 Datos.setearParametro("@ID", ID);
                 Datos.setearParametro("@Fecha", fecha.DayOfWeek.ToString());

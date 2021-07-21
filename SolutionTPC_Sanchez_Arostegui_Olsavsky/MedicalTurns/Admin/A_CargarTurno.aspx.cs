@@ -161,7 +161,7 @@ namespace MedicalTurns
                     {
                         TimeSpan tiempo = item.HoraInicio;
 
-                        if (Tlista.Exists(x => x.Hora != tiempo))
+                        //if (Tlista.Exists(x => x.Hora != tiempo)) // COMEnto esto porque no esta funcionando y no muestra turnos
                         {
                             ListItem listItemAux = new ListItem(tiempo.ToString(), tiempo.ToString());
                             ddlHorarios.Items.Add(listItemAux);
