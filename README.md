@@ -21,6 +21,18 @@
 
 ![ProgramacionIII-Modelo de dominio](https://user-images.githubusercontent.com/60631478/122834064-523bb600-d2c4-11eb-9587-31b711097eeb.png)
 
+
+**Der Base de Datos**
+
+![ProgramacionIII-Der Base de Datos](https://raw.githubusercontent.com/matias-sanchez-villar/TPC_Sanchez_Arostegui_Olsavsky/main/DB/Der.png)
+
+------------------------------
+
+**Login**
+
+![ProgramacionIII-Login](https://raw.githubusercontent.com/matias-sanchez-villar/TPC_Sanchez_Arostegui_Olsavsky/main/DB/Der.png)
+
+
 ------------------------------
 
 ## License

@@ -15,4 +15,3 @@ C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arosteg
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\dataAccess.dll
 C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\dataAccess.pdb
-C:\Users\Mati\Desktop\TPC_Sanchez_Arostegui_Olsavsky\SolutionTPC_Sanchez_Arostegui_Olsavsky\dataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
