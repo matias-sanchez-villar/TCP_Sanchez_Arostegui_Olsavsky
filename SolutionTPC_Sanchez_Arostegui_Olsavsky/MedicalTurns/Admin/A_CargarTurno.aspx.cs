@@ -134,6 +134,21 @@ namespace MedicalTurns
 
                 NTurno.Cargar(turnoAux);
 
+                string EmailPaciente = NTurno.EmailPaciente(turnoAux);
+                string TextoEmail = "Reservo un turno para el día: " + turnoAux.Fecha.ToString("dd/MM/yy") + " en el horario de: " + turnoAux.Hora.ToString() + " con el médico: " + ddlMedico.SelectedItem;
+                N_EmailService emailService = new N_EmailService();
+                emailService.armarCorreo(EmailPaciente, "Turno Agendado", TextoEmail);
+
+                try
+                {
+                    emailService.enviarEmail();
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("error", ex);
+                }
+
+
                 Response.Redirect("A_CargarTurno.aspx");
             }
         }

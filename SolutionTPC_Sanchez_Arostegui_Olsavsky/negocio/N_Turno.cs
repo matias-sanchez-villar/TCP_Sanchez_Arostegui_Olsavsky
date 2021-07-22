@@ -264,6 +264,43 @@ namespace negocio
             }
         }
 
+        public string EmailPaciente(Turno turnoAux)
+        {
+            Datos = new DataAcces();
+
+            medico = new N_Medico();
+            paciente = new N_Paciente();
+
+            try
+            {
+                string query = (" select U.Email from Usuarios U inner join Pacientes P on P.IDUsuario = U.ID where P.ID = @IDPaciente");
+                string email = "";
+
+                Datos.setearConsulta(query);
+
+                Datos.setearParametro("@IDPaciente", turnoAux.paciente.ID);
+
+                Datos.ejecutarLectura();
+
+                while (Datos.Lector.Read())
+                {
+                    
+                    email = (string)Datos.Lector["Email"];
+
+                   
+                }
+                return email;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.cerrarConexion();
+            }
+        }
+
 
     }
 }
