@@ -32,17 +32,16 @@ namespace MedicalTurns
             // Carga los turnos en session
             Tlista = Tnegocio.Listar();
             Session.Add("Turno", Tlista);
+            EliminarTurno();
 
             if (!IsPostBack)
             {
                 
-
                 // Lista las especialidades en el drop down list
                 listarEspecialidades();
 
                 // Lista los pacientes en el drop down list
                 listarPacientes();
-
 
             }
         }
@@ -163,7 +162,7 @@ namespace MedicalTurns
                     {
                         TimeSpan tiempo = item.HoraInicio;
 
-                        if (Tlista.Exists(x => x.Hora == tiempo))
+                        if (!Tlista.Exists(x => x.Hora == tiempo))
                         {
                             ListItem listItemAux = new ListItem(tiempo.ToString(), tiempo.ToString());
                             ddlHorarios.Items.Add(listItemAux);
@@ -172,6 +171,25 @@ namespace MedicalTurns
                         item.HoraInicio = item.HoraInicio + Intervalo;
                     }
                 }
+            }
+        }
+
+        protected void EliminarTurno()
+        {
+            try
+            {
+                if (!(string.IsNullOrEmpty(Request.QueryString["IDTurno"])))
+                {
+                    N_Turno negocio = new N_Turno();
+
+
+                    negocio.Eliminar(Convert.ToInt32(Request.QueryString["IDTurno"]));
+                    Response.Redirect("A_CargarTurno.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 

@@ -215,14 +215,14 @@ namespace negocio
             }
         }
 
-        public void Eliminar(Turno turno)
+        public void Eliminar(int IDTurno)
         {
             Datos = new DataAcces();
             try
             {
                 Datos.setearConsulta(" Delete Turnos where ID = @ID");
 
-                Datos.setearParametro("@FechaHora", turno.ID);
+                Datos.setearParametro("@ID", IDTurno);
 
                 Datos.ejecutarLectura();
 

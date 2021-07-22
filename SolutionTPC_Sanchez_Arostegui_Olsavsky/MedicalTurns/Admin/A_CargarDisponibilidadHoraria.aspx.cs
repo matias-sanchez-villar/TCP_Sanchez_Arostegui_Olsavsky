@@ -118,8 +118,8 @@ namespace MedicalTurns.Admin
             ddlHoraInicio.Items.Clear();
             ddlHoraFin.Items.Clear();
 
-            TimeSpan Intervalo = new TimeSpan(00, 30, 00);
-            TimeSpan Fin = new TimeSpan(23, 30, 0);
+            TimeSpan Intervalo = new TimeSpan(01, 00, 00);
+            TimeSpan Fin = new TimeSpan(23, 00, 0);
             TimeSpan Inicio = new TimeSpan(00, 00, 0);
 
             while (Inicio != Fin)
