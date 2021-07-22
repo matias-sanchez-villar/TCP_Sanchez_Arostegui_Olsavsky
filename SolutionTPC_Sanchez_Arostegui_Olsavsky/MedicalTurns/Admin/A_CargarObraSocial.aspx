@@ -13,7 +13,7 @@
 
                     <asp:TextBox ID="ObraSocial" placeholder="Clinical support" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
 
-                    <asp:Button ID="btnAgregar" CssClass="BtnSubmit" runat="server" Text="ADD" OnClick="btnAgregar_Click" />
+                    <asp:Button ID="btnAgregar" CssClass="BtnSubmit" onClientClick="createSwal( { title: 'Medical support successfully uploaded!', icon: 'success'} )" runat="server" Text="ADD" OnClick="btnAgregar_Click"  />
 
                 </div>
 

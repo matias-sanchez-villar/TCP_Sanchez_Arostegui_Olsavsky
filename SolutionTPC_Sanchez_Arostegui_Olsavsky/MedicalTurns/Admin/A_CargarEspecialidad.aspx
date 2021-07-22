@@ -9,16 +9,20 @@
 
             <div class="main-container">
 
-                <h2>CARGAR ESPECIALIDAD</h2>
+                <h2>UPLOAD SPECIALTY</h2>
                 <div class="container generic-form">
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
 
-                    <asp:TextBox ID="Especialidad" placeholder="Specialty" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
+                            <asp:TextBox ID="Especialidad" placeholder="Specialty" MaxLength="100" runat="server" required ClientIDMode="Static"></asp:TextBox>
 
-                    <asp:Button ID="btnAgregar" CssClass="BtnSubmit" runat="server" Text="ADD" OnClick="btnAgregar_Click" />
+                            <asp:Button ID="btnAgregar" CssClass="BtnSubmit" OnClientClick="createSwal( { title: 'Specialty support successfully uploaded!', icon: 'success'} )" runat="server" Text="ADD" OnClick="btnAgregar_Click" AutoPostBack="true" />
 
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
-                
-                   <section class="table-container">
+
+                <section class="table-container">
 
                        <div class="table-title-container">
                            <h3>Specialties</h3>

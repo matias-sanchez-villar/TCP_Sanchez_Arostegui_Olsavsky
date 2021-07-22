@@ -52,7 +52,6 @@ namespace MedicalTurns
                 Negocio.Modificar(obraSocial);
 
                 Response.Redirect("A_CargarObraSocial.aspx", false);
-
             }
             else
             {

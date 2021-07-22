@@ -35,6 +35,8 @@ namespace MedicalTurns
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+
+
             N_Especialidad Negocio = new N_Especialidad();
             Especialidad especialidad = new Especialidad();
 
