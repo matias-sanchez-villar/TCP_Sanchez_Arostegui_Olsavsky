@@ -14,6 +14,7 @@ namespace MedicalTurns
         public List<Medico> listaMedicos;
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionMedico();
             try
             {
                 ///Listamos a medico
@@ -29,6 +30,14 @@ namespace MedicalTurns
                 //Response.Redirect("Dashboard.aspx");
             }
 
+        }
+
+        protected void SessionMedico()
+        {
+            if (Session["MedicoSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
+            }
         }
     }
 }

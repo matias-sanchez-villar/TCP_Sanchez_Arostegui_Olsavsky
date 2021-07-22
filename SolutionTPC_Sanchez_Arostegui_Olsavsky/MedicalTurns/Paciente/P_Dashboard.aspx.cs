@@ -15,6 +15,7 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionPaciente();
             try
             {
                 ///Listamos Paciente
@@ -28,6 +29,14 @@ namespace MedicalTurns
             {
                 ex.Message.ToString();
                 //Response.Redirect("Dashboard.aspx");
+            }
+        }
+
+        protected void SessionPaciente()
+        {
+            if (Session["PacienteSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
             }
         }
 

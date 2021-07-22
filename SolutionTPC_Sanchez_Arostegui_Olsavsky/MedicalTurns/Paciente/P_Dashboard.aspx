@@ -9,26 +9,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-    <%--Debe haber un main container que contenga el contenido en cada página aspx para que este centre todo el contenido teniendo en cuenta el navbar lateral--%>
-   
-    
-    <%
-        ///Listamos paciente
-    %>
-
     <div class="main-container">
 
 
-        <%-- Banner con recuentos de covid --%>
-
-
-        <%-- 2 o 4 trajetas con informacion --%>
-
-        <%-- Traer turnos del paciente --%>
-
-
-        </section>
+        
 
     </div>
 

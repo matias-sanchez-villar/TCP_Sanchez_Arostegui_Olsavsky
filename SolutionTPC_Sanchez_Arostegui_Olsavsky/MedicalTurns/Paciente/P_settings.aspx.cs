@@ -13,11 +13,36 @@ namespace MedicalTurns
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionPaciente();
+
             Paciente pacAux = new Paciente();
 
             pacAux = (Paciente)Session["PacienteSettings"];
 
             Email.Text = pacAux.Usuario.Email;
+        }
+
+        protected void SessionPaciente()
+        {
+            if (Session["PacienteSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
+            }
+        }
+
+        protected void BtnModificar_Click(object sender, EventArgs e)
+        {
+            Paciente pacAux = new Paciente();
+            N_Paciente negocio = new N_Paciente();
+
+            pacAux = (Paciente)Session["PacienteSettings"];
+
+            pacAux.Usuario.Email = Email.Text;
+            pacAux.Usuario.Contrasena = nuevaContrasena.Text;
+
+            negocio.Modificar(pacAux);
+
+            Response.Redirect("M_Dashboard.aspx", false);
         }
     }
 }
