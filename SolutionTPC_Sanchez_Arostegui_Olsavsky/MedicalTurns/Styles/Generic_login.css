@@ -43,7 +43,7 @@ input[type=text], input[type=password] {
     border: none;
 } */
 
-button, .btn-submit {
+button, .btn-submit, a .btn-submit {
     background-color: #AA58FF;
     color: white;
     padding: 14px 0;

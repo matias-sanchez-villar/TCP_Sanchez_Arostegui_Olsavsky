@@ -1,9 +1,9 @@
-﻿function createSwal(obj) {
+﻿function createSwal(title, icon) {
 
-    const { title, icon } = obj;
 
-    swal({ title: title, icon: icon, button: 'Accept' })
+    swal({ title: title, icon: icon, button: 'Accept' });
 
+    console.log('creando')
     //return false;
 }
 

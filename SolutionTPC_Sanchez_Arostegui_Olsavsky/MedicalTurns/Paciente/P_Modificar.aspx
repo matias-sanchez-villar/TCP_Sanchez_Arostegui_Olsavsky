@@ -35,7 +35,7 @@
 
                 <div class="m-auto col-sm-12 col-md-4 col-lg-3 p-1"></div>
 
-                <asp:Button ID="btnModificar" runat="server" Text="Modificar" class="m-auto col-sm-12 col-md-4 col-lg-3 p-1" OnClick="btnModificar_Click"/>
+                <asp:Button ID="btnModificar" runat="server" OnClientClick="alert('Turn successfully updated.')" Text="Modificar" class="m-auto col-sm-12 col-md-4 col-lg-3 p-1" OnClick="btnModificar_Click"/>
 
                 
             </div>

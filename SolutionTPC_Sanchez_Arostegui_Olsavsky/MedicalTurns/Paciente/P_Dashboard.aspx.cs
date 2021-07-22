@@ -77,7 +77,7 @@ namespace MedicalTurns
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("P_Error.aspx", false);
             }
         }
 
@@ -134,10 +134,9 @@ namespace MedicalTurns
                 catch (Exception ex)
                 {
                     Session.Add("error", ex);
+                    Response.Redirect("P_Error.aspx", false);
+
                 }
-
-
-                Response.Redirect("P_Dashboard.aspx", false);
             }
         }
 

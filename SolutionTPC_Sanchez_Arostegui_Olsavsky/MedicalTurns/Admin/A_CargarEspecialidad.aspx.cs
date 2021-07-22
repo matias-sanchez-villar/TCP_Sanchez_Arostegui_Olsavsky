@@ -35,32 +35,28 @@ namespace MedicalTurns
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+                N_Especialidad Negocio = new N_Especialidad();
+                Especialidad especialidad = new Especialidad();
 
-
-            N_Especialidad Negocio = new N_Especialidad();
-            Especialidad especialidad = new Especialidad();
-
-            if (!(string.IsNullOrEmpty(Request.QueryString["ID"])))
-            {
+                if (!(string.IsNullOrEmpty(Request.QueryString["ID"])))
+                {
 
                 int ID = int.Parse(Request.QueryString["ID"]);
 
-                lista = (List<Especialidad>)Session["Especialidad"];
+                    lista = (List<Especialidad>)Session["Especialidad"];
 
-                especialidad = lista.Find(x => x.ID == ID);
+                    especialidad = lista.Find(x => x.ID == ID);
 
-                especialidad.Nombre = Especialidad.Text;
+                    especialidad.Nombre = Especialidad.Text;
 
-
-                Negocio.Modificar(especialidad);
+                    Negocio.Modificar(especialidad);
 
             }
             else
-            {
-                especialidad.Nombre = Especialidad.Text;
+                {
+                    especialidad.Nombre = Especialidad.Text;
 
-                Negocio.Cargar(especialidad);
-                
+                    Negocio.Cargar(especialidad);
             }
 
             Response.Redirect("A_CargarEspecialidad.aspx", false);
@@ -89,7 +85,8 @@ namespace MedicalTurns
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("A_Error.aspx", false);
+
             }
         }
     }

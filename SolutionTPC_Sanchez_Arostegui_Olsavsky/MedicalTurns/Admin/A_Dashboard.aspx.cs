@@ -44,7 +44,8 @@ namespace MedicalTurns
             catch (Exception ex)
             {
                 ex.Message.ToString();
-                //Response.Redirect("Dashboard.aspx");
+                Response.Redirect("A_Error.aspx", false);
+
             }
         }
 
@@ -72,7 +73,8 @@ namespace MedicalTurns
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("A_Error.aspx", false);
+
             }
         }
 
@@ -91,7 +93,8 @@ namespace MedicalTurns
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("A_Error.aspx", false);
+
             }
         }
 

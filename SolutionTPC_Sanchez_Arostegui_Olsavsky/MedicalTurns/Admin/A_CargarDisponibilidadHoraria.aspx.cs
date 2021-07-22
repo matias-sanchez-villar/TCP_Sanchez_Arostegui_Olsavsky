@@ -71,7 +71,7 @@ namespace MedicalTurns.Admin
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("A_Error.aspx", false);
             }
         }
 
@@ -96,7 +96,8 @@ namespace MedicalTurns.Admin
             catch (Exception ex)
             {
 
-                throw ex;
+                Response.Redirect("A_Error.aspx", false);
+
             }
         }
 

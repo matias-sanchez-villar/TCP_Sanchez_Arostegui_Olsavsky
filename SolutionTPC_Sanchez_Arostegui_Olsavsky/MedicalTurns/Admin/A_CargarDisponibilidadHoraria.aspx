@@ -39,7 +39,7 @@
                         <asp:ListItem Text="Hora Fin" Value="#" />
                     </asp:DropDownList>
 
-                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="return true" runat="server" Text="ADD AVAILABILITY" type="submit" OnClick="BtnSubmit_Click" />
+                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="alert('Availabilty successfully created.')" runat="server" Text="ADD AVAILABILITY" type="submit" OnClick="BtnSubmit_Click" />
                 </div>
             </div>
 
@@ -71,7 +71,7 @@
                         <td><% = item.HoraInicio %></td>
                         <td><% = item.HoraFin %></td>
                         <td style="width: 100px;">
-                            <a href="?ID=<% = item.ID %>"><i class="fas fa-trash-alt removeItem"></i></a>
+                            <a href="?ID=<% = item.ID %>" OnClientClick="alert('Time availability successfully deleted.')"><i class="fas fa-trash-alt removeItem"></i></a>
                         </td>
                     </tr>
 

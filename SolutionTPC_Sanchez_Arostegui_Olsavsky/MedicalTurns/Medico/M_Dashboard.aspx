@@ -20,10 +20,11 @@
                 <table id="data-table2" style="width: 100%;">
                     <thead>
                         <tr>
-                            <th>Patient</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Condition</th>
+                            <th style="width: 20%;">Patient</th>
+                            <th style="width: 20%;">Date</th>
+                            <th style="width: 20%;">Time</th>
+                            <th style="width: 20%;">Condition</th>
+                            <th style="width: 20%;">Actions</th>
                         </tr>
                     </thead>
 

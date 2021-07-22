@@ -34,7 +34,7 @@
 
                     <div class="m-auto col-sm-12 col-md-4 col-lg-3 p-1"></div>
 
-                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="return" runat="server" Text="Add turn" type="submit" OnClick="BtnSubmit_Click" />
+                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="alert('Turn successfully uploaded.')" runat="server" Text="Add turn" type="submit" OnClick="BtnSubmit_Click" />
                 </div>
             </div>
 
@@ -66,7 +66,7 @@
                         <td style="width: 200px;">
                                 <a href="#"><i class="fas fa-info-circle"></i></a>
                                 <a href="A_ModificarTurno.aspx?ID=<% = item.ID %>" style="margin-left: 15px;"><i class="far fa-edit editItem"></i></a>
-                                <a href="?IDTurno=<% = item.ID %>"><i class="fas fa-trash-alt removeItem"></i></a>
+                                <a href="?IDTurno=<% = item.ID %>" OnClientClick="alert('Turn successfully deleted.')"><i class="fas fa-trash-alt removeItem"></i></a>
                         </td>
                     </tr>
 

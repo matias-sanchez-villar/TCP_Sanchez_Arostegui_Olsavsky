@@ -33,7 +33,7 @@
 
                     <br />
 
-                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="return validateForm()" runat="server" Text="Create patient" type="submit" OnClick="BtnSubmit_Click" />
+                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="alert('Patient successfully uploaded.')" runat="server" Text="Create patient" type="submit" OnClick="BtnSubmit_Click" />
                 </div>
             </div>
 
@@ -64,7 +64,7 @@
                         <td><% = item.Usuario.Email %></td>
                         <td>
                             <a href="A_ModificarPaciente.aspx?ID=<% = item.ID %>"><i class="far fa-edit editItem"></i></a>
-                            <a href="?IDPaciente=<% = item.ID %>"><i class="fas fa-trash-alt removeItem"></i></a>
+                            <a href="?IDPaciente=<% = item.ID %>" OnClientClick="alert('Patient successfully deleted.')"><i class="fas fa-trash-alt removeItem"></i></a>
                         </td>
                     </tr>
 

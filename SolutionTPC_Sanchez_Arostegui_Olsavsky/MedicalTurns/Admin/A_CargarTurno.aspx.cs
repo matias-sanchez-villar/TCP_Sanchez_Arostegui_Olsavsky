@@ -75,7 +75,7 @@ namespace MedicalTurns
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("A_Error.aspx", false);
             }
         }
 
@@ -99,7 +99,7 @@ namespace MedicalTurns
             catch (Exception ex)
             {
 
-                throw ex;
+                Response.Redirect("A_Error.aspx", false);
             }
         }
 
@@ -155,10 +155,9 @@ namespace MedicalTurns
                 catch (Exception ex)
                 {
                     Session.Add("error", ex);
+                    Response.Redirect("A_Error.aspx", false);
+
                 }
-
-
-                Response.Redirect("A_CargarTurno.aspx", false);
             }
         }
 
@@ -215,7 +214,7 @@ namespace MedicalTurns
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("A_Error.aspx", false);
             }
         }
 

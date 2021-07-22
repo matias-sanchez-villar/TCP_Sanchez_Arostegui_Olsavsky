@@ -53,7 +53,7 @@ namespace MedicalTurns
                 }
                 else
                 {
-                    Response.Redirect("A_Dashboard.aspx", false);
+                    Response.Redirect("A_Error.aspx", false);
                 }
 
             }
@@ -91,7 +91,7 @@ namespace MedicalTurns
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("A_Error.aspx", false);
             }
         }
 

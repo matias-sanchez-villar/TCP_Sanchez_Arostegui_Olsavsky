@@ -77,13 +77,17 @@
     <Content Include="Admin\A_ModificarPaciente.aspx" />
     <Content Include="Admin\A_CargarTurno.aspx" />
     <Content Include="Admin\A_ModificarTurno.aspx" />
+    <Content Include="Assets\404.svg" />
     <Content Include="Assets\Doctor.svg" />
+    <Content Include="Admin\A_Error.aspx" />
     <Content Include="LoginDef.aspx" />
     <Content Include="Medico\M_Settings.aspx" />
     <Content Include="Medico\M_ModificarTurno.aspx" />
+    <Content Include="Medico\M_Error.aspx" />
     <Content Include="Paciente\P_Dashboard.aspx" />
     <Content Include="Paciente\P_settings.aspx" />
     <Content Include="Paciente\P_Modificar.aspx" />
+    <Content Include="Paciente\P_Error.aspx" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\Validations.js" />
     <Content Include="Styles\bootstrap-grid.css" />
@@ -173,6 +177,13 @@
     <Compile Include="Admin\A_CargarTurno.aspx.designer.cs">
       <DependentUpon>A_CargarTurno.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\A_Error.aspx.cs">
+      <DependentUpon>A_Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\A_Error.aspx.designer.cs">
+      <DependentUpon>A_Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.Master.cs">
       <DependentUpon>Login.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -200,6 +211,13 @@
     </Compile>
     <Compile Include="Medico\M_ModificarTurno.aspx.designer.cs">
       <DependentUpon>M_ModificarTurno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\M_Error.aspx.cs">
+      <DependentUpon>M_Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Medico\M_Error.aspx.designer.cs">
+      <DependentUpon>M_Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paciente\P_Dashboard.aspx.cs">
       <DependentUpon>P_Dashboard.aspx</DependentUpon>
@@ -250,6 +268,13 @@
     </Compile>
     <Compile Include="Paciente\P_Modificar.aspx.designer.cs">
       <DependentUpon>P_Modificar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\P_Error.aspx.cs">
+      <DependentUpon>P_Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\P_Error.aspx.designer.cs">
+      <DependentUpon>P_Error.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

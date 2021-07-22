@@ -55,7 +55,7 @@ namespace MedicalTurns
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("M_Error.aspx", false);
             }
         }
     }
