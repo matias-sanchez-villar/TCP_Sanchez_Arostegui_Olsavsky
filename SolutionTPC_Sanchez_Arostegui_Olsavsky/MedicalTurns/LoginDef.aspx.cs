@@ -23,9 +23,27 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            BorrarSecciones();
+
             userListAux = n_Usuario.listar();
             Session.Add("listaUsuarios", userListAux);
 
+        }
+
+        protected void BorrarSecciones()
+        {
+            if (Session["MedicoSettings"] != null)
+            {
+                Session.Remove("MedicoSettings");
+            }
+            if (Session["PacienteSettings"] != null)
+            {
+                Session.Remove("PacienteSettings");
+            }
+            if (Session["AdmiSettings"] != null)
+            {
+                Session.Remove("AdmiSettings");
+            }
         }
 
         protected void submitButton_Click(object sender, EventArgs e)
