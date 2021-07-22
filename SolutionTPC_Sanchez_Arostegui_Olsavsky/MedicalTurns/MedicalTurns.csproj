@@ -82,6 +82,7 @@
     <Content Include="Medico\M_Settings.aspx" />
     <Content Include="Paciente\P_Dashboard.aspx" />
     <Content Include="Paciente\P_settings.aspx" />
+    <Content Include="Paciente\P_Modificar.aspx" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\Validations.js" />
     <Content Include="Styles\bootstrap-grid.css" />
@@ -234,6 +235,13 @@
     </Compile>
     <Compile Include="Paciente\P_settings.aspx.designer.cs">
       <DependentUpon>P_settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\P_Modificar.aspx.cs">
+      <DependentUpon>P_Modificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\P_Modificar.aspx.designer.cs">
+      <DependentUpon>P_Modificar.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

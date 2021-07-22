@@ -42,7 +42,7 @@ namespace MedicalTurns
 
             negocio.Modificar(pacAux);
 
-            Response.Redirect("M_Dashboard.aspx", false);
+            Response.Redirect("P_Dashboard.aspx", false);
         }
     }
 }

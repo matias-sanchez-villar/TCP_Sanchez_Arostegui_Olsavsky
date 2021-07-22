@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/A_Structure.Master" AutoEventWireup="true" CodeBehind="A_ModificarTurno.aspx.cs" Inherits="MedicalTurns.Admin.A_ModificarTurno" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paciente/P_Structure.Master" AutoEventWireup="true" CodeBehind="P_Modificar.aspx.cs" Inherits="MedicalTurns.P_Modificar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <body>
+
+        <body>
 
     
         <div class="main-container">
@@ -34,7 +35,7 @@
 
                 <div class="m-auto col-sm-12 col-md-4 col-lg-3 p-1"></div>
 
-                <asp:Button ID="btnModificar" runat="server" Text="Modificar" class="m-auto col-sm-12 col-md-4 col-lg-3 p-1" OnClick="btnModificar_Click1"/>
+                <asp:Button ID="btnModificar" runat="server" Text="Modificar" class="m-auto col-sm-12 col-md-4 col-lg-3 p-1" OnClick="btnModificar_Click"/>
 
                 
             </div>

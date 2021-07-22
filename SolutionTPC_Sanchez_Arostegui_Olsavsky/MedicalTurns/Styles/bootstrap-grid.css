@@ -2687,7 +2687,9 @@ html {
 }
 
 .m-auto {
-    margin: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: auto !important;
 }
 
 .mx-0 {
@@ -2877,7 +2879,8 @@ html {
 }
 
 .p-1 {
-    padding: 0.25rem !important;
+    top: 0px;
+    left: 0px;
 }
 
 .p-2 {

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MedicalTurns.Admin
+namespace MedicalTurns
 {
 
 
-    public partial class A_ModificarTurno
+    public partial class P_Modificar
     {
 
         /// <summary>
