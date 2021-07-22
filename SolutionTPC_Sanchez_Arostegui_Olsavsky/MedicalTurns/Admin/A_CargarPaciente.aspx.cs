@@ -19,6 +19,7 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsuarioAdmi();
             EliminarPaciente();
             listarObrasSociales();
 
@@ -27,6 +28,14 @@ namespace MedicalTurns
 
             Session.Add("Paciente", listaPaciente);
 
+        }
+
+        protected void UsuarioAdmi()
+        {
+            if (Session["AdmiSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
+            }
         }
 
         protected void EliminarPaciente()
@@ -41,7 +50,7 @@ namespace MedicalTurns
 
                     negocio.Eliminar(paciente);
 
-                    Response.Redirect("A_CargarPaciente.aspx");
+                    Response.Redirect("A_CargarPaciente.aspx", false);
 
                 }
             }
@@ -98,7 +107,7 @@ namespace MedicalTurns
                 pacAux.Usuario.tipoUsuario = 2;
 
                 negocio.Cargar(pacAux);
-                Response.Redirect("A_CargarPaciente.aspx");
+                Response.Redirect("A_CargarPaciente.aspx", false);
             }            
         }
 

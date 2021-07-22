@@ -15,6 +15,7 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsuarioAdmi();
             Modificar();
 
             N_ObraSocial Negocio = new N_ObraSocial();
@@ -22,6 +23,14 @@ namespace MedicalTurns
             lista = Negocio.listar();
 
             Session.Add("ObraSocial", lista);
+        }
+
+        protected void UsuarioAdmi()
+        {
+            if (Session["AdmiSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -42,7 +51,7 @@ namespace MedicalTurns
 
                 Negocio.Modificar(obraSocial);
 
-                Response.Redirect("A_CargarObraSocial.aspx");
+                Response.Redirect("A_CargarObraSocial.aspx", false);
 
             }
             else
@@ -50,7 +59,7 @@ namespace MedicalTurns
 
                     obraSocial.Nombre = ObraSocial.Text;
                     Negocio.Cargar(obraSocial);
-                    Response.Redirect("A_CargarObraSocial.aspx");
+                    Response.Redirect("A_CargarObraSocial.aspx", false);
 
             }
         }

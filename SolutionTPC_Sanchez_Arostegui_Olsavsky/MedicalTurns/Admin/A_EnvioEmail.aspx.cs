@@ -12,7 +12,15 @@ namespace MedicalTurns.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsuarioAdmi();
+        }
 
+        protected void UsuarioAdmi()
+        {
+            if (Session["AdmiSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
+            }
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)

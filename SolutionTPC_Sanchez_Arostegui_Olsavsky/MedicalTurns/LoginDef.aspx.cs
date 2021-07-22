@@ -55,6 +55,7 @@ namespace MedicalTurns
                             Response.Redirect("Paciente/P_Dashboard.aspx");
                             break;
                         case 3:
+                            Session.Add("AdmiSettings", true);
                             Response.Redirect("Admin/A_Dashboard.aspx");
                             break;
                     }

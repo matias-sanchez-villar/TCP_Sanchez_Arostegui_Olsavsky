@@ -29,6 +29,7 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsuarioAdmi();
             // Carga los turnos en session
             Tlista = Tnegocio.Listar();
             Session.Add("Turno", Tlista);
@@ -43,6 +44,14 @@ namespace MedicalTurns
                 // Lista los pacientes en el drop down list
                 listarPacientes();
 
+            }
+        }
+
+        protected void UsuarioAdmi()
+        {
+            if (Session["AdmiSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
             }
         }
 
@@ -149,13 +158,15 @@ namespace MedicalTurns
                 }
 
 
-                Response.Redirect("A_CargarTurno.aspx");
+                Response.Redirect("A_CargarTurno.aspx", false);
             }
         }
 
         protected void cFecha_SelectionChanged(object sender, EventArgs e)
         {
             ddlHorarios.Items.Clear();
+            ListItem listItem = new ListItem("Horarios", "Horarios ");
+            ddlHorarios.Items.Add(listItem);
 
             int ID = int.Parse(ddlMedico.SelectedItem.Value);
             DateTime fecha = cFecha.SelectedDate;
@@ -199,7 +210,7 @@ namespace MedicalTurns
 
 
                     negocio.Eliminar(Convert.ToInt32(Request.QueryString["IDTurno"]));
-                    Response.Redirect("A_CargarTurno.aspx");
+                    Response.Redirect("A_CargarTurno.aspx", false);
                 }
             }
             catch (Exception ex)

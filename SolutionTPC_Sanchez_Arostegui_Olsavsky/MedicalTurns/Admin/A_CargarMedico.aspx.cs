@@ -18,6 +18,7 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsuarioAdmi();
             try
             {
                 ElimarMedico();
@@ -38,6 +39,14 @@ namespace MedicalTurns
             }
         }
 
+        protected void UsuarioAdmi()
+        {
+            if (Session["AdmiSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
+            }
+        }
+
         protected void ElimarMedico()
         {
             try
@@ -49,7 +58,7 @@ namespace MedicalTurns
                     medico = RetornarMedico();
 
                     negocio.Eliminar(medico);
-                    Response.Redirect("A_CargarMedico.aspx");
+                    Response.Redirect("A_CargarMedico.aspx", false);
                 }
             }
             catch (Exception ex)
@@ -106,7 +115,7 @@ namespace MedicalTurns
                 medico.Usuario.tipoUsuario = 1;
 
                 negocio.Cargar(medico);
-                Response.Redirect("A_CargarMedico.aspx");
+                Response.Redirect("A_CargarMedico.aspx", false);
             }
         }
     }

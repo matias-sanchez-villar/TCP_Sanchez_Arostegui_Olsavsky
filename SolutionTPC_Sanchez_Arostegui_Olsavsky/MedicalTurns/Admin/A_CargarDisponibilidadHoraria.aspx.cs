@@ -21,6 +21,7 @@ namespace MedicalTurns.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsuarioAdmi();
             EliminarDH();
 
             if (!IsPostBack)
@@ -32,6 +33,15 @@ namespace MedicalTurns.Admin
             }
 
             listarMedicos();
+        }
+
+
+        protected void UsuarioAdmi()
+        {
+            if (Session["AdmiSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
+            }
         }
 
         protected DisponibilidadHoraria RetornarDH()
@@ -55,7 +65,7 @@ namespace MedicalTurns.Admin
 
                     negocio.Eliminar(disponibilidadHoraria);
 
-                    Response.Redirect("A_CargarDisponibilidadHoraria.aspx");
+                    Response.Redirect("A_CargarDisponibilidadHoraria.aspx", false);
 
                 }
             }
@@ -109,7 +119,7 @@ namespace MedicalTurns.Admin
                     DHnegocio.Cargar(disponibilidadHoraria);
                 }
 
-                Response.Redirect("A_CargarDisponibilidadHoraria.aspx");
+                Response.Redirect("A_CargarDisponibilidadHoraria.aspx", false);
             }
         }
 

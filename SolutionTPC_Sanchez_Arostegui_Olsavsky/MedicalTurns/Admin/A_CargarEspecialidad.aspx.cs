@@ -15,6 +15,7 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsuarioAdmi();
             Modificar();
 
             N_Especialidad Negocio = new N_Especialidad();
@@ -22,6 +23,14 @@ namespace MedicalTurns
 
             Session.Add("Especialidad", lista);
 
+        }
+
+        protected void UsuarioAdmi()
+        {
+            if (Session["AdmiSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -52,7 +61,7 @@ namespace MedicalTurns
                 
             }
 
-            Response.Redirect("A_CargarEspecialidad.aspx");
+            Response.Redirect("A_CargarEspecialidad.aspx", false);
         }
 
         public void Modificar()

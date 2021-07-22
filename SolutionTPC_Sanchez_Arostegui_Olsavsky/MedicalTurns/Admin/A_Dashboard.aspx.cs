@@ -20,6 +20,7 @@ namespace MedicalTurns
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsuarioAdmi();
             try
             {
                 ElimarMedico();
@@ -44,6 +45,15 @@ namespace MedicalTurns
             {
                 ex.Message.ToString();
                 //Response.Redirect("Dashboard.aspx");
+            }
+        }
+
+
+        protected void UsuarioAdmi()
+        {
+            if (Session["AdmiSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
             }
         }
 

@@ -29,13 +29,23 @@ namespace MedicalTurns.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsuarioAdmi();
+
             if (!(string.IsNullOrEmpty(Request.QueryString["ID"])))
             {
                 CargarDatos();
             }
             else
             {
-                Response.Redirect("A_Dashboard.aspx");
+                Response.Redirect("A_Dashboard.aspx", false);
+            }
+        }
+
+        protected void UsuarioAdmi()
+        {
+            if (Session["AdmiSettings"] == null)
+            {
+                Response.Redirect("../Logindef.aspx", false);
             }
         }
 
@@ -98,7 +108,7 @@ namespace MedicalTurns.Admin
 
             Tnegocio.Modificar(turno);
 
-            Response.Redirect("A_CargarTurno.aspx");
+            Response.Redirect("A_CargarTurno.aspx", false);
         }
     }
 }
