@@ -80,6 +80,7 @@
     <Content Include="Assets\Doctor.svg" />
     <Content Include="LoginDef.aspx" />
     <Content Include="Medico\M_Settings.aspx" />
+    <Content Include="Medico\M_ModificarTurno.aspx" />
     <Content Include="Paciente\P_Dashboard.aspx" />
     <Content Include="Paciente\P_settings.aspx" />
     <Content Include="Paciente\P_Modificar.aspx" />
@@ -192,6 +193,13 @@
     </Compile>
     <Compile Include="Medico\M_Settings.aspx.designer.cs">
       <DependentUpon>M_Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\M_ModificarTurno.aspx.cs">
+      <DependentUpon>M_ModificarTurno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Medico\M_ModificarTurno.aspx.designer.cs">
+      <DependentUpon>M_ModificarTurno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paciente\P_Dashboard.aspx.cs">
       <DependentUpon>P_Dashboard.aspx</DependentUpon>

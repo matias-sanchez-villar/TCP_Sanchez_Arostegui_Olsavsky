@@ -11,25 +11,25 @@ namespace MedicalTurns
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        public List<Medico> listaMedicos;
+        public List<Turno> Tlista = new List<Turno>();
+        public N_Turno Tnegocio = new N_Turno();
+        public Turno turno = new Turno();
+
+        public List<Medico> Mlista = new List<Medico>();
+        public N_Medico Mnegocio = new N_Medico();
+        public Medico medico = new Medico();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             SessionMedico();
-            try
-            {
-                ///Listamos a medico
-                N_Medico medicoNegocio = new N_Medico();
-                listaMedicos = medicoNegocio.Listar();
 
-                Session.Add("Medicos", listaMedicos);
+            Medico pacAux = new Medico();
 
-            }
-            catch (Exception ex)
-            {
-                ex.Message.ToString();
-                //Response.Redirect("Dashboard.aspx");
-            }
+            medico = (Medico)Session["MedicoSettings"];
 
+            Tlista = Tnegocio.ListarIDMedico(medico.ID);
+
+            EliminarTurno();
         }
 
         protected void SessionMedico()
@@ -37,6 +37,25 @@ namespace MedicalTurns
             if (Session["MedicoSettings"] == null)
             {
                 Response.Redirect("../Logindef.aspx", false);
+            }
+        }
+
+        protected void EliminarTurno()
+        {
+            try
+            {
+                if (!(string.IsNullOrEmpty(Request.QueryString["IDTurno"])))
+                {
+                    N_Turno negocio = new N_Turno();
+
+
+                    negocio.Eliminar(Convert.ToInt32(Request.QueryString["IDTurno"]));
+                    Response.Redirect("M_Dashboard.aspx", false);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }
