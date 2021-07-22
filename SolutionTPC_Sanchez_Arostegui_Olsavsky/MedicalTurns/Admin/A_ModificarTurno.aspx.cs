@@ -86,7 +86,7 @@ namespace MedicalTurns.Admin
                     {
                         TimeSpan tiempo = item.HoraInicio;
 
-                        if (!(Tlista.Exists(x => x.Hora == tiempo)))
+                        //if (!(Tlista.Exists(x => x.Hora == tiempo)))
                         {
                             ListItem listItemAux = new ListItem(tiempo.ToString(), tiempo.ToString());
                             ddlHorarios.Items.Add(listItemAux);

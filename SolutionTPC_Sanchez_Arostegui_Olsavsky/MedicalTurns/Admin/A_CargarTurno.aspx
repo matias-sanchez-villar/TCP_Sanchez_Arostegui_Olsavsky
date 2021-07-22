@@ -52,7 +52,7 @@
                             <th>Clinic</th>
                             <th>Patient</th>
                             <th>Date and Time</th>
-                            <th>Actions</th>
+                            <th>Condition</th>
                         </tr>
                     </thead>
 
@@ -62,6 +62,7 @@
                         <td><% = item.medico.Apellido %>, <% = item.medico.Nombre %></td>
                         <td><% = item.paciente.Apellido %>, <% = item.paciente.Nombre %></td>
                         <td><% = String.Format("{0:yyyy-MM-dd}", item.Fecha) %> <% = item.Hora %> </td>
+                        <td><% = item.Estado %> </td>
                         <td style="width: 200px;">
                                 <a href="#"><i class="fas fa-info-circle"></i></a>
                                 <a href="A_ModificarTurno.aspx?ID=<% = item.ID %>" style="margin-left: 15px;"><i class="far fa-edit editItem"></i></a>

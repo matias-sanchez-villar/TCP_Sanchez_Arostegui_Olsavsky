@@ -263,7 +263,8 @@ namespace negocio
             Datos = new DataAcces();
             try
             {
-                Datos.setearConsulta(" Delete Turnos where ID = @ID");
+                //Datos.setearConsulta(" Delete Turnos where ID = @ID");
+                Datos.setearConsulta(" UPDATE Turnos set Estado = 'Cancelado' where ID = @ID");
 
                 Datos.setearParametro("@ID", IDTurno);
 
