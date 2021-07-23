@@ -190,29 +190,18 @@ namespace negocio
 
         public void Eliminar(Paciente paciente)
         {
-
-            Datos = new DataAcces();
-
             N_Usuario usuario = new N_Usuario();
 
             try
             {
-                Datos.setearConsulta("Delete from Pacientes where ID = @ID");
+                paciente.Usuario.Estado = false;
 
-                Datos.setearParametro("@ID", paciente.ID);
-
-                Datos.EjecutarAccion();
-
-                usuario.Eliminar(paciente.Usuario);
+                usuario.Modificar(paciente.Usuario);
 
             }
             catch (Exception ex)
             {
                 ex.Message.ToString();
-            }
-            finally
-            {
-                Datos.cerrarConexion();
             }
 
         }
