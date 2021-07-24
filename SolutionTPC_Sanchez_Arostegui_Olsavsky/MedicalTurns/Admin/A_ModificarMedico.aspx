@@ -29,7 +29,7 @@
                         <asp:TextBox ID="Celular" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Phone" MaxLength="50" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
                         <asp:TextBox ID="Matricula" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" placeholder="Matricula" MaxLength="40" type="number" runat="server" required ClientIDMode="Static"></asp:TextBox>
 
-                        <asp:Button ID="BtnModificar" CssClass="col-sm-8 col-md-4 m-auto mt-3 BtnSubmit" runat="server" Text="Modificar" OnClientClick="alert('Doctor successfully updated.')" type="submit" OnClick="BtnModificar_Click1" />    
+                        <asp:Button ID="BtnModificar" CssClass="col-sm-8 col-md-4 m-auto mt-3 BtnSubmit" runat="server" Text="Modificar" type="submit" OnClick="BtnModificar_Click1" />    
 
                     </div>
                 </div>

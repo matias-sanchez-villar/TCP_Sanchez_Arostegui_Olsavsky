@@ -12,6 +12,8 @@
         <link rel="stylesheet" runat="server" href="Styles/Master.css" />
         <link rel="stylesheet" runat="server" href="Styles/Generic_login.css" />
 
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     </asp:ContentPlaceHolder>
 </head>
 <body>

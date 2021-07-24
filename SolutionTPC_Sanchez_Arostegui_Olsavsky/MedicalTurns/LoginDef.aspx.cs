@@ -79,16 +79,8 @@ namespace MedicalTurns
                     }
 
                 }
-                else
-                {
-                    //marcar la contraseña como incorrecta
-                }
             }
-            else
-            {
 
-            }
-                //marcar el email como erroneo
         }
 
         public Usuario retornarUsuario(string email)

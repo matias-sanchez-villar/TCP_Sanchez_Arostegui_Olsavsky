@@ -29,17 +29,18 @@
                         <asp:ListItem Text="Saturday" Value="Saturday" />
                         <asp:ListItem Text="Sunday" Value="Sunday" />
                     </asp:DropDownList>
-                    
+
 
                     <asp:DropDownList ID="ddlHoraInicio" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" required>
                         <asp:ListItem Text="Hora Inicio" Value="#" />
                     </asp:DropDownList>
 
+
                     <asp:DropDownList ID="ddlHoraFin" runat="server" CssClass="m-auto col-sm-12 col-md-4 col-lg-3 p-1" required>
                         <asp:ListItem Text="Hora Fin" Value="#" />
                     </asp:DropDownList>
 
-                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" OnClientClick="alert('Availabilty successfully created.')" runat="server" Text="ADD AVAILABILITY" type="submit" OnClick="BtnSubmit_Click" />
+                    <asp:Button CssClass="col-sm-8 col-md-4 m-auto mt-3" ID="BtnSubmit" runat="server" Text="ADD AVAILABILITY" type="submit" OnClick="BtnSubmit_Click" />
                 </div>
             </div>
 

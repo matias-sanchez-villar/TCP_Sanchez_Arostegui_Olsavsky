@@ -60,7 +60,9 @@ namespace MedicalTurns
             }
             catch (Exception ex)
             {
-                throw ex;
+                ClientScript.RegisterStartupScript(this.GetType(), "Mesaje", "<script> swal('Error!', '"+ ex.Message +"','Error').then( () => {"
+                                                                                    + "location.href = 'A_Dashboard.aspx'" +
+                                                                                "}) </script>");
             }
 
         }
@@ -93,8 +95,9 @@ namespace MedicalTurns
             }
             catch (Exception ex)
             {
-                Response.Redirect("A_Error.aspx", false);
-
+                ClientScript.RegisterStartupScript(this.GetType(), "Mesaje", "<script> swal('Error!', '" + ex.Message + "','Error').then( () => {"
+                                                                                    + "location.href = 'A_Dashboard.aspx'" +
+                                                                                "}) </script>");
             }
         }
 
@@ -124,7 +127,10 @@ namespace MedicalTurns
                 }
 
                 negocio.Modificar(medico);
-                Response.Redirect("A_Dashboard.aspx", false);
+
+                ClientScript.RegisterStartupScript(this.GetType(), "Mesaje", "<script> swal('Perfecto!', 'Medico modificado!','success').then( () => {"
+                                                                                    + "location.href = 'A_Dashboard.aspx'" +
+                                                                                "}) </script>");
             }
         }
 

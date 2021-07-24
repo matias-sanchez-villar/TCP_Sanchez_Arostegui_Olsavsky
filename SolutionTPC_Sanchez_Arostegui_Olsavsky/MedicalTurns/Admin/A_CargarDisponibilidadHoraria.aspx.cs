@@ -71,7 +71,9 @@ namespace MedicalTurns.Admin
             }
             catch (Exception ex)
             {
-                Response.Redirect("A_Error.aspx", false);
+                ClientScript.RegisterStartupScript(this.GetType(), "Mesaje", "<script> swal('Error!', '" + ex.Message + "','Error').then( () => {"
+                                                                                    + "location.href = 'A_Dashboard.aspx'" +
+                                                                                "}) </script>");
             }
         }
 
@@ -96,31 +98,47 @@ namespace MedicalTurns.Admin
             catch (Exception ex)
             {
 
-                Response.Redirect("A_Error.aspx", false);
+                ClientScript.RegisterStartupScript(this.GetType(), "Mesaje", "<script> swal('Error!', '" + ex.Message + "','Error').then( () => {"
+                                                                                    + "location.href = 'A_Dashboard.aspx'" +
+                                                                                "}) </script>");
 
             }
         }
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-            Page.Validate();
-            if (!Page.IsValid) return;
-
-            else
+            try
             {
-                medico = Mnegocio.BuscarMedicoID(int.Parse(ddlMedico.SelectedItem.Value));
 
-                disponibilidadHoraria.medicoAux = medico;
-                disponibilidadHoraria.Dia = ddlDia.SelectedValue;
-                disponibilidadHoraria.HoraInicio = TimeSpan.Parse(ddlHoraInicio.SelectedValue);
-                disponibilidadHoraria.HoraFin = TimeSpan.Parse(ddlHoraFin.SelectedValue);
+                Page.Validate();
+                if (!Page.IsValid) return;
 
-                if (disponibilidadHoraria.HoraInicio < disponibilidadHoraria.HoraFin)
+                else
                 {
-                    DHnegocio.Cargar(disponibilidadHoraria);
-                }
+                    medico = Mnegocio.BuscarMedicoID(int.Parse(ddlMedico.SelectedItem.Value));
 
-                Response.Redirect("A_CargarDisponibilidadHoraria.aspx", false);
+                    disponibilidadHoraria.medicoAux = medico;
+                    disponibilidadHoraria.Dia = ddlDia.SelectedValue;
+                    disponibilidadHoraria.HoraInicio = TimeSpan.Parse(ddlHoraInicio.SelectedValue);
+                    disponibilidadHoraria.HoraFin = TimeSpan.Parse(ddlHoraFin.SelectedValue);
+
+                    if (disponibilidadHoraria.HoraInicio < disponibilidadHoraria.HoraFin)
+                    {
+                        DHnegocio.Cargar(disponibilidadHoraria);
+                    }
+
+                    ClientScript.RegisterStartupScript(this.GetType(), "Mesaje", "<script> swal('Perfecto!', 'Disponibilidad Horaria Ingresada!','success').then( () => {"
+                                                                                        + "location.href = 'A_CargarDisponibilidadHoraria.aspx'" +
+                                                                                    "}) </script>");
+
+                    //Response.Redirect("A_CargarDisponibilidadHoraria.aspx", false);
+                }
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "Mesaje", "<script> swal('Error!', '" + ex.Message + "','Error').then( () => {"
+                                                                                    + "location.href = 'A_Dashboard.aspx'" +
+                                                                                "}) </script>");
             }
         }
 

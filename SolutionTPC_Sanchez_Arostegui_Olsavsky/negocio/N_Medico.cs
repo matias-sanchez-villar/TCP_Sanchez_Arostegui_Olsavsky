@@ -75,7 +75,7 @@ namespace negocio
                 string From = " FROM Medicos M ";
                 string JoinU = " inner join Usuarios U on M.IDUsuario = U.ID ";
                 string JoinE = " inner join Especialidades E on E.ID = M.IDEspecialidad ";
-                string Where = " where U.Estado = 1 and M.ID = @ID ";
+                string Where = " where M.ID = @ID ";
                 string query = Select + From + JoinU + JoinE + Where;
 
                 Datos.setearConsulta(query);
