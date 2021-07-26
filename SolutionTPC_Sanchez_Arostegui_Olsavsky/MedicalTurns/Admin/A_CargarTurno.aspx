@@ -53,6 +53,7 @@
                             <th>Patient</th>
                             <th>Date and Time</th>
                             <th>Condition</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
 
